@@ -153,16 +153,16 @@ class PROFILES:
 
             if 'result' in jsonGet:
                 if 'settings' in jsonGet['result']:
-                    for set in jsonGet['result']['settings']:
-                        if 'value' in set.keys():
+                    for theset in jsonGet['result']['settings']:
+                        if 'value' in theset.keys():
 
-                            if set['value'] == True or set['value'] == False:  # lowercase bolean values
-                                settingsToSave[set['id']] = str(set['value']).lower()
+                            if theset['value'] == True or theset['value'] == False:  # lowercase bolean values
+                                settingsToSave[theset['id']] = str(theset['value']).lower()
                             else:
-                                if type(set['value']) is int:
-                                    settingsToSave[set['id']] = str(set['value'])
+                                if isinstance(theset['value'],int):
+                                    settingsToSave[theset['id']] = str(theset['value'])
                                 else:
-                                    settingsToSave[set['id']] = str(set['value']).encode('utf-8')
+                                    settingsToSave[theset['id']] = str(theset['value']).encode('utf-8')
 
                 if 'volume' in jsonGet['result']:
                     settingsToSave['volume'] = str(jsonGet['result']['volume'])
@@ -179,7 +179,7 @@ class PROFILES:
         # save profile file
         debug.notice('[SAVING SETTING]: ' + sName[button])
         f = xbmcvfs.File(ADDON_PATH_DATA + 'profile' + str(button) + '.json', 'w')
-        result = f.write(jsonToWrite)
+        f.write(jsonToWrite)
         f.close()
 
         debug.notify(ADDON_LANG(32102) + ' ' + str(button) + ' (' + sName[button] + ')')
@@ -217,7 +217,7 @@ class PROFILES:
             else:
                 ip = int(self.aProfile.index(profile))
                 if len(self.aProfile) == ip:
-                    profile == self.aProfile[0]
+                    profile = self.aProfile[0]
                 else:
                     profile = self.aProfile[ip + 1]
         except:
@@ -238,7 +238,7 @@ class PROFILES:
         try:
             jsonResult = json.loads(result)
             f.close()
-        except:
+        except ValueError:
             debug.notify(ADDON_LANG(32104) + ' ' + profile + ' (' + sName[int(profile)] + ')')
             debug.error('[LOAD JSON FROM FILE]: Error reading from profile - ' + str(profile))
             return False

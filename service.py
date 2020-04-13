@@ -54,48 +54,47 @@ class Monitor(xbmc.Monitor):
 
             # auto switch
             if 'item' in data and 'type' in data['item']:
-                type = data['item']['type']
-                set = map_type.get(type)
+                thetype = data['item']['type']
+                theset = map_type.get(thetype)
                 # auto show dialog
-                if 'true' in ADDON.getSetting('player_show') and 'movie' in type and 'id' not in data['item']:
+                if 'true' in ADDON.getSetting('player_show') and 'movie' in thetype and 'id' not in data['item']:
                     xbmc.executebuiltin('XBMC.RunScript(' + ADDON_ID + ', popup)')
 
                 # if video is not from library assign to auto_videos
-                if 'movie' in type and 'id' not in data['item']:
-                    set = 'auto_videos'
+                if 'movie' in thetype and 'id' not in data['item']:
+                    theset = 'auto_videos'
 
                 # distinguish pvr TV and pvr RADIO
-                if 'channel' in type and 'channeltype' in data['item']:
+                if 'channel' in thetype and 'channeltype' in data['item']:
                     if 'tv' in data['item']['channeltype']:
-                        set = 'auto_pvr_tv'
+                        theset = 'auto_pvr_tv'
                     elif 'radio' in data['item']['channeltype']:
-                        set = 'auto_pvr_radio'
+                        theset = 'auto_pvr_radio'
                     else:
-                        set = None
+                        theset = None
 
                 # detect cdda that kodi return as unknown
-                if 'unknown' in type and 'player' in data and 'playerid' in data['player']:
+                if 'unknown' in thetype and 'player' in data and 'playerid' in data['player']:
                     jsonS = xbmc.executeJSONRPC(
                         '{"jsonrpc": "2.0", "id": "1", "method": "Player.GetItem", "params": {"playerid": ' + str(
                             data['player']['playerid']) + ', "properties": ["file"]}}')
                     jsonR = json.loads(jsonS)
-                    file = ''
                     try:
                         file = jsonR['result']['item']['file']
-                    except:
-                        pass
+                    except (IndexError, KeyError, ValueError):
+                        file = ''
                     if file.startswith('cdda://'):
-                        set = 'auto_music'
+                        theset = 'auto_music'
 
-                debug.debug("[MONITOR] Setting parsed: " + str(set))
+                debug.debug("[MONITOR] Setting parsed: " + str(theset))
 
-                # cancel susspend auto change when media type change
-                if set != set_for_susspend:
+                # cancel susspend auto change when media thetype change
+                if theset != set_for_susspend:
                     susppend_auto_change = False
                     set_for_susspend = set
 
-                if set is not None:
-                    self.changeProfile(ADDON.getSetting(set))
+                if theset is not None:
+                    self.changeProfile(ADDON.getSetting(theset))
                     susppend_auto_change = True
 
     def changeProfile(self, profile):
@@ -115,11 +114,11 @@ class Monitor(xbmc.Monitor):
             f = xbmcvfs.File(ADDON_PATH_DATA + 'profile')
             p = f.read()
             f.close()
-            if p in profiles:
-                return p
-            else:
-                return ''
-        except:
+        except IOError:
+            return ''
+        if p in profiles:
+            return p
+        else:
             return ''
 
 

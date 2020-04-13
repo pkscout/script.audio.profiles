@@ -10,8 +10,8 @@ ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
 
 
 class DIALOG:
-    def start(self, xml_file, labels={}, textboxes={}, buttons=[], list=0):
-        display = SHOW(xml_file, ADDON_PATH, labels=labels, textboxes=textboxes, buttons=buttons, list=list)
+    def start(self, xml_file, labels={}, textboxes={}, buttons=[], thelist=0):
+        display = SHOW(xml_file, ADDON_PATH, labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist)
 
         display.doModal()
         ret = display.ret
@@ -21,13 +21,13 @@ class DIALOG:
 
 class SHOW(xbmcgui.WindowXMLDialog):
 
-    def __init__(self, xmlFile, resourcePath, labels, textboxes, buttons, list):
+    def __init__(self, xmlFile, resourcePath, labels, textboxes, buttons, thelist):
 
         self.ret = None
         self.labels = labels
         self.textboxes = textboxes
         self.buttons = buttons
-        self.list = list
+        self.thelist = thelist
 
     def onInit(self):
 
@@ -40,7 +40,7 @@ class SHOW(xbmcgui.WindowXMLDialog):
             self.getControl(textbox).setText(textbox_text)
 
         # set buttons
-        self.listitem = self.getControl(self.list)
+        self.listitem = self.getControl(self.thelist)
         for button_text in self.buttons:
             self.listitem.addItem(xbmcgui.ListItem(button_text))
 

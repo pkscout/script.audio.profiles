@@ -74,7 +74,7 @@ class PROFILES:
             xbmcgui.Window(10000).setProperty(ADDON_ID + '_autoclose',
                                               '1' if 'true' in ADDON.getSetting('player_autoclose') else '0')
             ret = dialog.DIALOG().start(self.xmlFile, labels={10071: ADDON_LANG(32106)}, buttons=enabledProfiles[1],
-                                        list=10070)
+                                        thelist=10070)
             if ret is not None:
                 self.profile(str(enabledProfiles[0][ret]))
             return
@@ -104,7 +104,7 @@ class PROFILES:
     def save(self):
         enabledProfiles = self.getEnabledProfiles()
         ret = dialog.DIALOG().start(self.xmlFile, labels={10071: ADDON_LANG(32100)}, buttons=enabledProfiles[1],
-                                    list=10070)
+                                    thelist=10070)
         if ret is None:
             return False
         else:

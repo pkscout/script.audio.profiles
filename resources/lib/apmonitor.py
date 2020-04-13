@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import json, os, sys, xbmc, xbmcaddon, xbmcvfs
+import json, os, xbmc, xbmcaddon, xbmcvfs
 import resources.lib.debug as debug
 
 ADDON = xbmcaddon.Addon()
@@ -8,9 +8,6 @@ ADDON_ID = ADDON.getAddonInfo('id')
 ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
 ADDON_PATH_DATA = xbmc.translatePath(os.path.join('special://profile/addon_data/', ADDON_ID)).replace('\\', '/') + '/'
 ADDON_LANG = ADDON.getLocalizedString
-
-
-import debug
 
 profiles = ['1', '2', '3', '4']
 map_type = {'movie': 'auto_movies', 'video': 'auto_videos', 'episode': 'auto_tvshows', 'channel': 'auto_pvr',

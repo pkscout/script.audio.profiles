@@ -1,52 +1,55 @@
-[B]1.4[/B]
+v1.4.2~beta1
+- updates for submission to Kodi main repository
+
+v1.4
 - add compatybility to python3 and Kodi Matrix
 
-[B]1.2.5[/B]
+v1.2.5
 - fix: assign cdda Audio CD from unknown to audio type
 - fix: prevent auto change immediately after change profile manually
 
-[B]1.2.4[/B]
+v1.2.4
 - add: kodi start/wakeup (Default) profile
 
-[B]1.2.3[/B]
+v1.2.3
 - fix: read setting for CEC Command
 
-[B]1.2.2[/B]
+v1.2.2
 - fix: JSON parse lookandfeel.soundskin value
 - fix: automatic content change for GUI
 
-[B]1.2.1[/B]
+v1.2.1
 - fix: automatic content detection
 
-[B]1.2.0[/B]
+v1.2.0
 - add: automatic content detection and enable suitable profile
 - add: sending HDMI-CEC Commands to wake up or sleep your AVR or TV
 
-[B]1.1.1[/B]
+v1.1.1
 - fix: unicode characters for profiles name
 
-[B]1.1.0[/B]
+v1.1.0
 - fix: compatibility with KODI 17 Krypton 
 - fix: rewrite window dialog to use WindowXML
 - add: service to auto open menu when star playing video
 
-[B]1.0.5[/B]
+v1.0.5
 - fix: update addon.xml
 
-[B]1.0.4[/B]
+v1.0.4
 - fix: writing unicode chars to file profile
 
-[B]1.0.3[/B]
+v1.0.3
 - add: auto open menu to select audio profile on start playing
 - add: auto close menu after a certain time
 - add: optional save settings from video section
 
-[B]1.0.2[/B]
+v1.0.2
 - add: now is 4 profile to save settings
 
-[B]1.0.1[/B]
+v1.0.1
 - fix: case sensitive bolean values
 - add: volume level
 
-[B]1.0.0[/B]
+v1.0.0
 - init

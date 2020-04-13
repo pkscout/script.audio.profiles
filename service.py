@@ -35,7 +35,6 @@ class Monitor(xbmc.Monitor):
     def onNotification(self, sender, method, data):
         global susppend_auto_change
         global set_for_susspend
-
         data = json.loads(data)
 
         if 'System.OnWake' in method:
@@ -51,54 +50,57 @@ class Monitor(xbmc.Monitor):
 
         if 'Player.OnPlay' in method:
             debug.debug("[MONITOR] METHOD: " + str(method) + " DATA: " + str(data))
-
             # auto switch
             if 'item' in data and 'type' in data['item']:
-                thetype = data['item']['type']
-                theset = map_type.get(thetype)
-                # auto show dialog
-                if 'true' in ADDON.getSetting('player_show') and 'movie' in thetype and 'id' not in data['item']:
-                    xbmc.executebuiltin('XBMC.RunScript(' + ADDON_ID + ', popup)')
+                self.autoSwitch(data)
 
-                # if video is not from library assign to auto_videos
-                if 'movie' in thetype and 'id' not in data['item']:
-                    theset = 'auto_videos'
+    def autoSwitch(self, data):
+        global susppend_auto_change
+        global set_for_susspend
+        thetype = data['item']['type']
+        theset = map_type.get(thetype)
+        # auto show dialog
+        if 'true' in ADDON.getSetting('player_show') and 'movie' in thetype and 'id' not in data['item']:
+            xbmc.executebuiltin('XBMC.RunScript(' + ADDON_ID + ', popup)')
 
-                # distinguish pvr TV and pvr RADIO
-                if 'channel' in thetype and 'channeltype' in data['item']:
-                    if 'tv' in data['item']['channeltype']:
-                        theset = 'auto_pvr_tv'
-                    elif 'radio' in data['item']['channeltype']:
-                        theset = 'auto_pvr_radio'
-                    else:
-                        theset = None
+        # if video is not from library assign to auto_videos
+        if 'movie' in thetype and 'id' not in data['item']:
+            theset = 'auto_videos'
 
-                # detect cdda that kodi return as unknown
-                if 'unknown' in thetype and 'player' in data and 'playerid' in data['player']:
-                    jsonS = xbmc.executeJSONRPC(
-                        '{"jsonrpc": "2.0", "id": "1", "method": "Player.GetItem", "params": {"playerid": ' + str(
-                            data['player']['playerid']) + ', "properties": ["file"]}}')
-                    jsonR = json.loads(jsonS)
-                    try:
-                        file = jsonR['result']['item']['file']
-                    except (IndexError, KeyError, ValueError):
-                        file = ''
-                    if file.startswith('cdda://'):
-                        theset = 'auto_music'
+        # distinguish pvr TV and pvr RADIO
+        if 'channel' in thetype and 'channeltype' in data['item']:
+            if 'tv' in data['item']['channeltype']:
+                theset = 'auto_pvr_tv'
+            elif 'radio' in data['item']['channeltype']:
+                theset = 'auto_pvr_radio'
+            else:
+                theset = None
 
-                debug.debug("[MONITOR] Setting parsed: " + str(theset))
+        # detect cdda that kodi return as unknown
+        if 'unknown' in thetype and 'player' in data and 'playerid' in data['player']:
+            jsonS = xbmc.executeJSONRPC(
+                '{"jsonrpc": "2.0", "id": "1", "method": "Player.GetItem", "params": {"playerid": ' + str(
+                    data['player']['playerid']) + ', "properties": ["file"]}}')
+            jsonR = json.loads(jsonS)
+            try:
+                file = jsonR['result']['item']['file']
+            except (IndexError, KeyError, ValueError):
+                file = ''
+            if file.startswith('cdda://'):
+                theset = 'auto_music'
 
-                # cancel susspend auto change when media thetype change
-                if theset != set_for_susspend:
-                    susppend_auto_change = False
-                    set_for_susspend = set
+        debug.debug("[MONITOR] Setting parsed: " + str(theset))
 
-                if theset is not None:
-                    self.changeProfile(ADDON.getSetting(theset))
-                    susppend_auto_change = True
+        # cancel susspend auto change when media thetype change
+        if theset != set_for_susspend:
+            susppend_auto_change = False
+            set_for_susspend = set
+
+        if theset is not None:
+            self.changeProfile(ADDON.getSetting(theset))
+            susppend_auto_change = True
 
     def changeProfile(self, profile):
-
         if profile in profiles:
             # get last loaded profile
             lastProfile = self.getLastProfile()

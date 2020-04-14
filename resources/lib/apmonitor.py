@@ -6,7 +6,7 @@ import resources.lib.debug as debug
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
 ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
-ADDON_PATH_DATA = xbmc.translatePath(os.path.join('special://profile/addon_data/', ADDON_ID)).replace('\\', '/') + '/'
+ADDON_PATH_DATA = xbmc.translatePath( ADDON.getAddonInfo('profile') )
 ADDON_LANG = ADDON.getLocalizedString
 
 profiles = ['1', '2', '3', '4']
@@ -104,7 +104,7 @@ class Monitor(xbmc.Monitor):
 
     def getLastProfile(self):
         try:
-            f = xbmcvfs.File(ADDON_PATH_DATA + 'profile')
+            f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile'))
             p = f.read()
             f.close()
         except IOError:

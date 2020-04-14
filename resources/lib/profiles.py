@@ -9,7 +9,7 @@ ADDON_ID = ADDON.getAddonInfo('id')
 ADDON_NAME = ADDON.getAddonInfo('name')
 ADDON_ICON = ADDON.getAddonInfo('icon')
 ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
-ADDON_PATH_DATA = xbmc.translatePath(os.path.join('special://profile/addon_data/', ADDON_ID)).replace('\\', '/') + '/'
+ADDON_PATH_DATA = xbmc.translatePath( ADDON.getAddonInfo('profile') )
 ADDON_LANG = ADDON.getLocalizedString
 
 
@@ -168,7 +168,7 @@ class PROFILES:
 
         # save profile file
         debug.notice('[SAVING SETTING]: ' + sName[button])
-        f = xbmcvfs.File(ADDON_PATH_DATA + 'profile' + str(button) + '.json', 'w')
+        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA,'profile' + str(button) + '.json'), 'w')
         f.write(jsonToWrite)
         f.close()
 
@@ -199,7 +199,7 @@ class PROFILES:
             xbmcvfs.mkdir(ADDON_PATH_DATA)
         # try read last active profile
         profileread = True
-        f = xbmcvfs.File(ADDON_PATH_DATA + 'profile')
+        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile'))
         try:
             profile = f.read()
             f.close()
@@ -225,7 +225,7 @@ class PROFILES:
         sCec = ADDON.getSetting('profile' + profile + '_cec')
 
         # read settings from profile
-        f = xbmcvfs.File(ADDON_PATH_DATA + 'profile' + profile + '.json', 'r')
+        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile' + profile + '.json'), 'r')
         result = f.read()
         try:
             jsonResult = json.loads(result)
@@ -268,7 +268,7 @@ class PROFILES:
         debug.notify(sName[int(profile)])
 
         # write curent profile
-        f = xbmcvfs.File(ADDON_PATH_DATA + 'profile', 'w')
+        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile'), 'w')
         f.write(profile)
         f.close()
 

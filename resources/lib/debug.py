@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import xbmc
-import xbmcaddon
+import xbmc, xbmcaddon, xbmcgui
 
 ADDON = xbmcaddon.Addon()
 ADDON_ICON = ADDON.getAddonInfo('icon')
@@ -22,5 +21,4 @@ def error(msg):
 
 def notify(msg, force=False, title=''):
     if 'true' in ADDON.getSetting('notify') or force is True:
-        xbmc.executebuiltin('Notification(' + ADDON_NAME + (
-            ' - ' + title if len(title) > 0 else '') + ', ' + msg + ', 4000, ' + ADDON_ICON + ')')
+        xbmcgui.Dialog().notification(ADDON_NAME + (' - ' + title if len(title) > 0 else ''), msg, icon=ADDON_ICON)

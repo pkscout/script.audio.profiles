@@ -52,7 +52,7 @@ class Monitor(xbmc.Monitor):
         theset = map_type.get(thetype)
         # auto show dialog
         if 'true' in ADDON.getSetting('player_show') and 'movie' in thetype and 'id' not in data['item']:
-            xbmc.executebuiltin('XBMC.RunScript(' + ADDON_ID + ', popup)')
+            xbmc.executebuiltin('RunScript(' + ADDON_ID + ', popup)')
 
         # if video is not from library assign to auto_videos
         if 'movie' in thetype and 'id' not in data['item']:
@@ -98,7 +98,7 @@ class Monitor(xbmc.Monitor):
             debug.debug("[MONITOR] Last loaded profile: " + lastProfile + " To switch profile: " + profile)
 
             if lastProfile != profile and susppend_auto_change is not True:
-                xbmc.executebuiltin('XBMC.RunScript(' + ADDON_ID + ', ' + profile + ')')
+                xbmc.executebuiltin('RunScript(' + ADDON_ID + ', ' + profile + ')')
             else:
                 debug.debug("[MONITOR] Switching omitted (same profile) or switching is susspend")
 

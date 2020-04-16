@@ -198,23 +198,20 @@ class PROFILES:
         if not xbmcvfs.exists(ADDON_PATH_DATA):
             xbmcvfs.mkdir(ADDON_PATH_DATA)
         # try read last active profile
-        profileread = True
-        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile'))
         try:
+            f = xbmcvfs.File(ADDON_PATH_DATA + 'profile')
             profile = f.read()
             f.close()
-        except IOError:
-            profileread = False
-            profile = self.aProfile[0]
-        if profileread:
             if (len(self.aProfile) == 1) or (profile not in self.aProfile):
                 profile = self.aProfile[0]
             else:
                 ip = int(self.aProfile.index(profile))
                 if len(self.aProfile) == ip:
-                    profile = self.aProfile[0]
+                    profile == self.aProfile[0]
                 else:
                     profile = self.aProfile[ip + 1]
+        except (IOError, IndexError):
+            profile = self.aProfile[0]
         self.profile(profile)
 
     def profile(self, profile):

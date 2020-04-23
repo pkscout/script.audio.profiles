@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from kodi_six import xbmc, xbmcaddon, xbmcgui, xbmcvfs
+from kodi_six import xbmc, xbmcaddon, xbmcvfs
 import json, os, sys
 import resources.lib.dialog as dialog
 import resources.lib.notify as notify

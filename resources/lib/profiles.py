@@ -135,8 +135,8 @@ class PROFILES:
                 if 'volume' in jsonGet['result']:
                     settingsToSave['volume'] = str(jsonGet['result']['volume'])
         # prepare JSON string to save to file
-#        if xbmc_version > 18:
-#            settingsToSave = convert(settingsToSave)
+        if xbmc_version > 18:
+            settingsToSave = convert(settingsToSave)
         jsonToWrite = json.dumps(settingsToSave)
         # create dir in addon data if not exist
         if not xbmcvfs.exists(ADDON_PATH_DATA):

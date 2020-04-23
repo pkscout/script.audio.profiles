@@ -42,15 +42,15 @@ def convert(data):
 class PROFILES:
 
     def __init__(self):
-        notify.logDebug('[SYS.ARGV]: ' + str(sys.argv))
-        notify.logDebug('[XBMC VERSION]: ' + str(xbmc_version))
+        notify.logDebug('[SYS.ARGV]: %s' % str(sys.argv))
+        notify.logDebug('[XBMC VERSION]: %s' % str(xbmc_version))
         self.xmlFile = 'script-audio-profiles-menu.xml'
         # detect mode, check args
         if (len(sys.argv) < 2 or len(sys.argv[0]) == 0):
             mode = False
         else:
             mode = str(sys.argv[1])
-        notify.logDebug('[MODE]: ' + str(mode))
+        notify.logDebug('[MODE]: %s' % str(mode))
         self.start(mode)
 
 
@@ -80,7 +80,7 @@ class PROFILES:
             else:
                 self.profile(mode)
             return
-        notify.logError('Wrong arg, use like RunScript("' + ADDON_ID + ',x") x - number of profile')
+        notify.logError('Wrong arg, use like RunScript("%s,x") x - number of profile' % ADDON_ID)
 
 
     def getEnabledProfiles(self):
@@ -117,7 +117,7 @@ class PROFILES:
         for j in json_s:
             jsonGet = xbmc.executeJSONRPC(j)
             jsonGet = json.loads(jsonGet)
-            notify.logDebug('[JSON]: ' + str(jsonGet))
+            notify.logDebug('[JSON]: %s' % str(jsonGet))
 
             if 'result' in jsonGet:
                 if 'settings' in jsonGet['result']:
@@ -142,11 +142,11 @@ class PROFILES:
         if not xbmcvfs.exists(ADDON_PATH_DATA):
             xbmcvfs.mkdir(ADDON_PATH_DATA)
         # save profile file
-        notify.logNotice('[SAVING SETTING]: ' + sName[button])
-        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA,'profile' + str(button) + '.json'), 'w')
+        notify.logNotice('[SAVING SETTING]: %s' % sName[button])
+        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile%s.json' % str(button)), 'w')
         f.write(jsonToWrite)
         f.close()
-        notify.popup(ADDON_LANG(32102) + ' ' + str(button) + ' (' + sName[button] + ')')
+        notify.popup('%s %s (%s)' % (ADDON_LANG(32102), str(button), sName[button]))
 
 
     def check(self, mode):
@@ -154,15 +154,15 @@ class PROFILES:
         self.aProfile = []
         # stop if selected (mode) profile are disabled
         if mode != '0' and 'false' in sProfile[int(mode)]:
-            notify.popup(ADDON_LANG(32103) + ' (' + sName[int(mode)] + ')')
-            notify.logNotice('[CHECK]: This profile is disabled in addon settings - ' + str(mode))
+            notify.popup('%s (%s)' % (ADDON_LANG(32103), sName[int(mode)]))
+            notify.logNotice('[CHECK]: This profile is disabled in addon settings - %s' % str(mode))
             return False
         # check if profile have settings file
         for key in sProfile:
             if 'true' in sProfile[key]:
                 if not xbmcvfs.exists(ADDON_PATH_DATA + 'profile' + str(key) + '.json'):
-                    notify.popup(ADDON_LANG(32101) + ' ' + str(key) + ' (' + sName[key] + ')')
-                    notify.logError('[PROFILE FILE]: not exist for profile - ' + str(key))
+                    notify.popup('%s %s (%s)' % (ADDON_LANG(32101), str(key), sName[key]))
+                    notify.logError('[PROFILE FILE]: not exist for profile - %s' % str(key))
                     return False
                 self.aProfile.append(str(key))
 
@@ -172,19 +172,28 @@ class PROFILES:
         if not xbmcvfs.exists(ADDON_PATH_DATA):
             xbmcvfs.mkdir(ADDON_PATH_DATA)
         # try read last active profile
+        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA,'profile'))
         try:
-            f = xbmcvfs.File(ADDON_PATH_DATA + 'profile')
             profile = f.read()
-            f.close()
+        except IOError:
+            profile = ''
+        f.close()
+        if profile:
             if (len(self.aProfile) == 1) or (profile not in self.aProfile):
                 profile = self.aProfile[0]
             else:
                 ip = int(self.aProfile.index(profile))
                 if len(self.aProfile) == ip:
-                    profile = self.aProfile[0]
+                    try:
+                        profile = self.aProfile[0]
+                    except IndexError:
+                        profile = self.aProfile[0]
                 else:
-                    profile = self.aProfile[ip + 1]
-        except (IOError, IndexError):
+                    try:
+                        profile = self.aProfile[ip + 1]
+                    except IndexError:
+                        profile = self.aProfile[0]
+        else:
             profile = self.aProfile[0]
         self.profile(profile)
 
@@ -202,36 +211,33 @@ class PROFILES:
             jsonResult = json.loads(result)
             f.close()
         except ValueError:
-            notify.popup(ADDON_LANG(32104) + ' ' + profile + ' (' + sName[int(profile)] + ')')
-            notify.logError('[LOAD JSON FROM FILE]: Error reading from profile - ' + str(profile))
+            notify.popup('%s %s (%s)' % (ADDON_LANG(32104), profile, sName[int(profile)]))
+            notify.logError('[LOAD JSON FROM FILE]: Error reading from profile - %s' % str(profile))
             return False
         # settings needed quote for value
-        quote_needed = [
-            'audiooutput.audiodevice',
-            'audiooutput.passthroughdevice',
-            'locale.audiolanguage',
-            'lookandfeel.soundskin'
-        ]
+        quote_needed = ['audiooutput.audiodevice',
+                        'audiooutput.passthroughdevice',
+                        'locale.audiolanguage',
+                        'lookandfeel.soundskin']
         # set settings readed from profile file
-        notify.logNotice('[RESTORING SETTING]: ' + sName[int(profile)])
+        notify.logNotice('[RESTORING SETTING]: %s' % sName[int(profile)])
         for setName, setValue in jsonResult.items():
             # skip setting that type is disable to changing
             if 'false' in sPlayer and setName.startswith('videoplayer'):
                 continue
             if 'false' in sVideo and setName.startswith('videoscreen'):
                 continue
-            notify.logDebug('[RESTORING SETTING]: ' + setName + ': ' + setValue)
+            notify.logDebug('[RESTORING SETTING]: %s: %s' % (setName,setValue))
             # add quotes
             if setName in quote_needed:
-                setValue = '"' + setValue + '"'
+                setValue = '"%s"' % setValue
             # set setting
             if 'true' in sVolume and setName == 'volume':
                 xbmc.executeJSONRPC(
-                    '{"jsonrpc": "2.0", "method": "Application.SetVolume", "params": {"volume": ' + jsonResult[
-                        'volume'] + '}, "id": 1}')
+                    '{"jsonrpc": "2.0", "method": "Application.SetVolume", "params": {"volume": %s}, "id": 1}' % jsonResult['volume'])
             else:
                 xbmc.executeJSONRPC(
-                    '{"jsonrpc": "2.0", "method": "Settings.SetSettingValue", "params": {"setting": "' + setName + '", "value": ' + setValue + '}, "id": 1}')
+                    '{"jsonrpc": "2.0", "method": "Settings.SetSettingValue", "params": {"setting": "%s", "value": %s}, "id": 1}' % (setName, setValue))
         notify.popup(sName[int(profile)])
         # write curent profile
         f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile'), 'w')
@@ -239,5 +245,5 @@ class PROFILES:
         f.close()
         # CEC
         if sCec != '' and int(sCec) > 0:
-            notify.logNotice('[SENDING CEC COMMAND]: ' + cecCommands[int(sCec)])
+            notify.logNotice('[SENDING CEC COMMAND]: %s' % cecCommands[int(sCec)])
             xbmc.executebuiltin(cecCommands[int(sCec)])

@@ -75,7 +75,7 @@ class Monitor(xbmc.Monitor):
                 file = ''
             if file.startswith('cdda://'):
                 theset = 'auto_music'
-        notify.logDebug(' [MONITOR] Setting parsed: %s' % str(theset))
+        notify.logDebug('[MONITOR] Setting parsed: %s' % str(theset))
         # cancel susspend auto change when media thetype change
         if theset != set_for_susspend:
             susppend_auto_change = False
@@ -89,11 +89,11 @@ class Monitor(xbmc.Monitor):
         if profile in profiles:
             # get last loaded profile
             lastProfile = self.getLastProfile()
-            notify.logDebug(' [MONITOR] Last loaded profile: %s To switch profile: %s' % (lastProfile, profile))
+            notify.logDebug('[MONITOR] Last loaded profile: %s To switch profile: %s' % (lastProfile, profile))
             if lastProfile != profile and susppend_auto_change is not True:
                 xbmc.executebuiltin('RunScript(%s, %s)' % (ADDON_ID, profile))
             else:
-                notify.logDebug("[MONITOR] Switching omitted (same profile) or switching is susspend")
+                notify.logDebug('[MONITOR] Switching omitted (same profile) or switching is susspend')
 
 
     def getLastProfile(self):

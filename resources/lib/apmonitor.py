@@ -19,9 +19,15 @@ set_for_susspend = None
 
 class Monitor(xbmc.Monitor):
     def __init__(self):
+        notify.logNotice('staring background monitor process')
         xbmc.Monitor.__init__(self)
         # default for kodi start
         self.changeProfile(ADDON.getSetting('auto_default'))
+
+
+    def onSettingsChanged(self):
+        global ADDON
+        ADDON = xbmcaddon.Addon()
 
 
     def onNotification(self, sender, method, data):
@@ -50,7 +56,9 @@ class Monitor(xbmc.Monitor):
         thetype = data['item']['type']
         theset = map_type.get(thetype)
         # auto show dialog
-        if 'true' in ADDON.getSetting('player_show') and 'movie' in thetype and 'id' not in data['item']:
+        notify.logDebug('the data are:')
+        notify.logDebug(data)
+        if 'true' in ADDON.getSetting('player_show'):
             xbmc.executebuiltin('RunScript(%s, popup)' % ADDON_ID)
         # if video is not from library assign to auto_videos
         if 'movie' in thetype and 'id' not in data['item']:
@@ -70,10 +78,10 @@ class Monitor(xbmc.Monitor):
                                        )
             jsonR = json.loads(jsonS)
             try:
-                file = jsonR['result']['item']['file']
+                thefile = jsonR['result']['item']['file']
             except (IndexError, KeyError, ValueError):
-                file = ''
-            if file.startswith('cdda://'):
+                thefile = ''
+            if thefile.startswith('cdda://'):
                 theset = 'auto_music'
         notify.logDebug('[MONITOR] Setting parsed: %s' % str(theset))
         # cancel susspend auto change when media thetype change

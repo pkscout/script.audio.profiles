@@ -25,6 +25,7 @@ def logError(msg):
 
 
 def logDebug(msg):
-    xbmc.log('[%s] %s' % (ADDON_NAME, msg), level=xbmc.LOGDEBUG)
+    if ADDON.getSetting('debug').lower() == 'true':
+        xbmc.log('[%s] %s' % (ADDON_NAME, msg), level=xbmc.LOGDEBUG)
 
 

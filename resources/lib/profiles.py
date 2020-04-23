@@ -42,6 +42,7 @@ def convert(data):
 class PROFILES:
 
     def __init__(self):
+        notify.logNotice('running profiles script')
         notify.logDebug('[SYS.ARGV]: %s' % str(sys.argv))
         notify.logDebug('[XBMC VERSION]: %s' % str(xbmc_version))
         self.xmlFile = 'script-audio-profiles-menu.xml'
@@ -55,7 +56,6 @@ class PROFILES:
 
 
     def start(self, mode):
-        xbmcgui.Window(10000).clearProperty(ADDON_ID + '_autoclose')
         # check is profiles is set
         if 'true' not in sProfile.values():
             notify.popup(ADDON_LANG(32105))
@@ -65,8 +65,6 @@ class PROFILES:
             return
         if mode == 'popup':
             enabledProfiles = self.getEnabledProfiles()
-            xbmcgui.Window(10000).setProperty(ADDON_ID + '_autoclose',
-                                              '1' if 'true' in ADDON.getSetting('player_autoclose') else '0')
             ret = dialog.DIALOG().start(self.xmlFile, labels={10071: ADDON_LANG(32106)}, buttons=enabledProfiles[1],
                                         thelist=10070)
             if ret is not None:
@@ -97,28 +95,28 @@ class PROFILES:
         # get audio config and save to file
         enabledProfiles = self.getEnabledProfiles()
         ret = dialog.DIALOG().start(self.xmlFile, labels={10071: ADDON_LANG(32100)}, buttons=enabledProfiles[1],
-                                    thelist=10070)
+                                    thelist=10070, save_profile=True)
+        notify.logDebug( 'the returned value is %s' % str(ret) )
         if ret is None:
             return False
         else:
             button = enabledProfiles[0][ret]
         settingsToSave = {}
         json_s = [
-                # get all settings from System / Audio section
-                '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"audio"}},"id":1}',
-                # get volume level
-                '{"jsonrpc": "2.0", "method": "Application.GetProperties", "params": {"properties": ["volume"]}, "id": 1}',
-                # get all settings from Video / Playback section
-                '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"player","category":"videoplayer"}}, "id":1}',
-                # get all settings from System / Video section
-                '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"display"}}, "id":1}'
+            # get all settings from System / Audio section
+            '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"audio"}},"id":1}',
+            # get volume level
+            '{"jsonrpc": "2.0", "method": "Application.GetProperties", "params": {"properties": ["volume"]}, "id": 1}',
+            # get all settings from Player / Videos section
+            '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"player","category":"videoplayer"}}, "id":1}',
+            # get all settings from System / Video section
+            '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"display"}}, "id":1}'
                  ]
         # send json requests
         for j in json_s:
             jsonGet = xbmc.executeJSONRPC(j)
             jsonGet = json.loads(jsonGet)
             notify.logDebug('[JSON]: %s' % str(jsonGet))
-
             if 'result' in jsonGet:
                 if 'settings' in jsonGet['result']:
                     for theset in jsonGet['result']['settings']:
@@ -146,7 +144,7 @@ class PROFILES:
         f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile%s.json' % str(button)), 'w')
         f.write(jsonToWrite)
         f.close()
-        notify.popup('%s %s (%s)' % (ADDON_LANG(32102), str(button), sName[button]))
+        notify.popup('%s %s (%s)' % (ADDON_LANG(32102), str(button), sName[button]), force=True)
 
 
     def check(self, mode):

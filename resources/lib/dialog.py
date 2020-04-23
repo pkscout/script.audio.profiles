@@ -1,17 +1,33 @@
 # -*- coding: utf-8 -*-
 
 from kodi_six import xbmc, xbmcaddon, xbmcgui
+import resources.lib.notify as notify
 
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
 ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
+KODIMONITOR = xbmc.Monitor()
+KODIPLAYER = xbmc.Player()
 
 
 class DIALOG:
 
-    def start(self, xml_file, labels=None, textboxes=None, buttons=None, thelist=0):
+    def start(self, xml_file, labels=None, textboxes=None, buttons=None, thelist=0, save_profile=False):
+        count = 0
+        delay = int(ADDON.getSetting('player_autoclose_delay'))
+        autoclose = ADDON.getSetting('player_autoclose').lower()
         display = SHOW(xml_file, ADDON_PATH, labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist)
-        display.doModal()
+        display.show()
+        while (KODIPLAYER.isPlaying() or save_profile) and not KODIMONITOR.abortRequested():
+            if save_profile:
+                notify.logDebug('the current returned value from display is: %s' % str(display.ret))
+                if display.ret is not None:
+                    break
+            elif autoclose == 'true':
+                if count >= delay:
+                    break
+                count = count + 1
+            KODIMONITOR.waitForAbort( 1 )
         ret = display.ret
         del display
         return ret

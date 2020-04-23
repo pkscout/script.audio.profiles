@@ -181,7 +181,7 @@ class PROFILES:
             else:
                 ip = int(self.aProfile.index(profile))
                 if len(self.aProfile) == ip:
-                    profile == self.aProfile[0]
+                    profile = self.aProfile[0]
                 else:
                     profile = self.aProfile[ip + 1]
         except (IOError, IndexError):

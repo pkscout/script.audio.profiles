@@ -72,12 +72,12 @@ msgstr ""
 
 #: Settings
 msgctxt "#32011"
-msgid "Include player settings"
+msgid "Include video player settings"
 msgstr ""
 
 #: Settings
 msgctxt "#32012"
-msgid "Include video settings"
+msgid "Include display settings"
 msgstr ""
 
 #: Settings
@@ -198,6 +198,16 @@ msgstr ""
 #: Settings
 msgctxt "#32038"
 msgid "Profile for KODI Start/Wakeup (Default)"
+msgstr ""
+
+#: Settings
+msgctxt "#32039"
+msgid "Delay before close"
+msgstr ""
+
+#: Settings
+msgctxt "#32040"
+msgid "Enable debug logging"
 msgstr ""
 
 #: Script

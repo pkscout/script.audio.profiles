@@ -72,13 +72,13 @@ msgstr "Hangerő beállítások mentése"
 
 #: Settings
 msgctxt "#32011"
-msgid "Include player settings"
-msgstr "Lejátszó beállítások mentése"
+msgid "Include video player settings"
+msgstr "Tartalmazza a videolejátszó beállításait"
 
 #: Settings
 msgctxt "#32012"
-msgid "Include video settings"
-msgstr "Videó beállítások mentése"
+msgid "Include display settings"
+msgstr "Tartalmazza a megjelenítési beállításokat"
 
 #: Settings
 msgctxt "#32005"
@@ -200,6 +200,17 @@ msgstr "Más"
 msgctxt "#32038"
 msgid "Profile for KODI Start/Wakeup (Default)"
 msgstr "Profil a KODI Indításakor (Alapértelmezett)"
+
+#: Settings
+msgctxt "#32039"
+msgid "Delay before close"
+msgstr "Késleltetés a bezárás előtt"
+
+#: Settings
+msgctxt "#32040"
+msgid "Enable debug logging"
+msgstr "A hibakeresési naplózás engedélyezése"
+
 
 #: Script
 msgctxt "#32100"

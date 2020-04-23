@@ -17,7 +17,7 @@ msgstr ""
 #: addon.xml
 msgctxt "Addon Summary"
 msgid "Save audio profile and easily switch between them"
-msgstr "Salva il profilo audio e cambia facilmente tra di loro"
+msgstr "Salva il profilo audio e cambia facilmente da uno all'altro"
 
 #: addon.xml
 msgctxt "Addon Description"
@@ -25,7 +25,7 @@ msgid ""
 "To map a key for switch audio profile edit keymap xml file and "
 "add:[CR]RunScript(script.audio.profiles,0) - for switch profile in "
 "loop[CR]RunScript(script.audio.profiles,x) - where x is number of profile"
-msgstr "Per assegnare il cambio profilo audio ad un pulsante modifica il file keymap xml e aggiungi:[CR]RunScript(script.audio.profiles,0) - per cambiare  il profilo in ciclo continuo [CR]RunScript(script.audio.profiles,x) - dove x è il numero del profilo"
+msgstr "Per assegnare ad un pulsante il cambio profilo modifica il file keymap xml e aggiungi:[CR]RunScript(script.audio.profiles,0) - per cambiare  il profilo in ciclo continuo [CR]RunScript(script.audio.profiles,x) - dove x è il numero del profilo"
 
 #: Settings
 msgctxt "#32000"
@@ -50,7 +50,7 @@ msgstr "Cambio automatico"
 #: Settings
 msgctxt "#32015"
 msgid "Show audio stream select menu on start playing"
-msgstr "Mostra menu di selezione stream all'inizio della riproduzione"
+msgstr "Mostra menu di selezione stream all'avvio della riproduzione"
 
 #: Settings
 msgctxt "#32016"
@@ -79,13 +79,13 @@ msgstr "Includi livello volume"
 
 #: Settings
 msgctxt "#32011"
-msgid "Include player settings"
-msgstr "Includi impostazioni player"
+msgid "Include video player settings"
+msgstr "Includi le impostazioni del lettore video"
 
 #: Settings
 msgctxt "#32012"
-msgid "Include video settings"
-msgstr "Includi impostazioni video"
+msgid "Include display settings"
+msgstr "Includi impostazioni di visualizzazione"
 
 #: Settings
 msgctxt "#32005"
@@ -125,7 +125,7 @@ msgstr "Profilo per GUI"
 #: Settings
 msgctxt "#32022"
 msgid "Profile for Movies"
-msgstr "Profilo per Film"
+msgstr "Profilo per Films"
 
 #: Settings
 msgctxt "#32023"
@@ -207,10 +207,20 @@ msgctxt "#32038"
 msgid "Profile for KODI Start/Wakeup (Default)"
 msgstr "Profilo per Avvio/Risveglio di Kodi (Predefinito)"
 
+#: Settings
+msgctxt "#32039"
+msgid "Delay before close"
+msgstr "Ritardo prima della chiusura"
+
+#: Settings
+msgctxt "#32040"
+msgid "Enable debug logging"
+msgstr "Abilita registrazione debug"
+
 #: Script
 msgctxt "#32100"
 msgid "Select profile to save settings"
-msgstr "Seleziona il profilo dove salvare le impostazioni"
+msgstr "Seleziona il profilo per salvare le impostazioni"
 
 #: Script
 msgctxt "#32106"

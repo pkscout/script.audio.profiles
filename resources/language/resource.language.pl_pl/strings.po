@@ -74,13 +74,13 @@ msgstr "Załącz poziom głośności"
 
 #: Settings
 msgctxt "#32011"
-msgid "Include player settings"
-msgstr "Załącz ustawienia odtwarzacza"
+msgid "Include video player settings"
+msgstr "Uwzględnij ustawienia odtwarzacza wideo"
 
 #: Settings
 msgctxt "#32012"
-msgid "Include video settings"
-msgstr "Załącz ustawienia wideo"
+msgid "Include display settings"
+msgstr "Uwzględnij ustawienia wyświetlania"
 
 #: Settings
 msgctxt "#32005"
@@ -201,6 +201,16 @@ msgstr "Inne"
 msgctxt "#32038"
 msgid "Profile for KODI Start/Wakeup (Default)"
 msgstr "Profil dla włączania/wybudzania (Domyślny)"
+
+#: Settings
+msgctxt "#32039"
+msgid "Delay before close"
+msgstr "Opóźnienie przed zamknięciem"
+
+#: Settings
+msgctxt "#32040"
+msgid "Enable debug logging"
+msgstr "Włącz rejestrowanie debugowania"
 
 #: Script
 msgctxt "#32100"

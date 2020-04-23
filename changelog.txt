@@ -1,5 +1,12 @@
 v1.4.2~beta3
 - changes for better code compatibility between Kodi 18 and 19
+- setting to pop up dialog box when playback start works again
+- fixed notifications so save notifications show even if notifications are off
+- fix so you don't have to restart Kodi for settings changes to be reflected
+- added option to set delay before pop up dialog automatically closes
+- added option to enable debug logging (standard for Kodi addons)
+- cleaned up some setting descriptions
+- updated Italian language file
 
 v1.4.2~beta2
 - fix for crash when trying to toggle profiles

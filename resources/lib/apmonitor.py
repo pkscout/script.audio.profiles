@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import json, os, xbmc, xbmcaddon, xbmcvfs
-import resources.lib.debug as debug
+from kodi_six import xbmc, xbmcaddon, xbmcvfs
+import json, os
+import resources.lib.notify as notify
 
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
@@ -19,31 +20,29 @@ set_for_susspend = None
 class Monitor(xbmc.Monitor):
     def __init__(self):
         xbmc.Monitor.__init__(self)
-
         # default for kodi start
         self.changeProfile(ADDON.getSetting('auto_default'))
+
 
     def onNotification(self, sender, method, data):
         global susppend_auto_change
         global set_for_susspend
         data = json.loads(data)
-
         if 'System.OnWake' in method:
-            debug.debug("[MONITOR] METHOD: " + str(method) + " DATA: " + str(data))
+            notify.logDebug('[MONITOR] METHOD: %s DATA: %s' % (str(method), str(data)))
             # default for kodi wakeup
             self.changeProfile(ADDON.getSetting('auto_default'))
-
         if 'Player.OnStop' in method:
-            debug.debug("[MONITOR] METHOD: " + str(method) + " DATA: " + str(data))
+            notify.logDebug('[MONITOR] METHOD: %s DATA: %s' % (str(method), str(data)))
             # gui
             susppend_auto_change = False
             self.changeProfile(ADDON.getSetting('auto_gui'))
-
         if 'Player.OnPlay' in method:
-            debug.debug("[MONITOR] METHOD: " + str(method) + " DATA: " + str(data))
+            notify.logDebug('[MONITOR] METHOD: %s DATA: %s' % (str(method), str(data)))
             # auto switch
             if 'item' in data and 'type' in data['item']:
                 self.autoSwitch(data)
+
 
     def autoSwitch(self, data):
         global susppend_auto_change
@@ -52,12 +51,10 @@ class Monitor(xbmc.Monitor):
         theset = map_type.get(thetype)
         # auto show dialog
         if 'true' in ADDON.getSetting('player_show') and 'movie' in thetype and 'id' not in data['item']:
-            xbmc.executebuiltin('RunScript(' + ADDON_ID + ', popup)')
-
+            xbmc.executebuiltin('RunScript(%s, popup)' % ADDON_ID)
         # if video is not from library assign to auto_videos
         if 'movie' in thetype and 'id' not in data['item']:
             theset = 'auto_videos'
-
         # distinguish pvr TV and pvr RADIO
         if 'channel' in thetype and 'channeltype' in data['item']:
             if 'tv' in data['item']['channeltype']:
@@ -66,12 +63,11 @@ class Monitor(xbmc.Monitor):
                 theset = 'auto_pvr_radio'
             else:
                 theset = None
-
         # detect cdda that kodi return as unknown
         if 'unknown' in thetype and 'player' in data and 'playerid' in data['player']:
             jsonS = xbmc.executeJSONRPC(
-                '{"jsonrpc": "2.0", "id": "1", "method": "Player.GetItem", "params": {"playerid": ' + str(
-                    data['player']['playerid']) + ', "properties": ["file"]}}')
+            '{"jsonrpc": "2.0", "id": "1", "method": "Player.GetItem", "params": {"playerid": %s, "properties": ["file"]}}' % str(data['player']['playerid'])
+                                       )
             jsonR = json.loads(jsonS)
             try:
                 file = jsonR['result']['item']['file']
@@ -79,28 +75,26 @@ class Monitor(xbmc.Monitor):
                 file = ''
             if file.startswith('cdda://'):
                 theset = 'auto_music'
-
-        debug.debug("[MONITOR] Setting parsed: " + str(theset))
-
+        notify.logDebug(' [MONITOR] Setting parsed: %s' % str(theset))
         # cancel susspend auto change when media thetype change
         if theset != set_for_susspend:
             susppend_auto_change = False
-            set_for_susspend = set
-
+            set_for_susspend = theset
         if theset is not None:
             self.changeProfile(ADDON.getSetting(theset))
             susppend_auto_change = True
+
 
     def changeProfile(self, profile):
         if profile in profiles:
             # get last loaded profile
             lastProfile = self.getLastProfile()
-            debug.debug("[MONITOR] Last loaded profile: " + lastProfile + " To switch profile: " + profile)
-
+            notify.logDebug(' [MONITOR] Last loaded profile: %s To switch profile: %s' % (lastProfile, profile))
             if lastProfile != profile and susppend_auto_change is not True:
-                xbmc.executebuiltin('RunScript(' + ADDON_ID + ', ' + profile + ')')
+                xbmc.executebuiltin('RunScript(%s, %s)' % (ADDON_ID, profile))
             else:
-                debug.debug("[MONITOR] Switching omitted (same profile) or switching is susspend")
+                notify.logDebug("[MONITOR] Switching omitted (same profile) or switching is susspend")
+
 
     def getLastProfile(self):
         try:

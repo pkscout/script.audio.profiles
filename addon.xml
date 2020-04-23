@@ -2,16 +2,17 @@
 <addon id="script.audio.profiles" name="Audio Profiles" version="1.4.2~beta2" provider-name="Regss, notoco, pkscout">
     <requires>
         <import addon="xbmc.python" version="2.26.0"/>
+        <import addon="script.module.kodi-six" version="0.0.3" />
     </requires>
     <extension point="xbmc.python.script" library="default.py"/>
     <extension point="xbmc.service" library="service.py" start="login"/>
     <extension point="xbmc.addon.metadata">
-		<news>
-v1.4.2~beta2
-- fix for crash when trying to toggle profiles
-		</news>
-		<assets>
-        	<icon>icon.png</icon>
+        <news>
+v1.4.2~beta3
+- changes for better code compatibility between Kodi 18 and 19
+        </news>
+        <assets>
+            <icon>icon.png</icon>
         </assets>
         <summary lang="en">Save audio profile and easily switch between them</summary>
         <summary lang="pl">Zapisuje profile ustawień audio i łatwo przełącza między nimi</summary>
@@ -29,7 +30,7 @@ v1.4.2~beta2
             [CR]RunScript(script.audio.profiles,x) dove x è il numero del profilo
         </description>
         <platform>all</platform>
-		<license>GPL-3.0-only</license>
+        <license>GPL-3.0-only</license>
         <forum>http://forum.kodi.tv/showthread.php?tid=200081</forum>
         <source>https://github.com/notoco/script.audio.profiles</source>
     </extension>

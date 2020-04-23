@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import json, os, sys, xbmc, xbmcaddon, xbmcgui, xbmcvfs
+from kodi_six import xbmc, xbmcaddon, xbmcgui, xbmcvfs
+import json, os, sys
 import resources.lib.dialog as dialog
-import resources.lib.debug as debug
+import resources.lib.notify as notify
 
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
@@ -11,7 +12,6 @@ ADDON_ICON = ADDON.getAddonInfo('icon')
 ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
 ADDON_PATH_DATA = xbmc.translatePath( ADDON.getAddonInfo('profile') )
 ADDON_LANG = ADDON.getLocalizedString
-
 
 # set vars
 sName = {
@@ -29,7 +29,6 @@ sProfile = {
 cecCommands = ['', 'CECActivateSource', 'CECStandby', 'CECToggleState']
 xbmc_version = int(xbmc.getInfoLabel('System.BuildVersion')[0:2])
 
-
 def convert(data):
     if isinstance(data, bytes):      return data.decode()
     if isinstance(data, (str, int)): return str(data)
@@ -39,36 +38,31 @@ def convert(data):
     if isinstance(data, set):        return set(map(convert, data))
 
 
+
 class PROFILES:
 
     def __init__(self):
-        debug.debug('[SYS.ARGV]: ' + str(sys.argv))
-        debug.debug('[XBMC VERSION]: ' + str(xbmc_version))
-
-        # select xml file depending on xbmc version
-        version = 'old' if xbmc_version < 17 else 'new'
-        self.xmlFile = 'script-audio-profiles-menu-{}.xml'.format(version)
-
+        notify.logDebug('[SYS.ARGV]: ' + str(sys.argv))
+        notify.logDebug('[XBMC VERSION]: ' + str(xbmc_version))
+        self.xmlFile = 'script-audio-profiles-menu.xml'
         # detect mode, check args
         if (len(sys.argv) < 2 or len(sys.argv[0]) == 0):
             mode = False
         else:
             mode = str(sys.argv[1])
-        debug.debug('[MODE]: ' + str(mode))
+        notify.logDebug('[MODE]: ' + str(mode))
         self.start(mode)
+
 
     def start(self, mode):
         xbmcgui.Window(10000).clearProperty(ADDON_ID + '_autoclose')
-
         # check is profiles is set
         if 'true' not in sProfile.values():
-            debug.notify(ADDON_LANG(32105))
+            notify.popup(ADDON_LANG(32105))
             xbmcaddon.Addon(id=ADDON_ID).openSettings()
-
         if mode is False:
             self.save()
             return
-
         if mode == 'popup':
             enabledProfiles = self.getEnabledProfiles()
             xbmcgui.Window(10000).setProperty(ADDON_ID + '_autoclose',
@@ -78,18 +72,16 @@ class PROFILES:
             if ret is not None:
                 self.profile(str(enabledProfiles[0][ret]))
             return
-
         if mode == '0' or mode == '1' or mode == '2' or mode == '3' or mode == '4':
             if self.check(mode) is False:
                 return
-
             if mode == '0':
                 self.toggle(mode)
             else:
                 self.profile(mode)
             return
+        notify.logError('Wrong arg, use like RunScript("' + ADDON_ID + ',x") x - number of profile')
 
-        debug.error('Wrong arg, use like RunScript("' + ADDON_ID + ',x") x - number of profile')
 
     def getEnabledProfiles(self):
         enabledProfileKey = []
@@ -100,8 +92,9 @@ class PROFILES:
                 enabledProfileName.append(sName[k])
         return [enabledProfileKey, enabledProfileName]
 
-    # get audio config and save to file
+
     def save(self):
+        # get audio config and save to file
         enabledProfiles = self.getEnabledProfiles()
         ret = dialog.DIALOG().start(self.xmlFile, labels={10071: ADDON_LANG(32100)}, buttons=enabledProfiles[1],
                                     thelist=10070)
@@ -109,22 +102,8 @@ class PROFILES:
             return False
         else:
             button = enabledProfiles[0][ret]
-
         settingsToSave = {}
-
-        if xbmc_version < 17:
-            json_s = [
-                # get all settings from System / Audio section
-                '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"audiooutput"}},"id":1}',
-                # get volume level
-                '{"jsonrpc": "2.0", "method": "Application.GetProperties", "params": {"properties": ["volume"]}, "id": 1}',
-                # get all settings from Video / Playback section
-                '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"videos","category":"videoplayer"}}, "id":1}',
-                # get all settings from System / Video section
-                '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"videoscreen"}}, "id":1}'
-            ]
-        else:
-            json_s = [
+        json_s = [
                 # get all settings from System / Audio section
                 '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"audio"}},"id":1}',
                 # get volume level
@@ -133,13 +112,12 @@ class PROFILES:
                 '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"player","category":"videoplayer"}}, "id":1}',
                 # get all settings from System / Video section
                 '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"display"}}, "id":1}'
-            ]
-
+                 ]
         # send json requests
         for j in json_s:
             jsonGet = xbmc.executeJSONRPC(j)
             jsonGet = json.loads(jsonGet)
-            debug.debug('[JSON]: ' + str(jsonGet))
+            notify.logDebug('[JSON]: ' + str(jsonGet))
 
             if 'result' in jsonGet:
                 if 'settings' in jsonGet['result']:
@@ -156,42 +134,38 @@ class PROFILES:
 
                 if 'volume' in jsonGet['result']:
                     settingsToSave['volume'] = str(jsonGet['result']['volume'])
-
         # prepare JSON string to save to file
-        if xbmc_version > 18:
-            settingsToSave = convert(settingsToSave)
+#        if xbmc_version > 18:
+#            settingsToSave = convert(settingsToSave)
         jsonToWrite = json.dumps(settingsToSave)
-
         # create dir in addon data if not exist
         if not xbmcvfs.exists(ADDON_PATH_DATA):
             xbmcvfs.mkdir(ADDON_PATH_DATA)
-
         # save profile file
-        debug.notice('[SAVING SETTING]: ' + sName[button])
+        notify.logNotice('[SAVING SETTING]: ' + sName[button])
         f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA,'profile' + str(button) + '.json'), 'w')
         f.write(jsonToWrite)
         f.close()
+        notify.popup(ADDON_LANG(32102) + ' ' + str(button) + ' (' + sName[button] + ')')
 
-        debug.notify(ADDON_LANG(32102) + ' ' + str(button) + ' (' + sName[button] + ')')
 
     def check(self, mode):
         # check profile config
         self.aProfile = []
-
         # stop if selected (mode) profile are disabled
         if mode != '0' and 'false' in sProfile[int(mode)]:
-            debug.notify(ADDON_LANG(32103) + ' (' + sName[int(mode)] + ')')
-            debug.notice('[CHECK]: This profile is disabled in addon settings - ' + str(mode))
+            notify.popup(ADDON_LANG(32103) + ' (' + sName[int(mode)] + ')')
+            notify.logNotice('[CHECK]: This profile is disabled in addon settings - ' + str(mode))
             return False
-
         # check if profile have settings file
         for key in sProfile:
             if 'true' in sProfile[key]:
                 if not xbmcvfs.exists(ADDON_PATH_DATA + 'profile' + str(key) + '.json'):
-                    debug.notify(ADDON_LANG(32101) + ' ' + str(key) + ' (' + sName[key] + ')')
-                    debug.error('[PROFILE FILE]: not exist for profile - ' + str(key))
+                    notify.popup(ADDON_LANG(32101) + ' ' + str(key) + ' (' + sName[key] + ')')
+                    notify.logError('[PROFILE FILE]: not exist for profile - ' + str(key))
                     return False
                 self.aProfile.append(str(key))
+
 
     def toggle(self, mode):
         # create profile file
@@ -214,13 +188,13 @@ class PROFILES:
             profile = self.aProfile[0]
         self.profile(profile)
 
+
     def profile(self, profile):
         # read addon settings
         sVolume = ADDON.getSetting('volume')
         sPlayer = ADDON.getSetting('player')
         sVideo = ADDON.getSetting('video')
         sCec = ADDON.getSetting('profile' + profile + '_cec')
-
         # read settings from profile
         f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile' + profile + '.json'), 'r')
         result = f.read()
@@ -228,10 +202,9 @@ class PROFILES:
             jsonResult = json.loads(result)
             f.close()
         except ValueError:
-            debug.notify(ADDON_LANG(32104) + ' ' + profile + ' (' + sName[int(profile)] + ')')
-            debug.error('[LOAD JSON FROM FILE]: Error reading from profile - ' + str(profile))
+            notify.popup(ADDON_LANG(32104) + ' ' + profile + ' (' + sName[int(profile)] + ')')
+            notify.logError('[LOAD JSON FROM FILE]: Error reading from profile - ' + str(profile))
             return False
-
         # settings needed quote for value
         quote_needed = [
             'audiooutput.audiodevice',
@@ -239,17 +212,15 @@ class PROFILES:
             'locale.audiolanguage',
             'lookandfeel.soundskin'
         ]
-
         # set settings readed from profile file
-        debug.notice('[RESTORING SETTING]: ' + sName[int(profile)])
+        notify.logNotice('[RESTORING SETTING]: ' + sName[int(profile)])
         for setName, setValue in jsonResult.items():
             # skip setting that type is disable to changing
             if 'false' in sPlayer and setName.startswith('videoplayer'):
                 continue
             if 'false' in sVideo and setName.startswith('videoscreen'):
                 continue
-
-            debug.debug('[RESTORING SETTING]: ' + setName + ': ' + setValue)
+            notify.logDebug('[RESTORING SETTING]: ' + setName + ': ' + setValue)
             # add quotes
             if setName in quote_needed:
                 setValue = '"' + setValue + '"'
@@ -261,15 +232,12 @@ class PROFILES:
             else:
                 xbmc.executeJSONRPC(
                     '{"jsonrpc": "2.0", "method": "Settings.SetSettingValue", "params": {"setting": "' + setName + '", "value": ' + setValue + '}, "id": 1}')
-
-        debug.notify(sName[int(profile)])
-
+        notify.popup(sName[int(profile)])
         # write curent profile
         f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile'), 'w')
         f.write(profile)
         f.close()
-
         # CEC
         if sCec != '' and int(sCec) > 0:
-            debug.notice('[SENDING CEC COMMAND]: ' + cecCommands[int(sCec)])
+            notify.logNotice('[SENDING CEC COMMAND]: ' + cecCommands[int(sCec)])
             xbmc.executebuiltin(cecCommands[int(sCec)])

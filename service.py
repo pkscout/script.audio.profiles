@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import xbmc
+from kodi_six import xbmc
 from resources.lib.apmonitor import Monitor as apMonitor
 
 if ( __name__ == "__main__" ):

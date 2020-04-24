@@ -42,7 +42,7 @@ def convert(data):
 class PROFILES:
 
     def __init__(self):
-        notify.logNotice('running profiles script')
+        notify.logInfo('running profiles script')
         notify.logDebug('[SYS.ARGV]: %s' % str(sys.argv))
         notify.logDebug('[XBMC VERSION]: %s' % str(xbmc_version))
         self.xmlFile = 'script-audio-profiles-menu.xml'
@@ -140,7 +140,7 @@ class PROFILES:
         if not xbmcvfs.exists(ADDON_PATH_DATA):
             xbmcvfs.mkdir(ADDON_PATH_DATA)
         # save profile file
-        notify.logNotice('[SAVING SETTING]: %s' % sName[button])
+        notify.logInfo('[SAVING SETTING]: %s' % sName[button])
         f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile%s.json' % str(button)), 'w')
         f.write(jsonToWrite)
         f.close()
@@ -153,7 +153,7 @@ class PROFILES:
         # stop if selected (mode) profile are disabled
         if mode != '0' and 'false' in sProfile[int(mode)]:
             notify.popup('%s (%s)' % (ADDON_LANG(32103), sName[int(mode)]))
-            notify.logNotice('[CHECK]: This profile is disabled in addon settings - %s' % str(mode))
+            notify.logInfo('[CHECK]: This profile is disabled in addon settings - %s' % str(mode))
             return False
         # check if profile have settings file
         for key in sProfile:
@@ -218,7 +218,7 @@ class PROFILES:
                         'locale.audiolanguage',
                         'lookandfeel.soundskin']
         # set settings readed from profile file
-        notify.logNotice('[RESTORING SETTING]: %s' % sName[int(profile)])
+        notify.logInfo('[RESTORING SETTING]: %s' % sName[int(profile)])
         for setName, setValue in jsonResult.items():
             # skip setting that type is disable to changing
             if 'false' in sPlayer and setName.startswith('videoplayer'):
@@ -243,5 +243,5 @@ class PROFILES:
         f.close()
         # CEC
         if sCec != '' and int(sCec) > 0:
-            notify.logNotice('[SENDING CEC COMMAND]: %s' % cecCommands[int(sCec)])
+            notify.logInfo('[SENDING CEC COMMAND]: %s' % cecCommands[int(sCec)])
             xbmc.executebuiltin(cecCommands[int(sCec)])

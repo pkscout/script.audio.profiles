@@ -19,7 +19,7 @@ set_for_susspend = None
 
 class Monitor(xbmc.Monitor):
     def __init__(self):
-        notify.logNotice('staring background monitor process')
+        notify.logInfo('staring background monitor process')
         xbmc.Monitor.__init__(self)
         # default for kodi start
         self.changeProfile(ADDON.getSetting('auto_default'), forceload=ADDON.getSetting('force_auto_default'))

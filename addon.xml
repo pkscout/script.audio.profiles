@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.audio.profiles" name="Audio Profiles" version="1.4.2~beta4" provider-name="Regss, notoco, pkscout">
+<addon id="script.audio.profiles" name="Audio Profiles" version="1.4.2~beta5" provider-name="Regss, notoco, pkscout">
     <requires>
         <import addon="xbmc.python" version="2.26.0"/>
         <import addon="script.module.kodi-six" version="0.0.3" />
@@ -8,19 +8,8 @@
     <extension point="xbmc.service" library="service.py" start="login"/>
     <extension point="xbmc.addon.metadata">
         <news>
-v.1.4.2~beta4
-- fix so the auto loaded profile for startup is always loaded
-- addd option to disable auto load of profile at startup if it's the one that was enabled at shutdown
-
-v1.4.2~beta3
-- changes for better code compatibility between Kodi 18 and 19
-- setting to pop up dialog box when playback start works again
-- fixed notifications so save notifications show even if notifications are off
-- fix so you don't have to restart Kodi for settings changes to be reflected
-- added option to set delay before pop up dialog automatically closes
-- added option to enable debug logging (standard for Kodi addons)
-- cleaned up some setting descriptions
-- updated Italian language file
+v.1.4.2~beta5
+changing in logging to accomodate new logging requirements for Kodi 19
         </news>
         <assets>
             <icon>icon.png</icon>

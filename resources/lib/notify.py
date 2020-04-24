@@ -16,8 +16,8 @@ def popup(msg, force=False, title=''):
         xbmcgui.Dialog().notification(title, msg, icon=ADDON_ICON)
 
 
-def logNotice(msg):
-    xbmc.log('[%s] %s' % (ADDON_NAME, msg), level=xbmc.LOGNOTICE)
+def logInfo(msg):
+    xbmc.log('[%s] %s' % (ADDON_NAME, msg), level=xbmc.LOGINFO)
 
 
 def logError(msg):

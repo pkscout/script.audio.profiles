@@ -212,6 +212,11 @@ msgctxt "#32040"
 msgid "Enable debug logging"
 msgstr "Włącz rejestrowanie debugowania"
 
+#: Settings
+msgctxt "#32041"
+msgid "Force load profile at startup"
+msgstr "Wymuś profil obciążenia podczas uruchamiania"
+
 #: Script
 msgctxt "#32100"
 msgid "Select profile to save settings"

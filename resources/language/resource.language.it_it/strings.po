@@ -217,6 +217,11 @@ msgctxt "#32040"
 msgid "Enable debug logging"
 msgstr "Abilita registrazione debug"
 
+#: Settings
+msgctxt "#32041"
+msgid "Force load profile at startup"
+msgstr "Forza il profilo di caricamento all'avvio"
+
 #: Script
 msgctxt "#32100"
 msgid "Select profile to save settings"

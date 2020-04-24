@@ -210,6 +210,11 @@ msgctxt "#32040"
 msgid "Enable debug logging"
 msgstr ""
 
+#: Settings
+msgctxt "#32041"
+msgid "Force load profile at startup"
+msgstr ""
+
 #: Script
 msgctxt "#32100"
 msgid "Select profile to save settings"

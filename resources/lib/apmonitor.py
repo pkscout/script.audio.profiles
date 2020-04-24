@@ -22,7 +22,7 @@ class Monitor(xbmc.Monitor):
         notify.logNotice('staring background monitor process')
         xbmc.Monitor.__init__(self)
         # default for kodi start
-        self.changeProfile(ADDON.getSetting('auto_default'))
+        self.changeProfile(ADDON.getSetting('auto_default'), forceload=ADDON.getSetting('force_auto_default'))
 
 
     def onSettingsChanged(self):
@@ -93,12 +93,12 @@ class Monitor(xbmc.Monitor):
             susppend_auto_change = True
 
 
-    def changeProfile(self, profile):
+    def changeProfile(self, profile, forceload=''):
         if profile in profiles:
             # get last loaded profile
             lastProfile = self.getLastProfile()
             notify.logDebug('[MONITOR] Last loaded profile: %s To switch profile: %s' % (lastProfile, profile))
-            if lastProfile != profile and susppend_auto_change is not True:
+            if (lastProfile != profile and susppend_auto_change is not True) or forceload.lower() == 'true':
                 xbmc.executebuiltin('RunScript(%s, %s)' % (ADDON_ID, profile))
             else:
                 notify.logDebug('[MONITOR] Switching omitted (same profile) or switching is susspend')

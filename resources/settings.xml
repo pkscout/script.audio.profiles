@@ -32,6 +32,7 @@
     </category>
     <category label="32014">
         <setting label="32038" type="enum" id="auto_default" lvalues="32026|32007|32008|32009|32010"/>
+        <setting label="32041" type="bool" id="force_auto_default" default="true" visible="!eq(-1,0)"/>
         <setting label="32021" type="enum" id="auto_gui" lvalues="32026|32007|32008|32009|32010"/>
         <setting type="lsep" label="32035"/>
         <setting label="32022" type="enum" id="auto_movies" lvalues="32026|32007|32008|32009|32010"/>

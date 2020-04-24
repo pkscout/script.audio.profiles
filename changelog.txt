@@ -1,3 +1,7 @@
+v.1.4.2~beta4
+- fix so the auto loaded profile for startup is always loaded
+- addd option to disable auto load of profile at startup if it's the one that was enabled at shutdown
+
 v1.4.2~beta3
 - changes for better code compatibility between Kodi 18 and 19
 - setting to pop up dialog box when playback start works again

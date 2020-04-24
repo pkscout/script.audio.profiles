@@ -211,6 +211,10 @@ msgctxt "#32040"
 msgid "Enable debug logging"
 msgstr "A hibakeresési naplózás engedélyezése"
 
+#: Settings
+msgctxt "#32041"
+msgid "Force load profile at startup"
+msgstr "A terhelési profil kényszerítése indításkor"
 
 #: Script
 msgctxt "#32100"

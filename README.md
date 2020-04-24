@@ -7,14 +7,6 @@ Save audio settings to profiles and easy switch between them using keymap or pop
 <pre>RunScript(script.audio.profiles,x) - where x is number of profile</pre>
 <pre>RunScript(script.audio.profiles,popup) - display popup to change profile </pre>
 
-<h2>Information</h2>
-The plug originally came from here: https://github.com/Regss/script.audio.profiles and here: https://github.com/CtrlGy/script.audio.profiles
-<br/>A friend corrected the code for me, I throw it to share with others.
-
-<h2>Download:</h2>
-The repository is currently being tested. Download using "Download" and install using a zip file. 
-</br>
-<b>I plan to create a separate repository only for this add-on. </b>
 <h2>Short Instruction:</h2>
 <ol>
   <li>Configure Add-on to set names for profiles.</li>

@@ -101,7 +101,7 @@ By default, any time a profile is changed Kodi will display a notification indic
 When enabled, if you have Kodi logging set to DEBUG you will get a very verbose set of information in your log file. You should only need to activate this when troubleshooting issues.
 
 ## Getting help
-If you need assistance using Audio Profiles, please see the support thread on the Kodi forums at <https://forum.kodi.tv/showthread.php?tid=200081>
+If you need assistance using Audio Profiles, please see the support thread on the Kodi forums at <https://forum.kodi.tv/showthread.php?tid=353852>.
 
 ## Beta Testing
 If you are interested in beta testing new versions of this add on (or just like being on the bleeding edge of up to date), you can install beta versions (Leia or later, there will be no more updates for earlier versions) from my addon beta repository - either [for Leia](https://github.com/pkscout/repository.beta.pkscout/raw/helix/repository.beta.pkscout-1.1.1.zip) or [for Matrix](https://github.com/pkscout/repository.beta.pkscout/raw/matrix/repository.beta.pkscout-1.1.2.zip) (these are a zip download). You can also monitor the support thread, as links to particular beta releases will be available there as well.

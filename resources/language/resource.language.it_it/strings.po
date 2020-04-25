@@ -2,7 +2,7 @@
 # Translators:
 # axlt2002 <axlt2002@yahoo.it>, 2017
 # Peppe Calvo <peppe.calvo.cc@gmail.com>, 2017
-# ROBY <armando.dabbene@gmail.com>, 2016-2017
+# ROBY77 <ezio.comi67@gmail.com>, 2016-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Audio Profiles for KODI\n"
@@ -85,7 +85,7 @@ msgstr "Includi le impostazioni del lettore video"
 #: Settings
 msgctxt "#32012"
 msgid "Include display settings"
-msgstr "Includi impostazioni di visualizzazione"
+msgstr "Includi impostazioni display"
 
 #: Settings
 msgctxt "#32005"
@@ -220,7 +220,7 @@ msgstr "Abilita registrazione debug"
 #: Settings
 msgctxt "#32041"
 msgid "Force load profile at startup"
-msgstr "Forza il profilo di caricamento all'avvio"
+msgstr "Forza il caricamento del profilo all'avvio"
 
 #: Script
 msgctxt "#32100"

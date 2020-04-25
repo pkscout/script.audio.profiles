@@ -20,7 +20,7 @@ msgstr "Zapisuje profile ustawień audio i łatwo przełącza między nimi"
 #: addon.xml
 msgctxt "Addon Description"
 msgid "To map a key for switch audio profile edit keymap xml file and add:[CR]RunScript(script.audio.profiles,0) - for switch profile in loop[CR]RunScript(script.audio.profiles,x) - where x is number of profile"
-msgstr "Aby przypisać przycisk to zmiany profili edytuj plik keymap xml i dodaj:[CR]RunScript(script.audio.profiles,0) - aby przełączać między profilami w pętli[CR]RunScript(script.audio.profiles,x) - gdzie x to numer profilu"
+msgstr "Aby przypisać przycisk do zmiany profili edytuj plik keymap xml i dodaj:[CR]RunScript(script.audio.profiles,0) - aby przełączać między profilami w pętli[CR]RunScript(script.audio.profiles,x) - gdzie x to numer profilu"
 
 #: Settings
 msgctxt "#32000"
@@ -43,14 +43,19 @@ msgid "Automatic Switch"
 msgstr "Automatyczne przełączanie"
 
 #: Settings
+msgctxt "#32018"
+msgid "Notifications"
+msgstr "Powiadomienia"
+
+#: Settings
 msgctxt "#32015"
 msgid "Show audio stream select menu on start playing"
-msgstr "Pokaż menu wyboru strumienia audio podczas startu odtwarzania"
+msgstr "Pokaż menu wyboru profilu audio podczas startu odtwarzania"
 
 #: Settings
 msgctxt "#32016"
 msgid "Auto close select menu"
-msgstr "Automatycznie zamknij menu wyboru strumienia audio"
+msgstr "Automatycznie zamknij menu wyboru profilu audio"
 
 #: Settings
 msgctxt "#32019"
@@ -215,7 +220,7 @@ msgstr "Włącz rejestrowanie debugowania"
 #: Settings
 msgctxt "#32041"
 msgid "Force load profile at startup"
-msgstr "Wymuś profil obciążenia podczas uruchamiania"
+msgstr "Wymuś ładowanie profilu przy starcie"
 
 #: Script
 msgctxt "#32100"

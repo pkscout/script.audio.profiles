@@ -1,3 +1,6 @@
+v.1.4.2~beta6
+- fix for keymap option to pop up dialog not working
+
 v.1.4.2~beta5
 changing in logging to accomodate new logging requirements for Kodi 19
 

@@ -71,7 +71,7 @@ class PROFILES:
         if mode == 'popup':
             enabledProfiles = self.getEnabledProfiles()
             ret = dialog.DIALOG().start(self.xmlFile, labels={10071: ADDON_LANG(32106)}, buttons=enabledProfiles[1],
-                                        thelist=10070)
+                                        thelist=10070, force_dialog=True)
             if ret is not None:
                 self.profile(str(enabledProfiles[0][ret]))
             return
@@ -100,7 +100,7 @@ class PROFILES:
         # get audio config and save to file
         enabledProfiles = self.getEnabledProfiles()
         ret = dialog.DIALOG().start(self.xmlFile, labels={10071: ADDON_LANG(32100)}, buttons=enabledProfiles[1],
-                                    thelist=10070, save_profile=True)
+                                    thelist=10070, force_dialog=True)
         notify.logDebug( 'the returned value is %s' % str(ret) )
         if ret is None:
             return False

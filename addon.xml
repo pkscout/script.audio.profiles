@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.audio.profiles" name="Audio Profiles" version="1.4.2~beta5" provider-name="pkscout, notoco, Regss">
+<addon id="script.audio.profiles" name="Audio Profiles" version="1.4.2~beta6" provider-name="pkscout, notoco, Regss">
     <requires>
         <import addon="xbmc.python" version="2.26.0"/>
         <import addon="script.module.kodi-six" version="0.0.3" />
@@ -8,8 +8,8 @@
     <extension point="xbmc.service" library="service.py" start="login"/>
     <extension point="xbmc.addon.metadata">
         <news>
-v.1.4.2~beta5
-changing in logging to accomodate new logging requirements for Kodi 19
+v.1.4.2~beta6
+- fix for keymap option to pop up dialog not working
         </news>
         <assets>
             <icon>icon.png</icon>

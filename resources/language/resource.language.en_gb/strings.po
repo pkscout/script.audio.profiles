@@ -26,36 +26,6 @@ msgid "Name of profile 1"
 msgstr ""
 
 #: Settings
-msgctxt "#32013"
-msgid "Includes Settings"
-msgstr ""
-
-#: Settings
-msgctxt "#32014"
-msgid "Automatic Switch"
-msgstr ""
-
-#: Settings
-msgctxt "#32018"
-msgid "Notifications"
-msgstr ""
-
-#: Settings
-msgctxt "#32015"
-msgid "Show audio stream select menu on start playing"
-msgstr ""
-
-#: Settings
-msgctxt "#32016"
-msgid "Auto close select menu"
-msgstr ""
-
-#: Settings
-msgctxt "#32019"
-msgid "Notifications"
-msgstr ""
-
-#: Settings
 msgctxt "#32002"
 msgid "Settings"
 msgstr ""
@@ -68,16 +38,6 @@ msgstr ""
 #: Settings
 msgctxt "#32004"
 msgid "Include volume level"
-msgstr ""
-
-#: Settings
-msgctxt "#32011"
-msgid "Include video player settings"
-msgstr ""
-
-#: Settings
-msgctxt "#32012"
-msgid "Include display settings"
 msgstr ""
 
 #: Settings
@@ -108,6 +68,46 @@ msgstr ""
 #: Settings
 msgctxt "#32010"
 msgid "Profile 4"
+msgstr ""
+
+#: Settings
+msgctxt "#32011"
+msgid "Include video player settings"
+msgstr ""
+
+#: Settings
+msgctxt "#32012"
+msgid "Include display settings"
+msgstr ""
+
+#: Settings
+msgctxt "#32013"
+msgid "Includes Settings"
+msgstr ""
+
+#: Settings
+msgctxt "#32014"
+msgid "Automatic Switch"
+msgstr ""
+
+#: Settings
+msgctxt "#32015"
+msgid "Show audio stream select menu on start playing"
+msgstr ""
+
+#: Settings
+msgctxt "#32016"
+msgid "Auto close select menu"
+msgstr ""
+
+#: Settings
+msgctxt "#32018"
+msgid "Notifications"
+msgstr ""
+
+#: Settings
+msgctxt "#32019"
+msgid "Notifications"
 msgstr ""
 
 #: Settings
@@ -221,8 +221,13 @@ msgid "Select profile to save settings"
 msgstr ""
 
 #: Script
-msgctxt "#32106"
-msgid "Select audio profile"
+msgctxt "#32101"
+msgid "Configure profile"
+msgstr ""
+
+#: Script
+msgctxt "#32102"
+msgid "Saved as profile"
 msgstr ""
 
 #: Script
@@ -241,11 +246,6 @@ msgid "Enable profiles"
 msgstr ""
 
 #: Script
-msgctxt "#32101"
-msgid "Configure profile"
-msgstr ""
-
-#: Script
-msgctxt "#32102"
-msgid "Saved as profile"
+msgctxt "#32106"
+msgid "Select audio profile"
 msgstr ""

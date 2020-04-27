@@ -26,36 +26,6 @@ msgid "Name of profile 1"
 msgstr "1. Profil neve"
 
 #: Settings
-msgctxt "#32013"
-msgid "Includes Settings"
-msgstr "Beállításokkal együtt"
-
-#: Settings
-msgctxt "#32014"
-msgid "Automatic Switch"
-msgstr "Automatikus váltás"
-
-#: Settings
-msgctxt "#32015"
-msgid "Show audio stream select menu on start playing"
-msgstr "Profilváltó ablak megjelenítése lejátszás indításakor"
-
-#: Settings
-msgctxt "#32016"
-msgid "Auto close select menu"
-msgstr "Profilváltó ablak automatikus bezárása (5mp után)"
-
-#: Settings
-msgctxt "#32018"
-msgid "Debug"
-msgstr "Hibakeresés"
-
-#: Settings
-msgctxt "#32019"
-msgid "Notifications"
-msgstr "Értesítések"
-
-#: Settings
 msgctxt "#32002"
 msgid "Settings"
 msgstr "Beállítások"
@@ -69,16 +39,6 @@ msgstr "2. Profil neve"
 msgctxt "#32004"
 msgid "Include volume level"
 msgstr "Hangerő beállítások mentése"
-
-#: Settings
-msgctxt "#32011"
-msgid "Include video player settings"
-msgstr "Tartalmazza a videolejátszó beállításait"
-
-#: Settings
-msgctxt "#32012"
-msgid "Include display settings"
-msgstr "Tartalmazza a megjelenítési beállításokat"
 
 #: Settings
 msgctxt "#32005"
@@ -111,6 +71,46 @@ msgid "Profile 4"
 msgstr "Profil 4"
 
 #: Settings
+msgctxt "#32011"
+msgid "Include video player settings"
+msgstr "Tartalmazza a videolejátszó beállításait"
+
+#: Settings
+msgctxt "#32012"
+msgid "Include display settings"
+msgstr "Tartalmazza a megjelenítési beállításokat"
+
+#: Settings
+msgctxt "#32013"
+msgid "Includes Settings"
+msgstr "Beállításokkal együtt"
+
+#: Settings
+msgctxt "#32014"
+msgid "Automatic Switch"
+msgstr "Automatikus váltás"
+
+#: Settings
+msgctxt "#32015"
+msgid "Show audio stream select menu on start playing"
+msgstr "Profilváltó ablak megjelenítése lejátszás indításakor"
+
+#: Settings
+msgctxt "#32016"
+msgid "Auto close select menu"
+msgstr "Profilváltó ablak automatikus bezárása (5mp után)"
+
+#: Settings
+msgctxt "#32018"
+msgid "Debug"
+msgstr "Hibakeresés"
+
+#: Settings
+msgctxt "#32019"
+msgid "Notifications"
+msgstr "Értesítések"
+
+#: Settings
 msgctxt "#32021"
 msgid "Profile for GUI"
 msgstr "Profil a Grafikus Felülethez GUI"
@@ -126,7 +126,6 @@ msgid "Profile for TVShows"
 msgstr "Profil a Sorozatokhoz"
 
 #: Settings
-#, fuzzy
 msgctxt "#32024"
 msgid "Profile for PVR TV"
 msgstr "Profil a TV-hez PVR"
@@ -222,9 +221,14 @@ msgid "Select profile to save settings"
 msgstr "Hangprofil kiválasztása a mentéshez"
 
 #: Script
-msgctxt "#32106"
-msgid "Select audio profile"
-msgstr "Hangprofil kiválasztása"
+msgctxt "#32101"
+msgid "Configure profile"
+msgstr "Profilok beállítása"
+
+#: Script
+msgctxt "#32102"
+msgid "Saved as profile"
+msgstr "Profil mentve"
 
 #: Script
 msgctxt "#32103"
@@ -242,11 +246,6 @@ msgid "Enable profiles"
 msgstr "Profilok engedélyezése"
 
 #: Script
-msgctxt "#32101"
-msgid "Configure profile"
-msgstr "Profilok beállítása"
-
-#: Script
-msgctxt "#32102"
-msgid "Saved as profile"
-msgstr "Profil mentve"
+msgctxt "#32106"
+msgid "Select audio profile"
+msgstr "Hangprofil kiválasztása"

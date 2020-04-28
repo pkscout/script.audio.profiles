@@ -5,16 +5,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 
-#: addon.xml
-msgctxt "Addon Summary"
-msgid "Save audio profile and easily switch between them"
-msgstr ""
-
-#: addon.xml
-msgctxt "Addon Description"
-msgid "To map a key for switch audio profile edit keymap xml file and add:[CR]RunScript(script.audio.profiles,0) - for switch profile in loop[CR]RunScript(script.audio.profiles,x) - where x is number of profile"
-msgstr ""
-
 #: Settings
 msgctxt "#32000"
 msgid "Profiles"

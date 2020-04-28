@@ -14,19 +14,6 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: addon.xml
-msgctxt "Addon Summary"
-msgid "Save audio profile and easily switch between them"
-msgstr "Salva il profilo audio e cambia facilmente da uno all'altro"
-
-#: addon.xml
-msgctxt "Addon Description"
-msgid ""
-"To map a key for switch audio profile edit keymap xml file and "
-"add:[CR]RunScript(script.audio.profiles,0) - for switch profile in "
-"loop[CR]RunScript(script.audio.profiles,x) - where x is number of profile"
-msgstr "Per assegnare ad un pulsante il cambio profilo modifica il file keymap xml e aggiungi:[CR]RunScript(script.audio.profiles,0) - per cambiare  il profilo in ciclo continuo [CR]RunScript(script.audio.profiles,x) - dove x è il numero del profilo"
-
 #: Settings
 msgctxt "#32000"
 msgid "Profiles"

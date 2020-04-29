@@ -5,12 +5,10 @@
 # *  updates and additions through v1.4.1 by notoco and CtrlGy
 # *  updates and additions since v1.4.2 by pkscout
 
-from kodi_six import xbmc, xbmcaddon, xbmcgui
-import resources.lib.notify as notify
+from kodi_six import xbmc, xbmcgui
+from resources.lib import notify
+from resources.lib.addoninfo import *
 
-ADDON = xbmcaddon.Addon()
-ADDON_ID = ADDON.getAddonInfo('id')
-ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
 KODIMONITOR = xbmc.Monitor()
 KODIPLAYER = xbmc.Player()
 
@@ -64,10 +62,10 @@ class SHOW(xbmcgui.WindowXMLDialog):
 
     def onInit(self):
         # set labels
-        for label, label_text in self.labels.items():
+        for label, label_text in list(self.labels.items()):
             self.getControl(label).setLabel(label_text)
         # set textboxes
-        for textbox, textbox_text in self.textboxes.items():
+        for textbox, textbox_text in list(self.textboxes.items()):
             self.getControl(textbox).setText(textbox_text)
         # set buttons
         self.listitem = self.getControl(self.thelist)

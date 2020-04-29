@@ -5,18 +5,11 @@
 # *  updates and additions through v1.4.1 by notoco and CtrlGy
 # *  updates and additions since v1.4.2 by pkscout
 
-from kodi_six import xbmc, xbmcaddon, xbmcvfs
+from kodi_six import xbmc, xbmcvfs
 import json, os, sys
-import resources.lib.dialog as dialog
-import resources.lib.notify as notify
+from resources.lib import *
+from resources.lib.addoninfo import *
 
-ADDON = xbmcaddon.Addon()
-ADDON_ID = ADDON.getAddonInfo('id')
-ADDON_NAME = ADDON.getAddonInfo('name')
-ADDON_ICON = ADDON.getAddonInfo('icon')
-ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
-ADDON_PATH_DATA = xbmc.translatePath( ADDON.getAddonInfo('profile') )
-ADDON_LANG = ADDON.getLocalizedString
 KODIPLAYER = xbmc.Player()
 
 # set vars
@@ -38,7 +31,7 @@ xbmc_version = int(xbmc.getInfoLabel('System.BuildVersion')[0:2])
 def convert(data):
     if isinstance(data, bytes):      return data.decode()
     if isinstance(data, (str, int)): return str(data)
-    if isinstance(data, dict):       return dict(map(convert, data.items()))
+    if isinstance(data, dict):       return dict(list(map(convert, list(data.items()))))
     if isinstance(data, tuple):      return tuple(map(convert, data))
     if isinstance(data, list):       return list(map(convert, data))
     if isinstance(data, set):        return set(map(convert, data))
@@ -65,7 +58,7 @@ class PROFILES:
         # check is profiles is set
         if 'true' not in sProfile.values():
             notify.popup(ADDON_LANG(32105))
-            xbmcaddon.Addon(id=ADDON_ID).openSettings()
+            ADDON.openSettings()
         if mode is False:
             self.save()
             return
@@ -210,11 +203,11 @@ class PROFILES:
         sVideo = ADDON.getSetting('video')
         sCec = ADDON.getSetting('profile' + profile + '_cec')
         # read settings from profile
-        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile' + profile + '.json'), 'r')
+        f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile%s.json' % profile), 'r')
         result = f.read()
+        f.close()
         try:
             jsonResult = json.loads(result)
-            f.close()
         except ValueError:
             notify.popup('%s %s (%s)' % (ADDON_LANG(32104), profile, sName[int(profile)]))
             notify.logError('[LOAD JSON FROM FILE]: Error reading from profile - %s' % str(profile))

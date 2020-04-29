@@ -17,14 +17,18 @@ KODIPLAYER = xbmc.Player()
 
 class DIALOG:
 
-    def start(self, xml_file, labels=None, textboxes=None, buttons=None, thelist=0, save_profile=False):
+    def start(self, xml_file, labels=None, textboxes=None, buttons=None, thelist=0, force_dialog=False):
         count = 0
-        delay = int(ADDON.getSetting('player_autoclose_delay'))
-        autoclose = ADDON.getSetting('player_autoclose').lower()
+        if ADDON.getSetting('player_show').lower() == 'true':
+            delay = int(ADDON.getSetting('player_autoclose_delay'))
+            autoclose = ADDON.getSetting('player_autoclose').lower()
+        else:
+            delay = 10
+            autoclose = 'false'
         display = SHOW(xml_file, ADDON_PATH, labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist)
         display.show()
-        while (KODIPLAYER.isPlaying() or save_profile) and not KODIMONITOR.abortRequested():
-            if save_profile:
+        while (KODIPLAYER.isPlaying() or force_dialog) and not KODIMONITOR.abortRequested():
+            if force_dialog:
                 notify.logDebug('the current returned value from display is: %s' % str(display.ret))
                 if display.ret is not None:
                     break

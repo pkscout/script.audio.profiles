@@ -17,6 +17,7 @@ ADDON_ICON = ADDON.getAddonInfo('icon')
 ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
 ADDON_PATH_DATA = xbmc.translatePath( ADDON.getAddonInfo('profile') )
 ADDON_LANG = ADDON.getLocalizedString
+KODIPLAYER = xbmc.Player()
 
 # set vars
 sName = {
@@ -70,8 +71,9 @@ class PROFILES:
             return
         if mode == 'popup':
             enabledProfiles = self.getEnabledProfiles()
+            force_dialog = not KODIPLAYER.isPlaying()
             ret = dialog.DIALOG().start(self.xmlFile, labels={10071: ADDON_LANG(32106)}, buttons=enabledProfiles[1],
-                                        thelist=10070)
+                                        thelist=10070, force_dialog=force_dialog)
             if ret is not None:
                 self.profile(str(enabledProfiles[0][ret]))
             return
@@ -100,7 +102,7 @@ class PROFILES:
         # get audio config and save to file
         enabledProfiles = self.getEnabledProfiles()
         ret = dialog.DIALOG().start(self.xmlFile, labels={10071: ADDON_LANG(32100)}, buttons=enabledProfiles[1],
-                                    thelist=10070, save_profile=True)
+                                    thelist=10070, force_dialog=True)
         notify.logDebug( 'the returned value is %s' % str(ret) )
         if ret is None:
             return False

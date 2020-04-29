@@ -1,28 +1,17 @@
-v.1.4.2~beta6
-- fix for keymap option to pop up dialog not working
-
-v.1.4.2~beta5
-changing in logging to accomodate new logging requirements for Kodi 19
-
-v.1.4.2~beta4
-- fix so the auto loaded profile for startup is always loaded
-- addd option to disable auto load of profile at startup if it's the one that was enabled at shutdown
-
-v1.4.2~beta3
-- changes for better code compatibility between Kodi 18 and 19
-- setting to pop up dialog box when playback start works again
-- fixed notifications so save notifications show even if notifications are off
-- fix so you don't have to restart Kodi for settings changes to be reflected
+v.1.4.2
+- added option to disable auto load of profile at startup if it's the one that was enabled at shutdown
 - added option to set delay before pop up dialog automatically closes
-- added option to enable debug logging (standard for Kodi addons)
-- cleaned up some setting descriptions
-- updated Italian language file
-
-v1.4.2~beta2
+- added option to enable debug logging
+- fix for keymap option to pop up dialog not working
+- fix so the auto loaded profile for startup is always loaded
+- fix so setting to pop up dialog box when playback start works again
+- fix so save notifications show even if notifications are off
+- fix so you don't have to restart Kodi for settings changes to be reflected
 - fix for crash when trying to toggle profiles
-
-v1.4.2~beta1
-- updates for submission to Kodi main repository
+- updated language files
+- cleaned up some setting descriptions
+- changes for better code compatibility between Kodi 18 and 19
+- changes in logging to accomodate new logging requirements for Kodi 19
 
 v1.4
 - add compatybility to python3 and Kodi Matrix

@@ -26,14 +26,14 @@ class DIALOG:
         display = SHOW(xml_file, ADDON_PATH, labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist)
         display.show()
         while (KODIPLAYER.isPlaying() or force_dialog) and not KODIMONITOR.abortRequested():
-            if force_dialog:
-                notify.logDebug('the current returned value from display is: %s' % str(display.ret))
-                if display.ret is not None:
-                    break
-            elif autoclose == 'true':
-                if count >= delay:
+            notify.logDebug('the current returned value from display is: %s' % str(display.ret))
+            if autoclose == 'true' and not force_dialog:
+                if count >= delay or display.ret is not None:
                     break
                 count = count + 1
+            else:
+                if display.ret is not None:
+                    break
             KODIMONITOR.waitForAbort( 1 )
         ret = display.ret
         del display

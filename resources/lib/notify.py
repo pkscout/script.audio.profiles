@@ -15,7 +15,12 @@ def popup(msg, force=False, title=''):
             title = '%s - %s' % (ADDON_NAME, title)
         else:
             title = ADDON_NAME
-        xbmcgui.Dialog().notification(title, msg, icon=ADDON_ICON)
+        notify_time = ADDON.getSetting('notify_time')
+        if notify_time:
+            notify_time = int(notify_time) * 1000
+        else:
+            notify_time = 5000
+        xbmcgui.Dialog().notification(title, msg, icon=ADDON_ICON, time=notify_time)
 
 
 def logInfo(msg):

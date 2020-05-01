@@ -1,3 +1,6 @@
+v.1.4.3~beta2
+- fix for GUI profile auto loading during playback if you skip to next item
+
 v.1.4.3~beta1
 - fix for switch dialog box not switching profiles during playback
 

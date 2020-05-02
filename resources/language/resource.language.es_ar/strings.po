@@ -1,0 +1,241 @@
+# script.audio.profiles language file
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_ar\n"
+
+#: Settings
+msgctxt "#32000"
+msgid "Profiles"
+msgstr "Perfiles"
+
+#: Settings
+msgctxt "#32001"
+msgid "Name of profile 1"
+msgstr "Nombre del Perfil 1"
+
+#: Settings
+msgctxt "#32002"
+msgid "Settings"
+msgstr "Configuración"
+
+#: Settings
+msgctxt "#32003"
+msgid "Name of profile 2"
+msgstr "Nombre del Perfil 2"
+
+#: Settings
+msgctxt "#32004"
+msgid "Include volume level"
+msgstr "Incluir Nivel de Volumen"
+
+#: Settings
+msgctxt "#32005"
+msgid "Name of profile 3"
+msgstr "Nombre del Perfil 3"
+
+#: Settings
+msgctxt "#32006"
+msgid "Name of profile 4"
+msgstr "Nombre del Perfil 4"
+
+#: Settings
+msgctxt "#32007"
+msgid "Profile 1"
+msgstr "Perfil 1"
+
+#: Settings
+msgctxt "#32008"
+msgid "Profile 2"
+msgstr "Perfil 2"
+
+#: Settings
+msgctxt "#32009"
+msgid "Profile 3"
+msgstr "Perfil 3"
+
+#: Settings
+msgctxt "#32010"
+msgid "Profile 4"
+msgstr "Perfil 4"
+
+#: Settings
+msgctxt "#32011"
+msgid "Include video player settings"
+msgstr "Incluir Configuración de reproductor de video"
+
+#: Settings
+msgctxt "#32012"
+msgid "Include display settings"
+msgstr "Incluir Configuración de Pantalla"
+
+#: Settings
+msgctxt "#32013"
+msgid "Includes Settings"
+msgstr "Incluye Configuración"
+
+#: Settings
+msgctxt "#32014"
+msgid "Automatic Switch"
+msgstr "Cambio Automático"
+
+#: Settings
+msgctxt "#32015"
+msgid "Show audio stream select menu on start playing"
+msgstr "Mostrar el selector de audio stream al comenzar reproducción"
+
+#: Settings
+msgctxt "#32016"
+msgid "Auto close select menu"
+msgstr "Autocerrar menú de selección"
+
+#: Settings
+msgctxt "#32018"
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: Settings
+msgctxt "#32019"
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: Settings
+msgctxt "#32021"
+msgid "Profile for GUI"
+msgstr "Perfil para GUI"
+
+#: Settings
+msgctxt "#32022"
+msgid "Profile for Movies"
+msgstr "Perfil para Películas"
+
+#: Settings
+msgctxt "#32023"
+msgid "Profile for TVShows"
+msgstr "Perfil para Series de TV"
+
+#: Settings
+msgctxt "#32024"
+msgid "Profile for PVR TV"
+msgstr "Perfil para TV PVR"
+
+#: Settings
+msgctxt "#32025"
+msgid "Profile for Music"
+msgstr "Perfil para Música"
+
+#: Settings
+msgctxt "#32026"
+msgid "None"
+msgstr "Ninguno"
+
+#: Settings
+msgctxt "#32027"
+msgid "Send HDMI-CEC command when profile activated"
+msgstr "Enviar comando HDMI-CEC cuando se activa el perfil"
+
+#: Settings
+msgctxt "#32028"
+msgid "Wake Up"
+msgstr "Despertar"
+
+#: Settings
+msgctxt "#32029"
+msgid "StandBy"
+msgstr "En espera"
+
+#: Settings
+msgctxt "#32030"
+msgid "Toggle state"
+msgstr "Estado del Toggle"
+
+#: Settings
+msgctxt "#32031"
+msgid "Profile for Videos (not from library)"
+msgstr "Perfiles para Videos (no de la biblioteca)"
+
+#: Settings
+msgctxt "#32032"
+msgid "Profile for Music Videos"
+msgstr "Perfil para Videos de Música"
+
+#: Settings
+msgctxt "#32033"
+msgid "Profile for Unknown content type"
+msgstr "Perfil para contenido desconocido"
+
+#: Settings
+msgctxt "#32034"
+msgid "Profile for PVR Radio"
+msgstr "Perfil para Radio PVR"
+
+#: Settings
+msgctxt "#32035"
+msgid "Video"
+msgstr "Video"
+
+#: Settings
+msgctxt "#32036"
+msgid "Audio"
+msgstr "Audio"
+
+#: Settings
+msgctxt "#32037"
+msgid "Other"
+msgstr "Otro"
+
+#: Settings
+msgctxt "#32038"
+msgid "Profile for KODI Start/Wakeup (Default)"
+msgstr "Perfil para inicio/wakeup (Por Defecto)"
+
+#: Settings
+msgctxt "#32039"
+msgid "Delay before close"
+msgstr "Retraso antes de cerrar"
+
+#: Settings
+msgctxt "#32040"
+msgid "Enable debug logging"
+msgstr "Habilitar debug logging"
+
+#: Settings
+msgctxt "#32041"
+msgid "Force load profile at startup"
+msgstr "Forzar la carga de perfil al comienzo"
+
+#: Script
+msgctxt "#32100"
+msgid "Select profile to save settings"
+msgstr "Seleccionar perfil para guardar configuración"
+
+#: Script
+msgctxt "#32101"
+msgid "Configure profile"
+msgstr "Configurar perfil"
+
+#: Script
+msgctxt "#32102"
+msgid "Saved as profile"
+msgstr "Guardado como perfil"
+
+#: Script
+msgctxt "#32103"
+msgid "This profile is disabled"
+msgstr "Este perfil está deshabilitado"
+
+#: Script
+msgctxt "#32104"
+msgid "Invalid file for profile"
+msgstr "Archivo Inválido para perfil"
+
+#: Script
+msgctxt "#32105"
+msgid "Enable profiles"
+msgstr "Habilitar perfiles"
+
+#: Script
+msgctxt "#32106"
+msgid "Select audio profile"
+msgstr "Seleccionar perfil de Audio"

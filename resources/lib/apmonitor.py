@@ -27,10 +27,6 @@ class Monitor(xbmc.Monitor):
         self.changeProfile(ADDON.getSetting('auto_default'), forceload=ADDON.getSetting('force_auto_default'))
 
 
-    def onSettingsChanged(self):
-        global ADDON
-        reload (ADDON)
-
     def onNotification(self, sender, method, data):
         global susppend_auto_change
         global set_for_susspend

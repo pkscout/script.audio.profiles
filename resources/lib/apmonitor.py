@@ -15,6 +15,7 @@ map_type = {'movie': 'auto_movies', 'video': 'auto_videos', 'episode': 'auto_tvs
             'musicvideo': 'auto_musicvideo', 'song': 'auto_music', 'unknown': 'auto_unknown'}
 susppend_auto_change = False
 set_for_susspend = None
+KODIPLAYER = xbmc.Player()
 
 
 
@@ -40,9 +41,10 @@ class Monitor(xbmc.Monitor):
             self.changeProfile(ADDON.getSetting('auto_default'))
         if 'Player.OnStop' in method:
             notify.logDebug('[MONITOR] METHOD: %s DATA: %s' % (str(method), str(data)))
-            # gui
-            susppend_auto_change = False
-            self.changeProfile(ADDON.getSetting('auto_gui'))
+            self.waitForAbort( 1 )
+            if not KODIPLAYER.isPlaying():
+                susppend_auto_change = False
+                self.changeProfile(ADDON.getSetting('auto_gui'))
         if 'Player.OnPlay' in method:
             notify.logDebug('[MONITOR] METHOD: %s DATA: %s' % (str(method), str(data)))
             # auto switch

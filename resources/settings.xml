@@ -28,7 +28,7 @@
         <setting type="sep"/>
         <setting label="32015" type="bool" id="player_show" default="false"/>
         <setting label="32016" type="bool" id="player_autoclose" default="false" visible="eq(-1,true)"/>
-        <setting id="player_autoclose_delay" type="slider" label="32039" default="10" range="5,1,30" visible="eq(-1,true) + eq(-2,true)" option="int" />
+        <setting id="player_autoclose_delay" type="slider" label="32039" default="10" range="1,1,30" visible="eq(-1,true) + eq(-2,true)" option="int" />
     </category>
     <category label="32014">
         <setting label="32038" type="enum" id="auto_default" lvalues="32026|32007|32008|32009|32010"/>
@@ -48,6 +48,7 @@
     </category>
     <category label="32018">
         <setting label="32019" type="bool" id="notify" default="true"/>
+        <setting id="notify_time" type="slider" label="32039" default="5" range="1,1,30" visible="eq(-1,true)" option="int" />
         <setting label="32040" type="bool" id="debug" default="false"/>
     </category>
 </settings>

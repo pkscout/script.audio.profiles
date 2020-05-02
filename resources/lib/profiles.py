@@ -55,7 +55,14 @@ class PROFILES:
         if (len(sys.argv) < 2 or len(sys.argv[0]) == 0):
             mode = False
         else:
-            mode = str(sys.argv[1])
+            args = sys.argv[1].split( '&' )
+            mode = args[0]
+            self.FROMMONITOR = False
+            try:
+                if args[1] == 'auto':
+                    self.FROMMONITOR = True
+            except IndexError:
+                self.FROMMONITOR = False
         LW.log( ['MODE: %s' % str(mode)] )
         self.start( mode )
         LW.log( ['script version %s stopped' % ADDONVERSION], xbmc.LOGINFO )
@@ -63,7 +70,7 @@ class PROFILES:
 
     def start( self, mode ):
         if True not in SPROFILE.values():
-            self.notification( ADDONLANGUAGE(32105) )
+            self.notification( ADDONLANGUAGE(32105), getSettingBool( 'notify_maintenance', default=True ) )
             ADDON.openSettings()
         if mode is False:
             self.save()
@@ -139,13 +146,13 @@ class PROFILES:
         success, loglines = writeFile( jsonToWrite, os.path.join( ADDONDATAPATH, 'profile%s.json' % str( button ) ), 'w' )
         LW.log( loglines )
         if success:
-            self.notification( '%s %s (%s)' % (ADDONLANGUAGE(32102), str(button), SNAME[button]) )
+            self.notification( '%s %s (%s)' % (ADDONLANGUAGE(32102), str(button), SNAME[button]), getSettingBool( 'notify_maintenance', default=True ) )
 
 
     def check( self, mode ):
         self.aProfile = []
         if mode != '0' and not SPROFILE[int( mode )]:
-            self.notification( '%s (%s)' % (ADDONLANGUAGE(32103), SNAME[int(mode)]) )
+            self.notification( '%s (%s)' % (ADDONLANGUAGE(32103), SNAME[int(mode)]), getSettingBool( 'notify_maintenance', default=True ) )
             LW.log( ['[CHECK]: This profile is disabled in addon settings - %s' % str(mode)], xbmc.LOGINFO )
             return False
         for key in SPROFILE:
@@ -153,7 +160,7 @@ class PROFILES:
                 success, loglines = checkPath( os.path.join( ADDONDATAPATH, 'profile%s.json' % str( key ) ), createdir=False )
                 LW.log( loglines )
                 if not success:
-                    self.notification( '%s %s (%s)' % (ADDONLANGUAGE( 32101 ), str( key ), SNAME[key]) )
+                    self.notification( '%s %s (%s)' % (ADDONLANGUAGE( 32101 ), str( key ), SNAME[key]), getSettingBool( 'notify_maintenance', default=True ) )
                     LW.log( ['[PROFILE FILE]: not exist for profile - %s' % str(key)], xbmc.LOGERROR )
                     return False
                 self.aProfile.append( str( key ) )
@@ -188,8 +195,8 @@ class PROFILES:
         try:
             jsonResult = json.loads( result )
         except ValueError:
-            self.notification( '%s %s (%s)' % (ADDONLANGUAGE( 32104 ), profile, SNAME[int( profile )]) )
-            LW.log( ['[LOAD JSON FROM FILE]: Error reading from profile - %s' % str( profile )], xbmc.LOGERROR )
+            self.notification( '%s %s (%s)' % (ADDONLANGUAGE( 32104 ), profile, SNAME[int( profile )]), getSettingBool( 'notify_maintenance' ), default=True )
+            LW.log( ['LOAD JSON FROM FILE: Error reading from profile - %s' % str( profile )], xbmc.LOGERROR )
             return False
         quote_needed = ['audiooutput.audiodevice',
                         'audiooutput.passthroughdevice',
@@ -210,7 +217,11 @@ class PROFILES:
             else:
                 xbmc.executeJSONRPC(
                     '{"jsonrpc": "2.0", "method": "Settings.SetSettingValue", "params": {"setting": "%s", "value": %s}, "id": 1}' % (setName, setValue) )
-        self.notification( SNAME[int( profile )] )
+        if self.FROMMONITOR:
+            show_notification = getSettingBool( 'notify_auto', default=True )
+        else:
+            show_notification = getSettingBool( 'notify_manual', default=True )
+        self.notification( SNAME[int( profile )], show_notification )
         success, loglines = writeFile( profile, os.path.join(ADDONDATAPATH, 'profile'), 'w' )
         LW.log( loglines )
         sCec = getSettingInt('profile%s_cec' % profile )
@@ -219,6 +230,6 @@ class PROFILES:
             xbmc.executebuiltin(CECCOMMANDS[sCec])
 
 
-    def notification( self, msg):
-        if self.DISPLAYNOTIFICATION:
+    def notification( self, msg, display=True):
+        if self.DISPLAYNOTIFICATION and display:
             DIALOG.notification( ADDONLONGNAME, msg, icon=ADDONICON, time=self.NOTIFYTIME )

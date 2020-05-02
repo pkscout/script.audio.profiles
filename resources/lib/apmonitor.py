@@ -105,7 +105,7 @@ class Monitor( xbmc.Monitor ):
             lastProfile = self.getLastProfile()
             LW.log( ['Last loaded profile: %s To switch profile: %s' % (lastProfile, profile)] )
             if (lastProfile != profile and not SUSPENDAUTOCHANGE) or forceload:
-                xbmc.executebuiltin( 'RunScript(%s, %s) ' % (ADDONNAME, profile) )
+                xbmc.executebuiltin( 'RunScript(%s, %s&auto)' % (ADDONNAME, profile) )
             else:
                 LW.log( ['Switching omitted (same profile) or switching is susspend'] )
 

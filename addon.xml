@@ -9,6 +9,7 @@
 	<extension point="xbmc.addon.metadata">
 		<news>
 v.1.4.3~beta4
+- added more granular control over notifications
 - fix for crash in service when changing settings
 - code refactoring
 		</news>

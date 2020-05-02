@@ -1,3 +1,6 @@
+v.1.4.3~beta5
+- added Spanish translation files
+
 v.1.4.3~beta4
 - fix for crash when settings are changed
 

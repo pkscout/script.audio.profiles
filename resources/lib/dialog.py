@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# *  Credits:
-# *
-# *  original Audio Profiles code by Regss
-# *  updates and additions through v1.4.1 by notoco and CtrlGy
-# *  updates and additions since v1.4.2 by pkscout
+# v.2.0
 
 from kodi_six import xbmc, xbmcgui
 from resources.lib.kodisettings import *
@@ -13,7 +8,7 @@ KODIPLAYER   = xbmc.Player()
 
 
 
-class DIALOG:
+class Dialog:
 
     def start( self, xml_file, labels=None, textboxes=None, buttons=None, thelist=0, force_dialog=False ):
         self.LOGLINES = []
@@ -24,7 +19,7 @@ class DIALOG:
         else:
             delay = 10
             autoclose = False
-        display = SHOW(xml_file, ADDONPATH, labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist)
+        display = Show(xml_file, ADDONPATH, labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist)
         display.show()
         while (KODIPLAYER.isPlaying() or force_dialog) and not KODIMONITOR.abortRequested():
             self.LOGLINES.append( 'the current returned value from display is: %s' % str(display.ret) )
@@ -42,7 +37,7 @@ class DIALOG:
 
 
 
-class SHOW( xbmcgui.WindowXMLDialog ):
+class Show( xbmcgui.WindowXMLDialog ):
 
     def __init__( self, xmlFile, resourcePath, labels, textboxes, buttons, thelist ):
         self.ret = None

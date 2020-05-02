@@ -1,71 +1,70 @@
-# -*- coding: utf-8 -*-
-# *  Credits:
-# *
-# *  original Audio Profiles code by Regss
-# *  updates and additions through v1.4.1 by notoco and CtrlGy
-# *  updates and additions since v1.4.2 by pkscout
+# v.0.2.0
 
 from kodi_six import xbmc
 import json, os
 from resources.lib.fileops import *
 from resources.lib.xlogger import Logger
-from resources.lib.kodisettings import *
-
-PROFILES          = ['1', '2', '3', '4']
-MAPTYPE           = {'movie': 'auto_movies', 'video': 'auto_videos', 'episode': 'auto_tvshows', 'channel': 'auto_pvr',
-                     'musicvideo': 'auto_musicvideo', 'song': 'auto_music', 'unknown': 'auto_unknown'}
-SUSPENDAUTOCHANGE = False
-SETFORSUSPEND     = None
-LOGDEBUG          = getSettingBool( 'debug' )
-LW                = Logger( preamble='[Audio Profiles Service]', logdebug=LOGDEBUG )
-KODIPLAYER        = xbmc.Player()
+from resources.lib.apsettings import loadSettings
+from resources.lib.profiles import Profiles
 
 
 
-class Monitor( xbmc.Monitor ):
+class apMonitor( xbmc.Monitor ):
 
     def __init__( self ):
-        LW.log( ['background monitor version %s started' % ADDONVERSION], xbmc.LOGINFO )
-        LW.log( ['debug logging set to %s' % LOGDEBUG], xbmc.LOGINFO )
         xbmc.Monitor.__init__( self )
-        # default for kodi start
-        self.changeProfile( getSettingString( 'auto_default' ), forceload=getSettingBool( 'force_auto_default' ) )
+        self._init_vars()
+        self.LW.log( ['background monitor version %s started' % self.SETTINGS['ADDONVERSION']], xbmc.LOGINFO )
+        self.LW.log( ['debug logging set to %s' % self.SETTINGS['debug']], xbmc.LOGINFO )
+        self._chage_profile( self.SETTINGS['auto_default'], forceload=self.SETTINGS['force_auto_default'] )
         while not self.abortRequested():
             if self.waitForAbort( 10 ):
                 break
-        LW.log( ['background monitor version %s stopped' % ADDONVERSION], xbmc.LOGINFO )
+        self.LW.log( ['background monitor version %s stopped' % self.SETTINGS['ADDONVERSION']], xbmc.LOGINFO )
 
 
     def onNotification( self, sender, method, data ):
-        global SUSPENDAUTOCHANGE
-        global SETFORSUSPEND
         data = json.loads( data )
         if 'System.OnWake' in method:
-            LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
-            # default for kodi wakeup
-            self.changeProfile( getSettingString('auto_default') )
+            self.LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
+            self._chage_profile( self.SETTINGS['auto_default'] )
         if 'Player.OnStop' in method:
-            LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
+            self.LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
             self.waitForAbort( 1 )
-            if not KODIPLAYER.isPlaying():
-                SUSPENDAUTOCHANGE = False
-                self.changeProfile(getSettingString('auto_gui'))
+            if not self.KODIPLAYER.isPlaying():
+                self.SUSPENDAUTOCHANGE = False
+                self._chage_profile( self.SETTINGS['auto_gui'] )
+                self.SUSPENDAUTOCHANGE = True
         if 'Player.OnPlay' in method:
-            LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
-            # auto switch
+            self.LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
             if 'item' in data and 'type' in data['item']:
-                self.autoSwitch( data )
+                self._auto_switch( data )
 
 
-    def autoSwitch( self, data ):
-        global SUSPENDAUTOCHANGE
-        global SETFORSUSPEND
+    def onSettingsChanged( self ):
+        self._init_vars()
+
+
+    def _init_vars( self ):
+        self.SETTINGS = loadSettings()
+        self.PROFILESLIST = ['1', '2', '3', '4']
+        self.MAPTYPE = {'movie': 'auto_movies', 'video': 'auto_videos', 'episode': 'auto_tvshows', 'channel': 'auto_pvr',
+                        'musicvideo': 'auto_musicvideo', 'song': 'auto_music', 'unknown': 'auto_unknown'}
+        self.SUSPENDAUTOCHANGE = False
+        self.SETFORSUSPEND = None
+        self.LW = Logger( preamble='[Audio Profiles Service]', logdebug=self.SETTINGS['debug'] )
+        self.PROFILES = Profiles( self.SETTINGS, self.LW, auto=True )
+        self.KODIPLAYER = xbmc.Player()
+    
+
+    def _auto_switch( self, data ):
         thetype = data['item']['type']
-        theset = MAPTYPE.get(thetype)
-        LW.log( ['the data are:'] )
-        LW.log( [data] )
-        if getSettingBool( 'player_show' ):
-            xbmc.executebuiltin( 'RunScript(%s, popup)' % ADDONNAME )
+        theset =self.MAPTYPE.get(thetype)
+        self.LW.log( ['the data are:'] )
+        self.LW.log( [data] )
+        if self.SETTINGS['player_show']:
+            if self.PROFILES.changeProfile( 'popup' ) is not None:
+                return
         # if video is not from library assign to auto_videos
         if 'movie' in thetype and 'id' not in data['item']:
             theset = 'auto_videos'
@@ -79,41 +78,41 @@ class Monitor( xbmc.Monitor ):
                 theset = None
         # detect cdda that kodi return as unknown
         if 'unknown' in thetype and 'player' in data and 'playerid' in data['player']:
-            jsonS = xbmc.executeJSONRPC(
+            json_str = xbmc.executeJSONRPC(
             '{"jsonrpc": "2.0", "id": "1", "method": "Player.GetItem", "params": {"playerid": %s, "properties": ["file"]}}' % str(data['player']['playerid'])
-                                       )
-            jsonR = json.loads(jsonS)
+            )
+            json_ret = json.loads(json_str)
             try:
-                thefile = jsonR['result']['item']['file']
+                thefile = json_ret['result']['item']['file']
             except (IndexError, KeyError, ValueError):
                 thefile = ''
             if thefile.startswith( 'cdda://' ):
                 theset = 'auto_music'
-        LW.log( ['Setting parsed: %s' % str(theset)] )
-        # cancel susspend auto change when media thetype change
-        if theset != SETFORSUSPEND:
-            SUSPENDAUTOCHANGE = False
-            SETFORSUSPEND = theset
+        self.LW.log( ['Setting parsed: %s' % str( theset )] )
+        # cancel suspend auto change when media thetype change
+        if theset != self.SETFORSUSPEND:
+            self.SUSPENDAUTOCHANGE = False
+            self.SETFORSUSPEND = theset
         if theset is not None:
-            self.changeProfile( getSettingString( theset ) )
-            SUSPENDAUTOCHANGE = True
+            self._chage_profile( self.SETTINGS[theset] )
+            self.SUSPENDAUTOCHANGE = True
 
 
-    def changeProfile( self, profile, forceload=False ):
-        if profile in PROFILES:
+    def _chage_profile( self, profile, forceload=False ):
+        if profile in self.PROFILESLIST:
             # get last loaded profile
-            lastProfile = self.getLastProfile()
-            LW.log( ['Last loaded profile: %s To switch profile: %s' % (lastProfile, profile)] )
-            if (lastProfile != profile and not SUSPENDAUTOCHANGE) or forceload:
-                xbmc.executebuiltin( 'RunScript(%s, %s&auto)' % (ADDONNAME, profile) )
+            lastProfile = self._get_last_profile()
+            self.LW.log( ['Last loaded profile: %s To switch profile: %s' % (lastProfile, profile)] )
+            if (lastProfile != profile and not self.SUSPENDAUTOCHANGE) or forceload:
+                self.PROFILES.changeProfile( profile )
             else:
-                LW.log( ['Switching omitted (same profile) or switching is susspend'] )
+                self.LW.log( ['Switching omitted (same profile) or switching is susspend'] )
 
 
-    def getLastProfile( self ):
-        loglines, p = readFile( os.path.join( ADDONDATAPATH, 'profile' ) )
-        LW.log( loglines )
-        if p in PROFILES:
+    def _get_last_profile( self ):
+        loglines, p = readFile( os.path.join( self.SETTINGS['ADDONDATAPATH'], 'profile' ) )
+        self.LW.log( loglines )
+        if p in self.PROFILESLIST:
             return p
         else:
             return ''

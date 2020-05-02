@@ -1,6 +1,8 @@
-v.1.4.3~beta4
+v.2.0.0~alpha1
 - added more granular control over notifications
 - fix for crash in service when changing settings
+- reorganized settings
+- substantial rewrite to eliminate need for service to call main addon via executebuiltin
 - code refactoring
 
 v.1.4.3~beta3
@@ -25,8 +27,8 @@ v.1.4.2
 - changes for better code compatibility between Kodi 18 and 19
 - changes in logging to accomodate new logging requirements for Kodi 19
 
-v1.4
-- add compatybility to python3 and Kodi Matrix
+v1.4.0
+- add basic compatibilityto python3 and Kodi Matrix
 
 v1.2.5
 - fix: assign cdda Audio CD from unknown to audio type

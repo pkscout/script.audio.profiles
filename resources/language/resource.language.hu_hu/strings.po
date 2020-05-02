@@ -87,8 +87,8 @@ msgstr "Profilváltó ablak megjelenítése lejátszás indításakor"
 
 #: Settings
 msgctxt "#32016"
-msgid "- Auto close select menu"
-msgstr "- Profilváltó ablak automatikus bezárása (5mp után)"
+msgid "Auto close select menu"
+msgstr "Profilváltó ablak automatikus bezárása (5mp után)"
 
 #: Settings
 msgctxt "#32018"

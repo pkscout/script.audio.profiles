@@ -87,8 +87,8 @@ msgstr "Mostrar el selector de audio stream al comenzar reproducción"
 
 #: Settings
 msgctxt "#32016"
-msgid "- Auto close select menu"
-msgstr "- Autocerrar menú de selección"
+msgid "Auto close select menu"
+msgstr "Autocerrar menú de selección"
 
 #: Settings
 msgctxt "#32018"

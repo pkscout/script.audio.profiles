@@ -94,8 +94,8 @@ msgstr "Pokaż menu wyboru profilu audio podczas startu odtwarzania"
 
 #: Settings
 msgctxt "#32016"
-msgid "- Auto close select menu"
-msgstr "- Automatycznie zamknij menu wyboru profilu audio"
+msgid "Auto close select menu"
+msgstr "Automatycznie zamknij menu wyboru profilu audio"
 
 #: Settings
 msgctxt "#32018"

@@ -96,8 +96,8 @@ msgstr "Mostra menu di selezione stream all'avvio della riproduzione"
 
 #: Settings
 msgctxt "#32016"
-msgid "- Auto close select menu"
-msgstr "- Chiudi automaticamente il menu di selezione"
+msgid "Auto close select menu"
+msgstr "Chiudi automaticamente il menu di selezione"
 
 #: Settings
 msgctxt "#32018"

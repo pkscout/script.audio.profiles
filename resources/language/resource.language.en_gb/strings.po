@@ -87,7 +87,7 @@ msgstr ""
 
 #: Settings
 msgctxt "#32016"
-msgid "- Auto close select menu"
+msgid "Auto close select menu"
 msgstr ""
 
 #: Settings

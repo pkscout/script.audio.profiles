@@ -71,8 +71,9 @@ class PROFILES:
         if mode == 'popup':
             enabledProfiles = self.getEnabledProfiles()
             force_dialog = not KODIPLAYER.isPlaying()
-            ret = dialog.DIALOG().start( self.XMLFILE, labels={10071: ADDONLANGUAGE(32106)}, buttons=enabledProfiles[1],
+            ret, loglines = dialog.DIALOG().start( self.XMLFILE, labels={10071: ADDONLANGUAGE(32106)}, buttons=enabledProfiles[1],
                                         thelist=10070, force_dialog=force_dialog )
+            LW.log( loglines )
             if ret is not None:
                 self.profile( str( enabledProfiles[0][ret] ) )
             return
@@ -99,8 +100,9 @@ class PROFILES:
 
     def save( self ):
         enabledProfiles = self.getEnabledProfiles()
-        ret = dialog.DIALOG().start( self.XMLFILE, labels={10071: ADDONLANGUAGE(32100)}, buttons=enabledProfiles[1],
+        ret, loglines = dialog.DIALOG().start( self.XMLFILE, labels={10071: ADDONLANGUAGE(32100)}, buttons=enabledProfiles[1],
                                     thelist=10070, force_dialog=True )
+        LW.log( loglines )
         LW.log( [ 'the returned value is %s' % str(ret) ] )
         if ret is None:
             return False

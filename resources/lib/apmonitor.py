@@ -5,59 +5,67 @@
 # *  updates and additions through v1.4.1 by notoco and CtrlGy
 # *  updates and additions since v1.4.2 by pkscout
 
-from kodi_six import xbmc, xbmcvfs
+from kodi_six import xbmc
 import json, os
-from resources.lib import notify
-from resources.lib.addoninfo import *
+from resources.lib.fileops import *
+from resources.lib.xlogger import Logger
+from resources.lib.kodisettings import *
 
-profiles = ['1', '2', '3', '4']
-map_type = {'movie': 'auto_movies', 'video': 'auto_videos', 'episode': 'auto_tvshows', 'channel': 'auto_pvr',
-            'musicvideo': 'auto_musicvideo', 'song': 'auto_music', 'unknown': 'auto_unknown'}
-susppend_auto_change = False
-set_for_susspend = None
-KODIPLAYER = xbmc.Player()
+PROFILES          = ['1', '2', '3', '4']
+MAPTYPE           = {'movie': 'auto_movies', 'video': 'auto_videos', 'episode': 'auto_tvshows', 'channel': 'auto_pvr',
+                     'musicvideo': 'auto_musicvideo', 'song': 'auto_music', 'unknown': 'auto_unknown'}
+SUSPENDAUTOCHANGE = False
+SETFORSUSPEND     = None
+LOGDEBUG          = getSettingBool( 'debug' )
+LW                = Logger( preamble='[Audio Profiles Service]', logdebug=LOGDEBUG )
+KODIPLAYER        = xbmc.Player()
 
 
 
-class Monitor(xbmc.Monitor):
-    def __init__(self):
-        notify.logInfo('staring background monitor process')
-        xbmc.Monitor.__init__(self)
+class Monitor( xbmc.Monitor ):
+
+    def __init__( self ):
+        LW.log( ['background monitor version %s started' % ADDONVERSION], xbmc.LOGINFO )
+        LW.log( ['debug logging set to %s' % LOGDEBUG], xbmc.LOGINFO )
+        xbmc.Monitor.__init__( self )
         # default for kodi start
-        self.changeProfile(ADDON.getSetting('auto_default'), forceload=ADDON.getSetting('force_auto_default'))
+        self.changeProfile( getSettingString( 'auto_default' ), forceload=getSettingBool( 'force_auto_default' ) )
+        while not self.abortRequested():
+            if self.waitForAbort( 10 ):
+                break
+        LW.log( ['background monitor version %s stopped' % ADDONVERSION], xbmc.LOGINFO )
 
 
-    def onNotification(self, sender, method, data):
-        global susppend_auto_change
-        global set_for_susspend
-        data = json.loads(data)
+    def onNotification( self, sender, method, data ):
+        global SUSPENDAUTOCHANGE
+        global SETFORSUSPEND
+        data = json.loads( data )
         if 'System.OnWake' in method:
-            notify.logDebug('[MONITOR] METHOD: %s DATA: %s' % (str(method), str(data)))
+            LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
             # default for kodi wakeup
-            self.changeProfile(ADDON.getSetting('auto_default'))
+            self.changeProfile( getSettingString('auto_default') )
         if 'Player.OnStop' in method:
-            notify.logDebug('[MONITOR] METHOD: %s DATA: %s' % (str(method), str(data)))
+            LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
             self.waitForAbort( 1 )
             if not KODIPLAYER.isPlaying():
-                susppend_auto_change = False
-                self.changeProfile(ADDON.getSetting('auto_gui'))
+                SUSPENDAUTOCHANGE = False
+                self.changeProfile(getSettingString('auto_gui'))
         if 'Player.OnPlay' in method:
-            notify.logDebug('[MONITOR] METHOD: %s DATA: %s' % (str(method), str(data)))
+            LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
             # auto switch
             if 'item' in data and 'type' in data['item']:
-                self.autoSwitch(data)
+                self.autoSwitch( data )
 
 
-    def autoSwitch(self, data):
-        global susppend_auto_change
-        global set_for_susspend
+    def autoSwitch( self, data ):
+        global SUSPENDAUTOCHANGE
+        global SETFORSUSPEND
         thetype = data['item']['type']
-        theset = map_type.get(thetype)
-        # auto show dialog
-        notify.logDebug('the data are:')
-        notify.logDebug(data)
-        if 'true' in ADDON.getSetting('player_show'):
-            xbmc.executebuiltin('RunScript(%s, popup)' % ADDON_ID)
+        theset = MAPTYPE.get(thetype)
+        LW.log( ['the data are:'] )
+        LW.log( [data] )
+        if getSettingBool( 'player_show' ):
+            xbmc.executebuiltin( 'RunScript(%s, popup)' % ADDONNAME )
         # if video is not from library assign to auto_videos
         if 'movie' in thetype and 'id' not in data['item']:
             theset = 'auto_videos'
@@ -79,37 +87,33 @@ class Monitor(xbmc.Monitor):
                 thefile = jsonR['result']['item']['file']
             except (IndexError, KeyError, ValueError):
                 thefile = ''
-            if thefile.startswith('cdda://'):
+            if thefile.startswith( 'cdda://' ):
                 theset = 'auto_music'
-        notify.logDebug('[MONITOR] Setting parsed: %s' % str(theset))
+        LW.log( ['Setting parsed: %s' % str(theset)] )
         # cancel susspend auto change when media thetype change
-        if theset != set_for_susspend:
-            susppend_auto_change = False
-            set_for_susspend = theset
+        if theset != SETFORSUSPEND:
+            SUSPENDAUTOCHANGE = False
+            SETFORSUSPEND = theset
         if theset is not None:
-            self.changeProfile(ADDON.getSetting(theset))
-            susppend_auto_change = True
+            self.changeProfile( getSettingString( theset ) )
+            SUSPENDAUTOCHANGE = True
 
 
-    def changeProfile(self, profile, forceload=''):
-        if profile in profiles:
+    def changeProfile( self, profile, forceload=False ):
+        if profile in PROFILES:
             # get last loaded profile
             lastProfile = self.getLastProfile()
-            notify.logDebug('[MONITOR] Last loaded profile: %s To switch profile: %s' % (lastProfile, profile))
-            if (lastProfile != profile and susppend_auto_change is not True) or forceload.lower() == 'true':
-                xbmc.executebuiltin('RunScript(%s, %s)' % (ADDON_ID, profile))
+            LW.log( ['Last loaded profile: %s To switch profile: %s' % (lastProfile, profile)] )
+            if (lastProfile != profile and not SUSPENDAUTOCHANGE) or forceload:
+                xbmc.executebuiltin( 'RunScript(%s, %s) ' % (ADDONNAME, profile) )
             else:
-                notify.logDebug('[MONITOR] Switching omitted (same profile) or switching is susspend')
+                LW.log( ['Switching omitted (same profile) or switching is susspend'] )
 
 
-    def getLastProfile(self):
-        try:
-            f = xbmcvfs.File(os.path.join(ADDON_PATH_DATA, 'profile'))
-            p = f.read()
-            f.close()
-        except IOError:
-            return ''
-        if p in profiles:
+    def getLastProfile( self ):
+        loglines, p = readFile( os.path.join( ADDONDATAPATH, 'profile' ) )
+        LW.log( loglines )
+        if p in PROFILES:
             return p
         else:
             return ''

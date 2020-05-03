@@ -23,17 +23,17 @@
     </category>
     <category label="32014">
         <setting label="32015" type="bool" id="player_show" default="false"/>
-        <setting label="32038" type="enum" id="auto_default" lvalues="32026|32007|32008|32009|32010"/>
+        <setting label="32038" type="enum" id="auto_default" lvalues="32026|32007|32008|32009|32010|32045"/>
         <setting label="32041" type="bool" id="force_auto_default" default="true" visible="!eq(-1,0)"/>
-        <setting label="32021" type="enum" id="auto_gui" lvalues="32026|32007|32008|32009|32010"/>
-        <setting label="32022" type="enum" id="auto_movies" lvalues="32026|32007|32008|32009|32010"/>
-        <setting label="32031" type="enum" id="auto_videos" lvalues="32026|32007|32008|32009|32010"/>
-        <setting label="32023" type="enum" id="auto_tvshows" lvalues="32026|32007|32008|32009|32010"/>
-        <setting label="32024" type="enum" id="auto_pvr_tv" lvalues="32026|32007|32008|32009|32010"/>
-        <setting label="32025" type="enum" id="auto_music" lvalues="32026|32007|32008|32009|32010"/>
-        <setting label="32032" type="enum" id="auto_musicvideo" lvalues="32026|32007|32008|32009|32010"/>
-        <setting label="32034" type="enum" id="auto_pvr_radio" lvalues="32026|32007|32008|32009|32010"/>
-        <setting label="32033" type="enum" id="auto_unknown" lvalues="32026|32007|32008|32009|32010"/>
+        <setting label="32021" type="enum" id="auto_gui" lvalues="32026|32007|32008|32009|32010|32045"/>
+        <setting label="32022" type="enum" id="auto_movies" lvalues="32026|32007|32008|32009|32010|32045"/>
+        <setting label="32023" type="enum" id="auto_tvshows" lvalues="32026|32007|32008|32009|32010|32045"/>
+        <setting label="32024" type="enum" id="auto_pvr_tv" lvalues="32026|32007|32008|32009|32010|32045"/>
+        <setting label="32031" type="enum" id="auto_videos" lvalues="32026|32007|32008|32009|32010|32045"/>
+        <setting label="32025" type="enum" id="auto_music" lvalues="32026|32007|32008|32009|32010|32045"/>
+        <setting label="32032" type="enum" id="auto_musicvideo" lvalues="32026|32007|32008|32009|32010|32045"/>
+        <setting label="32034" type="enum" id="auto_pvr_radio" lvalues="32026|32007|32008|32009|32010|32045"/>
+        <setting label="32033" type="enum" id="auto_unknown" lvalues="32026|32007|32008|32009|32010|32045"/>
     </category>
     <category label="32018">
         <setting label="32019" type="bool" id="notify" default="true"/>

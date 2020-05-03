@@ -90,13 +90,15 @@ class apMonitor( xbmc.Monitor ):
 
     def _change_profile( self, profile, forceload=False ):
         if profile in self.PROFILESLIST:
-            # get last loaded profile
             last_profile = self._get_last_profile()
             self.LW.log( ['Last loaded profile: %s To switch profile: %s' % (last_profile, profile)] )
             if last_profile != profile or forceload:
                 self.PROFILES.changeProfile( profile )
             else:
                 self.LW.log( ['Same profile - profiles not switched'] )
+        elif profile == str( len( self.PROFILESLIST ) + 1 ):
+            self.LW.log( ['this auto switch setting is set to show the select menu - showing menu'] )
+            self.PROFILES.changeProfile( 'popup' )
 
 
     def _get_last_profile( self ):

@@ -1,7 +1,7 @@
 
 import json, os, sys
 from kodi_six import xbmc, xbmcgui
-from resources.lib import dialog
+from resources.lib import apdialog
 from resources.lib.fileops import *
 
 
@@ -41,7 +41,7 @@ class Profiles:
             return
         if mode == 'popup':
             force_dialog = not self.KODIPLAYER.isPlaying()
-            dialog_return, loglines = dialog.Dialog().start( self.XMLFILE, self.SETTINGS, labels={10071: self.SETTINGS['ADDONLANGUAGE'](32106)},
+            dialog_return, loglines = apdialog.Dialog().start( self.XMLFILE, self.SETTINGS, labels={10071: self.SETTINGS['ADDONLANGUAGE'](32106)},
                                                    buttons=self.ENABLEDPROFILES[1], thelist=10070, force_dialog=force_dialog )
             self.LW.log( loglines )
             if dialog_return is not None:
@@ -143,7 +143,7 @@ class Profiles:
 
 
     def _save( self ):
-        dialog_return, loglines = dialog.Dialog().start( self.XMLFILE, self.SETTINGS, labels={10071: self.SETTINGS['ADDONLANGUAGE'](32100)},
+        dialog_return, loglines = apdialog.Dialog().start( self.XMLFILE, self.SETTINGS, labels={10071: self.SETTINGS['ADDONLANGUAGE'](32100)},
                                                buttons=self.ENABLEDPROFILES[1], thelist=10070, force_dialog=True )
         self.LW.log( loglines )
         self.LW.log( [ 'the returned value is %s' % str( dialog_return ) ] )

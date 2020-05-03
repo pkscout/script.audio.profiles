@@ -225,6 +225,11 @@ msgctxt "#32045"
 msgid "Select menu"
 msgstr ""
 
+#: Settings
+msgctxt "#32046"
+msgid "Select menu background diffusion"
+msgstr ""
+
 #: Script
 msgctxt "#32100"
 msgid "Select profile to save settings"

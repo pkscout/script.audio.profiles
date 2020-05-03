@@ -1,4 +1,6 @@
 v.2.0.0~alpha2
+- select menu more closely follows skin's color settings
+- added option to change the background diffusion of the select menu
 - PVR recordings are now categorized as auto_pvr_tv during auto switch
 - changed general logic for auto switching
 

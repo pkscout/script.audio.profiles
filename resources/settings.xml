@@ -36,6 +36,7 @@
         <setting label="32033" type="enum" id="auto_unknown" lvalues="32026|32007|32008|32009|32010|32045"/>
     </category>
     <category label="32018">
+        <setting id="menu_diffusion" type="slider" label="32046" default="90" range="70,10,100" option="int" />
         <setting label="32019" type="bool" id="notify" default="true"/>
         <setting id="notify_time" type="slider" label="32039" default="5" range="1,1,30" visible="eq(-1,true)" option="int" />
         <setting label="32042" type="bool" id="notify_auto" default="true" visible="eq(-2,true)" />

@@ -8,16 +8,18 @@ KODIPLAYER   = xbmc.Player()
 
 class Dialog:
 
-    def start( self, xml_file, settings, labels=None, textboxes=None, buttons=None, thelist=0, force_dialog=False ):
-        self.LOGLINES = []
+    def start( self, settings, labels=None, textboxes=None, buttons=None, thelist=0, force_dialog=False ):
+        loglines = []
         count = 0
         delay = settings['player_autoclose_delay']
         autoclose = settings['player_autoclose']
-        display = Show(xml_file, settings['ADDONPATH'], settings=settings, labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist)
+        loglines.append( 'set background menu diffusion to %s' % settings['menu_diffusion'] )
+        display = Show( 'menu.xml', settings['ADDONPATH'], diffusion=settings['menu_diffusion'],
+                        labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist )
         display.show()
         while (KODIPLAYER.isPlaying() or force_dialog) and not display.CLOSED and not KODIMONITOR.abortRequested():
-            self.LOGLINES.append( 'the current returned value from display is: %s' % str(display.DIALOGRETURN) )
-            self.LOGLINES.append( 'the current returned close status from display is: %s' % str(display.CLOSED) )
+            loglines.append( 'the current returned value from display is: %s' % str(display.DIALOGRETURN) )
+            loglines.append( 'the current returned close status from display is: %s' % str(display.CLOSED) )
             if autoclose and not force_dialog:
                 if count >= delay or display.DIALOGRETURN is not None:
                     break
@@ -26,18 +28,18 @@ class Dialog:
                 if display.DIALOGRETURN is not None:
                     break
             KODIMONITOR.waitForAbort( 1 )
-        self.LOGLINES.append( 'the final returned value from display is: %s' % str(display.DIALOGRETURN) )
-        self.LOGLINES.append( 'the final returned close status from display is: %s' % str(display.CLOSED) )
+        loglines.append( 'the final returned value from display is: %s' % str(display.DIALOGRETURN) )
+        loglines.append( 'the final returned close status from display is: %s' % str(display.CLOSED) )
         d_return = display.DIALOGRETURN
         del display
-        return d_return, self.LOGLINES
+        return d_return, loglines
 
 
 
 class Show( xbmcgui.WindowXMLDialog ):
 
-    def __init__( self, xml_file, script_path, settings, labels=None, textboxes=None, buttons=None, thelist=None ):
-        self.SETTINGS = settings
+    def __init__( self, xml_file, script_path, diffusion='90', labels=None, textboxes=None, buttons=None, thelist=None ):
+        self.DIFFUSION = diffusion
         self.DIALOGRETURN = None
         self.CLOSED = False
         self.ACTION_PREVIOUS_MENU = 10
@@ -66,7 +68,8 @@ class Show( xbmcgui.WindowXMLDialog ):
         for button_text in self.BUTTONS:
             self.listitem.addItem( xbmcgui.ListItem( button_text ) )
         self.setFocus( self.listitem )
-        xbmcgui.Window( 10000 ).setProperty( '%s_items' % self.SETTINGS['ADDONNAME'], str( len( self.BUTTONS ) ) )
+        xbmcgui.Window( 10000 ).setProperty( 'ap_diffusion', self.DIFFUSION )
+        xbmcgui.Window( 10000 ).setProperty( 'ap_buttons', str( len( self.BUTTONS ) ) )
 
 
     def onAction( self, action ):

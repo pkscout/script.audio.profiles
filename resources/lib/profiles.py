@@ -1,4 +1,3 @@
-# v.0.2.0
 
 import json, os, sys
 from kodi_six import xbmc, xbmcgui
@@ -42,12 +41,12 @@ class Profiles:
             return
         if mode == 'popup':
             force_dialog = not self.KODIPLAYER.isPlaying()
-            ret, loglines = dialog.Dialog().start( self.XMLFILE, labels={10071: self.SETTINGS['ADDONLANGUAGE'](32106)}, buttons=self.ENABLEDPROFILES[1],
-                                                   thelist=10070, force_dialog=force_dialog )
+            dialog_return, loglines = dialog.Dialog().start( self.XMLFILE, self.SETTINGS, labels={10071: self.SETTINGS['ADDONLANGUAGE'](32106)},
+                                                   buttons=self.ENABLEDPROFILES[1], thelist=10070, force_dialog=force_dialog )
             self.LW.log( loglines )
-            if ret is not None:
-                self._profile( str( self.ENABLEDPROFILES[0][ret] ) )
-            return ret
+            if dialog_return is not None:
+                self._profile( str( self.ENABLEDPROFILES[0][dialog_return] ) )
+            return dialog_return
         if mode == '0' or mode == '1' or mode == '2' or mode == '3' or mode == '4':
             if self._check( mode ) is False:
                 return
@@ -56,7 +55,7 @@ class Profiles:
             else:
                 self._profile( mode )
             return
-        self.LW.log( ['Wrong arg, use like RunScript("%s,x") x - number of profile' % self.SETTINGS['ADDONNAME']], xbmc.LOGERROR )
+        self.LW.log( ['Wrong argument used - use like RunScript("%s,x") x (x is the number of the profile)' % self.SETTINGS['ADDONNAME']], xbmc.LOGERROR )
 
 
     def _check( self, mode ):
@@ -70,29 +69,29 @@ class Profiles:
                 self.LW.log( loglines )
                 if not success:
                     self._notification( '%s %s (%s)' % (self.SETTINGS['ADDONLANGUAGE']( 32101 ), str( key ), self.SNAME[key]),
-                                       self.SETTINGS['notify_maintenance'] )
-                    self.LW.log( ['PROFILE FILE: not exist for profile - %s' % str(key)], xbmc.LOGERROR )
+                                        self.SETTINGS['notify_maintenance'] )
+                    self.LW.log( ['PROFILE FILE does not exist for profile - %s' % str(key)], xbmc.LOGERROR )
                     return False
                 self.APROFILE.append( str( key ) )
 
 
     def _convert( self, data ):
-        if sys.version_info < (3, 0):    return data
-        if isinstance(data, bytes):      return data.decode()
-        if isinstance(data, (str, int)): return str(data)
-        if isinstance(data, dict):       return dict(list(map(convert, list(data.items()))))
-        if isinstance(data, tuple):      return tuple(map(convert, data))
-        if isinstance(data, list):       return list(map(convert, data))
-        if isinstance(data, set):        return set(map(convert, data))
+        if sys.version_info < (3, 0):      return data
+        if isinstance( data, bytes ):      return data.decode()
+        if isinstance( data, (str, int) ): return str( data )
+        if isinstance( data, dict ):       return dict( list( map( self._convert, list( data.items() ) ) ) )
+        if isinstance( data, tuple ):      return tuple( map( self._convert, data ) )
+        if isinstance( data, list ):       return list( map( self._convert, data ) )
+        if isinstance( data, set ):        return set( map( self._convert, data) )
 
 
     def _get_enabled_profiles( self ):
         enabled_profile_key = []
         enabled_profile_name = []
-        for k, p in self.SPROFILE.items():
-            if p:
-                enabled_profile_key.append( k )
-                enabled_profile_name.append( self.SNAME[k] )
+        for thekey, profile in self.SPROFILE.items():
+            if profile:
+                enabled_profile_key.append( thekey )
+                enabled_profile_name.append( self.SNAME[thekey] )
         return [enabled_profile_key, enabled_profile_name]
 
 
@@ -116,20 +115,20 @@ class Profiles:
                         'locale.audiolanguage',
                         'lookandfeel.soundskin']
         self.LW.log( ['RESTORING SETTING: %s' % self.SNAME[int( profile )]], xbmc.LOGINFO )
-        for setName, setValue in jsonResult.items():
-            if not self.SETTINGS['player'] and setName.startswith('videoplayer'):
+        for set_name, set_value in jsonResult.items():
+            if not self.SETTINGS['player'] and set_name.startswith('videoplayer'):
                 continue
-            if not self.SETTINGS['video'] and setName.startswith('videoscreen'):
+            if not self.SETTINGS['video'] and set_name.startswith('videoscreen'):
                 continue
-            self.LW.log( ['RESTORING SETTING: %s: %s' % (setName, setValue)] )
-            if setName in quote_needed:
-                setValue = '"%s"' % setValue
-            if self.SETTINGS['volume'] and setName == 'volume':
+            self.LW.log( ['RESTORING SETTING: %s: %s' % (set_name, set_value)] )
+            if set_name in quote_needed:
+                set_value = '"%s"' % set_value
+            if self.SETTINGS['volume'] and set_name == 'volume':
                 xbmc.executeJSONRPC(
                     '{"jsonrpc": "2.0", "method": "Application.SetVolume", "params": {"volume": %s}, "id": 1}' % jsonResult['volume'] )
             else:
                 xbmc.executeJSONRPC(
-                    '{"jsonrpc": "2.0", "method": "Settings.SetSettingValue", "params": {"setting": "%s", "value": %s}, "id": 1}' % (setName, setValue) )
+                    '{"jsonrpc": "2.0", "method": "Settings.SetSettingValue", "params": {"setting": "%s", "value": %s}, "id": 1}' % (set_name, set_value) )
         if self.AUTO:
             show_notification = self.SETTINGS['notify_auto']
         else:
@@ -144,15 +143,15 @@ class Profiles:
 
 
     def _save( self ):
-        ret, loglines = dialog.Dialog().start( self.XMLFILE, labels={10071: self.SETTINGS['ADDONLANGUAGE'](32100)}, buttons=self.ENABLEDPROFILES[1],
-                                               thelist=10070, force_dialog=True )
+        dialog_return, loglines = dialog.Dialog().start( self.XMLFILE, self.SETTINGS, labels={10071: self.SETTINGS['ADDONLANGUAGE'](32100)},
+                                               buttons=self.ENABLEDPROFILES[1], thelist=10070, force_dialog=True )
         self.LW.log( loglines )
-        self.LW.log( [ 'the returned value is %s' % str(ret) ] )
-        if ret is None:
+        self.LW.log( [ 'the returned value is %s' % str( dialog_return ) ] )
+        if dialog_return is None:
             return False
         else:
-            button = self.ENABLEDPROFILES[0][ret]
-        settingsToSave = {}
+            button = self.ENABLEDPROFILES[0][dialog_return]
+        settings_to_save = {}
         json_s = [
             '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"audio"}},"id":1}',
             '{"jsonrpc": "2.0", "method": "Application.GetProperties", "params": {"properties": ["volume"]}, "id": 1}',
@@ -160,26 +159,26 @@ class Profiles:
             '{"jsonrpc":"2.0","method":"Settings.GetSettings", "params":{"level": "expert", "filter":{"section":"system","category":"display"}}, "id":1}'
                  ]
         for j in json_s:
-            jsonGet = xbmc.executeJSONRPC( j )
-            jsonGet = json.loads( jsonGet )
-            self.LW.log( ['JSON: %s' % str( jsonGet )] )
-            if 'result' in jsonGet:
-                if 'settings' in jsonGet['result']:
-                    for theset in jsonGet['result']['settings']:
+            json_get = xbmc.executeJSONRPC( j )
+            json_get = json.loads( json_get )
+            self.LW.log( ['JSON: %s' % str( json_get )] )
+            if 'result' in json_get:
+                if 'settings' in json_get['result']:
+                    for theset in json_get['result']['settings']:
                         if 'value' in theset.keys():
                             if theset['value'] == True or theset['value'] == False:
-                                settingsToSave[theset['id']] = str(theset['value']).lower()
+                                settings_to_save[theset['id']] = str(theset['value']).lower()
                             else:
                                 if isinstance(theset['value'],int):
-                                    settingsToSave[theset['id']] = str(theset['value'])
+                                    settings_to_save[theset['id']] = str(theset['value'])
                                 else:
-                                    settingsToSave[theset['id']] = str(theset['value']).encode( 'utf-8' )
+                                    settings_to_save[theset['id']] = str(theset['value']).encode( 'utf-8' )
 
-                if 'volume' in jsonGet['result']:
-                    settingsToSave['volume'] = str( jsonGet['result']['volume'] )
-        jsonToWrite = json.dumps( self._convert( settingsToSave ) )
+                if 'volume' in json_get['result']:
+                    settings_to_save['volume'] = str( json_get['result']['volume'] )
+        json_to_write = json.dumps( self._convert( settings_to_save ) )
         self.LW.log( ['SAVING SETTING: %s' % self.SNAME[button]], xbmc.LOGINFO )
-        success, loglines = writeFile( jsonToWrite, os.path.join( self.SETTINGS['ADDONDATAPATH'], 'profile%s.json' % str( button ) ), 'w' )
+        success, loglines = writeFile( json_to_write, os.path.join( self.SETTINGS['ADDONDATAPATH'], 'profile%s.json' % str( button ) ), 'w' )
         self.LW.log( loglines )
         if success:
             self._notification( '%s %s (%s)' % (self.SETTINGS['ADDONLANGUAGE'](32102), str(button),

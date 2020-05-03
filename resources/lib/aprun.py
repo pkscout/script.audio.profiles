@@ -1,4 +1,3 @@
-# v.0.1.0
 
 import sys
 from kodi_six import xbmc
@@ -18,10 +17,10 @@ class Main:
         lw.log( ['SYS.ARGV: %s' % str(sys.argv)] )
         lw.log( ['loaded settings', settings] )
         profiles = Profiles( settings, lw )
-        if (len(sys.argv) < 2 or len(sys.argv[0]) == 0):
-            mode = False
-        else:
+        try:
             mode = sys.argv[1]
+        except IndexError:
+            mode = False
         lw.log( ['MODE: %s' % str(mode)] )
         profiles.changeProfile( mode )
         lw.log( ['script version %s stopped' % settings['ADDONVERSION']], xbmc.LOGINFO )

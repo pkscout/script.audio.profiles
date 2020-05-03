@@ -1,4 +1,3 @@
-# v.0.2.0
 
 from kodi_six import xbmc
 import json, os
@@ -16,7 +15,7 @@ class apMonitor( xbmc.Monitor ):
         self._init_vars()
         self.LW.log( ['background monitor version %s started' % self.SETTINGS['ADDONVERSION']], xbmc.LOGINFO )
         self.LW.log( ['debug logging set to %s' % self.SETTINGS['debug']], xbmc.LOGINFO )
-        self._chage_profile( self.SETTINGS['auto_default'], forceload=self.SETTINGS['force_auto_default'] )
+        self._change_profile( self.SETTINGS['auto_default'], forceload=self.SETTINGS['force_auto_default'] )
         while not self.abortRequested():
             if self.waitForAbort( 10 ):
                 break
@@ -27,14 +26,12 @@ class apMonitor( xbmc.Monitor ):
         data = json.loads( data )
         if 'System.OnWake' in method:
             self.LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
-            self._chage_profile( self.SETTINGS['auto_default'] )
+            self._change_profile( self.SETTINGS['auto_default'] )
         if 'Player.OnStop' in method:
             self.LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
             self.waitForAbort( 1 )
             if not self.KODIPLAYER.isPlaying():
-                self.SUSPENDAUTOCHANGE = False
-                self._chage_profile( self.SETTINGS['auto_gui'] )
-                self.SUSPENDAUTOCHANGE = True
+                self._change_profile( self.SETTINGS['auto_gui'] )
         if 'Player.OnPlay' in method:
             self.LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
             if 'item' in data and 'type' in data['item']:
@@ -50,8 +47,6 @@ class apMonitor( xbmc.Monitor ):
         self.PROFILESLIST = ['1', '2', '3', '4']
         self.MAPTYPE = {'movie': 'auto_movies', 'video': 'auto_videos', 'episode': 'auto_tvshows', 'channel': 'auto_pvr',
                         'musicvideo': 'auto_musicvideo', 'song': 'auto_music', 'unknown': 'auto_unknown'}
-        self.SUSPENDAUTOCHANGE = False
-        self.SETFORSUSPEND = None
         self.LW = Logger( preamble='[Audio Profiles Service]', logdebug=self.SETTINGS['debug'] )
         self.PROFILES = Profiles( self.SETTINGS, self.LW, auto=True )
         self.KODIPLAYER = xbmc.Player()
@@ -59,7 +54,7 @@ class apMonitor( xbmc.Monitor ):
 
     def _auto_switch( self, data ):
         thetype = data['item']['type']
-        theset =self.MAPTYPE.get(thetype)
+        theset = self.MAPTYPE.get(thetype)
         self.LW.log( ['the data are:'] )
         self.LW.log( [data] )
         if self.SETTINGS['player_show']:
@@ -89,30 +84,25 @@ class apMonitor( xbmc.Monitor ):
             if thefile.startswith( 'cdda://' ):
                 theset = 'auto_music'
         self.LW.log( ['Setting parsed: %s' % str( theset )] )
-        # cancel suspend auto change when media thetype change
-        if theset != self.SETFORSUSPEND:
-            self.SUSPENDAUTOCHANGE = False
-            self.SETFORSUSPEND = theset
         if theset is not None:
-            self._chage_profile( self.SETTINGS[theset] )
-            self.SUSPENDAUTOCHANGE = True
+            self._change_profile( self.SETTINGS[theset] )
 
 
-    def _chage_profile( self, profile, forceload=False ):
+    def _change_profile( self, profile, forceload=False ):
         if profile in self.PROFILESLIST:
             # get last loaded profile
-            lastProfile = self._get_last_profile()
-            self.LW.log( ['Last loaded profile: %s To switch profile: %s' % (lastProfile, profile)] )
-            if (lastProfile != profile and not self.SUSPENDAUTOCHANGE) or forceload:
+            last_profile = self._get_last_profile()
+            self.LW.log( ['Last loaded profile: %s To switch profile: %s' % (last_profile, profile)] )
+            if last_profile != profile or forceload:
                 self.PROFILES.changeProfile( profile )
             else:
-                self.LW.log( ['Switching omitted (same profile) or switching is susspend'] )
+                self.LW.log( ['Same profile - profiles not switched'] )
 
 
     def _get_last_profile( self ):
-        loglines, p = readFile( os.path.join( self.SETTINGS['ADDONDATAPATH'], 'profile' ) )
+        loglines, profile = readFile( os.path.join( self.SETTINGS['ADDONDATAPATH'], 'profile' ) )
         self.LW.log( loglines )
-        if p in self.PROFILESLIST:
-            return p
+        if profile in self.PROFILESLIST:
+            return profile
         else:
             return ''

@@ -53,16 +53,21 @@ class apMonitor( xbmc.Monitor ):
     
 
     def _auto_switch( self, data ):
-        thetype = data['item']['type']
-        theset = self.MAPTYPE.get(thetype)
         self.LW.log( ['the data are:'] )
         self.LW.log( [data] )
         if self.SETTINGS['player_show']:
             if self.PROFILES.changeProfile( 'popup' ) is not None:
                 return
-        # if video is not from library assign to auto_videos
+        thetype = data['item']['type']
+        theset = self.MAPTYPE.get(thetype)
+        # if video is not from library check to see if it's a PVR recording, otherwise assign to auto_videos
         if 'movie' in thetype and 'id' not in data['item']:
-            theset = 'auto_videos'
+            thefile = self.KODIPLAYER.getPlayingFile()
+            self.LW.log( ['the playing file is: %s' % thefile] )
+            if thefile.startswith( 'pvr://' ):
+                theset = 'auto_pvr_tv'
+            else:
+                theset = 'auto_videos'
         # distinguish pvr TV and pvr RADIO
         if 'channel' in thetype and 'channeltype' in data['item']:
             if 'tv' in data['item']['channeltype']:

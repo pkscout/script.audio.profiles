@@ -11,12 +11,8 @@ class Dialog:
     def start( self, xml_file, settings, labels=None, textboxes=None, buttons=None, thelist=0, force_dialog=False ):
         self.LOGLINES = []
         count = 0
-        if settings['player_show']:
-            delay = settings['player_autoclose_delay']
-            autoclose = settings['player_autoclose']
-        else:
-            delay = 10
-            autoclose = False
+        delay = settings['player_autoclose_delay']
+        autoclose = settings['player_autoclose']
         display = Show(xml_file, settings['ADDONPATH'], settings=settings, labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist)
         display.show()
         while (KODIPLAYER.isPlaying() or force_dialog) and not display.CLOSED and not KODIMONITOR.abortRequested():

@@ -1,5 +1,6 @@
 v.2.0.0~alpha1
 - added more granular control over notifications
+- added option to have select menu show over for certain media types
 - fix for crash in service when changing settings
 - reorganized settings
 - substantial rewrite to eliminate need for service to call main addon via executebuiltin

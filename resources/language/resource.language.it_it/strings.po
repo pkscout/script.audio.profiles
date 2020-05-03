@@ -91,7 +91,7 @@ msgstr "Cambio automatico"
 
 #: Settings
 msgctxt "#32015"
-msgid "Show audio stream select menu on start playing"
+msgid "Show audio profile select menu on media playback"
 msgstr "Mostra menu di selezione stream all'avvio della riproduzione"
 
 #: Settings
@@ -116,12 +116,12 @@ msgstr "Profilo per GUI"
 
 #: Settings
 msgctxt "#32022"
-msgid "Profile for Movies"
+msgid "Profile for movies"
 msgstr "Profilo per Films"
 
 #: Settings
 msgctxt "#32023"
-msgid "Profile for TVShows"
+msgid "Profile for TV shows"
 msgstr "Profilo per Serie TV"
 
 #: Settings
@@ -131,7 +131,7 @@ msgstr "Profilo per PVR TV"
 
 #: Settings
 msgctxt "#32025"
-msgid "Profile for Music"
+msgid "Profile for music"
 msgstr "Profilo per Musica"
 
 #: Settings
@@ -161,22 +161,22 @@ msgstr "Cambia stato"
 
 #: Settings
 msgctxt "#32031"
-msgid "Profile for Videos (not from library)"
+msgid "Profile for videos (not in library)"
 msgstr "Profilo per Video (non dalla libreria)"
 
 #: Settings
 msgctxt "#32032"
-msgid "Profile for Music Videos"
+msgid "Profile for music videos"
 msgstr "Profilo per Video Musicali"
 
 #: Settings
 msgctxt "#32033"
-msgid "Profile for Unknown content type"
+msgid "Profile for unknown content type"
 msgstr "Profilo per contenuti sconosciuti"
 
 #: Settings
 msgctxt "#32034"
-msgid "Profile for PVR Radio"
+msgid "Profile for PVR radio"
 msgstr "Profilo per PVR Radio"
 
 #: Settings
@@ -228,6 +228,11 @@ msgstr "- Notifiche manuali di commutazione"
 msgctxt "#32044"
 msgid "- Maintenance notifications"
 msgstr "- Notifiche di manutenzione"
+
+#: Settings
+msgctxt "#32045"
+msgid "Select menu"
+msgstr "Menu di selezione"
 
 #: Script
 msgctxt "#32100"

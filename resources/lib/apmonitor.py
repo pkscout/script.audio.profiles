@@ -34,8 +34,7 @@ class apMonitor( xbmc.Monitor ):
                 self._change_profile( self.SETTINGS['auto_gui'] )
         if 'Player.OnPlay' in method:
             self.LW.log( ['MONITOR METHOD: %s DATA: %s' % (str( method ), str( data ))] )
-            if 'item' in data and 'type' in data['item']:
-                self._auto_switch( data )
+            self._auto_switch( data )
 
 
     def onSettingsChanged( self ):
@@ -45,52 +44,57 @@ class apMonitor( xbmc.Monitor ):
     def _init_vars( self ):
         self.SETTINGS = loadSettings()
         self.PROFILESLIST = ['1', '2', '3', '4']
-        self.MAPTYPE = {'movie': 'auto_movies', 'video': 'auto_videos', 'episode': 'auto_tvshows', 'channel': 'auto_pvr',
-                        'musicvideo': 'auto_musicvideo', 'song': 'auto_music', 'unknown': 'auto_unknown'}
+        # this only includes mappings we are 100% sure are accurate every time
+        self.MAPTYPE = {'video': 'auto_videos', 'episode': 'auto_tvshows',
+                        'musicvideo': 'auto_musicvideo', 'song': 'auto_music'}
         self.LW = Logger( preamble='[Audio Profiles Service]', logdebug=self.SETTINGS['debug'] )
         self.PROFILES = Profiles( self.SETTINGS, self.LW, auto=True )
         self.KODIPLAYER = xbmc.Player()
     
 
     def _auto_switch( self, data ):
-        self.LW.log( ['the data are:'] )
-        self.LW.log( [data] )
         if self.SETTINGS['player_show']:
+            self.LW.log( ['showing select menu'] )
             if self.PROFILES.changeProfile( 'popup' ) is not None:
+                self.LW.log( ['option selected, returning'] )
                 return
-        thetype = data['item']['type']
+            self.LW.log( ['select menu timed out or was closed with no selection - continuing to auto select'] )
+        try:
+            thetype = data['item']['type']
+        except IndexError:
+            self.LW.log( ['data did not include valid item and/or type for playing media - aborting'] )
+            return
+        self.LW.log( ['the type is: %s' % thetype] )
         theset = self.MAPTYPE.get(thetype)
-        # if video is not from library check to see if it's a PVR recording, otherwise assign to auto_videos
-        if 'movie' in thetype and 'id' not in data['item']:
-            thefile = self.KODIPLAYER.getPlayingFile()
-            self.LW.log( ['the playing file is: %s' % thefile] )
-            if thefile.startswith( 'pvr://' ):
-                theset = 'auto_pvr_tv'
+        if not theset:
+            if thetype == 'movie':
+                # if video is a PVR recording assign to auto_pvr_tv
+                if self._check_playing_file( 'pvr://' ):
+                    theset = 'auto_pvr_tv'
+                # if video is not from library assign to auto_videos
+                elif 'id' not in data['item']:
+                    theset = 'auto_videos'
+                # it must actually be a movie
+                else:
+                    theset = 'auto_movies'
+            # distinguish pvr TV and pvr RADIO
+            elif 'channel' in thetype and 'channeltype' in data['item']:
+                if 'tv' in data['item']['channeltype']:
+                    theset = 'auto_pvr_tv'
+                elif 'radio' in data['item']['channeltype']:
+                    theset = 'auto_pvr_radio'
+                else:
+                    theset = 'auto_unknown'
+            # detect cdda that kodi return as unknown
+            elif thetype == 'unknown':
+                if self._check_playing_file( 'cdda://' ):
+                    theset = 'auto_music'
+                else:
+                    theset = 'auto_unknown'
             else:
-                theset = 'auto_videos'
-        # distinguish pvr TV and pvr RADIO
-        if 'channel' in thetype and 'channeltype' in data['item']:
-            if 'tv' in data['item']['channeltype']:
-                theset = 'auto_pvr_tv'
-            elif 'radio' in data['item']['channeltype']:
-                theset = 'auto_pvr_radio'
-            else:
-                theset = None
-        # detect cdda that kodi return as unknown
-        if 'unknown' in thetype and 'player' in data and 'playerid' in data['player']:
-            json_str = xbmc.executeJSONRPC(
-            '{"jsonrpc": "2.0", "id": "1", "method": "Player.GetItem", "params": {"playerid": %s, "properties": ["file"]}}' % str(data['player']['playerid'])
-            )
-            json_ret = json.loads(json_str)
-            try:
-                thefile = json_ret['result']['item']['file']
-            except (IndexError, KeyError, ValueError):
-                thefile = ''
-            if thefile.startswith( 'cdda://' ):
-                theset = 'auto_music'
-        self.LW.log( ['Setting parsed: %s' % str( theset )] )
-        if theset is not None:
-            self._change_profile( self.SETTINGS[theset] )
+                theset = 'auto_unknown'
+        self.LW.log( ['Setting parsed: %s' % theset] )
+        self._change_profile( self.SETTINGS[theset] )
 
 
     def _change_profile( self, profile, forceload=False ):
@@ -104,6 +108,16 @@ class apMonitor( xbmc.Monitor ):
         elif profile == str( len( self.PROFILESLIST ) + 1 ):
             self.LW.log( ['this auto switch setting is set to show the select menu - showing menu'] )
             self.PROFILES.changeProfile( 'popup' )
+
+
+    def _check_playing_file( self, thestr ):
+        try:
+            thefile = self.KODIPLAYER.getPlayingFile()
+        except RuntimeError:
+            self.LW.log( ['error trying to get playing file from Kodi'] )
+            return False
+        self.LW.log( ['the playing file is: %s' % thefile] )
+        return thefile.startswith( thestr )
 
 
     def _get_last_profile( self ):

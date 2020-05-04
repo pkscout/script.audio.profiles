@@ -17,6 +17,7 @@ from resources.lib.approfiles import Profiles
 class apManual:
 
     def __init__( self ):
+        """Runs the audio profiler switcher manually."""
         settings = loadSettings()
         lw = Logger( preamble='[Audio Profiles]', logdebug=settings['debug'] )
         lw.log( ['script version %s started' % settings['ADDONVERSION']], xbmc.LOGINFO )
@@ -37,6 +38,7 @@ class apManual:
 class apMonitor( xbmc.Monitor ):
 
     def __init__( self ):
+        """Starts the background process for automatic audio profile switching."""
         xbmc.Monitor.__init__( self )
         self._init_vars()
         self.LW.log( ['background monitor version %s started' % self.SETTINGS['ADDONVERSION']], xbmc.LOGINFO )

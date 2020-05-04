@@ -1,10 +1,6 @@
-# v.0.10.0
+# v.0.10.1
 
 import os, re, sys
-try:
-    _range = range
-except NameError:
-    _range = xrange
 try:
     from kodi_six import xbmcvfs
     isXBMC = True

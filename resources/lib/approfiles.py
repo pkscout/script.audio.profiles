@@ -9,6 +9,7 @@ from resources.lib.fileops import *
 class Profiles:
 
     def __init__( self, settings, lw, auto=False ):
+        """Handles audio profile switching."""
         self.LW = lw
         self.SETTINGS = settings
         self.AUTO = auto

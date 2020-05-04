@@ -34,8 +34,8 @@
         <setting label="32033" type="enum" id="auto_unknown" lvalues="32026|32007|32008|32009|32010|32045"/>
     </category>
     <category label="32018">
-        <setting id="menu_diffusion" type="slider" label="32046" default="90" range="70,10,100" option="int" />
-        <setting label="32047" type="bool" id="use_custom_skin_menu" default="true" />
+        <setting label="32046" type="bool" id="use_custom_skin_menu" default="true" />
+        <setting label="32047" type="bool" id="match_custom_to_skin" default="true" visible="eq(-1,true)" />
         <setting label="32016" type="bool" id="player_autoclose" default="false" />
         <setting id="player_autoclose_delay" type="slider" label="32039" default="10" range="1,1,30" visible="eq(-1,true)" option="int" />
         <setting label="32019" type="bool" id="notify" default="true" />

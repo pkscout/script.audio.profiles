@@ -227,12 +227,12 @@ msgstr ""
 
 #: Settings
 msgctxt "#32046"
-msgid "Select menu background diffusion"
+msgid "Use custom select menu"
 msgstr ""
 
 #: Settings
 msgctxt "#32047"
-msgid "Use select menu that matches skin"
+msgid "- Match select menu to skin when possible"
 msgstr ""
 
 #: Script

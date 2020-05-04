@@ -35,6 +35,7 @@ SETTINGSLIST = [ {'name': 'volume', 'default': False},
                  {'name': 'auto_unknown', 'default': '0'},
                  {'name': 'menu_diffusion', 'default': '90'},
                  {'name': 'use_custom_skin_menu', 'default': True},                 
+                 {'name': 'match_custom_to_skin', 'default': True},                 
                  {'name': 'notify', 'default': True},
                  {'name': 'notify_time', 'default': 5},
                  {'name': 'notify_auto', 'default': True},
@@ -70,7 +71,7 @@ def loadSettings():
 
 def _get_skin( settings ):
     skin = 'Default'
-    if not settings['use_custom_skin_menu']:
+    if not (settings['use_custom_skin_menu'] and settings['match_custom_to_skin']):
         return skin
     skin_glue = 2
     keep_trying = True

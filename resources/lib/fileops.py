@@ -121,7 +121,7 @@ def _atoi( text ):
 
 
 def naturalKeys( thelist ):
-    '''http://nedbatchelder.com/blog/200712/human_sorting.html.'''
+    # from http://nedbatchelder.com/blog/200712/human_sorting.html
     return [ _atoi( c ) for c in re.split( r'(\d+)', thelist ) ]
 
 

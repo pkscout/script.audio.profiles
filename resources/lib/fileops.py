@@ -1,4 +1,4 @@
-# v.0.10.1
+# v.0.10.2
 
 import os, re, sys
 try:
@@ -121,10 +121,7 @@ def _atoi( text ):
 
 
 def naturalKeys( thelist ):
-    '''
-    alist.sort( key=naturalKeys ) sorts in human order
-    http://nedbatchelder.com/blog/200712/human_sorting.html
-    '''
+    '''http://nedbatchelder.com/blog/200712/human_sorting.html.'''
     return [ _atoi( c ) for c in re.split( r'(\d+)', thelist ) ]
 
 

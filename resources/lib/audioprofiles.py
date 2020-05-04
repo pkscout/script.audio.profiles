@@ -78,7 +78,7 @@ class apMonitor( xbmc.Monitor ):
         self.LW = Logger( preamble='[Audio Profiles Service]', logdebug=self.SETTINGS['debug'] )
         self.PROFILES = Profiles( self.SETTINGS, self.LW, auto=True )
         self.KODIPLAYER = xbmc.Player()
-    
+
 
     def _auto_switch( self, data ):
         if self.SETTINGS['player_show']:

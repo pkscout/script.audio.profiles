@@ -34,8 +34,8 @@ SETTINGSLIST = [ {'name': 'volume', 'default': False},
                  {'name': 'auto_pvr_radio', 'default': '0'},
                  {'name': 'auto_unknown', 'default': '0'},
                  {'name': 'menu_diffusion', 'default': '90'},
-                 {'name': 'use_custom_skin_menu', 'default': True},                 
-                 {'name': 'match_custom_to_skin', 'default': True},                 
+                 {'name': 'use_custom_skin_menu', 'default': True},
+                 {'name': 'match_custom_to_skin', 'default': True},
                  {'name': 'notify', 'default': True},
                  {'name': 'notify_time', 'default': 5},
                  {'name': 'notify_auto', 'default': True},
@@ -75,7 +75,7 @@ def _get_skin( settings ):
         return skin
     skin_glue = 2
     keep_trying = True
-    skin_parts = SKINNAME.split('.')            
+    skin_parts = SKINNAME.split('.')
     while keep_trying:
         skin_test = '.'.join( skin_parts[:skin_glue] )
         success, loglines = checkPath( os.path.join( ADDONPATH, 'resources', 'skins', skin_test, '' ), createdir=False )

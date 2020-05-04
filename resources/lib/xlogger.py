@@ -1,4 +1,4 @@
-#v.0.4.5
+#v.0.4.6
 
 try:
     from kodi_six import xbmc
@@ -12,7 +12,7 @@ except ImportError:
 class Logger( object ):
     def __init__( self, logconfig="timed", logformat='%(asctime)-15s %(levelname)-8s %(message)s', logfile='logfile.log',
                   logname='_logger', numbackups=5, logdebug=False, maxsize=100000, when='midnight', preamble='' ):
-        """Logs messages either to Kodi log of a file log"""
+        """Logs messages either to Kodi log of a file log."""
         self.LOGPREAMBLE = preamble
         self.LOGDEBUG = logdebug
         if LOGTYPE == 'file':

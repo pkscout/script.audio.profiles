@@ -1,4 +1,3 @@
-import os
 from kodi_six import xbmc, xbmcgui
 
 KODIMONITOR  = xbmc.Monitor()
@@ -23,7 +22,7 @@ class Dialog:
         if not autoclose or force_dialog:
             d_return = xbmcgui.Dialog().select( labels[10071], buttons )
         else:
-            d_return = xbmcgui.Dialog().select( labels[10071], buttons, autoclose=delay ) 
+            d_return = xbmcgui.Dialog().select( labels[10071], buttons, autoclose=delay )
         loglines.append( 'the final returned value from the dialog box is: %s' % str(d_return) )
         if d_return == -1:
             d_return = None
@@ -55,7 +54,7 @@ class Dialog:
         d_return = display.DIALOGRETURN
         del display
         return d_return, loglines
-    
+
 
 
 class Show( xbmcgui.WindowXMLDialog ):

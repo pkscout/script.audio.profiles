@@ -13,22 +13,22 @@
             <width>520</width>
             <control type="image">
                 <height>120</height>
-                <texture>black-background-070.png</texture>
+                <texture>white-background-070.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),1)</visible>
             </control>
             <control type="image">
                 <height>170</height>
-                <texture>black-background-070.png</texture>
+                <texture>white-background-070.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),2)</visible>
             </control>
             <control type="image">
                 <height>220</height>
-                <texture>black-background-070.png</texture>
+                <texture>white-background-070.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),3)</visible>
             </control>
             <control type="image">
                 <height>270</height>
-                <texture>black-background-070.png</texture>
+                <texture>white-background-070.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),4)</visible>
             </control>
             <visible>String.IsEqual(Window(10000).Property(ap_diffusion),70)</visible>
@@ -40,22 +40,22 @@
             <width>520</width>
             <control type="image">
                 <height>120</height>
-                <texture>black-background-080.png</texture>
+                <texture>white-background-080.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),1)</visible>
             </control>
             <control type="image">
                 <height>170</height>
-                <texture>black-background-080.png</texture>
+                <texture>white-background-080.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),2)</visible>
             </control>
             <control type="image">
                 <height>220</height>
-                <texture>black-background-080.png</texture>
+                <texture>white-background-080.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),3)</visible>
             </control>
             <control type="image">
                 <height>270</height>
-                <texture>black-background-080.png</texture>
+                <texture>white-background-080.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),4)</visible>
             </control>
             <visible>String.IsEqual(Window(10000).Property(ap_diffusion),80)</visible>
@@ -67,22 +67,22 @@
             <width>520</width>
             <control type="image">
                 <height>120</height>
-                <texture>black-background-090.png</texture>
+                <texture>white-background-090.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),1)</visible>
             </control>
             <control type="image">
                 <height>170</height>
-                <texture>black-background-090.png</texture>
+                <texture>white-background-090.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),2)</visible>
             </control>
             <control type="image">
                 <height>220</height>
-                <texture>black-background-090.png</texture>
+                <texture>white-background-090.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),3)</visible>
             </control>
             <control type="image">
                 <height>270</height>
-                <texture>black-background-090.png</texture>
+                <texture>white-background-090.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),4)</visible>
             </control>
             <visible>String.IsEqual(Window(10000).Property(ap_diffusion),90)</visible>
@@ -94,22 +94,22 @@
             <width>520</width>
             <control type="image">
                 <height>120</height>
-                <texture>black-background-100.png</texture>
+                <texture>white-background-100.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),1)</visible>
             </control>
             <control type="image">
                 <height>170</height>
-                <texture>black-background-100.png</texture>
+                <texture>white-background-100.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),2)</visible>
             </control>
             <control type="image">
                 <height>220</height>
-                <texture>black-background-100.png</texture>
+                <texture>white-background-100.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),3)</visible>
             </control>
             <control type="image">
                 <height>270</height>
-                <texture>black-background-100.png</texture>
+                <texture>white-background-100.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),4)</visible>
             </control>
             <visible>String.IsEqual(Window(10000).Property(ap_diffusion),100)</visible>
@@ -123,7 +123,7 @@
             <label></label>
             <align>center</align>
             <font>font14</font>
-            <textcolor>FFFFFF</textcolor>
+            <textcolor>dialog_fg_100</textcolor>
         </control>
         <control type="list" id="10070">
             <description>button list</description>
@@ -138,7 +138,7 @@
                     <width>480</width>
                     <height>40</height>
                     <font>font13</font>
-                    <textcolor>FFA0A0A0</textcolor>
+                    <textcolor>dialog_fg_70</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <info>ListItem.Label</info>
@@ -150,13 +150,13 @@
                     <top>0</top>
                     <width>480</width>
                     <height>40</height>
-                    <texture colordiffuse="FF12A0C7" border="0,2,0,2">white-button.png</texture>
+                    <texture colordiffuse="Highlight2" border="0,2,0,2">white-button.png</texture>
                 </control>
                 <control type="label">
                     <width>480</width>
                     <height>40</height>
                     <font>font13</font>
-                    <textcolor>FF11E7B1</textcolor>
+                    <textcolor>dialog_fg_70</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <info>ListItem.Label</info>

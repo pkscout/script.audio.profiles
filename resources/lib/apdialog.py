@@ -1,5 +1,6 @@
-
+import os
 from kodi_six import xbmc, xbmcgui
+from resources.lib.fileops import checkPath
 
 KODIMONITOR  = xbmc.Monitor()
 KODIPLAYER   = xbmc.Player()
@@ -14,8 +15,10 @@ class Dialog:
         delay = settings['player_autoclose_delay']
         autoclose = settings['player_autoclose']
         loglines.append( 'set background menu diffusion to %s' % settings['menu_diffusion'] )
-        display = Show( 'menu.xml', settings['ADDONPATH'], diffusion=settings['menu_diffusion'],
-                        labels=labels, textboxes=textboxes, buttons=buttons, thelist=thelist )
+        loglines.append( 'using menu.xml from %s' % settings['SKINNAME'] )
+        display = Show( 'menu.xml', settings['ADDONPATH'], settings['SKINNAME'],
+                        diffusion=settings['menu_diffusion'], labels=labels, textboxes=textboxes,
+                        buttons=buttons, thelist=thelist )
         display.show()
         while (KODIPLAYER.isPlaying() or force_dialog) and not display.CLOSED and not KODIMONITOR.abortRequested():
             loglines.append( 'the current returned value from display is: %s' % str(display.DIALOGRETURN) )
@@ -38,7 +41,7 @@ class Dialog:
 
 class Show( xbmcgui.WindowXMLDialog ):
 
-    def __init__( self, xml_file, script_path, diffusion='90', labels=None, textboxes=None, buttons=None, thelist=None ):
+    def __init__( self, xml_file, script_path, defaultSkin, diffusion='90', labels=None, textboxes=None, buttons=None, thelist=None ):
         self.DIFFUSION = diffusion
         self.DIALOGRETURN = None
         self.CLOSED = False

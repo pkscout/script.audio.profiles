@@ -230,6 +230,11 @@ msgctxt "#32046"
 msgid "Select menu background diffusion"
 msgstr ""
 
+#: Settings
+msgctxt "#32047"
+msgid "Use select menu that matches skin"
+msgstr ""
+
 #: Script
 msgctxt "#32100"
 msgid "Select profile to save settings"

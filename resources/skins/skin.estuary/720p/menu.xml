@@ -123,7 +123,7 @@
             <label></label>
             <align>center</align>
             <font>font14</font>
-            <textcolor>FFFFFF</textcolor>
+            <textcolor>white</textcolor>
         </control>
         <control type="list" id="10070">
             <description>button list</description>
@@ -138,7 +138,7 @@
                     <width>480</width>
                     <height>40</height>
                     <font>font13</font>
-                    <textcolor>FFA0A0A0</textcolor>
+                    <textcolor>grey</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <info>ListItem.Label</info>
@@ -150,13 +150,13 @@
                     <top>0</top>
                     <width>480</width>
                     <height>40</height>
-                    <texture colordiffuse="FF12A0C7" border="0,2,0,2">white-button.png</texture>
+                    <texture colordiffuse="button_focus" border="0,2,0,2">white-button.png</texture>
                 </control>
                 <control type="label">
                     <width>480</width>
                     <height>40</height>
                     <font>font13</font>
-                    <textcolor>FF11E7B1</textcolor>
+                    <textcolor>selected</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <info>ListItem.Label</info>

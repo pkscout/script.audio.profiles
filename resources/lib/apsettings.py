@@ -1,4 +1,6 @@
 
+import os
+from resources.lib.fileops import checkPath
 from resources.lib.kodisettings import *
 
 SETTINGSLIST = [ {'name': 'volume', 'default': False},
@@ -32,6 +34,7 @@ SETTINGSLIST = [ {'name': 'volume', 'default': False},
                  {'name': 'auto_pvr_radio', 'default': '0'},
                  {'name': 'auto_unknown', 'default': '0'},
                  {'name': 'menu_diffusion', 'default': '90'},
+                 {'name': 'use_custom_skin_menu', 'default': True},                 
                  {'name': 'notify', 'default': True},
                  {'name': 'notify_time', 'default': 5},
                  {'name': 'notify_auto', 'default': True},
@@ -61,4 +64,24 @@ def loadSettings():
         else:
             getset = getSettingString
         settings[item['name']] = getset( item['name'], item['default'] )
+    settings['SKINNAME'] = _get_skin( settings )
     return settings
+
+
+def _get_skin( settings ):
+    skin = 'Default'
+    if not settings['use_custom_skin_menu']:
+        return skin
+    skin_glue = 2
+    keep_trying = True
+    skin_parts = SKINNAME.split('.')            
+    while keep_trying:
+        skin_test = '.'.join( skin_parts[:skin_glue] )
+        success, loglines = checkPath( os.path.join( ADDONPATH, 'resources', 'skins', skin_test, '' ), createdir=False )
+        if success:
+            skin = skin_test
+            keep_trying = False
+        skin_glue += 1
+        if skin_glue > len( skin_parts ):
+            keep_trying = False
+    return skin

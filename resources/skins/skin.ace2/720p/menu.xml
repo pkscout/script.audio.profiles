@@ -10,25 +10,25 @@
             <description>background</description>
             <posx>0</posx>
             <posy>0</posy>
-            <width>520</width>
+            <width>480</width>
             <control type="image">
-                <height>120</height>
-                <texture>black-background-070.png</texture>
+                <height>65</height>
+                <texture>grey-background-070.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),1)</visible>
             </control>
             <control type="image">
-                <height>170</height>
-                <texture>black-background-070.png</texture>
+                <height>95</height>
+                <texture>grey-background-070.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),2)</visible>
             </control>
             <control type="image">
-                <height>220</height>
-                <texture>black-background-070.png</texture>
+                <height>125</height>
+                <texture>grey-background-070.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),3)</visible>
             </control>
             <control type="image">
-                <height>270</height>
-                <texture>black-background-070.png</texture>
+                <height>155</height>
+                <texture>grey-background-070.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),4)</visible>
             </control>
             <visible>String.IsEqual(Window(10000).Property(ap_diffusion),70)</visible>
@@ -37,25 +37,25 @@
             <description>background</description>
             <posx>0</posx>
             <posy>0</posy>
-            <width>520</width>
+            <width>480</width>
             <control type="image">
-                <height>120</height>
-                <texture>black-background-080.png</texture>
+                <height>65</height>
+                <texture>grey-background-080.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),1)</visible>
             </control>
             <control type="image">
-                <height>170</height>
-                <texture>black-background-080.png</texture>
+                <height>95</height>
+                <texture>grey-background-080.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),2)</visible>
             </control>
             <control type="image">
-                <height>220</height>
-                <texture>black-background-080.png</texture>
+                <height>125</height>
+                <texture>grey-background-080.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),3)</visible>
             </control>
             <control type="image">
-                <height>270</height>
-                <texture>black-background-080.png</texture>
+                <height>155</height>
+                <texture>grey-background-080.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),4)</visible>
             </control>
             <visible>String.IsEqual(Window(10000).Property(ap_diffusion),80)</visible>
@@ -64,25 +64,25 @@
             <description>background</description>
             <posx>0</posx>
             <posy>0</posy>
-            <width>520</width>
+            <width>480</width>
             <control type="image">
-                <height>120</height>
-                <texture>black-background-090.png</texture>
+                <height>65</height>
+                <texture>grey-background-090.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),1)</visible>
             </control>
             <control type="image">
-                <height>170</height>
-                <texture>black-background-090.png</texture>
+                <height>95</height>
+                <texture>grey-background-090.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),2)</visible>
             </control>
             <control type="image">
-                <height>220</height>
-                <texture>black-background-090.png</texture>
+                <height>125</height>
+                <texture>grey-background-090.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),3)</visible>
             </control>
             <control type="image">
-                <height>270</height>
-                <texture>black-background-090.png</texture>
+                <height>155</height>
+                <texture>grey-background-090.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),4)</visible>
             </control>
             <visible>String.IsEqual(Window(10000).Property(ap_diffusion),90)</visible>
@@ -91,72 +91,72 @@
             <description>background</description>
             <posx>0</posx>
             <posy>0</posy>
-            <width>520</width>
+            <width>480</width>
             <control type="image">
-                <height>120</height>
-                <texture>black-background-100.png</texture>
+                <height>65</height>
+                <texture>grey-background-100.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),1)</visible>
             </control>
             <control type="image">
-                <height>170</height>
-                <texture>black-background-100.png</texture>
+                <height>95</height>
+                <texture>grey-background-100.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),2)</visible>
             </control>
             <control type="image">
-                <height>220</height>
-                <texture>black-background-100.png</texture>
+                <height>125</height>
+                <texture>grey-background-100.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),3)</visible>
             </control>
             <control type="image">
-                <height>270</height>
-                <texture>black-background-100.png</texture>
+                <height>155</height>
+                <texture>grey-background-100.png</texture>
                 <visible>String.IsEqual(Window(10000).Property(ap_buttons),4)</visible>
             </control>
             <visible>String.IsEqual(Window(10000).Property(ap_diffusion),100)</visible>
         </control>
         <control type="label" id="10071">
             <description>title</description>
-            <posx>20</posx>
-            <posy>20</posy>
+            <posx>0</posx>
+            <posy>10</posy>
             <width>480</width>
-            <height>40</height>
+            <height>20</height>
             <label></label>
             <align>center</align>
             <font>font14</font>
-            <textcolor>FFFFFF</textcolor>
+            <textcolor>white</textcolor>
         </control>
         <control type="list" id="10070">
             <description>button list</description>
-            <posx>20</posx>
-            <posy>60</posy>
+            <posx>0</posx>
+            <posy>35</posy>
             <width>480</width>
             <height>200</height>
             <onup>10070</onup>
             <ondown>10070</ondown>
-            <itemlayout width="480" height="50">
+            <itemlayout width="480" height="30">
                 <control type="label">
                     <width>480</width>
-                    <height>40</height>
+                    <height>30</height>
                     <font>font13</font>
-                    <textcolor>FFA0A0A0</textcolor>
+                    <textcolor>light</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <info>ListItem.Label</info>
                 </control>
             </itemlayout>
-            <focusedlayout width="480" height="50">
+            <focusedlayout width="480" height="30">
                 <control type="image">
                     <left>0</left>
                     <top>0</top>
                     <width>480</width>
-                    <height>40</height>
-                    <texture colordiffuse="FF12A0C7" border="0,2,0,2">white-button.png</texture>
+                    <height>30</height>
+                    <texture border="0,2,0,2">white-button.png</texture>
                 </control>
                 <control type="label">
                     <width>480</width>
-                    <height>40</height>
+                    <height>30</height>
                     <font>font13</font>
-                    <textcolor>FF11E7B1</textcolor>
+                    <textcolor>dark</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <info>ListItem.Label</info>

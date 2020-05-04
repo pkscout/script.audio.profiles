@@ -1,6 +1,5 @@
 import os
 from kodi_six import xbmc, xbmcgui
-from resources.lib.fileops import checkPath
 
 KODIMONITOR  = xbmc.Monitor()
 KODIPLAYER   = xbmc.Player()
@@ -62,6 +61,7 @@ class Dialog:
 class Show( xbmcgui.WindowXMLDialog ):
 
     def __init__( self, xml_file, script_path, defaultSkin, labels=None, textboxes=None, buttons=None, thelist=None ):
+        """Shows a Kodi WindowXMLDialog."""
         self.DIALOGRETURN = None
         self.CLOSED = False
         self.ACTION_PREVIOUS_MENU = 10

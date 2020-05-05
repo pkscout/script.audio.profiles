@@ -89,7 +89,6 @@ class Show( xbmcgui.WindowXMLDialog ):
         for button_text in self.BUTTONS:
             self.listitem.addItem( xbmcgui.ListItem( button_text ) )
         self.setFocus( self.listitem )
-        xbmcgui.Window( 10000 ).setProperty( 'ap_buttons', str( len( self.BUTTONS ) ) )
 
 
     def onAction( self, action ):

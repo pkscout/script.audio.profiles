@@ -83,7 +83,7 @@
 			</control>
 			<control type="panel" id="10070">
 				<left>0</left>
-				<top>50</top>
+				<top>46</top>
 				<width>520</width>
 				<height>300</height>
 				<onleft>10070</onleft>

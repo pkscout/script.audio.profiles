@@ -1,88 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="11112">
-    <coordinates>
-        <system>1</system>
-        <posx>380</posx>
-        <posy>260</posy>
-    </coordinates>
-    <controls>
-        <control type="group">
-            <description>background</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>520</width>
-            <control type="image">
-                <height>120</height>
-                <texture>black-background-090.png</texture>
-                <visible>String.IsEqual(Window(10000).Property(ap_buttons),1)</visible>
-            </control>
-            <control type="image">
-                <height>170</height>
-                <texture>black-background-090.png</texture>
-                <visible>String.IsEqual(Window(10000).Property(ap_buttons),2)</visible>
-            </control>
-            <control type="image">
-                <height>220</height>
-                <texture>black-background-090.png</texture>
-                <visible>String.IsEqual(Window(10000).Property(ap_buttons),3)</visible>
-            </control>
-            <control type="image">
-                <height>270</height>
-                <texture>black-background-090.png</texture>
-                <visible>String.IsEqual(Window(10000).Property(ap_buttons),4)</visible>
-            </control>
-        </control>
-        <control type="label" id="10071">
-            <description>title</description>
-            <posx>20</posx>
-            <posy>20</posy>
-            <width>480</width>
-            <height>40</height>
-            <label></label>
-            <align>center</align>
-            <font>font14</font>
-            <textcolor>white</textcolor>
-        </control>
-        <control type="list" id="10070">
-            <description>button list</description>
-            <posx>20</posx>
-            <posy>60</posy>
-            <width>480</width>
-            <height>200</height>
-            <onup>10070</onup>
-            <ondown>10070</ondown>
-            <itemlayout width="480" height="50">
-                <control type="label">
-                    <width>480</width>
-                    <height>40</height>
-                    <font>font13</font>
-                    <textcolor>FFA0A0A0</textcolor>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <info>ListItem.Label</info>
-                </control>
-            </itemlayout>
-            <focusedlayout width="480" height="50">
-                <control type="image">
-                    <left>0</left>
-                    <top>0</top>
-                    <width>480</width>
-                    <height>40</height>
-                    <texture colordiffuse="FF12A0C7" border="0,2,0,2">white-button.png</texture>
-                </control>
-                <control type="label">
-                    <width>480</width>
-                    <height>40</height>
-                    <font>font13</font>
-                    <textcolor>FF11E7B1</textcolor>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <info>ListItem.Label</info>
-                </control>
-            </focusedlayout>
-            <animation effect="fade" end="100" delay="5000">Focus</animation>
-        </control>
-    </controls>
-    <animation effect="fade" time="200">WindowOpen</animation>
-    <animation effect="fade" time="200">WindowClose</animation>
+	<defaultcontrol>10070</defaultcontrol>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="zoom" start="80" end="100" center="50%,50%" delay="160" tween="back" time="240" />
+		<effect type="fade" delay="160" end="100" time="240" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="zoom" start="100" end="80" center="50%,50%" easing="in" tween="back" time="240" />
+		<effect type="fade" start="100" end="0" time="240" />
+	</animation>
+	<depth>0.50</depth>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>520</width>
+			<centertop>50%</centertop>
+			<height>300</height>
+			<control type="group">
+				<width>520</width>
+				<height>40</height>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<right>0</right>
+					<bottom>0</bottom>
+					<texture>color-black-90.png</texture>
+				</control>
+				<control type="label" id="10071">
+                    <width>520</width>
+					<height>40</height>
+					<font>font14</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>white</textcolor>
+					<label></label>
+				</control>
+			</control>
+			<control type="panel" id="10070">
+				<left>0</left>
+				<top>40</top>
+				<width>520</width>
+				<height>300</height>
+				<onleft>10070</onleft>
+				<onright>10070</onright>
+				<onup>10070</onup>
+				<ondown>10070</ondown>
+				<orientation>vertical</orientation>
+				<itemlayout height="40" width="520">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>520</width>
+						<height>40</height>
+						<texture>color-black-90.png</texture>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<textoffsetx>20</textoffsetx>
+						<top>0</top>
+						<width>520</width>
+						<height>40</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<textcolor>FFA0A0A0</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="40" width="520">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>520</width>
+						<height>40</height>
+						<texture>color-black-90.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>520</width>
+						<height>40</height>
+						<texture colordiffuse="FF12A0C7">color-white.png</texture>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<textoffsetx>20</textoffsetx>
+						<top>0</top>
+						<width>520</width>
+						<height>40</height>
+	                    <font>font13</font>
+    	                <textcolor>FF11E7B1</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
 </window>

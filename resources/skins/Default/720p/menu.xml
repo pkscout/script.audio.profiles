@@ -18,13 +18,13 @@
 			<height>300</height>
 			<control type="group">
 				<width>520</width>
-				<height>40</height>
+				<height>50</height>
 				<control type="image">
 					<left>0</left>
 					<top>0</top>
 					<right>0</right>
 					<bottom>0</bottom>
-					<texture>color-black-90.png</texture>
+					<texture>color-black.png</texture>
 				</control>
 				<control type="label" id="10071">
                     <width>520</width>
@@ -32,7 +32,7 @@
 					<font>font14</font>
 					<aligny>center</aligny>
 					<align>center</align>
-					<textcolor>white</textcolor>
+					<textcolor>FFFFFFFF</textcolor>
 					<label></label>
 				</control>
 			</control>
@@ -51,8 +51,8 @@
 						<left>0</left>
 						<top>0</top>
 						<width>520</width>
-						<height>40</height>
-						<texture>color-black-90.png</texture>
+						<height>50</height>
+						<texture>color-black.png</texture>
 					</control>
 					<control type="label">
 						<left>0</left>
@@ -72,24 +72,24 @@
 						<left>0</left>
 						<top>0</top>
 						<width>520</width>
-						<height>40</height>
-						<texture>color-black-90.png</texture>
+						<height>50</height>
+						<texture>color-black.png</texture>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<left>10</left>
 						<top>0</top>
-						<width>520</width>
+						<width>500</width>
 						<height>40</height>
 						<texture colordiffuse="FF12A0C7">color-white.png</texture>
 					</control>
 					<control type="label">
-						<left>0</left>
+						<left>20</left>
 						<textoffsetx>20</textoffsetx>
 						<top>0</top>
-						<width>520</width>
+						<width>480</width>
 						<height>40</height>
 	                    <font>font13</font>
-    	                <textcolor>FF11E7B1</textcolor>
+    	                <textcolor>FFFFFFFF</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>

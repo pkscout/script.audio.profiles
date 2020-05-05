@@ -1,3 +1,6 @@
+v.2.0.0~alpha3
+- changed default skin to make it easier to manage
+
 v.2.0.0~alpha2
 - added option to use built in select dialog instead of custom menu
 - added ability to support skin specific custom select menu

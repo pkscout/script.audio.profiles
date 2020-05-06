@@ -1,3 +1,8 @@
+v.2.0.0~alpha4
+- allow delay before checking stream to be set to 0 (for people not using codec matching)
+- changed codec detection so that if no stream details are found then the codec options are ignored
+- change in method for centering select menu
+
 v.2.0.0~alpha3
 - custom skin menu is now centered on screen no matter how many profiles are active
 - added support for up to 10 audio profiles

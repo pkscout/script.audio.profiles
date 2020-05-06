@@ -107,7 +107,7 @@ class apMonitor( xbmc.Monitor ):
 
 
     def _auto_switch_stream( self ):
-        self.waitForAbort( 1 )
+        self.waitForAbort( self.SETTINGS['codec_delay'] )
         response = xbmc.executeJSONRPC(
             '{"jsonrpc":"2.0", "method":"Player.GetProperties", "params":{"playerid":1, "properties":["currentaudiostream"]}, "id":1}')
         r_dict = json.loads( response )

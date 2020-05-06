@@ -361,6 +361,12 @@ msgctxt "#32072"
 msgid "Multi channel audio"
 msgstr ""
 
+#: Settings
+msgctxt "#32073"
+msgid "delay before reading codec info"
+msgstr ""
+
+
 #: Script
 msgctxt "#32100"
 msgid "Select profile to save settings"

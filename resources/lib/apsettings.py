@@ -44,6 +44,7 @@ SETTINGSLIST = [
                  {'name': 'auto_musicvideo', 'default': '0'},
                  {'name': 'auto_pvr_radio', 'default': '0'},
                  {'name': 'auto_unknown', 'default': '0'},
+                 {'name': 'codec_delay', 'default': 2},
                  {'name': 'auto_ac3', 'default': '0'},
                  {'name': 'auto_eac3', 'default': '0'},
                  {'name': 'auto_dts', 'default': '0'},

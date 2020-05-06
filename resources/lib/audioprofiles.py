@@ -16,16 +16,7 @@ def _upgrade():
     settings = loadSettings()
     checkPath( settings['ADDONDATAPATH'] )
     upgrade_txt = os.path.join( settings['ADDONDATAPATH'], 'upgrade.txt' )
-    success, loglines = checkPath( upgrade_txt, createdir=False )
-    if success:
-        return
-    checks = ['auto_default', 'auto_gui', 'auto_movies', 'auto_videos', 'auto_tvshows', 'auto_pvr_tv',
-              'auto_music', 'auto_musicvideo', 'auto_pvr_radio', 'auto_unknown']
-    for item in checks:
-        if settings[item] == '5':
-            settings['ADDON'].setSetting(item, '11')
-    writeFile( '2.0.0', upgrade_txt, 'w' )
-
+    deleteFile( upgrade_txt )
 
 
 class apManual:

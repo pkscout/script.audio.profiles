@@ -182,7 +182,7 @@
 		<category help="" id="hdmi-cec" label="32027">
 			<group id="1">
 				<setting help="" id="profile1_cec" label="32007" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -197,7 +197,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile2_cec" label="32008" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -212,7 +212,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile3_cec" label="32009" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -227,7 +227,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile4_cec" label="32010" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -242,7 +242,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile5_cec" label="32051" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -257,7 +257,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile6_cec" label="32053" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -272,7 +272,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile7_cec" label="32055" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -287,7 +287,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile8_cec" label="32057" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -302,7 +302,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile9_cec" label="32059" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -317,7 +317,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile10_cec" label="32061" type="integer">
-					<level>2</level>
+					<level>1</level>
 					<default>0</default>
 					<constraints>
 						<options>

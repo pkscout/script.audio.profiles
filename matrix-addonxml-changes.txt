@@ -1,2 +1,9 @@
+addon.xml:::
+	change required imports to:
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.kodi-six" version="0.1.3.1" />
+	update version number and news
+
+resources/skins/skin.estuary/720p/ap-menu.xml:::
+	change: icons/logo.png
+	to: special://xbmc/media/vendor_icon.png

@@ -16,11 +16,23 @@ class Profiles:
         self.SNAME = { 1: self.SETTINGS['name1'],
                        2: self.SETTINGS['name2'],
                        3: self.SETTINGS['name3'],
-                       4: self.SETTINGS['name4'] }
+                       4: self.SETTINGS['name4'],
+                       5: self.SETTINGS['name5'],
+                       6: self.SETTINGS['name6'],
+                       7: self.SETTINGS['name7'],
+                       8: self.SETTINGS['name8'],
+                       9: self.SETTINGS['name9'],
+                      10: self.SETTINGS['name10'] }
         self.SPROFILE = { 1: self.SETTINGS['profile1'],
                           2: self.SETTINGS['profile2'],
                           3: self.SETTINGS['profile3'],
-                          4: self.SETTINGS['profile4'] }
+                          4: self.SETTINGS['profile4'],
+                          5: self.SETTINGS['profile5'],
+                          6: self.SETTINGS['profile6'],
+                          7: self.SETTINGS['profile7'],
+                          8: self.SETTINGS['profile8'],
+                          9: self.SETTINGS['profile9'],
+                         10: self.SETTINGS['profile10'] }
         self.APROFILE = []
         self.CECCOMMANDS = ['', 'CECActivateSource', 'CECStandby', 'CECToggleState']
         self.ENABLEDPROFILES = self._get_enabled_profiles()
@@ -47,7 +59,7 @@ class Profiles:
             if dialog_return is not None:
                 self._profile( str( self.ENABLEDPROFILES[0][dialog_return] ) )
             return dialog_return
-        if mode == '0' or mode == '1' or mode == '2' or mode == '3' or mode == '4':
+        if int( mode ) <= 10:
             if self._check( mode ) is False:
                 return
             if mode == '0':

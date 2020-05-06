@@ -12,8 +12,8 @@ msgstr "Perfiles"
 
 #: Settings
 msgctxt "#32001"
-msgid "- Name of profile 1"
-msgstr "- Nombre del Perfil 1"
+msgid " Name of profile 1"
+msgstr " Nombre del Perfil 1"
 
 #: Settings
 msgctxt "#32002"
@@ -22,8 +22,8 @@ msgstr "Configuración"
 
 #: Settings
 msgctxt "#32003"
-msgid "- Name of profile 2"
-msgstr "- Nombre del Perfil 2"
+msgid " Name of profile 2"
+msgstr " Nombre del Perfil 2"
 
 #: Settings
 msgctxt "#32004"
@@ -32,13 +32,13 @@ msgstr "Incluir Nivel de Volumen"
 
 #: Settings
 msgctxt "#32005"
-msgid "- Name of profile 3"
-msgstr "- Nombre del Perfil 3"
+msgid " Name of profile 3"
+msgstr " Nombre del Perfil 3"
 
 #: Settings
 msgctxt "#32006"
-msgid "- Name of profile 4"
-msgstr "- Nombre del Perfil 4"
+msgid " Name of profile 4"
+msgstr " Nombre del Perfil 4"
 
 #: Settings
 msgctxt "#32007"
@@ -132,8 +132,8 @@ msgstr "Ninguno"
 
 #: Settings
 msgctxt "#32027"
-msgid "- Send HDMI-CEC command"
-msgstr "- Enviar comando HDMI-CEC"
+msgid " Send HDMI-CEC command"
+msgstr " Enviar comando HDMI-CEC"
 
 #: Settings
 msgctxt "#32028"
@@ -192,8 +192,8 @@ msgstr "Perfil para inicio/wakeup (Por Defecto)"
 
 #: Settings
 msgctxt "#32039"
-msgid "- Delay before close"
-msgstr "- Retraso antes de cerrar"
+msgid " Delay before close"
+msgstr " Retraso antes de cerrar"
 
 #: Settings
 msgctxt "#32040"
@@ -202,23 +202,23 @@ msgstr "Habilitar debug logging"
 
 #: Settings
 msgctxt "#32041"
-msgid "- Force load profile at startup"
-msgstr "- Forzar la carga de perfil al comienzo"
+msgid " Force load profile at startup"
+msgstr " Forzar la carga de perfil al comienzo"
 
 #: Settings
 msgctxt "#32042"
-msgid "- Auto switch notifications"
-msgstr "- Notificaciones de cambio autom‡tico"
+msgid " Auto switch notifications"
+msgstr " Notificaciones de cambio autom‡tico"
 
 #: Settings
 msgctxt "#32043"
-msgid "- Manual switch notifications"
-msgstr "- Notificaciones de cambio manual"
+msgid " Manual switch notifications"
+msgstr " Notificaciones de cambio manual"
 
 #: Settings
 msgctxt "#32044"
-msgid "- Maintenance notifications"
-msgstr "- Notificaciones de mantenimiento"
+msgid " Maintenance notifications"
+msgstr " Notificaciones de mantenimiento"
 
 #: Settings
 msgctxt "#32045"

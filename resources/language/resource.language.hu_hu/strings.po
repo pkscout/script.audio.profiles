@@ -12,8 +12,8 @@ msgstr "Profilok"
 
 #: Settings
 msgctxt "#32001"
-msgid "- Name of profile 1"
-msgstr "- 1. Profil neve"
+msgid " Name of profile 1"
+msgstr " 1. Profil neve"
 
 #: Settings
 msgctxt "#32002"
@@ -22,8 +22,8 @@ msgstr "Beállítások"
 
 #: Settings
 msgctxt "#32003"
-msgid "- Name of profile 2"
-msgstr "- 2. Profil neve"
+msgid " Name of profile 2"
+msgstr " 2. Profil neve"
 
 #: Settings
 msgctxt "#32004"
@@ -32,13 +32,13 @@ msgstr "Hangerő beállítások mentése"
 
 #: Settings
 msgctxt "#32005"
-msgid "- Name of profile 3"
-msgstr "- 3. Profil neve"
+msgid " Name of profile 3"
+msgstr " 3. Profil neve"
 
 #: Settings
 msgctxt "#32006"
-msgid "- Name of profile 4"
-msgstr "- 4. Profil neve"
+msgid " Name of profile 4"
+msgstr " 4. Profil neve"
 
 #: Settings
 msgctxt "#32007"
@@ -132,8 +132,8 @@ msgstr "Nincs"
 
 #: Settings
 msgctxt "#32027"
-msgid "- Send HDMI-CEC command"
-msgstr "- HDMI-CEC parancs küldése"
+msgid " Send HDMI-CEC command"
+msgstr " HDMI-CEC parancs küldése"
 
 #: Settings
 msgctxt "#32028"
@@ -192,8 +192,8 @@ msgstr "Profil a KODI Indításakor (Alapértelmezett)"
 
 #: Settings
 msgctxt "#32039"
-msgid "- Delay before close"
-msgstr "- Késleltetés a bezárás előtt"
+msgid " Delay before close"
+msgstr " Késleltetés a bezárás előtt"
 
 #: Settings
 msgctxt "#32040"
@@ -202,23 +202,23 @@ msgstr "A hibakeresési naplózás engedélyezése"
 
 #: Settings
 msgctxt "#32041"
-msgid "- Force load profile at startup"
-msgstr "- A terhelési profil kényszerítése indításkor"
+msgid " Force load profile at startup"
+msgstr " A terhelési profil kényszerítése indításkor"
 
 #: Settings
 msgctxt "#32042"
-msgid "- Auto switch notifications"
-msgstr "- Automatikus váltás értesítések"
+msgid " Auto switch notifications"
+msgstr " Automatikus váltás értesítések"
 
 #: Settings
 msgctxt "#32043"
-msgid "- Manual switch notifications"
-msgstr "- Kézi kapcsolási értesítések"
+msgid " Manual switch notifications"
+msgstr " Kézi kapcsolási értesítések"
 
 #: Settings
 msgctxt "#32044"
-msgid "- Maintenance notifications"
-msgstr "- Karbantartási értesítések"
+msgid " Maintenance notifications"
+msgstr " Karbantartási értesítések"
 
 #: Settings
 msgctxt "#32045"

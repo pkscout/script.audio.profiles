@@ -71,7 +71,7 @@ class apMonitor( xbmc.Monitor ):
 
     def _init_vars( self ):
         self.SETTINGS = loadSettings()
-        self.PROFILESLIST = ['1', '2', '3', '4']
+        self.PROFILESLIST = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
         # this only includes mappings we are 100% sure are accurate every time
         self.MAPTYPE = {'video': 'auto_videos', 'episode': 'auto_tvshows',
                         'musicvideo': 'auto_musicvideo', 'song': 'auto_music'}
@@ -87,6 +87,68 @@ class apMonitor( xbmc.Monitor ):
                 self.LW.log( ['option selected, returning'] )
                 return
             self.LW.log( ['select menu timed out or was closed with no selection - continuing to auto select'] )
+        content_autoswitch = self._auto_switch_content( data )
+        self.LW.log( ['got a content autoswitch of %s' % content_autoswitch] )
+        if content_autoswitch not in ['auto_music', 'auto_pvr_radio']:
+            codec_setting, channels_setting = self._auto_switch_stream()
+            if codec_setting != '0':
+                the_setting = codec_setting
+                self.LW.log( ['using the codec setting of %s' % the_setting] )
+            elif channels_setting != '0':
+                the_setting = channels_setting
+                self.LW.log( ['using the channels setting of %s' % the_setting] )
+            else:
+                the_setting = self.SETTINGS[content_autoswitch]
+                self.LW.log( ['using the content setting of %s' % the_setting] )
+        else:
+            the_setting = self.SETTINGS[content_autoswitch]
+            self.LW.log( ['using the content setting of %s' % the_setting] )
+        self._change_profile( the_setting )
+
+
+    def _auto_switch_stream( self ):
+        self.waitForAbort( 1 )
+        response = xbmc.executeJSONRPC(
+            '{"jsonrpc":"2.0", "method":"Player.GetProperties", "params":{"playerid":1, "properties":["currentaudiostream"]}, "id":1}')
+        r_dict = json.loads( response )
+        self.LW.log( ['got back audio stream data of:', r_dict] )
+        try:
+            codec = r_dict['result']['currentaudiostream']['codec']
+        except (IndexError, KeyError, ValueError):
+            codec = None
+        try:
+            channels = r_dict['result']['currentaudiostream']['codec']
+        except (IndexError, KeyError, ValueError):
+            channels = None
+        self.LW.log( ['got %s for the codec and %s for the channels' % (str( codec ), str( channels ))] )
+        if codec:
+            if codec in ['ac3', 'eac3', 'dts', 'dtshd', 'truehd']:
+                codec_set = 'auto_%s' % codec
+            else:
+                codec_set = 'auto_othercodec'
+        else:
+            codec_set = 'auto_othercodec'
+        try:
+            codec_setting = self.SETTINGS[codec_set]
+        except KeyError:
+            codec_setting = '0'
+        if channels:
+            if channels > 2:
+                channels_set = 'auto_multichannel'
+            else:
+                channels_set = 'auto_stereo'
+        else:
+            channels_set = 'none'
+        try:
+            channels_setting = self.SETTINGS[channels_set]
+        except KeyError:
+            channels_setting = '0'
+        self.LW.log( ['got codec set of %s and channels set of %s' % (codec_set, channels_set)] )
+        self.LW.log( ['sending back codec setting of %s and channel setting of %s' % (codec_setting, channels_setting)] )
+        return codec_setting, channels_setting
+
+
+    def _auto_switch_content( self, data ):
         try:
             thetype = data['item']['type']
         except IndexError:
@@ -121,8 +183,8 @@ class apMonitor( xbmc.Monitor ):
                     theset = 'auto_unknown'
             else:
                 theset = 'auto_unknown'
-        self.LW.log( ['Setting parsed: %s' % theset] )
-        self._change_profile( self.SETTINGS[theset] )
+            self.LW.log( ['got %s from the content auto switch' %s] )
+        return theset
 
 
     def _change_profile( self, profile, forceload=False ):

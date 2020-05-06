@@ -7,12 +7,10 @@ KODIPLAYER   = xbmc.Player()
 
 class Dialog:
 
-    def start( self, settings, labels=None, textboxes=None, buttons=None, thelist=0, force_dialog=False ):
+    def start( self, settings, title='', buttons=None, force_dialog=False ):
         self.SETTINGS = settings
-        self.LABELS = labels
-        self.TEXTBOXES = textboxes
+        self.TITLE = title
         self.BUTTONS = buttons
-        self.THELIST = thelist
         self.FORCEDIALOG = force_dialog
         if self.SETTINGS['use_custom_skin_menu']:
             return self._custom()
@@ -26,9 +24,9 @@ class Dialog:
         autoclose = self.SETTINGS['player_autoclose']
         loglines.append( 'using built-in dialog box' )
         if not autoclose or self.FORCEDIALOG:
-            d_return = xbmcgui.Dialog().select( self.LABELS[10071], self.BUTTONS )
+            d_return = xbmcgui.Dialog().select( self.TITLE, self.BUTTONS )
         else:
-            d_return = xbmcgui.Dialog().select( self.LABELS[10071], self.BUTTONS, autoclose=delay )
+            d_return = xbmcgui.Dialog().select( self.TITLE, self.BUTTONS, autoclose=delay )
         loglines.append( 'the final returned value from the dialog box is: %s' % str( d_return ) )
         if d_return == -1:
             d_return = None
@@ -40,10 +38,10 @@ class Dialog:
         count = 0
         delay = self.SETTINGS['player_autoclose_delay']
         autoclose = self.SETTINGS['player_autoclose']
-        xmlfilename = 'ap-menu-%s.xml' % str( len( self.BUTTONS ) )
+        xmlfilename = 'ap-menu.xml'
         loglines.append( 'using %s from %s' % (xmlfilename, self.SETTINGS['SKINNAME']) )
-        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'], labels=self.LABELS,
-                        textboxes=self.TEXTBOXES, buttons=self.BUTTONS, thelist=self.THELIST )
+        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'],
+                        title=self.TITLE, buttons=self.BUTTONS )
         display.show()
         while (KODIPLAYER.isPlaying() or self.FORCEDIALOG) and not display.CLOSED and not KODIMONITOR.abortRequested():
             loglines.append( 'the current returned value from display is: %s' % str( display.DIALOGRETURN ) )
@@ -66,36 +64,28 @@ class Dialog:
 
 class Show( xbmcgui.WindowXMLDialog ):
 
-    def __init__( self, xml_file, script_path, defaultSkin, labels=None, textboxes=None, buttons=None, thelist=None ):
+    def __init__( self, xml_file, script_path, defaultSkin, title='', buttons=None ):
         """Shows a Kodi WindowXMLDialog."""
         self.DIALOGRETURN = None
         self.CLOSED = False
         self.ACTION_PREVIOUS_MENU = 10
         self.ACTION_NAV_BACK = 92
-        if labels:
-            self.LABELS = labels
-        else:
-            self.LABELS = {}
-        if textboxes:
-            self.TEXTBOXES = textboxes
-        else:
-            self.TEXTBOXES = {}
+        self.SKINNAME = defaultSkin
+        self.TITLE = title
         if buttons:
             self.BUTTONS = buttons
         else:
             self.BUTTONS = []
-        self.THELIST = thelist
 
 
     def onInit( self ):
-        for label, label_text in list( self.LABELS.items() ):
-            self.getControl( label ).setLabel( label_text )
-        for textbox, textbox_text in list( self.TEXTBOXES.items() ):
-            self.getControl( textbox ).setText( textbox_text )
-        self.listitem = self.getControl( self.THELIST )
+        x, y = self._get_coordinates()
+        self.getControl( 10072 ).setPosition( x, y )
+        self.getControl( 10071 ).setLabel( self.TITLE )
+        the_list = self.getControl( 10070 )
         for button_text in self.BUTTONS:
-            self.listitem.addItem( xbmcgui.ListItem( button_text ) )
-        self.setFocus( self.listitem )
+            the_list.addItem( xbmcgui.ListItem( button_text ) )
+        self.setFocus( the_list )
 
 
     def onAction( self, action ):
@@ -106,3 +96,27 @@ class Show( xbmcgui.WindowXMLDialog ):
     def onClick( self, controlID ):
         self.DIALOGRETURN = self.getControl( controlID ).getSelectedPosition()
         self.close()
+
+
+    def _get_coordinates( self ):
+        skin_values = self._get_skin_values()
+        title_height = skin_values['th']
+        button_height = skin_values['bh']
+        x_offset = skin_values['xo']
+        y_offset = skin_values['yo']
+        dialog_width = skin_values['dw']
+        dialog_height = len( self.BUTTONS ) * button_height
+        x = int( (1280 - dialog_width) / 2 )
+        y = int( (720 - dialog_height) / 2 )
+        return x + x_offset, y + y_offset
+
+
+    def _get_skin_values( self ):
+        skin_values = { 'default': {'th': 50, 'bh': 40, 'xo': 0, 'yo': -5, 'dw': 520 },
+                        'skin.estuary': {'th': 50, 'bh': 40, 'xo': 0, 'yo': 0, 'dw': 520 }
+                      }
+        try:
+            r_value = skin_values[self.SKINNAME.lower()]
+        except IndexError:
+            r_value = skin_values['default']
+        return r_value

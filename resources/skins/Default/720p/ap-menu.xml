@@ -11,11 +11,8 @@
 	</animation>
 	<depth>0.50</depth>
 	<controls>
-		<control type="group">
-			<centerleft>50%</centerleft>
+		<control type="group" id="10072">
 			<width>520</width>
-			<centertop>50%</centertop>
-			<height>300</height>
 			<control type="group">
 				<width>520</width>
 				<height>50</height>

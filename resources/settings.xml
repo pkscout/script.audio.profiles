@@ -48,7 +48,7 @@
 		<setting label="32033" type="select" id="auto_unknown" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />
 	</category>
 	<category label="32063">
-		<setting id="codec_delay" type="slider" label="32073" default="2" range="1,1,10" option="int"/>
+		<setting id="codec_delay" type="slider" label="32073" default="2" range="0,1,10" option="int"/>
 		<setting label="32064" type="select" id="auto_ac3" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />
 		<setting label="32065" type="select" id="auto_eac3" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />
 		<setting label="32066" type="select" id="auto_dts" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />

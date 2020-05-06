@@ -8,40 +8,47 @@ KODIPLAYER   = xbmc.Player()
 class Dialog:
 
     def start( self, settings, labels=None, textboxes=None, buttons=None, thelist=0, force_dialog=False ):
-        if settings['use_custom_skin_menu']:
-            return self._custom( settings, labels, textboxes, buttons, thelist, force_dialog )
+        self.SETTINGS = settings
+        self.LABELS = labels
+        self.TEXTBOXES = textboxes
+        self.BUTTONS = buttons
+        self.THELIST = thelist
+        self.FORCEDIALOG = force_dialog
+        if self.SETTINGS['use_custom_skin_menu']:
+            return self._custom()
         else:
-            return self._built_in( settings, labels, buttons, force_dialog )
+            return self._built_in()
 
 
-    def _built_in( self, settings, labels, buttons, force_dialog ):
+    def _built_in( self ):
         loglines = []
-        delay = settings['player_autoclose_delay'] * 1000
-        autoclose = settings['player_autoclose']
+        delay = self.SETTINGS['player_autoclose_delay'] * 1000
+        autoclose = self.SETTINGS['player_autoclose']
         loglines.append( 'using built-in dialog box' )
-        if not autoclose or force_dialog:
-            d_return = xbmcgui.Dialog().select( labels[10071], buttons )
+        if not autoclose or self.FORCEDIALOG:
+            d_return = xbmcgui.Dialog().select( self.LABELS[10071], self.BUTTONS )
         else:
-            d_return = xbmcgui.Dialog().select( labels[10071], buttons, autoclose=delay )
-        loglines.append( 'the final returned value from the dialog box is: %s' % str(d_return) )
+            d_return = xbmcgui.Dialog().select( self.LABELS[10071], self.BUTTONS, autoclose=delay )
+        loglines.append( 'the final returned value from the dialog box is: %s' % str( d_return ) )
         if d_return == -1:
             d_return = None
         return d_return, loglines
 
 
-    def _custom( self, settings, labels, textboxes, buttons, thelist, force_dialog ):
+    def _custom( self ):
         loglines = []
         count = 0
-        delay = settings['player_autoclose_delay']
-        autoclose = settings['player_autoclose']
-        loglines.append( 'using menu.xml from %s' % settings['SKINNAME'] )
-        display = Show( 'menu.xml', settings['ADDONPATH'], settings['SKINNAME'], labels=labels,
-                        textboxes=textboxes, buttons=buttons, thelist=thelist )
+        delay = self.SETTINGS['player_autoclose_delay']
+        autoclose = self.SETTINGS['player_autoclose']
+        xmlfilename = 'ap-menu-%s.xml' % str( len( self.BUTTONS ) )
+        loglines.append( 'using %s from %s' % (xmlfilename, self.SETTINGS['SKINNAME']) )
+        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'], labels=self.LABELS,
+                        textboxes=self.TEXTBOXES, buttons=self.BUTTONS, thelist=self.THELIST )
         display.show()
-        while (KODIPLAYER.isPlaying() or force_dialog) and not display.CLOSED and not KODIMONITOR.abortRequested():
-            loglines.append( 'the current returned value from display is: %s' % str(display.DIALOGRETURN) )
-            loglines.append( 'the current returned close status from display is: %s' % str(display.CLOSED) )
-            if autoclose and not force_dialog:
+        while (KODIPLAYER.isPlaying() or self.FORCEDIALOG) and not display.CLOSED and not KODIMONITOR.abortRequested():
+            loglines.append( 'the current returned value from display is: %s' % str( display.DIALOGRETURN ) )
+            loglines.append( 'the current returned close status from display is: %s' % str( display.CLOSED ) )
+            if autoclose and not self.FORCEDIALOG:
                 if count >= delay or display.DIALOGRETURN is not None:
                     break
                 count = count + 1

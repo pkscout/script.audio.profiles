@@ -12,6 +12,20 @@ from resources.lib.xlogger import Logger
 from resources.lib.apsettings import loadSettings
 from resources.lib.approfiles import Profiles
 
+def _upgrade():
+    settings = loadSettings()
+    checkPath( settings['ADDONDATAPATH'] )
+    upgrade_txt = os.path.join( settings['ADDONDATAPATH'], 'upgrade.txt' )
+    success, loglines = checkPath( upgrade_txt, createdir=False )
+    if success:
+        return
+    checks = ['auto_default', 'auto_gui', 'auto_movies', 'auto_videos', 'auto_tvshows', 'auto_pvr_tv',
+              'auto_music', 'auto_musicvideo', 'auto_pvr_radio', 'auto_unknown']
+    for item in checks:
+        if settings[item] == '5':
+            settings['ADDON'].setSetting(item, '11')
+    writeFile( '2.0.0', upgrade_txt, 'w' )
+
 
 
 class apManual:
@@ -40,6 +54,7 @@ class apMonitor( xbmc.Monitor ):
     def __init__( self ):
         """Starts the background process for automatic audio profile switching."""
         xbmc.Monitor.__init__( self )
+        _upgrade()
         self._init_vars()
         self.LW.log( ['background monitor version %s started' % self.SETTINGS['ADDONVERSION']], xbmc.LOGINFO )
         self.LW.log( ['debug logging set to %s' % self.SETTINGS['debug']], xbmc.LOGINFO )

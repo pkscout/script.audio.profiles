@@ -1,5 +1,8 @@
 v.2.0.0~alpha3
-- changed default skin to make it easier to manage
+- custom skin menu is now centered on screen no matter how many profiles are active
+- added support for up to 10 audio profiles
+- added auto switching by codec kind and channel count (for videos only)
+- substantially reorganized settings
 
 v.2.0.0~alpha2
 - added option to use built in select dialog instead of custom menu

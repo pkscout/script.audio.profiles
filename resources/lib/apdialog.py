@@ -1,3 +1,4 @@
+
 from kodi_six import xbmc, xbmcgui
 
 KODIMONITOR  = xbmc.Monitor()
@@ -105,9 +106,9 @@ class Show( xbmcgui.WindowXMLDialog ):
         x_offset = skin_values['xo']
         y_offset = skin_values['yo']
         dialog_width = skin_values['dw']
-        dialog_height = len( self.BUTTONS ) * button_height
-        x = int( (1280 - dialog_width) / 2 )
-        y = int( (720 - dialog_height) / 2 )
+        dialog_height = (len( self.BUTTONS ) * button_height) + title_height
+        x = (1280 - dialog_width) // 2
+        y = (720 - dialog_height) // 2
         return x + x_offset, y + y_offset
 
 

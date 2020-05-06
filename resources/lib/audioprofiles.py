@@ -117,7 +117,7 @@ class apMonitor( xbmc.Monitor ):
         except (IndexError, KeyError, ValueError):
             codec = None
         try:
-            channels = r_dict['result']['currentaudiostream']['codec']
+            channels = r_dict['result']['currentaudiostream']['channels']
         except (IndexError, KeyError, ValueError):
             channels = None
         self.LW.log( ['got %s for the codec and %s for the channels' % (str( codec ), str( channels ))] )
@@ -183,7 +183,7 @@ class apMonitor( xbmc.Monitor ):
                     theset = 'auto_unknown'
             else:
                 theset = 'auto_unknown'
-            self.LW.log( ['got %s from the content auto switch' %s] )
+            self.LW.log( ['got %s from the content auto switch' % theset] )
         return theset
 
 

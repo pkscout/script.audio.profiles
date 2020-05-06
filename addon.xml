@@ -10,28 +10,9 @@
 		<news>
 v.2.0.0~alpha4
 - allow delay before checking stream to be set to 0 (for people not using codec matching)
+- added Matrix specific settings file (HDMI-CEC and Codec Detection are now ADVANCED settings for Matrix)
 - changed codec detection so that if no stream details are found then the codec options are ignored
 - change in method for centering select menu
-
-v.2.0.0~alpha3
-- custom skin menu is now centered on screen no matter how many profiles are active
-- added support for up to 10 audio profiles
-- added auto switching by codec kind and channel count (for videos only)
-- substantially reorganized settings
-
-v.2.0.0~alpha2
-- added option to use built in select dialog instead of custom menu
-- added ability to support skin specific custom select menu
-- PVR recordings are now categorized as auto_pvr_tv during auto switch
-- changed general logic for auto switching
-
-v.2.0.0~alpha1
-- added more granular control over notifications
-- added option to have select menu show only for certain media types
-- fix for crash in service when changing settings
-- reorganized settings
-- substantial rewrite to eliminate need for service to call main addon via executebuiltin
-- code refactoring
 		</news>
 		<assets>
 			<icon>icon.png</icon>

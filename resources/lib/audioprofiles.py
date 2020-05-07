@@ -129,15 +129,13 @@ class apMonitor( xbmc.Monitor ):
         except (IndexError, KeyError, ValueError):
             channels = None
         self.LW.log( ['got %s for the codec and %s for the channels' % (str( codec ), str( channels ))] )
-        if not (codec and channels):
-            return '0', '0'
         if codec:
             if codec in ['ac3', 'eac3', 'dts', 'dtshd', 'truehd']:
                 codec_set = 'auto_%s' % codec
             else:
                 codec_set = 'auto_othercodec'
         else:
-            codec_set = 'auto_othercodec'
+            codec_set = 'none'
         try:
             codec_setting = self.SETTINGS[codec_set]
         except KeyError:
@@ -161,7 +159,7 @@ class apMonitor( xbmc.Monitor ):
     def _auto_switch_content( self, data ):
         try:
             thetype = data['item']['type']
-        except IndexError:
+        except KeyError:
             self.LW.log( ['data did not include valid item and/or type for playing media - aborting'] )
             return
         self.LW.log( ['the type is: %s' % thetype] )

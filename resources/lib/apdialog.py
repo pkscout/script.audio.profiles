@@ -55,6 +55,7 @@ class Dialog:
                 if display.DIALOGRETURN is not None:
                     break
             KODIMONITOR.waitForAbort( 1 )
+        loglines = loglines + display.LOGLINES
         loglines.append( 'the final returned value from display is: %s' % str(display.DIALOGRETURN) )
         loglines.append( 'the final returned close status from display is: %s' % str(display.CLOSED) )
         d_return = display.DIALOGRETURN
@@ -77,11 +78,14 @@ class Show( xbmcgui.WindowXMLDialog ):
             self.BUTTONS = buttons
         else:
             self.BUTTONS = []
+        self.LOGLINES = []
 
 
     def onInit( self ):
-        x, y = self._get_coordinates()
+        x, y, bottom_y = self._get_coordinates()
         self.getControl( 10072 ).setPosition( x, y )
+        if bottom_y:
+            self.getControl( 10073 ).setPosition( 0, bottom_y)
         self.getControl( 10071 ).setLabel( self.TITLE )
         the_list = self.getControl( 10070 )
         for button_text in self.BUTTONS:
@@ -102,23 +106,21 @@ class Show( xbmcgui.WindowXMLDialog ):
 
     def _get_coordinates( self ):
         skin_values = self._get_skin_values()
-        title_height = skin_values['th']
-        button_height = skin_values['bh']
-        x_offset = skin_values['xo']
-        y_offset = skin_values['yo']
-        dialog_width = skin_values['dw']
-        dialog_height = (len( self.BUTTONS ) * button_height) + title_height
-        x = (1280 - dialog_width) // 2
+        self.LOGLINES.append( 'got back skin values of:' )
+        self.LOGLINES.append( skin_values )
+        dialog_height = (len( self.BUTTONS ) * skin_values['buttonh']) + skin_values['toph'] + skin_values['bottomh']
+        x = (1280 - skin_values['diagw']) // 2
         y = (720 - dialog_height) // 2
-        return x + x_offset, y + y_offset
+        if skin_values['bottomh']:
+            bottom_y = dialog_height - skin_values['bottomh']
+        else:
+            bottom_y = 0
+        return x + skin_values['xoffset'], y + skin_values['yoffset'], bottom_y
 
 
     def _get_skin_values( self ):
-        skin_values = { 'default': {'th': 50, 'bh': 45, 'xo': 0, 'yo': -5, 'dw': 520},
-                        'skin.estuary': {'th': 50, 'bh': 45, 'xo': 0, 'yo': 0, 'dw': 520}
+        skin_values = { 'default': {'diagw':380, 'toph':50, 'bottomh':10,', buttonh':45, 'xoffset':0, 'yoffset':0},
+                        'skin.aeon.nox.silvo': {'diagw':380, 'toph':74, 'bottomh':34,', buttonh':40, 'xoffset':0, 'yoffset':0},
+                        'skin.estuary': {'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0}
                       }
-        try:
-            r_value = skin_values[self.SKINNAME.lower()]
-        except IndexError:
-            r_value = skin_values['default']
-        return r_value
+        return skin_values[self.SKINNAME.lower()]

@@ -114,8 +114,8 @@ class Show( xbmcgui.WindowXMLDialog ):
 
 
     def _get_skin_values( self ):
-        skin_values = { 'default': {'th': 50, 'bh': 40, 'xo': 0, 'yo': -5, 'dw': 520},
-                        'skin.estuary': {'th': 50, 'bh': 40, 'xo': 0, 'yo': 0, 'dw': 520}
+        skin_values = { 'default': {'th': 50, 'bh': 45, 'xo': 0, 'yo': -5, 'dw': 520},
+                        'skin.estuary': {'th': 50, 'bh': 45, 'xo': 0, 'yo': 0, 'dw': 520}
                       }
         try:
             r_value = skin_values[self.SKINNAME.lower()]

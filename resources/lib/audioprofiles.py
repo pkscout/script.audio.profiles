@@ -14,9 +14,11 @@ from resources.lib.approfiles import Profiles
 
 def _upgrade():
     settings = loadSettings()
-    checkPath( settings['ADDONDATAPATH'] )
-    upgrade_txt = os.path.join( settings['ADDONDATAPATH'], 'upgrade.txt' )
-    deleteFile( upgrade_txt )
+    if settings['version_upgrade'] != settings['ADDONVERSION']:
+        upgrade_txt = os.path.join( settings['ADDONDATAPATH'], 'upgrade.txt' )
+        deleteFile( upgrade_txt )
+        settings['ADDON'].setSetting( 'version_upgrade', settings['ADDONVERSION'] )
+
 
 
 class apManual:

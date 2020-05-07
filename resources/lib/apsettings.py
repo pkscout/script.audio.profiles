@@ -3,7 +3,8 @@ import os
 from resources.lib.fileops import checkPath
 from resources.lib.kodisettings import *
 
-SETTINGSLIST = [ {'name': 'profile1', 'default': True},
+SETTINGSLIST = [ {'name': 'version_upgrade', 'default':''},
+                 {'name': 'profile1', 'default': True},
                  {'name': 'name1', 'default': 'Digital'},
                  {'name': 'profile1_cec', 'default': 0},
                  {'name': 'profile2', 'default': True},

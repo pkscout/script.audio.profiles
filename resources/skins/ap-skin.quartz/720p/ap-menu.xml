@@ -32,7 +32,6 @@
 			</control>
 			<control type="panel" id="10070">
 				<top>61</top>
-				<height>720</height>
 				<scrolltime>280</scrolltime>
 				<onleft>10070</onleft>
 				<onright>10070</onright>

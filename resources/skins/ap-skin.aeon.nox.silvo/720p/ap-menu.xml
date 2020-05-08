@@ -43,7 +43,6 @@
 			<control type="panel" id="10070">
 				<top>74</top>
 				<width>380</width>
-				<height>500</height>
 				<onleft>10070</onleft>
 				<onright>10070</onright>
 				<onup>10070</onup>

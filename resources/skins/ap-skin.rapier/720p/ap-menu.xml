@@ -38,6 +38,7 @@
 			</control>
 			<control type="panel" id="10070">
 			    <top>69</top>
+			    <width>350</width>
 				<onleft>close</onleft>
 				<onright>close</onright>
 				<onup>10070</onup>

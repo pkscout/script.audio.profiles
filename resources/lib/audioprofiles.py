@@ -132,10 +132,10 @@ class apMonitor( xbmc.Monitor ):
             channels = None
         self.LW.log( ['got %s for the codec and %s for the channels' % (str( codec ), str( channels ))] )
         if codec:
-            if codec in ['ac3', 'eac3', 'dts', 'dtshd', 'truehd']:
-                codec_set = 'auto_%s' % codec
-            else:
-                codec_set = 'auto_othercodec'
+            codec_set = 'auto_othercodec'
+            for check_codec in ['ac3', 'eac3', 'dts', 'dtshd', 'truehd']:
+                if codec.startswith( check_codec ):
+                    codec_set = 'auto_%s' % check_codec
         else:
             codec_set = 'none'
         try:

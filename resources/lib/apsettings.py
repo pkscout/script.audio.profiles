@@ -97,14 +97,14 @@ def loadSettings():
 
 
 def _get_skin( settings ):
-    skin = 'Default'
+    skin = 'ap-default'
     if not (settings['use_custom_skin_menu'] and settings['match_custom_to_skin']):
         return skin
     skin_glue = 2
     keep_trying = True
     skin_parts = SKINNAME.split('.')
     while keep_trying:
-        skin_test = '.'.join( skin_parts[:skin_glue] )
+        skin_test = 'ap-' + '.'.join( skin_parts[:skin_glue] )
         success, loglines = checkPath( os.path.join( ADDONPATH, 'resources', 'skins', skin_test, '' ), createdir=False )
         if success:
             skin = skin_test

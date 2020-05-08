@@ -41,7 +41,7 @@ class Dialog:
         autoclose = self.SETTINGS['player_autoclose']
         xmlfilename = 'ap-menu.xml'
         loglines.append( 'using %s from %s' % (xmlfilename, self.SETTINGS['SKINNAME']) )
-        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'],
+        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'], '720p',
                         title=self.TITLE, buttons=self.BUTTONS )
         display.show()
         while (KODIPLAYER.isPlaying() or self.FORCEDIALOG) and not display.CLOSED and not KODIMONITOR.abortRequested():
@@ -66,7 +66,7 @@ class Dialog:
 
 class Show( xbmcgui.WindowXMLDialog ):
 
-    def __init__( self, xml_file, script_path, defaultSkin, title='', buttons=None ):
+    def __init__( self, xml_file, script_path, defaultSkin, defaultRes, title='', buttons=None ):
         """Shows a Kodi WindowXMLDialog."""
         self.DIALOGRETURN = None
         self.CLOSED = False
@@ -119,10 +119,11 @@ class Show( xbmcgui.WindowXMLDialog ):
 
 
     def _get_skin_values( self ):
-        skin_values = { 'default': {'diagw':380, 'toph':50, 'bottomh':10, 'buttonh':45, 'xoffset':0, 'yoffset':0},
-                        'skin.aeon.nox.silvo': {'diagw':380, 'toph':74, 'bottomh':34, 'buttonh':40, 'xoffset':0, 'yoffset':0},
-                        'skin.amber': {'diagw':350, 'toph':70, 'bottomh':70, 'buttonh':40, 'xoffset':0, 'yoffset':0},
-                        'skin.estuary': {'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
-                        'skin.quartz': {'diagw':380, 'toph':50, 'bottomh':10, 'buttonh':45, 'xoffset':0, 'yoffset':0}
+        skin_values = { 'ap-default': {'diagw':380, 'toph':50, 'bottomh':10, 'buttonh':45, 'xoffset':0, 'yoffset':0},
+                        'ap-skin.aeon.nox.silvo': {'diagw':380, 'toph':74, 'bottomh':34, 'buttonh':40, 'xoffset':0, 'yoffset':0},
+                        'ap-skin.amber': {'diagw':350, 'toph':70, 'bottomh':70, 'buttonh':40, 'xoffset':0, 'yoffset':0},
+                        'ap-skin.estuary': {'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
+                        'ap-skin.quartz': {'diagw':380, 'toph':50, 'bottomh':10, 'buttonh':45, 'xoffset':0, 'yoffset':0},
+                        'ap-skin.rapier': {'diagw':350, 'toph':69, 'bottomh':32, 'buttonh':37, 'xoffset':0, 'yoffset':0}
                       }
         return skin_values[self.SKINNAME.lower()]

@@ -14,7 +14,7 @@
 		    <width>350</width>
 			<control type="image">
 				<height>70</height>
-				<texture>ap-dialog-top.png</texture>
+				<texture>ap-DialogTop.png</texture>
 			</control>
 			<control type="label" id="10071">
 			    <top>5</top>
@@ -26,8 +26,8 @@
 			</control>
 			<control type="group" id="10073">
 				<control type="image">
-					<height>70</height>
-					<texture flipy="true">ap-dialog-top.png</texture>
+					<height>35</height>
+					<texture>ap-DialogBottom.png</texture>
 				</control>
 			</control>
 			<control type="panel" id="10070">
@@ -39,7 +39,7 @@
 				<scrolltime tween="sine" easing="inout">280</scrolltime>
 				<itemlayout height="40">
 					<control type="image">
-						<texture border="3">ap-dialog-slice.png</texture>
+						<texture border="3">ap-DialogMid.png</texture>
 					</control>
 					<control type="image">
 						<left>20</left>
@@ -55,7 +55,7 @@
 				</itemlayout>
 				<focusedlayout height="40">
 					<control type="image">
-						<texture border="3">ap-dialog-slice.png</texture>
+						<texture border="3">ap-DialogMid.png</texture>
 					</control>
 					<control type="image">
 						<left>20</left>

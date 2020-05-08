@@ -9,21 +9,14 @@
 	</animation>
 	<controls>
 		<control type="group" id="10072">
-			<width>380</width>
+			<width>480</width>
 			<control type="group">
-				<height>50</height>
+				<height>61</height>
 				<control type="image">
-				    <height>10</height>
-					<texture>rounded-black-80.png</texture>
+					<texture colordiffuse="$VAR[MenuTransperancy]">img/DialogTop.png</texture>
 				</control>				
-				<control type="image">
-				    <top>10</top>
-				    <height>40</height>
-					<texture>color-black-80.png</texture>
-				</control>
 				<control type="label" id="10071">
-					<height>42</height>
-					<font>size23</font>
+					<font>size28</font>
 					<aligny>center</aligny>
 					<align>center</align>
 					<textcolor>White2</textcolor>
@@ -34,54 +27,53 @@
 			<control type="group" id="10073">
 				<height>10</height>
 				<control type="image">
-					<texture flipy="true">rounded-black-80.png</texture>
+					<texture colordiffuse="$VAR[MenuTransperancy]">ap-DialogBottom.png</texture>
 				</control>
 			</control>
 			<control type="panel" id="10070">
-				<top>50</top>
-				<height>410</height>
+				<top>61</top>
+				<height>720</height>
 				<scrolltime>280</scrolltime>
 				<onleft>10070</onleft>
 				<onright>10070</onright>
 				<onup>10070</onup>
 				<ondown>10070</ondown>
 				<orientation>vertical</orientation>
-				<itemlayout height="45">
+				<itemlayout height="50">
 					<control type="image">
-						<height>45</height>
-						<texture>color-black-80.png</texture>
-					</control>
-					<control type="button">
-						<left>20</left>
-						<width>340</width>
-						<height>45</height>
+						<texture colordiffuse="$VAR[MenuTransperancy]">img/DialogMid.png</texture>
 					</control>
 					<control type="label">
 						<left>20</left>
-						<width>340</width>
-						<height>45</height>
-	                    <font>font13</font>
+						<width>440</width>
+						<height>50</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<scroll>true</scroll>
+						<scroll>false</scroll>
+	                    <font>size25</font>
+    	                <textcolor>Grey2</textcolor>
 						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</itemlayout>
-				<focusedlayout height="45">
-					<control type="image">
-						<height>45</height>
-						<texture>color-black-80.png</texture>
 					</control>
 					<control type="button">
 						<left>20</left>
-						<width>340</width>
-						<height>45</height>
+						<width>440</width>
+						<height>50</height>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50">
+					<control type="image">
+						<texture colordiffuse="$VAR[MenuTransperancy]">img/DialogMid.png</texture>
+					</control>
+					<control type="button">
+						<left>20</left>
+						<width>440</width>
+						<height>50</height>
 					</control>
 					<control type="label">
 						<left>20</left>
-						<width>340</width>
-						<height>45</height>
-	                    <font>font13</font>
+						<width>440</width>
+						<height>50</height>
+	                    <font>size25</font>
     	                <textcolor>HL</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>

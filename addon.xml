@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.audio.profiles" name="Audio Profiles" version="2.0.0~alpha4" provider-name="pkscout, notoco, Regss">
+<addon id="script.audio.profiles" name="Audio Profiles" version="2.0.0~beta1" provider-name="pkscout, notoco, Regss">
 	<requires>
 		<import addon="xbmc.python" version="2.26.0"/>
 		<import addon="script.module.kodi-six" version="0.0.3" />
@@ -8,12 +8,21 @@
 	<extension point="xbmc.service" library="service.py" />
 	<extension point="xbmc.addon.metadata">
 		<news>
-v.2.0.0~alpha4
-- allow delay before checking stream to be set to 0 (for people not using codec matching)
+v.2.0.0~beta1
+- added support for up to 10 audio profiles
+- added more granular control over notifications
+- added option to have select menu show only for certain media types
+- added auto switching by codec kind and channel count (for videos only)
+- added option to use built in select dialog instead of custom menu
+- added ability to support skin specific custom select menu
+- added skin support for Aeon Nox Silvo, Amber, Estuary, Quartz, and Rapier
 - added Matrix specific settings file (HDMI-CEC and Codec Detection are now ADVANCED settings for Matrix)
-- added skin support for Aeon Nox Silvo, Amber, Quartz, and Rapier
-- changed codec detection so that if no stream details are found then the codec options are ignored
-- change in method for centering select menu
+- changed general logic for auto switching
+- changed method for centering select menu
+- fix so PVR recordings are now categorized as auto_pvr_tv during auto switch
+- fix for crash in service when changing settings
+- reorganized settings
+- substantial rewrite to eliminate need for service to call main addon via executebuiltin
 		</news>
 		<assets>
 			<icon>icon.png</icon>

@@ -134,8 +134,9 @@ class apMonitor( xbmc.Monitor ):
         if codec:
             codec_set = 'auto_othercodec'
             for check_codec in ['ac3', 'eac3', 'dts', 'dtshd', 'truehd']:
-                if codec.startswith( check_codec ):
+                if codec in check_codec:
                     codec_set = 'auto_%s' % check_codec
+                    break
         else:
             codec_set = 'none'
         try:

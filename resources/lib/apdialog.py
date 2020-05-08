@@ -122,6 +122,7 @@ class Show( xbmcgui.WindowXMLDialog ):
         skin_values = { 'default': {'diagw':380, 'toph':50, 'bottomh':10, 'buttonh':45, 'xoffset':0, 'yoffset':0},
                         'skin.aeon.nox.silvo': {'diagw':380, 'toph':74, 'bottomh':34, 'buttonh':40, 'xoffset':0, 'yoffset':0},
                         'skin.amber': {'diagw':350, 'toph':70, 'bottomh':70, 'buttonh':40, 'xoffset':0, 'yoffset':0},
-                        'skin.estuary': {'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0}
+                        'skin.estuary': {'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
+                        'skin.quartz': {'diagw':380, 'toph':50, 'bottomh':10, 'buttonh':45, 'xoffset':0, 'yoffset':0}
                       }
         return skin_values[self.SKINNAME.lower()]

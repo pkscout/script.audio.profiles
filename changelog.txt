@@ -1,7 +1,7 @@
 v.2.0.0~alpha4
 - allow delay before checking stream to be set to 0 (for people not using codec matching)
 - added Matrix specific settings file (HDMI-CEC and Codec Detection are now ADVANCED settings for Matrix)
-- added skin support for Aeon Nox Silvo, Amber, and Quartz
+- added skin support for Aeon Nox Silvo, Amber, Quartz, and Rapier
 - changed codec detection so that if no stream details are found then the codec options are ignored
 - change in method for centering select menu
 

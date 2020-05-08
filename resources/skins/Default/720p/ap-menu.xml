@@ -62,6 +62,7 @@
 				</itemlayout>
 				<focusedlayout height="45">
 					<control type="image">
+						<height>45</height>
 						<texture>color-black-80.png</texture>
 					</control>
 					<control type="image">
@@ -72,6 +73,7 @@
 					<control type="label">
 						<left>20</left>
 						<width>340</width>
+						<height>45</height>
 	                    <font>font13</font>
     	                <textcolor>FFFFFFFF</textcolor>
 						<align>center</align>

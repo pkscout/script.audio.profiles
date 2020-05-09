@@ -22,7 +22,7 @@
 			<control type="image">
 				<left>0</left>
 				<width>400</width>
-				<height>51</height>
+				<height>50</height>
 				<texture>dialogs_button.png</texture>
 				<colordiffuse>$INFO[skin.string(texture_color_base)]</colordiffuse>
 			</control>
@@ -45,7 +45,7 @@
 					<control type="image">
 						<left>0</left>
 						<width>400</width>
-						<height>46</height>
+						<height>45</height>
 						<texture colordiffuse="$INFO[skin.string(texture_color_base)]">dialogs_button.png</texture>
 					</control>
 					<control type="label">

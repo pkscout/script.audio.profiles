@@ -11,7 +11,7 @@
 			<effect type="slide" end="0,-15" time="400" tween="cubic" easing="out"/>
 		</animation>		
 		<control type="group" id="10072">
-		    <width>350</width>
+		    <width>400</width>
 			<control type="image">
 				<height>32</height>
 				<texture border="40,30,40,0">gui/context-menu-top.png</texture>
@@ -38,7 +38,7 @@
 			</control>
 			<control type="panel" id="10070">
 			    <top>69</top>
-			    <width>350</width>
+			    <width>400</width>
 				<onleft>close</onleft>
 				<onright>close</onright>
 				<onup>10070</onup>
@@ -50,11 +50,11 @@
 					</control>
 					<control type="button">
 						<left>32</left>
-						<width>286</width>
+						<width>336</width>
 					</control>
 					<control type="label">
 						<left>32</left>
-						<width>286</width>
+						<width>336</width>
 						<font>DialogMediaInfoFont</font>
 						<align>center</align>
 						<aligny>center</aligny>
@@ -68,11 +68,11 @@
 					</control>
 					<control type="button">
 						<left>32</left>
-						<width>286</width>
+						<width>336</width>
 					</control>
 					<control type="label">
 						<left>32</left>
-						<width>286</width>
+						<width>336</width>
 						<font>DialogMediaInfoFont</font>
 						<align>center</align>
 						<aligny>center</aligny>

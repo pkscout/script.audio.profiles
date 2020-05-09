@@ -11,7 +11,7 @@
 			<effect type="fade" start="100" end="0" time="100" />
 		</animation>
 		<control type="group" id="10072">
-		    <width>350</width>
+		    <width>400</width>
 			<control type="image">
 				<height>70</height>
 				<texture>ap-DialogTop.png</texture>
@@ -46,7 +46,7 @@
 						<texture border="3">buttons/ButtonNF.png</texture>
 					</control>
 					<control type="label">
-						<width>265</width>
+						<width>315</width>
 						<top>-11</top>
 						<left>20</left>
 						<font>font14</font>
@@ -62,12 +62,12 @@
 						<texture border="3">buttons/ButtonNF.png</texture>
 					</control>
 					<control type="image">
-						<width>325</width>
+						<width>375</width>
 						<left>13</left>
 						<texture border="4" colordiffuse="Highlight">img/WhiteRoundedST2.png</texture>
 					</control>
 					<control type="label">
-						<width>265</width>
+						<width>315</width>
 						<top>-11</top>
 						<left>20</left>
 						<textcolor>Black</textcolor>

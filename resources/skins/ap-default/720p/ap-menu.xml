@@ -13,16 +13,19 @@
 			<control type="group">
 				<height>50</height>
 				<control type="image">
+					<width>400</width>
 				    <height>10</height>
 					<texture>rounded-black-80.png</texture>
 				</control>				
 				<control type="image">
 				    <top>10</top>
 				    <height>40</height>
+					<width>400</width>
 					<texture>color-black-80.png</texture>
 				</control>
 				<control type="label" id="10071">
 					<height>42</height>
+					<width>400</width>
 					<font>font14</font>
 					<aligny>center</aligny>
 					<align>center</align>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="11112">
+	<defaultcontrol>10070</defaultcontrol>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="fade" delay="160" end="100" time="240" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="fade" start="100" end="0" time="240" />
+	</animation>
+	<controls>
+		<control type="group" id="10072">
+			<width>300</width>
+			<control type="group">
+				<height>10</height>
+				<control type="image">
+					<width>300</width>
+				    <height>10</height>
+					<texture colordiffuse="dialog_bg_100">ap-DialogTop.png</texture>
+				</control>				
+					<control type="image">
+						<top>10</top>
+						<height>44</height>
+						<texture colordiffuse="dialog_bg_100">common/white.png</texture>
+					</control>
+				<control type="label" id="10071">
+					<top>10</top>
+					<left>20</left>
+					<height>44</height>
+					<width>260</width>
+					<aligny>center</aligny>
+                    <textcolor>dialog_fg_70</textcolor>
+                    <font>font_small_bold</font>
+					<label></label>
+				</control>
+	            <control type="image">
+        	        <width>300</width>
+            	    <height>54</height>
+                	<left>0</left>
+	                <aspectratio align="right">keep</aspectratio>
+    	            <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/kodi.png</texture>
+        	    </control>
+			</control>
+			<control type="group" id="10073">
+				<height>10</height>
+				<control type="image">
+					<width>300</width>
+					<height>10</height>
+					<texture flipy="true" colordiffuse="dialog_bg_100">ap-DialogTop.png</texture>
+				</control>
+			</control>
+			<control type="panel" id="10070">
+				<top>54</top>
+				<onleft>10070</onleft>
+				<onright>10070</onright>
+				<onup>10070</onup>
+				<ondown>10070</ondown>
+				<orientation>vertical</orientation>
+				<itemlayout height="47" width="300">
+					<control type="image">
+						<texture colordiffuse="dialog_bg_100">common/white.png</texture>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<width>260</width>
+						<aligny>center</aligny>
+                        <font>font_tiny</font>
+                        <textcolor>dialog_fg_70</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="47" width="300">
+					<control type="image">
+						<texture colordiffuse="dialog_bg_100">common/white.png</texture>
+					</control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight2]">common/gradient-diffuse-horizontal.png</texture>
+                    </control>
+					<control type="label">
+						<left>20</left>
+						<width>260</width>
+						<aligny>center</aligny>
+                        <font>font_tiny</font>
+                        <textcolor>dialog_fg_70</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

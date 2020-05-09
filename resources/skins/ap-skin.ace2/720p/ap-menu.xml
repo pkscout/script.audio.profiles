@@ -15,16 +15,17 @@
 			<control type="image">
 				<left>0</left>
 				<width>400</width>
-				<height>51</height>
-				<texture>gradient_focus.png</texture>
-				<colordiffuse>$INFO[skin.string(header_color)]</colordiffuse>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<width>400</width>
 				<height>50</height>
 				<texture>dialogs_button.png</texture>
 				<colordiffuse>$INFO[skin.string(texture_color_base)]</colordiffuse>
+			</control>
+			<control type="image">
+			    <top>5</top>
+				<left>0</left>
+				<width>400</width>
+				<height>50</height>
+				<texture>gradient_focus.png</texture>
+				<colordiffuse>$INFO[skin.string(header_color)]</colordiffuse>
 			</control>
 			<control type="label" id=10071>
 				<left>0</left>

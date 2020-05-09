@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="11112">
+	<defaultcontrol>10070</defaultcontrol>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="zoom" start="150" end="100" center="CenterWidth,CenterHeight" time="300" tween="cubic" easing="out" />
+		<effect type="fade" end="100" time="150" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="fade" start="100" end="0" time="100" delay="100" />
+		<effect type="zoom" start="100" end="130" center="CenterWidth,CenterHeight" time="200" tween="cubic" easing="in" />
+	</animation>
+	<controls>
+		<control type="group" id="10072">
+			<width>480</width>
+			<control type="group">
+				<height>50</height>
+				<control type="image">
+					<width>480</width>
+					<height>50</height>
+					<texture>ap-DialogTop.png</texture>
+				</control>
+				<control type="label" id="10071">
+				    <top>5</top>
+					<left>10</left>
+					<height>50</height>
+					<width>460</width>
+					<align>center</align>
+					<textcolor>themecolor</textcolor>
+					<font>font16_title_bold</font>
+					<label></label>
+				</control>
+			</control>
+			<control type="group" id="10073">
+				<control type="image">
+					<width>480</width>
+					<height>10</height>
+					<texture>ap-DialogBottom.png</texture>
+				</control>
+			</control>
+			<control type="panel" id="10070">
+				<top>50</top>
+				<onleft>10070</onleft>
+				<onright>10070</onright>
+				<onup>10070</onup>
+				<ondown>10070</ondown>
+				<orientation>vertical</orientation>
+				<itemlayout height="40">
+					<control type="image">
+						<width>480</width>
+						<height>40</height>
+						<texture>ap-DialogMid.png</texture>
+					</control>
+					<control type="button">
+						<left>30</left>
+						<width>420</width>
+						<height>40</height>
+					</control>
+					<control type="label">
+						<left>40</left>
+						<width>400</width>
+						<height>40</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="40">
+					<control type="image">
+						<width>480</width>
+						<height>40</height>
+						<texture>ap-DialogMid.png</texture>
+					</control>
+					<control type="button">
+						<left>30</left>
+						<width>420</width>
+						<height>40</height>
+						<texture border="35,2,35,2">button_shutdown_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>40</left>
+						<width>400</width>
+						<height>40</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

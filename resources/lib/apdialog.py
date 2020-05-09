@@ -123,6 +123,7 @@ class Show( xbmcgui.WindowXMLDialog ):
                         'ap-skin.ace2': {'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
                         'ap-skin.aeonmq8': {'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':50, 'xoffset':0, 'yoffset':0},
                         'ap-skin.aeon.nox.silvo': {'diagw':400, 'toph':74, 'bottomh':34, 'buttonh':40, 'xoffset':0, 'yoffset':0},
+                        'ap-skin.aeon.tajo': {'diagw':480, 'toph':50, 'bottomh':10, 'buttonh':40, 'xoffset':0, 'yoffset':0},
                         'ap-skin.amber': {'diagw':400, 'toph':70, 'bottomh':35, 'buttonh':40, 'xoffset':0, 'yoffset':0},
                         'ap-skin.confluence': {'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40, 'xoffset':0, 'yoffset':0},
                         'ap-skin.estuary': {'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},

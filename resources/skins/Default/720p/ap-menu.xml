@@ -15,13 +15,13 @@
 				<control type="image">
 					<width>400</width>
 				    <height>10</height>
-					<texture>rounded-black-80.png</texture>
+					<texture>ap-rounded-black-80.png</texture>
 				</control>				
 				<control type="image">
 				    <top>10</top>
 				    <height>40</height>
 					<width>400</width>
-					<texture>color-black-80.png</texture>
+					<texture>ap-color-black-80.png</texture>
 				</control>
 				<control type="label" id="10071">
 					<height>42</height>
@@ -36,7 +36,7 @@
 			<control type="group" id="10073">
 				<height>10</height>
 				<control type="image">
-					<texture flipy="true">rounded-black-80.png</texture>
+					<texture flipy="true">ap-rounded-black-80.png</texture>
 				</control>
 			</control>
 			<control type="panel" id="10070">
@@ -49,7 +49,7 @@
 				<itemlayout height="45">
 					<control type="image">
 						<height>45</height>
-						<texture>color-black-80.png</texture>
+						<texture>ap-color-black-80.png</texture>
 					</control>
 					<control type="label">
 						<left>20</left>
@@ -65,12 +65,12 @@
 				<focusedlayout height="45">
 					<control type="image">
 						<height>45</height>
-						<texture>color-black-80.png</texture>
+						<texture>ap-color-black-80.png</texture>
 					</control>
 					<control type="image">
 						<left>10</left>
 						<width>380</width>
-						<texture colordiffuse="FF2866A4">color-white.png</texture>
+						<texture colordiffuse="FF2866A4">ap-color-white.png</texture>
 					</control>
 					<control type="label">
 						<left>20</left>

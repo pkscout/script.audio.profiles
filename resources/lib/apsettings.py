@@ -60,7 +60,6 @@ SETTINGSLIST = [ {'name': 'version_upgrade', 'default':''},
                  {'name': 'auto_default', 'default': '0'},
                  {'name': 'force_auto_default', 'default': False},
                  {'name': 'use_custom_skin_menu', 'default': True},
-                 {'name': 'match_custom_to_skin', 'default': True},
                  {'name': 'player_autoclose', 'default': False},
                  {'name': 'player_autoclose_delay', 'default': 10},
                  {'name': 'notify', 'default': True},
@@ -97,14 +96,14 @@ def loadSettings():
 
 
 def _get_skin( settings ):
-    skin = 'ap-default'
-    if not (settings['use_custom_skin_menu'] and settings['match_custom_to_skin']):
+    skin = 'Default'
+    if not settings['use_custom_skin_menu']:
         return skin
     skin_glue = 2
     keep_trying = True
     skin_parts = SKINNAME.split('.')
     while keep_trying:
-        skin_test = 'ap-' + '.'.join( skin_parts[:skin_glue] )
+        skin_test = '.'.join( skin_parts[:skin_glue] )
         success, loglines = checkPath( os.path.join( ADDONPATH, 'resources', 'skins', skin_test, '' ), createdir=False )
         if success:
             skin = skin_test

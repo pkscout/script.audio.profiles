@@ -3,22 +3,20 @@ from kodi_six import xbmc, xbmcgui
 
 KODIMONITOR  = xbmc.Monitor()
 KODIPLAYER   = xbmc.Player()
-
-SKINVALUES = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10, 'buttonh':45},
-               'skin.ace2': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':45},
-               'skin.aeonmq8': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':50},
-               'skin.aeon.nox.silvo': {'res':'720p', 'diagw':400, 'toph':74, 'bottomh':34, 'buttonh':40},
-               'skin.aeon.tajo': {'res':'1080i', 'diagw':720, 'toph':75, 'bottomh':15, 'buttonh':60},
-               'skin.amber': {'res':'1080i', 'diagw':600, 'toph':105, 'bottomh':53, 'buttonh':60},
-               'skin.apptv': {'res':'720p', 'diagw':500, 'toph':50, 'bottomh':15, 'buttonh':48},
-               'skin.aura': {'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'buttonh':47},
-               'skin.bello.7': {'res':'720p', 'diagw':405, 'toph':112, 'bottomh':22, 'buttonh':37},
-               'skin.box': {'res':'720p', 'diagw':0, 'toph':0, 'bottomh':0, 'buttonh':0},
-               'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40},
-               'skin.estuary': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45},
-               'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50},
-               'skin.rapier': {'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37}
-             }
+SKINVALUES   = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10, 'buttonh':45},
+                 'skin.ace2': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':45},
+                 'skin.aeonmq8': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':50},
+                 'skin.aeon.nox.silvo': {'res':'720p', 'diagw':400, 'toph':74, 'bottomh':34, 'buttonh':40},
+                 'skin.aeon.tajo': {'res':'1080i', 'diagw':720, 'toph':75, 'bottomh':15, 'buttonh':60},
+                 'skin.amber': {'res':'1080i', 'diagw':600, 'toph':105, 'bottomh':53, 'buttonh':60},
+                 'skin.apptv': {'res':'720p', 'diagw':500, 'toph':50, 'bottomh':15, 'buttonh':48},
+                 'skin.aura': {'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'buttonh':47},
+                 'skin.bello.7': {'res':'720p', 'diagw':405, 'toph':112, 'bottomh':22, 'buttonh':37},
+                 'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40},
+                 'skin.estuary': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45},
+                 'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50},
+                 'skin.rapier': {'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37}
+               }
 
 
 
@@ -57,8 +55,7 @@ class Dialog:
         autoclose = self.SETTINGS['player_autoclose']
         xmlfilename = 'ap-menu.xml'
         loglines.append( 'using %s from %s' % (xmlfilename, self.SETTINGS['SKINNAME']) )
-        resolution = SKINVALUES[self.SETTINGS['SKINNAME'].lower()]['res']
-        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'], resolution,
+        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'],
                         title=self.TITLE, buttons=self.BUTTONS )
         display.show()
         while (KODIPLAYER.isPlaying() or self.FORCEDIALOG) and not display.CLOSED and not KODIMONITOR.abortRequested():
@@ -83,7 +80,7 @@ class Dialog:
 
 class Show( xbmcgui.WindowXMLDialog ):
 
-    def __init__( self, xml_file, script_path, defaultSkin, defaultRes, title='', buttons=None ):
+    def __init__( self, xml_file, script_path, defaultSkin, title='', buttons=None ):
         """Shows a Kodi WindowXMLDialog."""
         self.DIALOGRETURN = None
         self.CLOSED = False
@@ -124,11 +121,13 @@ class Show( xbmcgui.WindowXMLDialog ):
 
 
     def _get_coordinates( self ):
-        skin_values = SKINVALUES[self.SKINNAME.lower()]
+        try:
+            skin_values = SKINVALUES[self.SKINNAME.lower()]
+        except KeyError:
+            self.LOGLINES.append( 'no custom skin values found - returning 0, 0, 0' )
+            return 0, 0, 0
         self.LOGLINES.append( 'got back skin values of:' )
         self.LOGLINES.append( skin_values )
-        if not skin_values['diagw']:
-            return 0, 0, 0
         dialog_height = (len( self.BUTTONS ) * skin_values['buttonh']) + skin_values['toph'] + skin_values['bottomh']
         if skin_values['res'] == '720p':
             screen_width = 1280

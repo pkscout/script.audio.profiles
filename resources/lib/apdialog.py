@@ -13,6 +13,7 @@ SKINVALUES = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10, '
                'skin.apptv': {'res':'720p', 'diagw':500, 'toph':50, 'bottomh':15, 'buttonh':48},
                'skin.aura': {'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'buttonh':47},
                'skin.bello.7': {'res':'720p', 'diagw':405, 'toph':112, 'bottomh':22, 'buttonh':37},
+               'skin.box': {'res':'720p', 'diagw':0, 'toph':0, 'bottomh':0, 'buttonh':0},
                'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40},
                'skin.estuary': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45},
                'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50},

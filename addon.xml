@@ -20,7 +20,7 @@ v.2.0.0~beta1
 - added Matrix specific settings file (HDMI-CEC and Codec Detection are now ADVANCED settings for Matrix)
 - changed general logic for auto switching
 - changed method for centering select menu
-- fix so PVR recordings are now categorized as auto_pvr_tv during auto switch
+- fix so PVR recordings are categorized as auto_pvr_tv during auto switch
 - fix for crash in service when changing settings
 - reorganized settings
 - substantial rewrite to eliminate need for service to call main addon via executebuiltin

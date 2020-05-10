@@ -4,18 +4,19 @@ from kodi_six import xbmc, xbmcgui
 KODIMONITOR  = xbmc.Monitor()
 KODIPLAYER   = xbmc.Player()
 
-SKINVALUES = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10, 'buttonh':45, 'xoffset':0, 'yoffset':0},
-               'skin.ace2': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
-               'skin.aeonmq8': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':50, 'xoffset':0, 'yoffset':0},
-               'skin.aeon.nox.silvo': {'res':'720p', 'diagw':400, 'toph':74, 'bottomh':34, 'buttonh':40, 'xoffset':0, 'yoffset':0},
-               'skin.aeon.tajo': {'res':'1080i', 'diagw':720, 'toph':75, 'bottomh':15, 'buttonh':60, 'xoffset':0, 'yoffset':0},
-               'skin.amber': {'res':'1080i', 'diagw':600, 'toph':105, 'bottomh':53, 'buttonh':60, 'xoffset':0, 'yoffset':0},
-               'skin.apptv': {'res':'720p', 'diagw':500, 'toph':50, 'bottomh':15, 'buttonh':48, 'xoffset':0, 'yoffset':0},
-               'skin.aura': {'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'buttonh':47, 'xoffset':0, 'yoffset':0},
-               'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40, 'xoffset':0, 'yoffset':0},
-               'skin.estuary': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
-               'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50, 'xoffset':0, 'yoffset':0},
-               'skin.rapier': {'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37, 'xoffset':0, 'yoffset':0}
+SKINVALUES = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10, 'buttonh':45},
+               'skin.ace2': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':45},
+               'skin.aeonmq8': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':50},
+               'skin.aeon.nox.silvo': {'res':'720p', 'diagw':400, 'toph':74, 'bottomh':34, 'buttonh':40},
+               'skin.aeon.tajo': {'res':'1080i', 'diagw':720, 'toph':75, 'bottomh':15, 'buttonh':60},
+               'skin.amber': {'res':'1080i', 'diagw':600, 'toph':105, 'bottomh':53, 'buttonh':60},
+               'skin.apptv': {'res':'720p', 'diagw':500, 'toph':50, 'bottomh':15, 'buttonh':48},
+               'skin.aura': {'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'buttonh':47},
+               'skin.bello.7': {'res':'720p', 'diagw':405, 'toph':112, 'bottomh':22, 'buttonh':37},
+               'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40},
+               'skin.estuary': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45},
+               'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50},
+               'skin.rapier': {'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37}
              }
 
 
@@ -136,4 +137,4 @@ class Show( xbmcgui.WindowXMLDialog ):
             bottom_y = dialog_height - skin_values['bottomh']
         else:
             bottom_y = 0
-        return x + skin_values['xoffset'], y + skin_values['yoffset'], bottom_y
+        return x, y, bottom_y

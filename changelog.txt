@@ -5,8 +5,8 @@ v.2.0.0~beta1
 - added auto switching by codec kind and channel count (for videos only)
 - added option to use built in select dialog instead of custom menu
 - added ability to support skin specific custom select menu
-- added skin support for Ace2, Aeon MQ8, Aeon Nox Silvo, Aeon Tajo, Amber, AppTV, Aura, Confluence,
-  Estuary, Quartz, and Rapier
+- added skin support for Ace2, Aeon MQ8, Aeon Nox Silvo, Aeon Tajo, Amber, AppTV, Aura, Bello 7,
+  Confluence, Estuary, Quartz, and Rapier
 - added Matrix specific settings file (HDMI-CEC and Codec Detection are now ADVANCED settings for Matrix)
 - changed general logic for auto switching
 - changed method for centering select menu

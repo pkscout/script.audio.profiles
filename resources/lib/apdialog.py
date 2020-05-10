@@ -4,6 +4,20 @@ from kodi_six import xbmc, xbmcgui
 KODIMONITOR  = xbmc.Monitor()
 KODIPLAYER   = xbmc.Player()
 
+SKINVALUES = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10, 'buttonh':45, 'xoffset':0, 'yoffset':0},
+               'skin.ace2': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
+               'skin.aeonmq8': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':50, 'xoffset':0, 'yoffset':0},
+               'skin.aeon.nox.silvo': {'res':'720p', 'diagw':400, 'toph':74, 'bottomh':34, 'buttonh':40, 'xoffset':0, 'yoffset':0},
+               'skin.aeon.tajo': {'res':'1080i', 'diagw':720, 'toph':75, 'bottomh':15, 'buttonh':60, 'xoffset':0, 'yoffset':0},
+               'skin.amber': {'res':'1080i', 'diagw':600, 'toph':105, 'bottomh':53, 'buttonh':60, 'xoffset':0, 'yoffset':0},
+               'skin.apptv': {'res':'720p', 'diagw':500, 'toph':50, 'bottomh':15, 'buttonh':48, 'xoffset':0, 'yoffset':0},
+               'skin.aura': {'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'buttonh':47, 'xoffset':0, 'yoffset':0},
+               'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40, 'xoffset':0, 'yoffset':0},
+               'skin.estuary': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
+               'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50, 'xoffset':0, 'yoffset':0},
+               'skin.rapier': {'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37, 'xoffset':0, 'yoffset':0}
+             }
+
 
 
 class Dialog:
@@ -41,7 +55,8 @@ class Dialog:
         autoclose = self.SETTINGS['player_autoclose']
         xmlfilename = 'ap-menu.xml'
         loglines.append( 'using %s from %s' % (xmlfilename, self.SETTINGS['SKINNAME']) )
-        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'], '720p',
+        resolution = SKINVALUES[self.SETTINGS['SKINNAME'].lower()]['res']
+        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'], resolution,
                         title=self.TITLE, buttons=self.BUTTONS )
         display.show()
         while (KODIPLAYER.isPlaying() or self.FORCEDIALOG) and not display.CLOSED and not KODIMONITOR.abortRequested():
@@ -105,31 +120,20 @@ class Show( xbmcgui.WindowXMLDialog ):
 
 
     def _get_coordinates( self ):
-        skin_values = self._get_skin_values()
+        skin_values = SKINVALUES[self.SKINNAME.lower()]
         self.LOGLINES.append( 'got back skin values of:' )
         self.LOGLINES.append( skin_values )
         dialog_height = (len( self.BUTTONS ) * skin_values['buttonh']) + skin_values['toph'] + skin_values['bottomh']
-        x = (1280 - skin_values['diagw']) // 2
-        y = (720 - dialog_height) // 2
+        if skin_values['res'] == '720p':
+            screen_width = 1280
+            screen_height = 720
+        else:
+            screen_width = 1920
+            screen_height = 1080
+        x = (screen_width - skin_values['diagw']) // 2
+        y = (screen_height - dialog_height) // 2
         if skin_values['bottomh']:
             bottom_y = dialog_height - skin_values['bottomh']
         else:
             bottom_y = 0
         return x + skin_values['xoffset'], y + skin_values['yoffset'], bottom_y
-
-
-    def _get_skin_values( self ):
-        skin_values = { 'ap-default': {'diagw':400, 'toph':50, 'bottomh':10, 'buttonh':45, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.ace2': {'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.aeonmq8': {'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':50, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.aeon.nox.silvo': {'diagw':400, 'toph':74, 'bottomh':34, 'buttonh':40, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.aeon.tajo': {'diagw':480, 'toph':50, 'bottomh':10, 'buttonh':40, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.amber': {'diagw':400, 'toph':70, 'bottomh':35, 'buttonh':40, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.apptv': {'diagw':500, 'toph':50, 'bottomh':15, 'buttonh':48, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.aura': {'diagw':300, 'toph':54, 'bottomh':10, 'buttonh':47, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.confluence': {'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.estuary': {'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.quartz': {'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50, 'xoffset':0, 'yoffset':0},
-                        'ap-skin.rapier': {'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37, 'xoffset':0, 'yoffset':0}
-                      }
-        return skin_values[self.SKINNAME.lower()]

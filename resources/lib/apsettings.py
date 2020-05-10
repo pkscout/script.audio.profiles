@@ -99,16 +99,16 @@ def _get_skin( settings ):
     skin = 'Default'
     if not settings['use_custom_skin_menu']:
         return skin
-    skin_glue = 2
     keep_trying = True
     skin_parts = SKINNAME.split('.')
+    skin_glue = len( skin_parts )
     while keep_trying:
         skin_test = '.'.join( skin_parts[:skin_glue] )
         success, loglines = checkPath( os.path.join( ADDONPATH, 'resources', 'skins', skin_test, '' ), createdir=False )
         if success:
             skin = skin_test
             keep_trying = False
-        skin_glue += 1
-        if skin_glue > len( skin_parts ):
+        skin_glue -= 1
+        if skin_glue == 0:
             keep_trying = False
     return skin

@@ -100,12 +100,14 @@ class Show( xbmcgui.WindowXMLDialog ):
 
     def onInit( self ):
         x, y, bottom_y = self._get_coordinates()
-        self.getControl( 10072 ).setPosition( x, y )
+        if x and y:
+            self.getControl( 10072 ).setPosition( x, y )
         if bottom_y:
             self.getControl( 10073 ).setPosition( 0, bottom_y)
         self.getControl( 10071 ).setLabel( self.TITLE )
         the_list = self.getControl( 10070 )
         for button_text in self.BUTTONS:
+            self.LOGLINES.append( 'setting list item to: %s' % button_text )
             the_list.addItem( xbmcgui.ListItem( button_text ) )
         self.setFocus( the_list )
 
@@ -125,6 +127,8 @@ class Show( xbmcgui.WindowXMLDialog ):
         skin_values = SKINVALUES[self.SKINNAME.lower()]
         self.LOGLINES.append( 'got back skin values of:' )
         self.LOGLINES.append( skin_values )
+        if not skin_values['diagw']:
+            return 0, 0, 0
         dialog_height = (len( self.BUTTONS ) * skin_values['buttonh']) + skin_values['toph'] + skin_values['bottomh']
         if skin_values['res'] == '720p':
             screen_width = 1280

@@ -14,6 +14,7 @@ SKINVALUES   = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10,
                  'skin.bello.7': {'res':'720p', 'diagw':405, 'toph':112, 'bottomh':22, 'buttonh':37},
                  'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40},
                  'skin.estuary': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':0, 'buttonh':45},
+                 'skin.embuary-leia': {'res':'1080i', 'diagw':500, 'toph':111, 'bottomh':61, 'buttonh':50},
                  'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50},
                  'skin.rapier': {'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37}
                }
@@ -54,8 +55,8 @@ class Dialog:
         delay = self.SETTINGS['player_autoclose_delay']
         autoclose = self.SETTINGS['player_autoclose']
         xmlfilename = 'ap-menu.xml'
-        loglines.append( 'using %s from %s' % (xmlfilename, self.SETTINGS['SKINNAME']) )
-        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['SKINNAME'],
+        loglines.append( 'using %s from %s' % (xmlfilename, self.SETTINGS['skin_root']) )
+        display = Show( xmlfilename, self.SETTINGS['ADDONPATH'], self.SETTINGS['skin_root'],
                         title=self.TITLE, buttons=self.BUTTONS )
         display.show()
         while (KODIPLAYER.isPlaying() or self.FORCEDIALOG) and not display.CLOSED and not KODIMONITOR.abortRequested():
@@ -86,7 +87,7 @@ class Show( xbmcgui.WindowXMLDialog ):
         self.CLOSED = False
         self.ACTION_PREVIOUS_MENU = 10
         self.ACTION_NAV_BACK = 92
-        self.SKINNAME = defaultSkin
+        self.DEFAULTSKIN = defaultSkin
         self.TITLE = title
         if buttons:
             self.BUTTONS = buttons
@@ -122,7 +123,7 @@ class Show( xbmcgui.WindowXMLDialog ):
 
     def _get_coordinates( self ):
         try:
-            skin_values = SKINVALUES[self.SKINNAME.lower()]
+            skin_values = SKINVALUES[self.DEFAULTSKIN.lower()]
         except KeyError:
             self.LOGLINES.append( 'no custom skin values found - returning 0, 0, 0' )
             return 0, 0, 0

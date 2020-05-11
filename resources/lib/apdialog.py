@@ -6,7 +6,7 @@ from resources.lib.fileops import checkPath, listDirectory
 KODIMONITOR  = xbmc.Monitor()
 KODIPLAYER   = xbmc.Player()
 SKINVALUESLIST   = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10, 'buttonh':45},
-                     'skin.ace2': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':45},
+                     'skin.ace2': {'res':'1080i', 'diagw':600, 'toph':95, 'bottomh':0, 'buttonh':45},
                      'skin.aeonmq8': {'res':'720p', 'diagw':400, 'toph':58, 'bottomh':0, 'buttonh':50},
                      'skin.aeon.nox.silvo': {'res':'720p', 'diagw':400, 'toph':74, 'bottomh':34, 'buttonh':40},
                      'skin.aeon.tajo': {'res':'1080i', 'diagw':720, 'toph':75, 'bottomh':15, 'buttonh':60},

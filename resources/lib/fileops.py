@@ -1,4 +1,4 @@
-# v.0.10.2
+# v.0.11.0
 
 import os, re, sys
 try:
@@ -8,22 +8,22 @@ except ImportError:
     isXBMC= False
 
 if isXBMC:
-    _mkdirs = xbmcvfs.mkdirs
-    _rmdir  = xbmcvfs.rmdir
-    _exists = xbmcvfs.exists
-    _delete = xbmcvfs.delete
-    _copy   = xbmcvfs.copy
-    _open   = xbmcvfs.File
-    _rename = xbmcvfs.rename
+    _mkdirs  = xbmcvfs.mkdirs
+    _rmdir   = xbmcvfs.rmdir
+    _exists  = xbmcvfs.exists
+    _delete  = xbmcvfs.delete
+    _copy    = xbmcvfs.copy
+    _open    = xbmcvfs.File
+    _rename  = xbmcvfs.rename
 else:
     import shutil
-    _mkdirs = os.makedirs
-    _rmdir  = os.rmdir
-    _exists = os.path.exists
-    _delete = os.remove
-    _copy   = shutil.copyfile
-    _open   = open
-    _rename = os.rename
+    _mkdirs  = os.makedirs
+    _rmdir   = os.rmdir
+    _exists  = os.path.exists
+    _delete  = os.remove
+    _copy    = shutil.copyfile
+    _open    = open
+    _rename  = os.rename
 
 
 def checkPath( thepath, createdir=True ):
@@ -97,6 +97,45 @@ def deleteFolder( thesource, thetype='folder' ):
     else:
         log_lines.append( '%s does not exist' % thesource )
         return False, log_lines
+
+
+def listDirectory( thesource, thefilter='all' ):
+    log_lines = []
+    log_lines.append( 'getting contents of folder %s' % thesource )
+    if isXBMC:
+        try:
+            dirs, files = xbmcvfs.listdir( thesource )
+        except OSError:
+            log_lines.append( 'OSError getting directory list' )
+            return [], log_lines
+        except Exception as e:
+            log_lines.append( 'unexpected error getting directory list' )
+            log_lines.append( e )
+            return [], log_lines
+        if thefilter == 'files':
+            log_lines.append( 'returning files from %s' % thesource )
+            log_lines.append( files )
+            return files, log_lines
+        elif thefilter =='folders':
+            log_lines.append( 'returning folders from %s' % thesource )
+            log_lines.append( dirs )
+            return dirs, log_lines
+        else:
+            log_lines.append( 'returning files and folders from %s' % thesource )
+            log_lines.append( files + dirs )
+            return files + dirs, log_lines
+    else:
+        try:
+            contents = os.listdir( thesource )
+        except OSError:
+            log_lines.append( 'OSError getting directory list' )
+            return [], log_lines
+        except Exception as e:
+            log_lines.append( 'unexpected error getting directory list' )
+            log_lines.append( e )
+            return [], log_lines
+        log_lines.append( 'returning files and folders from %s' % thesource )
+        return contents, loglines
 
 
 def moveFile( thesource, thedest ):

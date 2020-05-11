@@ -71,7 +71,7 @@ SETTINGSLIST = [ {'name': 'version_upgrade', 'default':''},
                ]
 
 
-def loadSettings( newskin='' ):
+def loadSettings():
     settings = {}
     settings['ADDON'] = ADDON
     settings['ADDONNAME'] = ADDONNAME
@@ -91,28 +91,4 @@ def loadSettings( newskin='' ):
         else:
             getset = getSettingString
         settings[item['name']] = getset( item['name'], item['default'] )
-    if newskin:
-        settings['SKINNAME'] = newskin
-    else:
-        settings['SKINNAME'] = SKINNAME
-    settings['skin_root'] = _get_skin_info( settings )
     return settings
-
-
-def _get_skin_info( settings ):
-    skin = 'Default'
-    if not settings['use_custom_skin_menu']:
-        return skin
-    keep_trying = True
-    skin_parts = settings['SKINNAME'].split('.')
-    skin_glue = len( skin_parts )
-    while keep_trying:
-        skin_test = '.'.join( skin_parts[:skin_glue] )
-        success, loglines = checkPath( os.path.join( settings['ADDONPATH'], 'resources', 'skins', skin_test, '' ), createdir=False )
-        if success:
-            skin = skin_test
-            keep_trying = False
-        skin_glue -= 1
-        if skin_glue == 0:
-            keep_trying = False
-    return skin

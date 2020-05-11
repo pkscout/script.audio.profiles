@@ -10,7 +10,6 @@ ADDONPATH     = ADDON.getAddonInfo('path')
 ADDONDATAPATH = xbmc.translatePath( ADDON.getAddonInfo('profile') )
 ADDONICON     = xbmc.translatePath('%s/icon.png' % ADDONPATH )
 ADDONLANGUAGE = ADDON.getLocalizedString
-SKINNAME      = xbmc.getSkinDir()
 
 
 def _get_setting( setting_name, default, thetype="string" ):

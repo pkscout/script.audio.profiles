@@ -53,10 +53,6 @@ class apMonitor( xbmc.Monitor ):
         while not self.abortRequested():
             if self.waitForAbort( 10 ):
                 break
-            current_skin = xbmc.getSkinDir()
-            self.LW.log( ['checking to see if skin changed with current skin of %s and old skin of %s' % (current_skin, self.SETTINGS['SKINNAME'])] )
-            if current_skin != self.SETTINGS['SKINNAME']:
-                self._init_vars( newskin=current_skin )
         self.LW.log( ['background monitor version %s stopped' % self.SETTINGS['ADDONVERSION']], xbmc.LOGINFO )
 
 
@@ -79,8 +75,8 @@ class apMonitor( xbmc.Monitor ):
         self._init_vars()
 
 
-    def _init_vars( self, newskin='' ):
-        self.SETTINGS = loadSettings( newskin=newskin )
+    def _init_vars( self ):
+        self.SETTINGS = loadSettings()
         self.PROFILESLIST = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
         # this only includes mappings we are 100% sure are accurate every time
         self.MAPTYPE = {'video': 'auto_videos', 'episode': 'auto_tvshows',

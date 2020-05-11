@@ -1,7 +1,7 @@
 
 import os
 from kodi_six import xbmc, xbmcgui
-from resources.lib.fileops import checkPath, listDirectory
+from resources.lib.fileops import listDirectory
 
 KODIMONITOR  = xbmc.Monitor()
 KODIPLAYER   = xbmc.Player()
@@ -59,7 +59,6 @@ class Dialog:
         autoclose = self.SETTINGS['player_autoclose']
         current_skin = xbmc.getSkinDir()
         skin, skin_values = self._get_skin_info( current_skin )
-        self.LOGLINES.append( 'for skin %s using %s' % (current_skin, skin) )
         self.LOGLINES.append( 'using skin values of:' )
         self.LOGLINES.append( skin_values )
         display = Show( 'ap-menu.xml', self.SETTINGS['ADDONPATH'], skin, skin_values['res'],
@@ -92,16 +91,15 @@ class Dialog:
             self.LOGLINES.append( 'found %s in list of skins, returning it as the skin' % current_skin )
             return current_skin, SKINVALUESLIST.get( current_skin.lower() )
         keep_trying = True
+        skin_glue = 2
         skin_parts = current_skin.split('.')
-        skin_glue = len( skin_parts )
         while keep_trying:
             skin_test = '.'.join( skin_parts[:skin_glue] )
-            success, self.LOGLINES = checkPath( os.path.join( self.SETTINGS['ADDONPATH'], 'resources', 'skins', skin_test, '' ), createdir=False )
-            if success:
+            if skin_test in skin_list:
                 default_skin = skin_test
-                keep_trying = False
-            skin_glue -= 1
-            if skin_glue == 0:
+                kepp_trying = False
+            skin_glue += 1
+            if skin_glue > len( skin_parts ):
                 keep_trying = False
         self.LOGLINES.append( 'returning %s as the skin for skin %s' % (default_skin, current_skin) )
         return default_skin, SKINVALUESLIST.get( default_skin.lower() )
@@ -134,7 +132,6 @@ class Show( xbmcgui.WindowXMLDialog ):
         self.getControl( 10071 ).setLabel( self.TITLE )
         the_list = self.getControl( 10070 )
         for button_text in self.BUTTONS:
-            self.LOGLINES.append( 'setting list item to: %s' % button_text )
             the_list.addItem( xbmcgui.ListItem( button_text ) )
         self.setFocus( the_list )
 

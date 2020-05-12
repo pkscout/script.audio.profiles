@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="11112">
+	<defaultcontrol>10070</defaultcontrol>
+	<animation effect="fade" end="100" start="0" time="200">WindowOpen</animation>
+	<animation delay="100" effect="fade" end="0" start="100" time="200">WindowClose</animation>
+	<controls>
+		<control type="group" id="10072">
+			<width>650</width>
+			<control type="group">
+				<control type="image">
+				    <height>130</height>
+					<texture>ap-background.png</texture>
+				</control>
+				<control type="button">
+					<top>53</top>
+					<left>55</left>
+					<width>540</width>
+					<height>76</height>
+				</control>			
+				<control type="label" id="10071">
+					<top>50</top>
+					<left>55</left>
+					<height>76</height>
+					<width>540</width>
+					<font>MedUpper24</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textcolor>FFFFFFFF</textcolor>
+					<label></label>
+				</control>
+			</control>
+			<control type="group" id="10073">
+				<control type="image">
+					<height>53</height>
+					<texture>ap-background.png</texture>
+				</control>
+			</control>
+			<control type="panel" id="10070">
+				<top>130</top>
+				<onleft>10070</onleft>
+				<onright>10070</onright>
+				<onup>10070</onup>
+				<ondown>10070</ondown>
+				<orientation>vertical</orientation>
+				<itemlayout height="76">
+					<control type="image">
+					    <height>76</height>
+						<texture>ap-background.png</texture>
+					</control>
+					<control type="label">
+						<left>55</left>
+						<height>76</height>
+						<width>540</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>MedUpper24</font>
+						<textcolor>FFBBBBBB</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="button">
+						<left>55</left>
+						<height>76</height>
+						<width>540</width>
+					</control>			
+				</itemlayout>
+				<focusedlayout height="76">
+					<control type="image">
+					    <height>76</height>
+						<texture>ap-background.png</texture>
+					</control>
+					<control type="button">
+						<left>55</left>
+						<height>76</height>
+						<width>540</width>
+					</control>			
+					<control type="label">
+						<left>55</left>
+						<height>76</height>
+						<width>540</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>MedUpper24</font>
+						<textcolor>FF000000</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

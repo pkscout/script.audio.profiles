@@ -17,6 +17,7 @@ SKINVALUESLIST   = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh'
                      'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40},
                      'skin.estuary': {'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'buttonh':70},
                      'skin.embuary-leia': {'res':'1080i', 'diagw':500, 'toph':111, 'bottomh':61, 'buttonh':50},
+                     'skin.eminence.2': {'res':'1080i', 'diagw':550, 'toph':82, 'bottomh':20, 'buttonh':82},
                      'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50},
                      'skin.rapier': {'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37}
                    }

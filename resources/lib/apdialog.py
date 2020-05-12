@@ -14,6 +14,7 @@ SKINVALUESLIST   = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh'
                      'skin.apptv': {'res':'720p', 'diagw':500, 'toph':50, 'bottomh':15, 'buttonh':48},
                      'skin.aura': {'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'buttonh':47},
                      'skin.bello.7': {'res':'720p', 'diagw':405, 'toph':112, 'bottomh':22, 'buttonh':37},
+                     'skin.box': {'res':'720p'},
                      'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40},
                      'skin.estuary': {'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'buttonh':70},
                      'skin.embuary-leia': {'res':'1080i', 'diagw':500, 'toph':111, 'bottomh':61, 'buttonh':50},
@@ -153,7 +154,7 @@ class Show( xbmcgui.WindowXMLDialog ):
 
 
     def _get_coordinates( self ):
-        if not self.SKINVALUES:
+        if not self.SKINVALUES.get( 'diagw' ):
             return 0, 0, 0
         dialog_height = (len( self.BUTTONS ) * self.SKINVALUES['buttonh']) + self.SKINVALUES['toph'] + self.SKINVALUES['bottomh']
         if self.SKINVALUES['res'] == '720p':

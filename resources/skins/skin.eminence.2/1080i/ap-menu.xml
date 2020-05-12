@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="11112">
 	<defaultcontrol>10070</defaultcontrol>
-    <animation effect="fade" start="0" end="100" time="200">Visible</animation>
-    <animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+    <animation effect="slide" tween="quadratic" easing="out" time="200" start="0,-400" end="0">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 	<controls>
 		<control type="group" id="10072">
 			<width>550</width>

@@ -89,18 +89,19 @@ class Dialog:
         self.LOGLINES = self.LOGLINES + loglines
         if current_skin in skin_list:
             self.LOGLINES.append( 'found %s in list of skins, returning it as the skin' % current_skin )
-            return current_skin, SKINVALUESLIST.get( current_skin.lower() )
-        keep_trying = True
-        skin_glue = 2
-        skin_parts = current_skin.split('.')
-        while keep_trying:
-            skin_test = '.'.join( skin_parts[:skin_glue] )
-            if skin_test in skin_list:
-                default_skin = skin_test
-                kepp_trying = False
-            skin_glue += 1
-            if skin_glue > len( skin_parts ):
-                keep_trying = False
+            default_skin = current_skin
+        elif self.SETTINGS['include_skin_mods']:
+            keep_trying = True
+            skin_glue = 2
+            skin_parts = current_skin.split('.')
+            while keep_trying:
+                skin_test = '.'.join( skin_parts[:skin_glue] )
+                if skin_test in skin_list:
+                    default_skin = skin_test
+                    keep_trying = False
+                skin_glue += 1
+                if skin_glue > len( skin_parts ):
+                    keep_trying = False
         self.LOGLINES.append( 'returning %s as the skin for skin %s' % (default_skin, current_skin) )
         return default_skin, SKINVALUESLIST.get( default_skin.lower() )
     

@@ -232,7 +232,7 @@ msgstr ""
 
 #: Settings
 msgctxt "#32047"
-msgid " Match select menu to skin when possible"
+msgid "Include skin mods"
 msgstr ""
 
 #: Settings

@@ -240,8 +240,8 @@ msgstr "Usa menu selezione custom"
 
 #: Settings
 msgctxt "#32047"
-msgid " Match select menu to skin when possible"
-msgstr " Abbina il menu di selezione alla skin quando possibile"
+msgid "Include skin mods"
+msgstr "Include modifiche della pelle"
 
 #: Settings
 msgctxt "#32048"

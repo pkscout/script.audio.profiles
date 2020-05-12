@@ -1,6 +1,4 @@
 
-import os
-from resources.lib.fileops import checkPath
 from resources.lib.kodisettings import *
 
 SETTINGSLIST = [ {'name': 'version_upgrade', 'default':''},
@@ -60,6 +58,7 @@ SETTINGSLIST = [ {'name': 'version_upgrade', 'default':''},
                  {'name': 'auto_default', 'default': '0'},
                  {'name': 'force_auto_default', 'default': False},
                  {'name': 'use_custom_skin_menu', 'default': True},
+                 {'name': 'include_skin_mods', 'default': True},
                  {'name': 'player_autoclose', 'default': False},
                  {'name': 'player_autoclose_delay', 'default': 10},
                  {'name': 'notify', 'default': True},

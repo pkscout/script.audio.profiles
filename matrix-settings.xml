@@ -817,6 +817,16 @@
 					<default>true</default>
 					<control type="toggle"/>
 				</setting>
+				<setting help="" id="include_skin_mods" label="32047" parent="use_custom_skin_menu" type="boolean">
+					<level>0</level>
+					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="use_custom_skin_menu">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>
 				<setting help="" id="player_autoclose" label="32016" type="boolean">
 					<level>0</level>
 					<default>false</default>

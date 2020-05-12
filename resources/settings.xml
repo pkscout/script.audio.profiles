@@ -68,6 +68,7 @@
 		<setting label="32038" type="select" id="auto_default" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />
 		<setting label="32041" type="bool" id="force_auto_default" default="true" visible="!eq(-1,0)" subsetting="true" />	
 		<setting label="32046" type="bool" id="use_custom_skin_menu" default="true" />
+		<setting label="32047" type="bool" id="include_skin_mods" default="true" visible="eq(-1,true)" subsetting="true" />
 		<setting label="32016" type="bool" id="player_autoclose" default="false" />
 		<setting id="player_autoclose_delay" type="slider" label="32039" default="10" range="1,1,30" visible="eq(-1,true)" option="int" subsetting="true"/>
 	</category>

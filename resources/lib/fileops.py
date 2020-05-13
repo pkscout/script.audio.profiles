@@ -1,4 +1,4 @@
-# v.0.11.0
+# v.0.11.1
 
 import os, re, sys
 try:
@@ -135,7 +135,7 @@ def listDirectory( thesource, thefilter='all' ):
             log_lines.append( e )
             return [], log_lines
         log_lines.append( 'returning files and folders from %s' % thesource )
-        return contents, loglines
+        return contents, log_lines
 
 
 def moveFile( thesource, thedest ):

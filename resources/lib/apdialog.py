@@ -111,7 +111,7 @@ class Dialog:
                     keep_trying = False
         self.LOGLINES.append( 'returning %s as the skin for skin %s' % (default_skin, current_skin) )
         return default_skin, SKINVALUESLIST.get( default_skin.lower() )
-    
+
 
 
 class Show( xbmcgui.WindowXMLDialog ):

@@ -11,7 +11,6 @@
 		<control type="group" id="10072">
 			<width>400</width>
 			<control type="group">
-				<height>50</height>
 				<control type="image">
 					<width>400</width>
 				    <height>10</height>
@@ -34,8 +33,9 @@
 				</control>
 			</control>
 			<control type="group" id="10073">
-				<height>10</height>
 				<control type="image">
+					<width>400</width>
+					<height>10</height>
 					<texture flipy="true">ap-rounded-black-80.png</texture>
 				</control>
 			</control>
@@ -48,6 +48,7 @@
 				<orientation>vertical</orientation>
 				<itemlayout height="45">
 					<control type="image">
+						<width>400</width>
 						<height>45</height>
 						<texture>ap-color-black-80.png</texture>
 					</control>
@@ -64,12 +65,14 @@
 				</itemlayout>
 				<focusedlayout height="45">
 					<control type="image">
+						<width>400</width>
 						<height>45</height>
 						<texture>ap-color-black-80.png</texture>
 					</control>
 					<control type="image">
 						<left>10</left>
 						<width>380</width>
+						<height>45</height>
 						<texture colordiffuse="FF2866A4">ap-color-white.png</texture>
 					</control>
 					<control type="label">

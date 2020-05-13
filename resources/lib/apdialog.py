@@ -138,10 +138,25 @@ class Show( xbmcgui.WindowXMLDialog ):
         if bottom_y:
             self.getControl( 10073 ).setPosition( 0, bottom_y)
         self.getControl( 10071 ).setLabel( self.TITLE )
-        the_list = self.getControl( 10070 )
+        the_button = None
+        try:
+            the_list = self.getControl( 10070 )
+        except RuntimeError:
+            the_button = 10080
+        self.LOGLINES.append( 'The button is set to %s' % str( the_button ) )
         for button_text in self.BUTTONS:
-            the_list.addItem( xbmcgui.ListItem( button_text ) )
-        self.setFocus( the_list )
+            if the_button:
+                self.LOGLINES.append( 'adding %s as label for button %s' % (button_text, str( the_button )) )
+                self.getControl( the_button ).setLabel( button_text )
+                the_button += 1
+                self.LOGLINES.append( 'The button value is set to %s' % str( the_button ) )
+            else:
+                self.LOGLINES.append( 'adding item %s' % button_text )
+                the_list.addItem( xbmcgui.ListItem( button_text ) )
+        if the_button:
+            while the_button <= 10089:
+                self.getControl( the_button ).setVisible( False )
+                the_button += 1                
 
 
     def onAction( self, action ):
@@ -151,7 +166,10 @@ class Show( xbmcgui.WindowXMLDialog ):
 
 
     def onClick( self, controlID ):
-        self.DIALOGRETURN = self.getControl( controlID ).getSelectedPosition()
+        try:
+            self.DIALOGRETURN = self.getControl( controlID ).getSelectedPosition()
+        except AttributeError:
+            self.DIALOGRETURN = self.getControl( controlID ).getId() - 10080
         self.close()
 
 

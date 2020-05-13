@@ -1,5 +1,6 @@
 v.2.0.0~beta2
 - added option for more agressive matching of unknown content to auto_music
+- added code so skin files can use grouplists/buttons instead of panels
 
 v.2.0.0~beta1
 - added support for up to 10 audio profiles

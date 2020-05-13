@@ -5,27 +5,27 @@ from resources.lib.fileops import listDirectory
 
 KODIMONITOR  = xbmc.Monitor()
 KODIPLAYER   = xbmc.Player()
-SKINVALUESLIST   = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10, 'buttonh':45},
-                     'skin.ace2': {'res':'1080i', 'diagw':600, 'toph':95, 'bottomh':0, 'buttonh':45},
-                     'skin.aeonmq8': {'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'buttonh':60},
-                     'skin.aeon.nox.silvo': {'res':'1080i', 'diagw':600, 'toph':80, 'bottomh':50, 'buttonh':60},
-                     'skin.aeon.tajo': {'res':'1080i', 'diagw':720, 'toph':75, 'bottomh':15, 'buttonh':60},
-                     'skin.amber': {'res':'1080i', 'diagw':600, 'toph':105, 'bottomh':53, 'buttonh':60},
-                     'skin.apptv': {'res':'720p', 'diagw':500, 'toph':50, 'bottomh':15, 'buttonh':48},
-                     'skin.aura': {'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'buttonh':47},
-                     'skin.bello.7': {'res':'720p', 'diagw':405, 'toph':112, 'bottomh':22, 'buttonh':37},
-                     'skin.box': {'res':'720p'},
-                     'skin.confluence': {'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'buttonh':40},
-                     'skin.estuary': {'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'buttonh':70},
-                     'skin.embuary-leia': {'res':'1080i', 'diagw':500, 'toph':111, 'bottomh':61, 'buttonh':50},
-                     'skin.eminence.2': {'res':'1080i', 'diagw':550, 'toph':82, 'bottomh':20, 'buttonh':82},
-                     'skin.ftv': {'res':'1080i', 'diagw':650, 'toph':130, 'bottomh':53, 'buttonh':76},
-                     'skin.pellucid': {'res':'1080i', 'diagw':640, 'toph':108, 'bottomh':20, 'buttonh':72},
-                     'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50},
-                     'skin.rapier': {'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37},
-                     'skin.transparency': {'res':'1080i', 'diagw':600, 'toph':118, 'bottomh':36, 'buttonh':52},
-                     'skin.unity': {'res':'720p'},
-                     'skin.xperience1080': {'res':'1080i', 'diagw':600, 'toph':55, 'bottomh':127, 'buttonh':57}
+SKINVALUESLIST   = { 'default': {'config':'sliced', 'res':'720p', 'diagw':400, 'toph':50, 'bottomh':10, 'itemh':45},
+                     'skin.ace2': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':95, 'bottomh':0, 'itemh':45},
+                     'skin.aeonmq8': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'itemh':60},
+                     'skin.aeon.nox.silvo': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':80, 'bottomh':50, 'itemh':60},
+                     'skin.aeon.tajo': {'config':'sliced', 'res':'1080i', 'diagw':720, 'toph':75, 'bottomh':15, 'itemh':60},
+                     'skin.amber': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':105, 'bottomh':53, 'itemh':60},
+                     'skin.apptv': {'config':'scaled', 'res':'1080i', 'diagw':770, 'diagb':83, 'itemh':72},
+                     'skin.aura': {'config':'sliced', 'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'itemh':47},
+                     'skin.bello.7': {'config':'sliced', 'res':'720p', 'diagw':405, 'toph':112, 'bottomh':22, 'itemh':37},
+                     'skin.box': {'config':'fixed', 'res':'720p'},
+                     'skin.confluence': {'config':'sliced', 'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'itemh':40},
+                     'skin.estuary': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'itemh':70},
+                     'skin.embuary-leia': {'config':'sliced', 'res':'1080i', 'diagw':500, 'toph':111, 'bottomh':61, 'itemh':50},
+                     'skin.eminence.2': {'config':'sliced', 'res':'1080i', 'diagw':550, 'toph':82, 'bottomh':20, 'itemh':82},
+                     'skin.ftv': {'config':'sliced', 'res':'1080i', 'diagw':650, 'toph':130, 'bottomh':53, 'itemh':76},
+                     'skin.pellucid': {'config':'sliced', 'res':'1080i', 'diagw':640, 'toph':108, 'bottomh':20, 'itemh':72},
+                     'skin.quartz': {'config':'sliced', 'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'itemh':50},
+                     'skin.rapier': {'config':'sliced', 'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'itemh':37},
+                     'skin.transparency': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':118, 'bottomh':36, 'itemh':52},
+                     'skin.unity': {'config':'fixed', 'res':'720p'},
+                     'skin.xperience1080': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':55, 'bottomh':127, 'itemh':57}
                    }
 
 
@@ -133,10 +133,6 @@ class Show( xbmcgui.WindowXMLDialog ):
 
     def onInit( self ):
         x, y, bottom_y = self._get_coordinates()
-        if x and y:
-            self.getControl( 10072 ).setPosition( x, y )
-        if bottom_y:
-            self.getControl( 10073 ).setPosition( 0, bottom_y)
         self.getControl( 10071 ).setLabel( self.TITLE )
         the_button = None
         try:
@@ -157,6 +153,13 @@ class Show( xbmcgui.WindowXMLDialog ):
             while the_button <= 10089:
                 self.getControl( the_button ).setVisible( False )
                 the_button += 1                
+        if x and y:
+            self.getControl( 10072 ).setPosition( x, y )
+        if bottom_y:
+            if self.SKINVALUES['config'] == 'sliced':
+                self.getControl( 10073 ).setPosition( 0, bottom_y )
+            elif self.SKINVALUES['config'] == 'scaled':
+                self.getControl( 10073 ).setHeight( bottom_y )
 
 
     def onAction( self, action ):
@@ -174,9 +177,17 @@ class Show( xbmcgui.WindowXMLDialog ):
 
 
     def _get_coordinates( self ):
-        if not self.SKINVALUES.get( 'diagw' ):
+        if self.SKINVALUES['config'] == 'scaled':
+            dialog_height = (len( self.BUTTONS ) * self.SKINVALUES['itemh']) + self.SKINVALUES['diagb']
+            bottom_y = dialog_height
+        elif self.SKINVALUES['config'] == 'sliced':
+            dialog_height = (len( self.BUTTONS ) * self.SKINVALUES['itemh']) + self.SKINVALUES['toph'] + self.SKINVALUES['bottomh']        
+            if self.SKINVALUES['bottomh']:
+                bottom_y = dialog_height - self.SKINVALUES['bottomh']
+            else:
+                bottom_y = 0
+        else:
             return 0, 0, 0
-        dialog_height = (len( self.BUTTONS ) * self.SKINVALUES['buttonh']) + self.SKINVALUES['toph'] + self.SKINVALUES['bottomh']
         if self.SKINVALUES['res'] == '720p':
             screen_width = 1280
             screen_height = 720
@@ -185,8 +196,5 @@ class Show( xbmcgui.WindowXMLDialog ):
             screen_height = 1080
         x = (screen_width - self.SKINVALUES['diagw']) // 2
         y = (screen_height - dialog_height) // 2
-        if self.SKINVALUES['bottomh']:
-            bottom_y = dialog_height - self.SKINVALUES['bottomh']
-        else:
-            bottom_y = 0
+        self.LOGLINES.append( 'returning x: %s, y: %s, bottom_y: %s' % (x, y, bottom_y) )
         return x, y, bottom_y

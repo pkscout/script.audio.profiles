@@ -59,40 +59,91 @@
                 <font>Panel_Description_Title</font>
                 <align>right</align>
             </control>
-			<control type="panel" id="10070">
-				<left>20</left>
-				<top>70</top>
-				<width>380</width>
-				<height>670</height>
-				<onleft>10070</onleft>
-				<onright>10070</onright>
+            <control type="grouplist" id="10070">
+                <left>20</left>
+                <top>70</top>
+                <width>380</width>
+                <height>700</height>
+                <itemgap>2</itemgap>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
 				<onup>10070</onup>
 				<ondown>10070</ondown>
-				<orientation>vertical</orientation>
-				<itemlayout height="50">
-					<control type="label">
-						<right>30</right>
-						<width>350</width>
-						<align>right</align>
-						<font>List_Right_Menu</font>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</itemlayout>
-				<focusedlayout height="50">
-					<control type="button" id="1000">
-						<width>370</width>
-						<align>right</align>
-					</control>
-					<control type="label">
-						<right>30</right>
-						<width>350</width>
-						<align>right</align>
-						<font>List_Right_Menu</font>
-						<textcolor>Accent</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</focusedlayout>
-			</control>
+                <orientation>vertical</orientation>
+                <control type="grouplist" id="3110">
+                    <height>700</height>
+                    <control type="button" id="10080">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                    <control type="button" id="10081">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                    <control type="button" id="10082">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                    <control type="button" id="10083">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                    <control type="button" id="10084">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                    <control type="button" id="10085">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                    <control type="button" id="10086">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                    <control type="button" id="10087">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                    <control type="button" id="10088">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                    <control type="button" id="10089">
+                        <width>370</width>
+                        <label></label>
+                        <align>right</align>
+                        <font>Panel_Info</font>
+                        <textoffsetx>20</textoffsetx>
+                    </control>
+                </control>
+            </control>			
 			<!-- Close Button for Context Menu	-->
 			<control type="button" id="9876">
 				<animation effect="rotate" end="-90" center="25,20" time="0" condition="true" reversible="false">Conditional</animation>

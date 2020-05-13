@@ -12,8 +12,8 @@ SKINVALUESLIST   = { 'default': {'config':'sliced', 'res':'720p', 'diagw':400, '
                      'skin.aeon.tajo': {'config':'sliced', 'res':'1080i', 'diagw':720, 'toph':75, 'bottomh':15, 'itemh':60},
                      'skin.amber': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':105, 'bottomh':53, 'itemh':60},
                      'skin.apptv': {'config':'scaled', 'res':'1080i', 'diagw':770, 'diagb':83, 'itemh':72},
-                     'skin.aura': {'config':'sliced', 'res':'720p', 'diagw':300, 'toph':54, 'bottomh':10, 'itemh':47},
-                     'skin.bello.7': {'config':'sliced', 'res':'720p', 'diagw':405, 'toph':112, 'bottomh':22, 'itemh':37},
+                     'skin.aura': {'config':'scaled', 'res':'1080i', 'diagw':506, 'diagb':90, 'itemh':70},
+                     'skin.bello.7': {'config':'sliced', 'res':'720p', 'diagw':405, 'diagb':134, 'bottomh':22, 'itemh':37},
                      'skin.box': {'config':'fixed', 'res':'720p'},
                      'skin.confluence': {'config':'sliced', 'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'itemh':40},
                      'skin.estuary': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'itemh':70},
@@ -160,6 +160,7 @@ class Show( xbmcgui.WindowXMLDialog ):
                 self.getControl( 10073 ).setPosition( 0, bottom_y )
             elif self.SKINVALUES['config'] == 'scaled':
                 self.getControl( 10073 ).setHeight( bottom_y )
+        self.setFocus( self.getControl( 10070 ) )
 
 
     def onAction( self, action ):

@@ -3,14 +3,18 @@
 	<section id="script.audio.profiles">
 		<category help="" id="profiles 1-5" label="32000">
 			<group id="1">
-			    <setting id="version_upgrade" type="string" label="hidden_upgrade" help="">
-			    	<visible>false</visible>
+				<setting help="" id="version_upgrade" label="hidden_upgrade" type="string">
 					<level>0</level>
 					<default/>
 					<constraints>
 						<allowempty>true</allowempty>
 					</constraints>
-					<control type="edit" format="string">
+					<dependencies>
+						<dependency type="visible">
+							<condition name="InfoBool" on="property">false</condition>
+						</dependency>
+					</dependencies>
+					<control format="string" type="edit">
 						<heading>hidden_upgrade</heading>
 					</control>
 				</setting>
@@ -193,7 +197,7 @@
 		<category help="" id="hdmi-cec" label="32027">
 			<group id="1">
 				<setting help="" id="profile1_cec" label="32007" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -208,7 +212,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile2_cec" label="32008" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -223,7 +227,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile3_cec" label="32009" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -238,7 +242,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile4_cec" label="32010" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -253,7 +257,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile5_cec" label="32051" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -268,7 +272,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile6_cec" label="32053" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -283,7 +287,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile7_cec" label="32055" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -298,7 +302,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile8_cec" label="32057" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -313,7 +317,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile9_cec" label="32059" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -328,7 +332,7 @@
 					</control>
 				</setting>
 				<setting help="" id="profile10_cec" label="32061" type="integer">
-					<level>1</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -484,6 +488,16 @@
 						<heading>32025</heading>
 					</control>
 				</setting>
+				<setting help="" id="aggressive_music_match" label="32074" parent="auto_music" type="boolean">
+					<level>0</level>
+					<default>false</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="!is" setting="auto_music">0</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>
 				<setting help="" id="auto_musicvideo" label="32032" type="integer">
 					<level>0</level>
 					<default>0</default>
@@ -558,7 +572,7 @@
 		<category help="" id="codec detection" label="32063">
 			<group id="1">
 				<setting help="" id="codec_delay" label="32073" type="integer">
-					<level>2</level>
+					<level>0</level>
 					<default>2</default>
 					<constraints>
 						<minimum>0</minimum>
@@ -570,7 +584,7 @@
 					</control>
 				</setting>
 				<setting help="" id="auto_ac3" label="32064" type="integer">
-					<level>2</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -593,7 +607,7 @@
 					</control>
 				</setting>
 				<setting help="" id="auto_eac3" label="32065" type="integer">
-					<level>2</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -616,7 +630,7 @@
 					</control>
 				</setting>
 				<setting help="" id="auto_dts" label="32066" type="integer">
-					<level>2</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -639,7 +653,7 @@
 					</control>
 				</setting>
 				<setting help="" id="auto_dtshd" label="32067" type="integer">
-					<level>2</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -662,7 +676,7 @@
 					</control>
 				</setting>
 				<setting help="" id="auto_truehd" label="32068" type="integer">
-					<level>2</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -685,7 +699,7 @@
 					</control>
 				</setting>
 				<setting help="" id="auto_othercodec" label="32069" type="integer">
-					<level>2</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -710,7 +724,7 @@
 			</group>
 			<group id="2" label="32049">
 				<setting help="" id="auto_stereo" label="32071" type="integer">
-					<level>2</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -733,7 +747,7 @@
 					</control>
 				</setting>
 				<setting help="" id="auto_multichannel" label="32072" type="integer">
-					<level>2</level>
+					<level>0</level>
 					<default>0</default>
 					<constraints>
 						<options>

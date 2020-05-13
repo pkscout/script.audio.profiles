@@ -65,10 +65,6 @@
                 <width>380</width>
                 <height>700</height>
                 <itemgap>2</itemgap>
-                <onleft>noop</onleft>
-                <onright>noop</onright>
-				<onup>10070</onup>
-				<ondown>10070</ondown>
                 <orientation>vertical</orientation>
                 <control type="grouplist" id="3110">
                     <height>700</height>
@@ -143,7 +139,7 @@
                         <textoffsetx>20</textoffsetx>
                     </control>
                 </control>
-            </control>			
+            </control>
 			<!-- Close Button for Context Menu	-->
 			<control type="button" id="9876">
 				<animation effect="rotate" end="-90" center="25,20" time="0" condition="true" reversible="false">Conditional</animation>

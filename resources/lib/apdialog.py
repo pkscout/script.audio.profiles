@@ -23,9 +23,9 @@ SKINVALUESLIST   = { 'default': {'res':'720p', 'diagw':400, 'toph':50, 'bottomh'
                      'skin.pellucid': {'res':'1080i', 'diagw':640, 'toph':108, 'bottomh':20, 'buttonh':72},
                      'skin.quartz': {'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'buttonh':50},
                      'skin.rapier': {'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'buttonh':37},
-                     'skin.transparency': {'res':'1080p', 'diagw':600, 'toph':118, 'bottomh':36, 'buttonh':52},
+                     'skin.transparency': {'res':'1080i', 'diagw':600, 'toph':118, 'bottomh':36, 'buttonh':52},
                      'skin.unity': {'res':'720p'},
-                     'skin.xperience1080': {'res':'1080p', 'diagw':600, 'toph':55, 'bottomh':127, 'buttonh':57}
+                     'skin.xperience1080': {'res':'1080i', 'diagw':600, 'toph':55, 'bottomh':127, 'buttonh':57}
                    }
 
 

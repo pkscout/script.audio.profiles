@@ -1,3 +1,6 @@
+v.2.0.0~beta2
+- added option for more agressive matching of unknown content to auto_music
+
 v.2.0.0~beta1
 - added support for up to 10 audio profiles
 - added more granular control over notifications

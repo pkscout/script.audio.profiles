@@ -44,6 +44,7 @@
 		<setting label="32024" type="select" id="auto_pvr_tv" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />
 		<setting label="32031" type="select" id="auto_videos" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />
 		<setting label="32025" type="select" id="auto_music" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />
+		<setting label="32074" type="bool" id="aggressive_music_match" default="false" visible="!eq(-1,0)" subsetting="true" />
 		<setting label="32032" type="select" id="auto_musicvideo" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />
 		<setting label="32034" type="select" id="auto_pvr_radio" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />
 		<setting label="32033" type="select" id="auto_unknown" lvalues="32026|32007|32008|32009|32010|32051|32053|32055|32057|32059|32061|32045" />

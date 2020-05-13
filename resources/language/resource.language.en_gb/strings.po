@@ -366,6 +366,10 @@ msgctxt "#32073"
 msgid "delay before reading codec info"
 msgstr ""
 
+#: Settings
+msgctxt "#32074"
+msgid "match streams with no codec details as music"
+msgstr ""
 
 #: Script
 msgctxt "#32100"

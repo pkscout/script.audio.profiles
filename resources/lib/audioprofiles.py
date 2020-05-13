@@ -105,6 +105,9 @@ class apMonitor( xbmc.Monitor ):
             elif channels_setting != '0':
                 the_setting = channels_setting
                 self.LW.log( ['using the channels setting of %s' % the_setting] )
+            elif self.SETTINGS['aggressive_music_match'] and codec_setting == '0' and channels_setting == '0' and content_autoswitch == 'auto_unknown':
+                the_setting = self.SETTINGS['auto_music']
+                self.LW.log( ['stream does not seem to be video, using the auto_music setting of %s' % the_setting] )
             else:
                 the_setting = self.SETTINGS[content_autoswitch]
                 self.LW.log( ['using the content setting of %s' % the_setting] )

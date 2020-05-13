@@ -146,7 +146,7 @@ msgstr "HDMI-CEC"
 #: Settings
 msgctxt "#32028"
 msgid "Wake Up"
-msgstr "Risveglio"
+msgstr "Wake Up"
 
 #: Settings
 msgctxt "#32029"
@@ -196,7 +196,7 @@ msgstr "Altro"
 #: Settings
 msgctxt "#32038"
 msgid "Profile for KODI Start/Wakeup (Default)"
-msgstr "Profilo per Avvio/Risveglio di Kodi (Predefinito)"
+msgstr "Profilo per Avvio/Wake up di Kodi (Predefinito)"
 
 #: Settings
 msgctxt "#32039"
@@ -241,7 +241,7 @@ msgstr "Usa menu selezione custom"
 #: Settings
 msgctxt "#32047"
 msgid "Include skin mods"
-msgstr "Include modifiche della pelle"
+msgstr "Include modifiche della skin"
 
 #: Settings
 msgctxt "#32048"

@@ -19,7 +19,7 @@ SKINVALUESLIST   = { 'default': {'config':'sliced', 'res':'720p', 'diagw':400, '
                      'skin.estuary': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'itemh':70},
                      'skin.embuary-leia': {'config':'sliced', 'res':'1080i', 'diagw':500, 'toph':111, 'bottomh':61, 'itemh':50},
                      'skin.eminence.2': {'config':'sliced', 'res':'1080i', 'diagw':550, 'toph':82, 'bottomh':20, 'itemh':82},
-                     'skin.ftv': {'config':'sliced', 'res':'1080i', 'diagw':650, 'toph':130, 'bottomh':53, 'itemh':76},
+                     'skin.ftv': {'config':'scaled', 'res':'1080i', 'diagw':540, 'diagb':156, 'itemh':76},
                      'skin.pellucid': {'config':'sliced', 'res':'1080i', 'diagw':640, 'toph':108, 'bottomh':20, 'itemh':72},
                      'skin.quartz': {'config':'sliced', 'res':'720p', 'diagw':480, 'toph':61, 'bottomh':10, 'itemh':50},
                      'skin.rapier': {'config':'sliced', 'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'itemh':37},

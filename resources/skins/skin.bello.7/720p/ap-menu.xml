@@ -8,6 +8,11 @@
 		<effect type="fade" start="100" end="0" time="240" />
 	</animation>
 	<controls>
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture>ap-color-black-50.png</texture>
+		</control>
 		<control type="group" id="10072">
 			<width>405</width>
 			<control type="group">
@@ -15,24 +20,11 @@
 				<control type="image">
 					<width>405</width>
 				    <height>75</height>
-					<texture>ap-topmenus_shutdown.png</texture>
+					<texture>dialogs/menus/topmenus_context.png</texture>
 				</control>				
-				<control type="image">
-					<top>75</top>
-					<width>405</width>
-					<height>37</height>
-					<texture>dialogs/menus/topmenus_nf.png</texture>
-				</control>
-				<control type="image">
-					<top>85</top>
-					<left>30</left>
-					<width>10</width>
-					<height>20</height>
-					<texture>ap-color-black.png</texture>
-				</control>
 				<control type="label" id="10071">
-					<top>75</top>
-					<left>25</left>
+					<top>20</top>
+					<left>75</left>
 					<width>385</width>
 					<height>37</height>
 					<font>FontSize_22B</font>
@@ -48,7 +40,7 @@
 				</control>
 			</control>
 			<control type="panel" id="10070">
-				<top>112</top>
+				<top>75</top>
 				<onleft>10070</onleft>
 				<onright>10070</onright>
 				<onup>10070</onup>

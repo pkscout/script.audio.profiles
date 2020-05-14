@@ -13,7 +13,7 @@ SKINVALUESLIST   = { 'default': {'config':'sliced', 'res':'720p', 'diagw':400, '
                      'skin.amber': {'config':'scaled', 'res':'1080i', 'diagw':525, 'diagb':120, 'itemh':60},
                      'skin.apptv': {'config':'scaled', 'res':'1080i', 'diagw':770, 'diagb':83, 'itemh':72},
                      'skin.aura': {'config':'scaled', 'res':'1080i', 'diagw':506, 'diagb':90, 'itemh':70},
-                     'skin.bello.7': {'config':'sliced', 'res':'720p', 'diagw':405, 'diagb':134, 'bottomh':22, 'itemh':37},
+                     'skin.bello.7': {'config':'sliced', 'res':'720p', 'diagw':405, 'toph':75, 'bottomh':22, 'itemh':37},
                      'skin.box': {'config':'fixed', 'res':'720p'},
                      'skin.confluence': {'config':'sliced', 'res':'720p', 'diagw':400, 'toph':60, 'bottomh':25, 'itemh':40},
                      'skin.estuary': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'itemh':70},

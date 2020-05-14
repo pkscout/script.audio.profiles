@@ -241,7 +241,7 @@ msgstr "Usa menu selezione custom"
 #: Settings
 msgctxt "#32047"
 msgid "Include skin mods"
-msgstr "Include modifiche della skin"
+msgstr "Includi modifiche della skin"
 
 #: Settings
 msgctxt "#32048"

@@ -10,7 +10,7 @@ SKINVALUESLIST   = { 'default': {'config':'sliced', 'res':'720p', 'diagw':400, '
                      'skin.aeonmq8': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':75, 'bottomh':0, 'itemh':60},
                      'skin.aeon.nox.silvo': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':80, 'bottomh':50, 'itemh':60},
                      'skin.aeon.tajo': {'config':'scaled', 'res':'1080i', 'diagw':600, 'diagb':130, 'itemh':60},
-                     'skin.amber': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':105, 'bottomh':53, 'itemh':60},
+                     'skin.amber': {'config':'scaled', 'res':'1080i', 'diagw':525, 'diagb':120, 'itemh':60},
                      'skin.apptv': {'config':'scaled', 'res':'1080i', 'diagw':770, 'diagb':83, 'itemh':72},
                      'skin.aura': {'config':'scaled', 'res':'1080i', 'diagw':506, 'diagb':90, 'itemh':70},
                      'skin.bello.7': {'config':'sliced', 'res':'720p', 'diagw':405, 'diagb':134, 'bottomh':22, 'itemh':37},
@@ -160,7 +160,10 @@ class Show( xbmcgui.WindowXMLDialog ):
                 self.getControl( 10073 ).setPosition( 0, bottom_y )
             elif self.SKINVALUES['config'] == 'scaled':
                 self.getControl( 10073 ).setHeight( bottom_y )
-        self.setFocus( self.getControl( 10070 ) )
+        try:
+            self.setFocus( self.getControl( 10070 ) )
+        except RuntimeError:
+            pass
 
 
     def onAction( self, action ):

@@ -12,21 +12,15 @@
 			<width>600</width>
 			<control type="group">
 				<control type="image">
+				    <height>128</height>
 					<width>600</width>
-				    <height>10</height>
-					<texture>ap-rounded-black-80.png</texture>
-				</control>				
-				<control type="image">
-				    <top>10</top>
-				    <height>118</height>
-					<width>600</width>
-					<texture>ap-color-black-80.png</texture>
+					<texture>black.png</texture>
 				</control>
 				<control type="label" id=10071>
 					<description>header label</description>
-					<left>60</left>
-					<top>56</top>
-					<width>480</width>
+					<left>20</left>
+					<top>36</top>
+					<width>560</width>
 					<height>45</height>
 					<font>font-30c</font>
 					<align>center</align>
@@ -35,28 +29,22 @@
 					<label></label>
 				</control>
 				<control type="image">
-					<left>128</left>
-					<top>102</top>
-					<width>315</width>
+					<left>142</left>
+					<top>92</top>
+					<width>316</width>
 					<height>3</height>
 					<texture border="30,0,30,0">separator.png</texture>
 				</control>
 			</control>
 		<control type="group" id="10073">
 				<control type="image">
-				    <height>26</height>
+				    <height>36</height>
 					<width>600</width>
-					<texture>ap-color-black-80.png</texture>
-				</control>
-				<control type="image">
-					<top>26</top>
-					<width>600</width>
-					<height>10</height>
-					<texture flipy="true">ap-rounded-black-80.png</texture>
+					<texture>black.png</texture>
 				</control>
 			</control>
 			<control type="panel" id="10070">
-				<top>118</top>
+				<top>100</top>
 				<onleft>10070</onleft>
 				<onright>10070</onright>
 				<onup>10070</onup>
@@ -65,7 +53,7 @@
 				<itemlayout height="52">
 					<control type="image">
 						<height>52</height>
-						<texture>ap-color-black-80.png</texture>
+						<texture>black.png</texture>
 					</control>
 					<control type="image">
 						<left>20</left>
@@ -87,7 +75,7 @@
 				<focusedlayout height="52">
 					<control type="image">
 						<height>52</height>
-						<texture>ap-color-black-80.png</texture>
+						<texture>black.png</texture>
 					</control>
 					<control type="image">
 						<left>20</left>

@@ -23,7 +23,7 @@ SKINVALUESLIST   = { 'default': {'config':'sliced', 'res':'720p', 'diagw':400, '
                      'skin.pellucid': {'config':'sliced', 'res':'1080i', 'diagw':640, 'toph':108, 'bottomh':20, 'itemh':72},
                      'skin.quartz': {'config':'scaled', 'res':'1080i', 'diagw':590, 'diagb':158, 'itemh':60},
                      'skin.rapier': {'config':'sliced', 'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'itemh':37},
-                     'skin.transparency': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':118, 'bottomh':36, 'itemh':52},
+                     'skin.transparency': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':100, 'bottomh':36, 'itemh':52},
                      'skin.unity': {'config':'fixed', 'res':'720p'},
                      'skin.xperience1080': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':55, 'bottomh':127, 'itemh':57}
                    }

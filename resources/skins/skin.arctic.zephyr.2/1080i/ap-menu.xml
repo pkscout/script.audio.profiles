@@ -53,9 +53,6 @@
 				<ondown>10070</ondown>
 				<orientation>horizontal</orientation>
 				<itemlayout height="70">
-					<control type="image">
-						<texture colordiffuse="dialog_bg_100">common/white.png</texture>
-					</control>
 					<control type="label">
 						<left>24</left>
 						<width>410</width>
@@ -66,9 +63,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout height="70">
-					<control type="image">
-						<texture colordiffuse="dialog_bg_100">common/white.png</texture>
-					</control>
                     <control type="image">
                         <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                     </control>

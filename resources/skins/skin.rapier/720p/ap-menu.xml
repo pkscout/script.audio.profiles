@@ -11,6 +11,9 @@
 			<effect type="slide" end="0,-15" time="400" tween="cubic" easing="out"/>
 		</animation>		
 		<control type="group" id="10072">
+			<!-- this hides the menu until it's done with setup -->
+		    <left>-10000</left>
+		    <right>-10000</right>
 		    <width>400</width>
 			<control type="image">
 				<height>32</height>

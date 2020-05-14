@@ -25,7 +25,7 @@ SKINVALUESLIST   = { 'default': {'config':'sliced', 'res':'720p', 'diagw':400, '
                      'skin.rapier': {'config':'sliced', 'res':'720p', 'diagw':400, 'toph':69, 'bottomh':32, 'itemh':37},
                      'skin.transparency': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':100, 'bottomh':36, 'itemh':52},
                      'skin.unity': {'config':'fixed', 'res':'720p'},
-                     'skin.xperience1080': {'config':'sliced', 'res':'1080i', 'diagw':600, 'toph':55, 'bottomh':127, 'itemh':57}
+                     'skin.xperience1080': {'config':'fixed', 'res':'1080i'}
                    }
 
 
@@ -138,6 +138,7 @@ class Show( xbmcgui.WindowXMLDialog ):
         try:
             the_list = self.getControl( 10070 )
         except RuntimeError:
+            the_list = None
             the_button = 10080
         self.LOGLINES.append( 'The button is set to %s' % str( the_button ) )
         for button_text in self.BUTTONS:
@@ -160,10 +161,8 @@ class Show( xbmcgui.WindowXMLDialog ):
                 self.getControl( 10073 ).setPosition( 0, bottom_y )
             elif self.SKINVALUES['config'] == 'scaled':
                 self.getControl( 10073 ).setHeight( bottom_y )
-        try:
+        if the_list:
             self.setFocus( self.getControl( 10070 ) )
-        except RuntimeError:
-            pass
 
 
     def onAction( self, action ):

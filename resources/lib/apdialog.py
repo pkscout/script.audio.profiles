@@ -12,6 +12,7 @@ SKINVALUESLIST   = { 'default': {'config':'sliced', 'res':'720p', 'diagw':400, '
                      'skin.aeon.tajo': {'config':'scaled', 'res':'1080i', 'diagw':600, 'diagb':130, 'itemh':60},
                      'skin.amber': {'config':'scaled', 'res':'1080i', 'diagw':525, 'diagb':120, 'itemh':60},
                      'skin.apptv': {'config':'scaled', 'res':'1080i', 'diagw':770, 'diagb':83, 'itemh':72},
+                     'skin.arctic.zephyr.2': {'config':'scaled', 'res':'1080i', 'diagw':506, 'diagb':90, 'itemh':70},
                      'skin.aura': {'config':'scaled', 'res':'1080i', 'diagw':506, 'diagb':90, 'itemh':70},
                      'skin.bello.7': {'config':'sliced', 'res':'720p', 'diagw':405, 'toph':75, 'bottomh':22, 'itemh':37},
                      'skin.box': {'config':'fixed', 'res':'720p'},

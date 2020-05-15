@@ -156,7 +156,7 @@ class Show( xbmcgui.WindowXMLDialog ):
         if the_button:
             while the_button <= 10089:
                 self.getControl( the_button ).setVisible( False )
-                the_button += 1                
+                the_button += 1
         if x and y:
             self.getControl( 10072 ).setPosition( x, y )
         if bottom_y:
@@ -187,7 +187,7 @@ class Show( xbmcgui.WindowXMLDialog ):
             dialog_height = (len( self.BUTTONS ) * self.SKINVALUES['itemh']) + self.SKINVALUES['diagb']
             bottom_y = dialog_height
         elif self.SKINVALUES['config'] == 'sliced':
-            dialog_height = (len( self.BUTTONS ) * self.SKINVALUES['itemh']) + self.SKINVALUES['toph'] + self.SKINVALUES['bottomh']        
+            dialog_height = (len( self.BUTTONS ) * self.SKINVALUES['itemh']) + self.SKINVALUES['toph'] + self.SKINVALUES['bottomh']
             if self.SKINVALUES['bottomh']:
                 bottom_y = dialog_height - self.SKINVALUES['bottomh']
             else:

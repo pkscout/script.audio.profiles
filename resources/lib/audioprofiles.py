@@ -127,11 +127,11 @@ class apMonitor( xbmc.Monitor ):
         self.LW.log( ['got back audio stream data of:', r_dict] )
         try:
             codec = r_dict['result']['currentaudiostream']['codec']
-        except (IndexError, KeyError, ValueError):
+        except (IndexError, KeyError, ValueError, TypeError):
             codec = None
         try:
             channels = r_dict['result']['currentaudiostream']['channels']
-        except (IndexError, KeyError, ValueError):
+        except (IndexError, KeyError, ValueError, TypeError):
             channels = None
         self.LW.log( ['got %s for the codec and %s for the channels' % (str( codec ), str( channels ))] )
         if codec:

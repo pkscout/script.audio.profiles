@@ -1,23 +1,17 @@
-v.2.0.0~beta3
-fix for crash if playback is stopped while AP is waiting for a stream to become available
-
-v.2.0.0~beta2
-- added option for more agressive matching of unknown content to auto_music
-- added skin support for Arctic Horizon, Arctic Zephyr2, and Revolve
-- updated language files
-- updated skin support to make it easier to support new skins
-
-v.2.0.0~beta1
+v.2.0.0
 - added support for up to 10 audio profiles
 - added more granular control over notifications
 - added option to have select menu show only for certain media types
 - added auto switching by codec kind and channel count (for videos only)
 - added option to use built in select dialog instead of custom menu
+- added option for more agressive matching of unknown content to auto_music
 - added ability to support skin specific custom select menu
-- added skin support for Ace2, Aeon MQ8, Aeon Nox Silvo, Aeon Tajo, Amber, AppTV, Aura, Bello 7,
-  Box, Confluence, Embuary, Eminence, Estuary, fTV, Pellucid, Quartz, Rapier, Transparency,
-  Unity, and Xperience1080
+- added skin support for Ace2, Aeon MQ8, Aeon Nox Silvo, Aeon Tajo, Amber, AppTV, Aura, Arctic Horizon,
+  Arctic Zephyr2Bello 7, Box, Confluence, Embuary, Eminence, Estuary, fTV, Pellucid, Quartz, Rapier,
+  Revolve, Transparency, Unity, and Xperience1080
 - added Matrix specific settings file (HDMI-CEC and Codec Detection are now ADVANCED settings for Matrix)
+- updated language files
+- updated skin support to make it easier to support new skins
 - changed general logic for auto switching
 - changed method for centering select menu
 - fix so PVR recordings are categorized as auto_pvr_tv during auto switch

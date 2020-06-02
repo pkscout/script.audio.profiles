@@ -33,7 +33,7 @@
 					<top>9</top>
 					<width>45</width>
 					<height>45</height>
-					<texture>icons/logo.png</texture>
+					<texture>special://xbmc/media/vendor_icon.png</texture>
 				</control>
 			</control>
 			<control type="panel" id="10070">

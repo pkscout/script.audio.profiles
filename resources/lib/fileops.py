@@ -1,4 +1,4 @@
-# v.0.11.1
+# v.0.12.2
 
 import os, re, sys
 try:
@@ -209,6 +209,30 @@ def renameFile ( thesource, thedest ):
         log_lines.append( e )
         return False, log_lines
     return True, log_lines
+
+
+def _remove_trailing_dot( thename, endreplace='' ):
+    if thename[-1] == '.' and len( thename ) > 1 and endreplace != '.':
+        return _remove_trailing_dot( thename[:-1] + endreplace )
+    else:
+        return thename
+
+
+def setSafeName( thename, illegalchars='<>:"/\|?*', illegalreplace='_', endreplace='' ):
+    loglines = []
+    if not thename:
+        loglines.append( 'name is empty, returning it' )
+        return thename, loglines
+    s_name = ''
+    loglines.append( 'started with %s' % thename )
+    loglines.append( 'the illegal characters are %s and the replacement is %s' % (illegalchars, illegalreplace) )
+    for c in list( _remove_trailing_dot( thename, endreplace=endreplace ) ):
+        if c in illegalchars:
+            s_name = s_name + illegalreplace
+        else:
+            s_name = s_name + c
+    loglines.append( 'finished with %s' % s_name )
+    return s_name, loglines
 
 
 def writeFile( data, filename, wtype='wb' ):

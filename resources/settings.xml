@@ -7,23 +7,23 @@
 		<setting label="32008" type="bool" id="profile2" default="true" />
 		<setting label="32003" type="text" id="name2" default="Analog" visible="eq(-1,true)" subsetting="true" />
 		<setting label="32009" type="bool" id="profile3" default="false" />
-		<setting label="32005" type="text" id="name3" default="Headphones" visible="eq(-1,true)" subsetting="false" />
+		<setting label="32005" type="text" id="name3" default="Headphones" visible="eq(-1,true)" subsetting="true" />
 		<setting label="32010" type="bool" id="profile4" default="false" />
-		<setting label="32006" type="text" id="name4" default="HDMI" visible="eq(-1,true)" subsetting="false" />
+		<setting label="32006" type="text" id="name4" default="HDMI" visible="eq(-1,true)" subsetting="true" />
 		<setting label="32051" type="bool" id="profile5" default="false" />
-		<setting label="32052" type="text" id="name5" default="Other" visible="eq(-1,true)" subsetting="false" />
+		<setting label="32052" type="text" id="name5" default="Other" visible="eq(-1,true)" subsetting="true" />
 	</category>
 	<category label="32070">
 		<setting label="32053" type="bool" id="profile6" default="false" />
-		<setting label="32054" type="text" id="name6" default="Profile 6" visible="eq(-1,true)" subsetting="false" />
+		<setting label="32054" type="text" id="name6" default="Profile 6" visible="eq(-1,true)" subsetting="true" />
 		<setting label="32055" type="bool" id="profile7" default="false" />
-		<setting label="32056" type="text" id="name7" default="Profile 7" visible="eq(-1,true)" subsetting="false" />
+		<setting label="32056" type="text" id="name7" default="Profile 7" visible="eq(-1,true)" subsetting="true" />
 		<setting label="32057" type="bool" id="profile8" default="false" />
-		<setting label="32058" type="text" id="name8" default="Profile 8" visible="eq(-1,true)" subsetting="false" />
+		<setting label="32058" type="text" id="name8" default="Profile 8" visible="eq(-1,true)" subsetting="true" />
 		<setting label="32059" type="bool" id="profile9" default="false" />
-		<setting label="32060" type="text" id="name9" default="Profile 9" visible="eq(-1,true)" subsetting="false" />
+		<setting label="32060" type="text" id="name9" default="Profile 9" visible="eq(-1,true)" subsetting="true" />
 		<setting label="32061" type="bool" id="profile10" default="false" />
-		<setting label="32062" type="text" id="name10" default="Profile 10" visible="eq(-1,true)" subsetting="false" />
+		<setting label="32062" type="text" id="name10" default="Profile 10" visible="eq(-1,true)" subsetting="true" />
 	</category>
 	<category label="32027">
 		<setting label="32007" type="select" id="profile1_cec" lvalues="32026|32028|32029|32030" />

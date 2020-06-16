@@ -18,7 +18,7 @@ msgstr " Nombre del Perfil 1"
 #: Settings
 msgctxt "#32002"
 msgid "Settings"
-msgstr "ConfiguraciÃ›n"
+msgstr "Configuración"
 
 #: Settings
 msgctxt "#32003"
@@ -63,32 +63,32 @@ msgstr "Perfil 4"
 #: Settings
 msgctxt "#32011"
 msgid "Include video player settings"
-msgstr "Incluir ConfiguraciÃ›n de reproductor de video"
+msgstr "Incluir Configuración de reproductor de video"
 
 #: Settings
 msgctxt "#32012"
 msgid "Include display settings"
-msgstr "Incluir ConfiguraciÃ›n de Pantalla"
+msgstr "Incluir Configuración de Pantalla"
 
 #: Settings
 msgctxt "#32013"
 msgid "Includes Settings"
-msgstr "Incluye ConfiguraciÃ›n"
+msgstr "Incluye Configuración"
 
 #: Settings
 msgctxt "#32014"
 msgid "Automatic Switch"
-msgstr "Cambio AutomÂ·tico"
+msgstr "Cambio Automático"
 
 #: Settings
 msgctxt "#32015"
 msgid "Show audio profile select menu on media playback"
-msgstr "Mostrar el selector de audio stream al comenzar reproducciÃ›n"
+msgstr "Mostrar el selector de perfil de audio al comenzar reproducción"
 
 #: Settings
 msgctxt "#32016"
 msgid "Auto close select menu"
-msgstr "Autocerrar menË™ de selecciÃ›n"
+msgstr "Autocerrar menú de selección"
 
 #: Settings
 msgctxt "#32018"
@@ -108,7 +108,7 @@ msgstr "Perfil para GUI"
 #: Settings
 msgctxt "#32022"
 msgid "Profile for movies"
-msgstr "Perfil para PelÃŒculas"
+msgstr "Perfil para Películas"
 
 #: Settings
 msgctxt "#32023"
@@ -123,7 +123,7 @@ msgstr "Perfil para TV PVR"
 #: Settings
 msgctxt "#32025"
 msgid "Profile for music"
-msgstr "Perfil para MË™sica"
+msgstr "Perfil para Música"
 
 #: Settings
 msgctxt "#32026"
@@ -158,7 +158,7 @@ msgstr "Perfiles para Videos (no de la biblioteca)"
 #: Settings
 msgctxt "#32032"
 msgid "Profile for music videos"
-msgstr "Perfil para Videos de MË™sica"
+msgstr "Perfil para Videos de Música"
 
 #: Settings
 msgctxt "#32033"
@@ -208,7 +208,7 @@ msgstr " Forzar la carga de perfil al comienzo"
 #: Settings
 msgctxt "#32042"
 msgid " Auto switch notifications"
-msgstr " Notificaciones de cambio automÃ¡tico"
+msgstr " Notificaciones de cambio automático"
 
 #: Settings
 msgctxt "#32043"
@@ -223,12 +223,153 @@ msgstr " Notificaciones de mantenimiento"
 #: Settings
 msgctxt "#32045"
 msgid "Select menu"
-msgstr "Mostrar el selector"
+msgstr "Menú de Selección"
+
+#: Settings
+msgctxt "#32046"
+msgid "Use custom select menu"
+msgstr "Usar Menú de selección Personalizado"
+
+#: Settings
+msgctxt "#32047"
+msgid " Match select menu to skin when possible"
+msgstr "Igualar Menú de selección al skin cuando sea posible"
+
+#: Settings
+msgctxt "#32048"
+msgid "Extras"
+msgstr "Extras"
+
+#: Settings
+msgctxt "#32049"
+msgid "By number of channels"
+msgstr "Por número de canales"
+
+#: Settings
+msgctxt "#32050"
+msgid "Menu Options"
+msgstr "Menú de Opciones"
+
+#: Settings
+msgctxt "#32051"
+msgid "Profile 5"
+msgstr "Perfil 5"
+
+#: Settings
+msgctxt "#32052"
+msgid "Name of profile 5"
+msgstr "Nombre del Perfil 5"
+
+#: Settings
+msgctxt "#32053"
+msgid "Profile 6"
+msgstr "Perfil 6"
+
+#: Settings
+msgctxt "#32054"
+msgid "Name of profile 6"
+msgstr "Nombre del Perfil 6"
+
+#: Settings
+msgctxt "#32055"
+msgid "Profile 7"
+msgstr "Perfil 7"
+
+#: Settings
+msgctxt "#32056"
+msgid "Name of profile 7"
+msgstr "Nombre del Perfil 7"
+
+#: Settings
+msgctxt "#32057"
+msgid "Profile 8"
+msgstr "Perfil 8"
+
+#: Settings
+msgctxt "#32058"
+msgid "Name of profile 8"
+msgstr "Nombre del Perfil 8"
+
+#: Settings
+msgctxt "#32059"
+msgid "Profile 9"
+msgstr "Perfil 9"
+
+#: Settings
+msgctxt "#32060"
+msgid "Name of profile 9"
+msgstr "Nombre del Perfil 9"
+
+#: Settings
+msgctxt "#32061"
+msgid "Profile 10"
+msgstr "Perfil 10"
+
+#: Settings
+msgctxt "#32062"
+msgid "Name of profile 10"
+msgstr "Nombre del Perfil 10"
+
+#: Settings
+msgctxt "#32063"
+msgid "Codec Detection"
+msgstr "Detección de Codec"
+
+#: Settings
+msgctxt "#32064"
+msgid "Profile for AC3"
+msgstr "Perfil para AC3"
+
+#: Settings
+msgctxt "#32065"
+msgid "Profile for E-AC3"
+msgstr "Perfil para E-AC3"
+
+#: Settings
+msgctxt "#32066"
+msgid "Profile for DTS"
+msgstr "Perfil para DTS"
+
+#: Settings
+msgctxt "#32067"
+msgid "Profile for DTS HD"
+msgstr "Perfil para DTS HD"
+
+#: Settings
+msgctxt "#32068"
+msgid "Profile for True HD"
+msgstr "Perrfil para True HD"
+
+#: Settings
+msgctxt "#32069"
+msgid "Profile for any other audio codec"
+msgstr "Perfil para otros codec de audio"
+
+#: Settings
+msgctxt "#32070"
+msgid "Profiles 6-10"
+msgstr "Perfiles 6-10"
+
+#: Settings
+msgctxt "#32071"
+msgid "Stereo audio"
+msgstr "Audio Estéreo"
+
+#: Settings
+msgctxt "#32072"
+msgid "Multi channel audio"
+msgstr "Audio Multi Canal"
+
+#: Settings
+msgctxt "#32073"
+msgid "delay before reading codec info"
+msgstr "Retraso antes de leer la info del codec"
+
 
 #: Script
 msgctxt "#32100"
 msgid "Select profile to save settings"
-msgstr "Seleccionar perfil para guardar configuraciÃ›n"
+msgstr "Seleccionar perfil para guardar configuración"
 
 #: Script
 msgctxt "#32101"
@@ -243,12 +384,12 @@ msgstr "Guardado como perfil"
 #: Script
 msgctxt "#32103"
 msgid "This profile is disabled"
-msgstr "Este perfil estÂ· deshabilitado"
+msgstr "Este perfil está deshabilitado"
 
 #: Script
 msgctxt "#32104"
 msgid "Invalid file for profile"
-msgstr "Archivo InvÂ·lido para perfil"
+msgstr "Archivo Inválido para perfil"
 
 #: Script
 msgctxt "#32105"
@@ -258,4 +399,5 @@ msgstr "Habilitar perfiles"
 #: Script
 msgctxt "#32106"
 msgid "Select audio profile"
-msgstr "Seleccionar perfil de Audio"
+msgstr "Elige Perfil de Audio"
+

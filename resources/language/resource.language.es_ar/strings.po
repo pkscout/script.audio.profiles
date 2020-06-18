@@ -3,27 +3,27 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
+"Language: en\n"
 
 #: Settings
 msgctxt "#32000"
-msgid "Profiles"
-msgstr "Perfiles"
+msgid "Profiles 1-5"
+msgstr "Perfiles 1-5"
 
 #: Settings
 msgctxt "#32001"
-msgid " Name of profile 1"
-msgstr " Nombre del Perfil 1"
+msgid " Name of prÃ³file 1"
+msgstr "Nombre del Perfil 1"
 
 #: Settings
 msgctxt "#32002"
 msgid "Settings"
-msgstr "Configuración"
+msgstr "ConfiguraciÃ³n"
 
 #: Settings
 msgctxt "#32003"
 msgid " Name of profile 2"
-msgstr " Nombre del Perfil 2"
+msgstr "Nombre del Perfil 2"
 
 #: Settings
 msgctxt "#32004"
@@ -33,12 +33,12 @@ msgstr "Incluir Nivel de Volumen"
 #: Settings
 msgctxt "#32005"
 msgid " Name of profile 3"
-msgstr " Nombre del Perfil 3"
+msgstr "Nombre del Perfil 3"
 
 #: Settings
 msgctxt "#32006"
 msgid " Name of profile 4"
-msgstr " Nombre del Perfil 4"
+msgstr "Nombre del Perfil 4"
 
 #: Settings
 msgctxt "#32007"
@@ -63,32 +63,32 @@ msgstr "Perfil 4"
 #: Settings
 msgctxt "#32011"
 msgid "Include video player settings"
-msgstr "Incluir Configuración de reproductor de video"
+msgstr "Incluir ConfiguraciÃ³n de reproductor de video"
 
 #: Settings
 msgctxt "#32012"
 msgid "Include display settings"
-msgstr "Incluir Configuración de Pantalla"
+msgstr "Incluir ConfiguraciÃ³n de Pantalla"
 
 #: Settings
 msgctxt "#32013"
 msgid "Includes Settings"
-msgstr "Incluye Configuración"
+msgstr "Incluye ConfiguraciÃ³n"
 
 #: Settings
 msgctxt "#32014"
-msgid "Automatic Switch"
-msgstr "Cambio Automático"
+msgid "Auto Switch"
+msgstr "Cambio AutomÃ¡tico"
 
 #: Settings
 msgctxt "#32015"
 msgid "Show audio profile select menu on media playback"
-msgstr "Mostrar el selector de perfil de audio al comenzar reproducción"
+msgstr "Mostrar el selector de perfil de audio al comenzar reproducciÃ³n"
 
 #: Settings
 msgctxt "#32016"
 msgid "Auto close select menu"
-msgstr "Autocerrar menú de selección"
+msgstr "Autocerrar menÃº de selecciÃ³n"
 
 #: Settings
 msgctxt "#32018"
@@ -108,7 +108,7 @@ msgstr "Perfil para GUI"
 #: Settings
 msgctxt "#32022"
 msgid "Profile for movies"
-msgstr "Perfil para Películas"
+msgstr "Perfil para PelÃ­culas"
 
 #: Settings
 msgctxt "#32023"
@@ -123,7 +123,7 @@ msgstr "Perfil para TV PVR"
 #: Settings
 msgctxt "#32025"
 msgid "Profile for music"
-msgstr "Perfil para Música"
+msgstr "Perfil para MÃºsica"
 
 #: Settings
 msgctxt "#32026"
@@ -132,8 +132,8 @@ msgstr "Ninguno"
 
 #: Settings
 msgctxt "#32027"
-msgid " Send HDMI-CEC command"
-msgstr " Enviar comando HDMI-CEC"
+msgid "HDMI-CEC"
+msgstr "HDMI-CEC"
 
 #: Settings
 msgctxt "#32028"
@@ -158,7 +158,7 @@ msgstr "Perfiles para Videos (no de la biblioteca)"
 #: Settings
 msgctxt "#32032"
 msgid "Profile for music videos"
-msgstr "Perfil para Videos de Música"
+msgstr "Perfil para Videos de MÃºsica"
 
 #: Settings
 msgctxt "#32033"
@@ -193,7 +193,7 @@ msgstr "Perfil para inicio/wakeup (Por Defecto)"
 #: Settings
 msgctxt "#32039"
 msgid " Delay before close"
-msgstr " Retraso antes de cerrar"
+msgstr "Retraso antes de cerrar"
 
 #: Settings
 msgctxt "#32040"
@@ -203,37 +203,37 @@ msgstr "Habilitar debug logging"
 #: Settings
 msgctxt "#32041"
 msgid " Force load profile at startup"
-msgstr " Forzar la carga de perfil al comienzo"
+msgstr "Forzar la carga de perfil al comienzo"
 
 #: Settings
 msgctxt "#32042"
 msgid " Auto switch notifications"
-msgstr " Notificaciones de cambio automático"
+msgstr "Notificaciones de cambio automÃ¡tico"
 
 #: Settings
 msgctxt "#32043"
 msgid " Manual switch notifications"
-msgstr " Notificaciones de cambio manual"
+msgstr "Notificaciones de cambio manual"
 
 #: Settings
 msgctxt "#32044"
 msgid " Maintenance notifications"
-msgstr " Notificaciones de mantenimiento"
+msgstr "Notificaciones de mantenimiento"
 
 #: Settings
 msgctxt "#32045"
 msgid "Select menu"
-msgstr "Menú de Selección"
+msgstr "MenÃº de SelecciÃ³n"
 
 #: Settings
 msgctxt "#32046"
 msgid "Use custom select menu"
-msgstr "Usar Menú de selección Personalizado"
+msgstr "Usar MenÃº de selecciÃ³n Personalizado"
 
 #: Settings
 msgctxt "#32047"
-msgid " Match select menu to skin when possible"
-msgstr "Igualar Menú de selección al skin cuando sea posible"
+msgid "Include skin mods"
+msgstr "Incluir Modificaciones de Skin"
 
 #: Settings
 msgctxt "#32048"
@@ -243,12 +243,12 @@ msgstr "Extras"
 #: Settings
 msgctxt "#32049"
 msgid "By number of channels"
-msgstr "Por número de canales"
+msgstr "Por nÃºmero de canales"
 
 #: Settings
 msgctxt "#32050"
 msgid "Menu Options"
-msgstr "Menú de Opciones"
+msgstr "MenÃº de Opciones"
 
 #: Settings
 msgctxt "#32051"
@@ -310,10 +310,11 @@ msgctxt "#32062"
 msgid "Name of profile 10"
 msgstr "Nombre del Perfil 10"
 
+
 #: Settings
 msgctxt "#32063"
 msgid "Codec Detection"
-msgstr "Detección de Codec"
+msgstr "DetecciÃ³n de Codec"
 
 #: Settings
 msgctxt "#32064"
@@ -338,7 +339,7 @@ msgstr "Perfil para DTS HD"
 #: Settings
 msgctxt "#32068"
 msgid "Profile for True HD"
-msgstr "Perrfil para True HD"
+msgstr "Perfil para True HD"
 
 #: Settings
 msgctxt "#32069"
@@ -353,7 +354,7 @@ msgstr "Perfiles 6-10"
 #: Settings
 msgctxt "#32071"
 msgid "Stereo audio"
-msgstr "Audio Estéreo"
+msgstr "Audio EstÃ©reo"
 
 #: Settings
 msgctxt "#32072"
@@ -365,11 +366,15 @@ msgctxt "#32073"
 msgid "delay before reading codec info"
 msgstr "Retraso antes de leer la info del codec"
 
+#: Settings
+msgctxt "#32074"
+msgid "match streams with no codec details as music"
+msgstr "Igualar streams sin detalles de codec como mÃºsica"
 
 #: Script
 msgctxt "#32100"
 msgid "Select profile to save settings"
-msgstr "Seleccionar perfil para guardar configuración"
+msgstr "Seleccionar perfil para guardar configuraciÃ³n"
 
 #: Script
 msgctxt "#32101"
@@ -384,12 +389,12 @@ msgstr "Guardado como perfil"
 #: Script
 msgctxt "#32103"
 msgid "This profile is disabled"
-msgstr "Este perfil está deshabilitado"
+msgstr "Este perfil estÃ¡ deshabilitado"
 
 #: Script
 msgctxt "#32104"
 msgid "Invalid file for profile"
-msgstr "Archivo Inválido para perfil"
+msgstr "Archivo InvÃ¡lido para perfil"
 
 #: Script
 msgctxt "#32105"
@@ -400,4 +405,3 @@ msgstr "Habilitar perfiles"
 msgctxt "#32106"
 msgid "Select audio profile"
 msgstr "Elige Perfil de Audio"
-

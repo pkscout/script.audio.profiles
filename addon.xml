@@ -37,6 +37,7 @@ v.2.0.0
 		<summary lang="hu_HU">Hangbeállítások profilba mentése, és könnyű váltás közöttük.</summary>
 		<summary lang="it_IT">Salva il profilo audio e cambia facilmente da uno all'altro.</summary>
 		<summary lang="pl_PL">Zapisuje profile ustawień audio i łatwo przełącza między nimi.</summary>
+		<summary lang="cs_CZ">Uložte si profily zvuku a snadno je přepínejte.</summary>
 		<description lang="en_GB">Save audio profile and easily switch between them.</description>
 		<description lang="es_AR">Guarde el perfil de audio y cambie fácilmente entre ellos.</description>
 		<description lang="es_ES">Guarde el perfil de audio y cambie fácilmente entre ellos.</description>
@@ -44,6 +45,7 @@ v.2.0.0
 		<description lang="hu_HU">Hangbeállítások profilba mentése, és könnyű váltás közöttük.</description>
 		<description lang="it_IT">Salva il profilo audio e cambia facilmente da uno all'altro.</description>
 		<description lang="pl_PL">Zapisuje profile ustawień audio i łatwo przełącza między nimi.</description>
+		<description lang="cs_CZ">Uložte si profily zvuku a snadno je přepínejte.</description>
 		<platform>all</platform>
 		<license>GPL-3.0-only</license>
 		<forum>https://forum.kodi.tv/showthread.php?tid=353852</forum>

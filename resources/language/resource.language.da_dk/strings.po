@@ -10,6 +10,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
+msgctxt "Addon Summary"
+msgid "Save audio profile and easily switch between them."
+msgstr ""
+
+msgctxt "Addon Description"
+msgid "Save audio profile and easily switch between them."
+msgstr ""
+
 #: Settings
 msgctxt "#32000"
 msgid "Profiles 1-5"

@@ -14,6 +14,11 @@ v.2.1.0
 		<assets>
 			<icon>icon.png</icon>
 		</assets>
+		<platform>all</platform>
+		<license>GPL-3.0-only</license>
+		<forum>https://forum.kodi.tv/showthread.php?tid=353852</forum>
+		<website>https://kodi.wiki/view/Add-on:Audio_Profiles</website>
+		<source>https://github.com/pkscout/script.audio.profiles</source>
 		<summary lang="en_GB">Save audio profile and easily switch between them.</summary>
 		<summary lang="es_AR">Guarde el perfil de audio y cambie fácilmente entre ellos.</summary>
 		<summary lang="es_ES">Guarde el perfil de audio y cambie fácilmente entre ellos.</summary>
@@ -28,10 +33,5 @@ v.2.1.0
 		<description lang="hu_HU">Hangbeállítások profilba mentése, és könnyű váltás közöttük.</description>
 		<description lang="it_IT">Salva il profilo audio e cambia facilmente da uno all'altro.</description>
 		<description lang="pl_PL">Zapisuje profile ustawień audio i łatwo przełącza między nimi.</description>
-		<platform>all</platform>
-		<license>GPL-3.0-only</license>
-		<forum>https://forum.kodi.tv/showthread.php?tid=353852</forum>
-		<website>https://kodi.wiki/view/Add-on:Audio_Profiles</website>
-		<source>https://github.com/pkscout/script.audio.profiles</source>
 	</extension>
 </addon>

@@ -12,6 +12,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
+msgctxt "Addon Summary"
+msgid "Save audio profile and easily switch between them."
+msgstr "Zapisuje profile ustawień audio i łatwo przełącza między nimi."
+
+msgctxt "Addon Description"
+msgid "Save audio profile and easily switch between them."
+msgstr "Zapisuje profile ustawień audio i łatwo przełącza między nimi."
+
 msgctxt "#32000"
 msgid "Profiles 1-5"
 msgstr ""

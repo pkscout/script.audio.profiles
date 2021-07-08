@@ -1,14 +1,14 @@
 # script.audio.profiles language file
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-04-30 10:01+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2021-07-08 10:29+0000\n"
+"Last-Translator: vdkbsd <valexgus@gmail.com>\n"
 "Language-Team: Russian <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/ru_ru/>\n"
 "Language: ru_ru\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.6\n"
+"X-Generator: Weblate 4.7.1\n"
 
 #: Settings
 msgctxt "#32000"
@@ -93,7 +93,7 @@ msgstr "Показывать меню выбора аудио профиля п�
 #: Settings
 msgctxt "#32016"
 msgid "Auto close select menu"
-msgstr ""
+msgstr "Автозакрытие меню выбора"
 
 #: Settings
 msgctxt "#32018"
@@ -153,7 +153,7 @@ msgstr "Режим ожидания"
 #: Settings
 msgctxt "#32030"
 msgid "Toggle state"
-msgstr ""
+msgstr "Переключить состояние"
 
 #: Settings
 msgctxt "#32031"
@@ -193,7 +193,7 @@ msgstr "Другое"
 #: Settings
 msgctxt "#32038"
 msgid "Profile for KODI Start/Wakeup (Default)"
-msgstr ""
+msgstr "Профиль для запуска/пробуждения KODI (по умолчанию)"
 
 #: Settings
 msgctxt "#32039"
@@ -373,7 +373,7 @@ msgstr "задержка до чтения информации о кодеке"
 #: Settings
 msgctxt "#32074"
 msgid "match streams with no codec details as music"
-msgstr ""
+msgstr "определять потоки без сведений о кодеке как музыку"
 
 #: Script
 msgctxt "#32100"

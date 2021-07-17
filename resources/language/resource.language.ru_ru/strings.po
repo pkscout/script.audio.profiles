@@ -1,7 +1,8 @@
 # script.audio.profiles language file
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-07-08 10:29+0000\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"PO-Revision-Date: 2021-07-17 08:29+0000\n"
 "Last-Translator: vdkbsd <valexgus@gmail.com>\n"
 "Language-Team: Russian <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/ru_ru/>\n"
 "Language: ru_ru\n"
@@ -12,11 +13,11 @@ msgstr ""
 
 msgctxt "Addon Summary"
 msgid "Save audio profile and easily switch between them."
-msgstr ""
+msgstr "Сохраняйте аудиопрофили и легко переключайтесь между ними."
 
 msgctxt "Addon Description"
 msgid "Save audio profile and easily switch between them."
-msgstr ""
+msgstr "Позволяет сохранять звуковые профили и с лёгкостью переключаться между ними."
 
 msgctxt "#32000"
 msgid "Profiles 1-5"

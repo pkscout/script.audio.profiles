@@ -1,22 +1,23 @@
 # script.audio.profiles language file
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-02-07 14:28+0000\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"PO-Revision-Date: 2021-07-26 22:29+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Danish <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/da_dk/>\n"
 "Language: da_dk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.7.2\n"
 
 msgctxt "Addon Summary"
 msgid "Save audio profile and easily switch between them."
-msgstr ""
+msgstr "Gem lydprofiler og skift let mellem dem."
 
 msgctxt "Addon Description"
 msgid "Save audio profile and easily switch between them."
-msgstr ""
+msgstr "Gem lydprofiler og skift let mellem dem."
 
 msgctxt "#32000"
 msgid "Profiles 1-5"
@@ -84,7 +85,7 @@ msgstr "Vis menuen til valg af lydprofil ved medieafspilning"
 
 msgctxt "#32016"
 msgid "Auto close select menu"
-msgstr ""
+msgstr "Luk automatisk menuen til valg"
 
 msgctxt "#32018"
 msgid "Notifications"
@@ -96,7 +97,7 @@ msgstr "Meddelelser"
 
 msgctxt "#32021"
 msgid "Profile for GUI"
-msgstr "Profil til GUI"
+msgstr "Profil til den grafiske brugerflade"
 
 msgctxt "#32022"
 msgid "Profile for movies"

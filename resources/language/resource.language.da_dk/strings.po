@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2021-07-26 22:29+0000\n"
+"PO-Revision-Date: 2021-08-06 17:29+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Danish <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/da_dk/>\n"
 "Language: da_dk\n"
@@ -129,7 +129,7 @@ msgstr "Vågn"
 
 msgctxt "#32029"
 msgid "StandBy"
-msgstr ""
+msgstr "StandBy"
 
 msgctxt "#32030"
 msgid "Toggle state"
@@ -193,11 +193,11 @@ msgstr " Vedligeholdelsesmeddelser"
 
 msgctxt "#32045"
 msgid "Select menu"
-msgstr ""
+msgstr "Menu til valg"
 
 msgctxt "#32046"
 msgid "Use custom select menu"
-msgstr ""
+msgstr "Anvend brugerdefineret menu til valg"
 
 msgctxt "#32047"
 msgid "Include skin mods"
@@ -265,7 +265,7 @@ msgstr "Navn på profil 10"
 
 msgctxt "#32063"
 msgid "Codec Detection"
-msgstr ""
+msgstr "Registrering af codec"
 
 msgctxt "#32064"
 msgid "Profile for AC3"
@@ -309,11 +309,11 @@ msgstr "forsinkelse inden læsning af codec-information"
 
 msgctxt "#32074"
 msgid "match streams with no codec details as music"
-msgstr ""
+msgstr "match streams uden codec-detaljer som musik"
 
 msgctxt "#32100"
 msgid "Select profile to save settings"
-msgstr ""
+msgstr "Vælg profil for at gemme indstillingerne"
 
 msgctxt "#32101"
 msgid "Configure profile"

@@ -2,7 +2,8 @@
 import json
 import os
 import sys
-from kodi_six import xbmc, xbmcgui
+import xbmc
+import xbmcgui
 from resources.lib import apdialog
 from resources.lib.fileops import *
 

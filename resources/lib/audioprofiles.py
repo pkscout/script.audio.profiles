@@ -5,7 +5,7 @@
 # *  updates and additions through v1.4.1 by notoco and CtrlGy
 # *  updates and additions since v1.4.2 by pkscout
 
-from kodi_six import xbmc
+import xbmc
 import json
 import os
 import sys

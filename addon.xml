@@ -29,6 +29,7 @@ v.2.1.1
 		<summary lang="ko_KR">오디오 프로필을 저장하고 쉽게 전환합니다.</summary>
 		<summary lang="pl_PL">Zapisuje profile ustawień audio i łatwo przełącza między nimi.</summary>
 		<summary lang="ru_RU">Сохраняйте аудиопрофили и легко переключайтесь между ними.</summary>
+		<summary lang="zh_CN">保存音频配置文件并在它们之间轻松切换。</summary>
 		<description lang="da_DK">Gem lydprofiler og skift let mellem dem.</description>
 		<description lang="de_DE">Audioprofile speichern und einfach zwischen diesen wechseln.</description>
 		<description lang="en_GB">Save audio profile and easily switch between them.</description>
@@ -40,5 +41,6 @@ v.2.1.1
 		<description lang="ko_KR">오디오 프로필을 저장하고 쉽게 전환합니다.</description>
 		<description lang="pl_PL">Zapisuje profile ustawień audio i łatwo przełącza między nimi.</description>
 		<description lang="ru_RU">Позволяет сохранять звуковые профили и с лёгкостью переключаться между ними.</description>
+		<description lang="zh_CN">保存音频配置文件并在它们之间轻松切换。</description>
 	</extension>
 </addon>

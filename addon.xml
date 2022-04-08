@@ -24,8 +24,9 @@ v.2.1.1
 		<summary lang="es_AR">Guarde el perfil de audio y cambie fácilmente entre ellos.</summary>
 		<summary lang="es_ES">Guarde el perfil de audio y cambie fácilmente entre ellos.</summary>
 		<summary lang="es_MX">Guarde el perfil de audio y cambie fácilmente entre ellos.</summary>
+		<summary lang="fi_FI">Tallenna ääniasetusprofiileita ja vaihda niiden välillä helposti.</summary>
 		<summary lang="hu_HU">Hangbeállítások profilba mentése, és könnyű váltás közöttük.</summary>
-		<summary lang="it_IT">Salva il profilo audio e cambia facilmente da uno all'altro.</summary>
+		<summary lang="it_IT">Salva il profilo audio e cambia facilmente da uno all&apos;altro.</summary>
 		<summary lang="ko_KR">오디오 프로필을 저장하고 쉽게 전환합니다.</summary>
 		<summary lang="pl_PL">Zapisuje profile ustawień audio i łatwo przełącza między nimi.</summary>
 		<summary lang="ru_RU">Сохраняйте аудиопрофили и легко переключайтесь между ними.</summary>
@@ -36,8 +37,9 @@ v.2.1.1
 		<description lang="es_AR">Guarde el perfil de audio y cambie fácilmente entre ellos.</description>
 		<description lang="es_ES">Guarde el perfil de audio y cambie fácilmente entre ellos.</description>
 		<description lang="es_MX">Guarde el perfil de audio y cambie fácilmente entre ellos.</description>
+		<description lang="fi_FI">Tallenna ääniasetusprofiileita ja vaihda niiden välillä helposti.</description>
 		<description lang="hu_HU">Hangbeállítások profilba mentése, és könnyű váltás közöttük.</description>
-		<description lang="it_IT">Salva il profilo audio e cambia facilmente da uno all'altro.</description>
+		<description lang="it_IT">Salva il profilo audio e cambia facilmente da uno all&apos;altro.</description>
 		<description lang="ko_KR">오디오 프로필을 저장하고 쉽게 전환합니다.</description>
 		<description lang="pl_PL">Zapisuje profile ustawień audio i łatwo przełącza między nimi.</description>
 		<description lang="ru_RU">Позволяет сохранять звуковые профили и с лёгкостью переключаться между ними.</description>

@@ -24,7 +24,7 @@ msgid "Profiles 1-5"
 msgstr ""
 
 msgctxt "#32001"
-msgid " Name of profile 1"
+msgid "Name of profile 1"
 msgstr ""
 
 msgctxt "#32002"
@@ -32,7 +32,7 @@ msgid "Settings"
 msgstr ""
 
 msgctxt "#32003"
-msgid " Name of profile 2"
+msgid "Name of profile 2"
 msgstr ""
 
 msgctxt "#32004"
@@ -40,11 +40,11 @@ msgid "Include volume level"
 msgstr ""
 
 msgctxt "#32005"
-msgid " Name of profile 3"
+msgid "Name of profile 3"
 msgstr ""
 
 msgctxt "#32006"
-msgid " Name of profile 4"
+msgid "Name of profile 4"
 msgstr ""
 
 msgctxt "#32007"
@@ -93,6 +93,10 @@ msgstr ""
 
 msgctxt "#32019"
 msgid "Notifications"
+msgstr ""
+
+msgctxt "#32020"
+msgid "Notifications sound"
 msgstr ""
 
 msgctxt "#32021"
@@ -168,7 +172,7 @@ msgid "Profile for KODI Start/Wakeup (Default)"
 msgstr ""
 
 msgctxt "#32039"
-msgid " Delay before close"
+msgid "Delay before close"
 msgstr ""
 
 msgctxt "#32040"
@@ -176,19 +180,19 @@ msgid "Enable debug logging"
 msgstr "Enable debug logging"
 
 msgctxt "#32041"
-msgid " Force load profile at startup"
+msgid "Force load profile at startup"
 msgstr ""
 
 msgctxt "#32042"
-msgid " Auto switch notifications"
+msgid "Auto switch notifications"
 msgstr ""
 
 msgctxt "#32043"
-msgid " Manual switch notifications"
+msgid "Manual switch notifications"
 msgstr ""
 
 msgctxt "#32044"
-msgid " Maintenance notifications"
+msgid "Maintenance notifications"
 msgstr ""
 
 msgctxt "#32045"

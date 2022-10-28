@@ -872,6 +872,16 @@
 					<default>true</default>
 					<control type="toggle"/>
 				</setting>
+				<setting help="" id="notify_sound" label="32020" parent="notify" type="boolean">
+					<level>0</level>
+					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="notify">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>
 				<setting help="" id="notify_time" label="32039" parent="notify" type="integer">
 					<level>0</level>
 					<default>5</default>
@@ -889,7 +899,7 @@
 						<popup>false</popup>
 					</control>
 				</setting>
-				<setting help="" id="notify_auto" label="32042" parent="notify_time" type="boolean">
+				<setting help="" id="notify_auto" label="32042" parent="notify" type="boolean">
 					<level>0</level>
 					<default>true</default>
 					<dependencies>
@@ -899,7 +909,7 @@
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
-				<setting help="" id="notify_manual" label="32043" parent="notify_auto" type="boolean">
+				<setting help="" id="notify_manual" label="32043" parent="notify" type="boolean">
 					<level>0</level>
 					<default>true</default>
 					<dependencies>
@@ -909,7 +919,7 @@
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
-				<setting help="" id="notify_maintenance" label="32044" parent="notify_manual" type="boolean">
+				<setting help="" id="notify_maintenance" label="32044" parent="notify" type="boolean">
 					<level>0</level>
 					<default>true</default>
 					<dependencies>

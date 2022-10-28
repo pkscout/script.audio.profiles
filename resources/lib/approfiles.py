@@ -42,6 +42,7 @@ class Profiles:
         self.KODIPLAYER = xbmc.Player()
         self.DIALOG = xbmcgui.Dialog()
         self.NOTIFYTIME = self.SETTINGS['notify_time'] * 1000
+        self.NOTIFYSOUND = self.SETTINGS['notify_sound']
         self.DISPLAYNOTIFICATION = self.SETTINGS['notify']
         success, loglines = checkPath(
             os.path.join(self.SETTINGS['ADDONDATAPATH'], ''))
@@ -122,7 +123,7 @@ class Profiles:
     def _notification(self, msg, display=True):
         if self.DISPLAYNOTIFICATION and display:
             self.DIALOG.notification(
-                self.SETTINGS['ADDONLONGNAME'], msg, icon=self.SETTINGS['ADDONICON'], time=self.NOTIFYTIME)
+                self.SETTINGS['ADDONLONGNAME'], msg, icon=self.SETTINGS['ADDONICON'], time=self.NOTIFYTIME, sound=self.NOTIFYSOUND)
 
     def _profile(self, profile):
         loglines, result = readFile(os.path.join(

@@ -20,7 +20,7 @@ msgstr ""
 
 #: Settings
 msgctxt "#32001"
-msgid " Name of profile 1"
+msgid "Name of profile 1"
 msgstr ""
 
 #: Settings
@@ -30,7 +30,7 @@ msgstr ""
 
 #: Settings
 msgctxt "#32003"
-msgid " Name of profile 2"
+msgid "Name of profile 2"
 msgstr ""
 
 #: Settings
@@ -40,12 +40,12 @@ msgstr ""
 
 #: Settings
 msgctxt "#32005"
-msgid " Name of profile 3"
+msgid "Name of profile 3"
 msgstr ""
 
 #: Settings
 msgctxt "#32006"
-msgid " Name of profile 4"
+msgid "Name of profile 4"
 msgstr ""
 
 #: Settings
@@ -106,6 +106,10 @@ msgstr ""
 #: Settings
 msgctxt "#32019"
 msgid "Notifications"
+msgstr ""
+
+msgctxt "#32020"
+msgid "Notifications sound"
 msgstr ""
 
 #: Settings
@@ -200,7 +204,7 @@ msgstr ""
 
 #: Settings
 msgctxt "#32039"
-msgid " Delay before close"
+msgid "Delay before close"
 msgstr ""
 
 #: Settings
@@ -210,22 +214,22 @@ msgstr ""
 
 #: Settings
 msgctxt "#32041"
-msgid " Force load profile at startup"
+msgid "Force load profile at startup"
 msgstr ""
 
 #: Settings
 msgctxt "#32042"
-msgid " Auto switch notifications"
+msgid "Auto switch notifications"
 msgstr ""
 
 #: Settings
 msgctxt "#32043"
-msgid " Manual switch notifications"
+msgid "Manual switch notifications"
 msgstr ""
 
 #: Settings
 msgctxt "#32044"
-msgid " Maintenance notifications"
+msgid "Maintenance notifications"
 msgstr ""
 
 #: Settings

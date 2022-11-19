@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.audio.profiles" name="Audio Profiles" version="2.1.1" provider-name="pkscout, notoco, Regss">
+<addon id="script.audio.profiles" name="Audio Profiles" version="2.1.2~beta1" provider-name="pkscout, notoco, Regss">
 	<requires>
         <import addon="xbmc.python" version="3.0.0" />
 	</requires>
@@ -7,8 +7,8 @@
 	<extension point="xbmc.service" library="service.py" />
 	<extension point="xbmc.addon.metadata">
 		<news>
-v.2.1.1
-- fix for depreciated call that was removed from Nexus
+v.2.1.2
+- fix for DTS and DTSHD not being properly detected
 		</news>
 		<assets>
 			<icon>icon.png</icon>

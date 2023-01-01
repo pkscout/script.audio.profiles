@@ -2,22 +2,22 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2022-07-12 17:14+0000\n"
+"PO-Revision-Date: 2023-01-01 16:15+0000\n"
 "Last-Translator: skypichat <skypichat@hotmail.fr>\n"
 "Language-Team: French (France) <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/fr_fr/>\n"
 "Language: fr_fr\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.13\n"
+"X-Generator: Weblate 4.15\n"
 
 msgctxt "Addon Summary"
 msgid "Save audio profile and easily switch between them."
-msgstr "Enregistrer le profil audio et basculer facilement entre eux."
+msgstr "Enregistrer les profils audio et basculer facilement entre eux."
 
 msgctxt "Addon Description"
 msgid "Save audio profile and easily switch between them."
-msgstr "Enregistrer le profil audio et basculer facilement entre eux."
+msgstr "Enregistrer les profils audio et basculer facilement entre eux."
 
 msgctxt "#32000"
 msgid "Profiles 1-5"
@@ -105,11 +105,11 @@ msgstr "Profil pour les films"
 
 msgctxt "#32023"
 msgid "Profile for TV shows"
-msgstr "Profil pour les émissions de TV"
+msgstr "Profil pour les séries TV"
 
 msgctxt "#32024"
 msgid "Profile for PVR TV"
-msgstr "Profil pour PVR TV"
+msgstr "Profil pour la TV"
 
 msgctxt "#32025"
 msgid "Profile for music"
@@ -165,7 +165,7 @@ msgstr "Autre"
 
 msgctxt "#32038"
 msgid "Profile for KODI Start/Wakeup (Default)"
-msgstr "Profil lors Démarrage/Réveil de KODI (par défaut)"
+msgstr "Profil lors du Démarrage/Réveil de KODI (par défaut)"
 
 msgctxt "#32039"
 msgid " Delay before close"
@@ -193,7 +193,7 @@ msgstr " Notifications de maintenance"
 
 msgctxt "#32045"
 msgid "Select menu"
-msgstr "Sélectionnez le menu"
+msgstr "Sélectionner le menu"
 
 msgctxt "#32046"
 msgid "Use custom select menu"
@@ -313,7 +313,7 @@ msgstr "les flux audio sans détail de codec seront considéré comme de la musi
 
 msgctxt "#32100"
 msgid "Select profile to save settings"
-msgstr "Sélectionnez le profil pour enregistrer les paramètres"
+msgstr "Sélectionner le profil pour enregistrer les paramètres"
 
 msgctxt "#32101"
 msgid "Configure profile"

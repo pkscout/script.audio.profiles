@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-04-29 04:16+0000\n"
+"PO-Revision-Date: 2023-05-11 12:08+0000\n"
 "Last-Translator: Massimo Pissarello <mapi68@gmail.com>\n"
 "Language-Team: Italian <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/it_it/>\n"
 "Language: it_it\n"
@@ -72,7 +72,7 @@ msgstr "Includi impostazioni lettore video"
 
 msgctxt "#32012"
 msgid "Include display settings"
-msgstr "Includi impostazioni display"
+msgstr "Includi impostazioni di visualizzazione"
 
 msgctxt "#32013"
 msgid "Includes Settings"
@@ -84,7 +84,7 @@ msgstr "Commutazione automatica"
 
 msgctxt "#32015"
 msgid "Show audio profile select menu on media playback"
-msgstr "Mostra menu selezione profilo audio durante la riproduzione"
+msgstr "Mostra menu selezione del profilo audio durante la riproduzione"
 
 msgctxt "#32016"
 msgid "Auto close select menu"
@@ -132,7 +132,7 @@ msgstr "Risveglio"
 
 msgctxt "#32029"
 msgid "StandBy"
-msgstr "StandBy"
+msgstr "Standby"
 
 msgctxt "#32030"
 msgid "Toggle state"
@@ -152,7 +152,7 @@ msgstr "Profilo per tipo contenuto sconosciuto"
 
 msgctxt "#32034"
 msgid "Profile for PVR radio"
-msgstr "Profilo per Radio PVR"
+msgstr "Profilo per radio PVR"
 
 msgctxt "#32035"
 msgid "Video"
@@ -288,7 +288,7 @@ msgstr "Profilo per DTS-HD"
 
 msgctxt "#32068"
 msgid "Profile for True HD"
-msgstr "Profilo per True HD"
+msgstr "Profilo per TrueHD"
 
 msgctxt "#32069"
 msgid "Profile for any other audio codec"
@@ -312,7 +312,7 @@ msgstr "ritardo prima di leggere informazioni codec"
 
 msgctxt "#32074"
 msgid "match streams with no codec details as music"
-msgstr "abbina flussi senza dettagli codec come musica"
+msgstr "tratta flussi senza dettagli del codec come musica"
 
 msgctxt "#32100"
 msgid "Select profile to save settings"

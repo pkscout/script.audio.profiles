@@ -172,10 +172,15 @@ class Profiles:
 
         harmony = self.SETTINGS['profile%s_harmony' % profile]
         if harmony and harmony != "None":
-            harmony_cmd = "RunScript(script.harmony.control, {})".format(harmony)
-        
-            self.LW.log(['SENDING HARMONY ACTIVITY: %s' % harmony_cmd], xbmc.LOGINFO)
-            xbmc.executebuiltin(harmony_cmd)
+            try:
+                harmony_cmd = "RunScript(script.harmony.control, {})".format(harmony)
+            
+                self.LW.log(['SENDING HARMONY ACTIVITY: %s' % harmony_cmd], xbmc.LOGINFO)
+                xbmc.executebuiltin(harmony_cmd)
+                
+            except Exception as ex:
+                self.LW.log(["{} while trying to send {}".format(ex, harmony)], xbmc.LOGERROR)
+               
 
     def _save(self):
         dialog_return, loglines = apdialog.Dialog().start(self.SETTINGS, title=self.SETTINGS['ADDONLANGUAGE'](32106),

@@ -338,3 +338,7 @@ msgstr "Включить профили"
 msgctxt "#32106"
 msgid "Select audio profile"
 msgstr "Выберите аудио профиль"
+
+msgctxt "#32107"
+msgid "Harmony"
+msgstr ""

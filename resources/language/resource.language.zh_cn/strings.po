@@ -338,3 +338,7 @@ msgstr "启用配置文件"
 msgctxt "#32106"
 msgid "Select audio profile"
 msgstr "选择音频配置文件"
+
+msgctxt "#32107"
+msgid "Harmony"
+msgstr ""

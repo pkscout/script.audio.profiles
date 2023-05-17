@@ -353,3 +353,7 @@ msgstr "Wybierz profil audio"
 #~ msgctxt "#32027"
 #~ msgid " Send HDMI-CEC command"
 #~ msgstr " Wyślij komendę HDMI-CEC"
+
+msgctxt "#32107"
+msgid "Harmony"
+msgstr ""

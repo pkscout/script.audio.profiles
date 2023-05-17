@@ -348,3 +348,7 @@ msgstr "Hangprofil kiválasztása"
 #~ msgctxt "#32027"
 #~ msgid " Send HDMI-CEC command"
 #~ msgstr " HDMI-CEC parancs küldése"
+
+msgctxt "#32107"
+msgid "Harmony"
+msgstr ""

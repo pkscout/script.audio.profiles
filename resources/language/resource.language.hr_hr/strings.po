@@ -338,3 +338,7 @@ msgstr "Omogući profile"
 msgctxt "#32106"
 msgid "Select audio profile"
 msgstr "Omogući zvučne profile"
+
+msgctxt "#32107"
+msgid "Harmony"
+msgstr ""

@@ -338,3 +338,7 @@ msgstr "Luba profiilid"
 msgctxt "#32106"
 msgid "Select audio profile"
 msgstr "Vali heliprofiil"
+
+msgctxt "#32107"
+msgid "Harmony"
+msgstr ""

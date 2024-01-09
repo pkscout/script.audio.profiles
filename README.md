@@ -11,5 +11,6 @@ Audio Profiles is a Kodi addon to help you easily switch between certain audio a
 *  option to automatically select a profile based on media playing
 *  option to automatically select a profile based on audio codec/number of audio channels used in stream
 *  option to load a profile when Kodi starts
+*  option to activate a Harmony Hub activity with a profile (if the Kodi Harmony Hub add-on is installed)
 
 For more information, please see https://kodi.wiki/view/Add-on:Audio_Profiles.

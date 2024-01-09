@@ -338,3 +338,7 @@ msgstr "Ota profiilit käyttöön"
 msgctxt "#32106"
 msgid "Select audio profile"
 msgstr "Valitse ääniprofiili"
+
+msgctxt "#32107"
+msgid "Harmony"
+msgstr ""

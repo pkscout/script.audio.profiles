@@ -335,6 +335,11 @@ msgctxt "#32105"
 msgid "Enable profiles"
 msgstr ""
 
+#: Script
 msgctxt "#32106"
 msgid "Select audio profile"
+msgstr ""
+
+msgctxt "#32107"
+msgid "Harmony"
 msgstr ""

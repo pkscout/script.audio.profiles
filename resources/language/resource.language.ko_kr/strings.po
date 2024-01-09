@@ -338,3 +338,7 @@ msgstr "프로필 사용함"
 msgctxt "#32106"
 msgid "Select audio profile"
 msgstr "오디오 프로필 선택"
+
+msgctxt "#32107"
+msgid "Harmony"
+msgstr ""

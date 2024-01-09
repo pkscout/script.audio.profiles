@@ -170,6 +170,18 @@ class Profiles:
                         self.CECCOMMANDS[s_cec]], xbmc.LOGINFO)
             xbmc.executebuiltin(self.CECCOMMANDS[s_cec])
 
+        harmony = self.SETTINGS['profile%s_harmony' % profile]
+        if harmony and harmony != "None":
+            try:
+                harmony_cmd = "RunScript(script.harmony.control, {})".format(harmony)
+            
+                self.LW.log(['SENDING HARMONY ACTIVITY: %s' % harmony_cmd], xbmc.LOGINFO)
+                xbmc.executebuiltin(harmony_cmd)
+                
+            except Exception as ex:
+                self.LW.log(["{} while trying to send {}".format(ex, harmony)], xbmc.LOGERROR)
+               
+
     def _save(self):
         dialog_return, loglines = apdialog.Dialog().start(self.SETTINGS, title=self.SETTINGS['ADDONLANGUAGE'](32106),
                                                           buttons=self.ENABLEDPROFILES[1], force_dialog=True)

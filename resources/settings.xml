@@ -348,6 +348,80 @@
 				</setting>
 			</group>
 		</category>
+		<category help="" id="harmony-hub" label="32107">
+			<group id="1">
+				<setting help="" id="profile1_harmony" label="32007" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32007</heading>
+					</control>
+				</setting>
+				<setting help="" id="profile2_harmony" label="32008" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32008</heading>
+					</control>
+				</setting>
+				<setting help="" id="profile3_harmony" label="32009" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32009</heading>
+					</control>
+				</setting>
+				<setting help="" id="profile4_harmony" label="32010" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32010</heading>
+					</control>
+				</setting>
+				<setting help="" id="profile5_harmony" label="32051" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32051</heading>
+					</control>
+				</setting>
+				<setting help="" id="profile6_harmony" label="32053" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32053</heading>
+					</control>
+				</setting>
+				<setting help="" id="profile7_harmony" label="32055" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32055</heading>
+					</control>
+				</setting>
+				<setting help="" id="profile8_harmony" label="32057" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32057</heading>
+					</control>
+				</setting>
+				<setting help="" id="profile9_harmony" label="32059" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32059</heading>
+					</control>
+				</setting>
+				<setting help="" id="profile10_harmony" label="32061" type="string">
+					<level>0</level>
+					<default>None</default>
+					<control format="string" type="edit">
+						<heading>32061</heading>
+					</control>
+				</setting>
+			</group>
+		</category>
 		<category help="" id="auto switch" label="32014">
 			<group id="1">
 				<setting help="" id="auto_gui" label="32021" type="integer">

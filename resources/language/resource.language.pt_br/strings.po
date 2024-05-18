@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2024-05-17 05:26+0000\n"
+"PO-Revision-Date: 2024-05-18 21:31+0000\n"
 "Last-Translator: Havok Dan <havokdan@yahoo.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/pt_br/>\n"
 "Language: pt_br\n"
@@ -126,11 +126,12 @@ msgstr "HDMI-CEC"
 
 msgctxt "#32028"
 msgid "Wake Up"
-msgstr ""
+msgstr "Acordar"
 
+#, fuzzy
 msgctxt "#32029"
 msgid "StandBy"
-msgstr ""
+msgstr "StandBy"
 
 msgctxt "#32030"
 msgid "Toggle state"

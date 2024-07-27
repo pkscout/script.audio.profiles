@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2024-01-07 01:13+0000\n"
-"Last-Translator: José Antonio Alvarado <jalvarado0.eses@gmail.com>\n"
+"PO-Revision-Date: 2024-07-27 09:25+0000\n"
+"Last-Translator: roliverosc <roliverosc@hotmail.com>\n"
 "Language-Team: Spanish (Spain) <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/es_es/>\n"
 "Language: es_es\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.3\n"
+"X-Generator: Weblate 5.6.2\n"
 
 msgctxt "Addon Summary"
 msgid "Save audio profile and easily switch between them."
@@ -25,7 +25,7 @@ msgstr "Perfiles 1-5"
 
 msgctxt "#32001"
 msgid " Name of profile 1"
-msgstr " Nombre del perfil 1"
+msgstr " Nombre de perfil 1"
 
 msgctxt "#32002"
 msgid "Settings"
@@ -33,7 +33,7 @@ msgstr "Ajustes"
 
 msgctxt "#32003"
 msgid " Name of profile 2"
-msgstr " Nombre del perfil 2"
+msgstr " Nombre de perfil 2"
 
 msgctxt "#32004"
 msgid "Include volume level"
@@ -41,11 +41,11 @@ msgstr "Incluir el nivel de volumen"
 
 msgctxt "#32005"
 msgid " Name of profile 3"
-msgstr " Nombre del perfil 3"
+msgstr " Nombre de perfil 3"
 
 msgctxt "#32006"
 msgid " Name of profile 4"
-msgstr " Nombre del perfil 4"
+msgstr " Nombre de perfil 4"
 
 msgctxt "#32007"
 msgid "Profile 1"
@@ -65,7 +65,7 @@ msgstr "Perfil 4"
 
 msgctxt "#32011"
 msgid "Include video player settings"
-msgstr "Incluir ajustes del reproductor de vídeo"
+msgstr "Incluir ajustes de reproductor de vídeo"
 
 msgctxt "#32012"
 msgid "Include display settings"
@@ -81,7 +81,7 @@ msgstr "Interruptor automático"
 
 msgctxt "#32015"
 msgid "Show audio profile select menu on media playback"
-msgstr "Mostrar menú para seleccionar el perfil de audio en la reproducción multimedia"
+msgstr "Mostrar menú para seleccionar el perfil de audio en la reproducción de contenido"
 
 msgctxt "#32016"
 msgid "Auto close select menu"
@@ -101,11 +101,11 @@ msgstr "Perfil de la interfaz gráfica de usuario"
 
 msgctxt "#32022"
 msgid "Profile for movies"
-msgstr "Perfil para películas"
+msgstr "Perfil de películas"
 
 msgctxt "#32023"
 msgid "Profile for TV shows"
-msgstr "Perfil de las series de TV"
+msgstr "Perfil de series de TV"
 
 msgctxt "#32024"
 msgid "Profile for PVR TV"
@@ -113,7 +113,7 @@ msgstr "Perfil de PVR TV"
 
 msgctxt "#32025"
 msgid "Profile for music"
-msgstr "Perfil para música"
+msgstr "Perfil de música"
 
 msgctxt "#32026"
 msgid "None"
@@ -133,15 +133,15 @@ msgstr "StandBy"
 
 msgctxt "#32030"
 msgid "Toggle state"
-msgstr "Activar estado"
+msgstr "Cambiar estado"
 
 msgctxt "#32031"
 msgid "Profile for videos (not in library)"
-msgstr "Perfil para vídeos (no en la biblioteca)"
+msgstr "Perfil de vídeos (no en la biblioteca)"
 
 msgctxt "#32032"
 msgid "Profile for music videos"
-msgstr "Perfil para vídeos musicales"
+msgstr "Perfil de vídeos musicales"
 
 msgctxt "#32033"
 msgid "Profile for unknown content type"
@@ -149,7 +149,7 @@ msgstr "Perfil para tipo de contenido desconocido"
 
 msgctxt "#32034"
 msgid "Profile for PVR radio"
-msgstr "Perfil para la radio PVR"
+msgstr "Perfil para radio PVR"
 
 msgctxt "#32035"
 msgid "Video"
@@ -169,11 +169,11 @@ msgstr "Perfil para el Inicio/Reactivación de KODI (predeterminado)"
 
 msgctxt "#32039"
 msgid " Delay before close"
-msgstr " Demora antes del cierre"
+msgstr " Retraso antes del cierre"
 
 msgctxt "#32040"
 msgid "Enable debug logging"
-msgstr "Habilitar modo depuración"
+msgstr "Activar modo depuración"
 
 msgctxt "#32041"
 msgid " Force load profile at startup"
@@ -181,11 +181,11 @@ msgstr " Forzar perfil de carga al inicio"
 
 msgctxt "#32042"
 msgid " Auto switch notifications"
-msgstr " Notificaciones de interruptor automático"
+msgstr " Notificaciones de cambio automático"
 
 msgctxt "#32043"
 msgid " Manual switch notifications"
-msgstr " Notificaciones de interruptor manual"
+msgstr " Notificaciones de cambio manual"
 
 msgctxt "#32044"
 msgid " Maintenance notifications"
@@ -213,7 +213,7 @@ msgstr "Por número de canales"
 
 msgctxt "#32050"
 msgid "Menu Options"
-msgstr "Opciones del menú"
+msgstr "Opciones de menú"
 
 msgctxt "#32051"
 msgid "Profile 5"
@@ -221,7 +221,7 @@ msgstr "Perfil 5"
 
 msgctxt "#32052"
 msgid "Name of profile 5"
-msgstr "Nombre del perfil 5"
+msgstr "Nombre de perfil 5"
 
 msgctxt "#32053"
 msgid "Profile 6"
@@ -229,7 +229,7 @@ msgstr "Perfil 6"
 
 msgctxt "#32054"
 msgid "Name of profile 6"
-msgstr "Nombre del perfil 6"
+msgstr "Nombre de perfil 6"
 
 msgctxt "#32055"
 msgid "Profile 7"
@@ -237,7 +237,7 @@ msgstr "Perfil 7"
 
 msgctxt "#32056"
 msgid "Name of profile 7"
-msgstr "Nombre del perfil 7"
+msgstr "Nombre de perfil 7"
 
 msgctxt "#32057"
 msgid "Profile 8"
@@ -245,7 +245,7 @@ msgstr "Perfil 8"
 
 msgctxt "#32058"
 msgid "Name of profile 8"
-msgstr "Nombre del perfil 8"
+msgstr "Nombre de perfil 8"
 
 msgctxt "#32059"
 msgid "Profile 9"
@@ -253,7 +253,7 @@ msgstr "Perfil 9"
 
 msgctxt "#32060"
 msgid "Name of profile 9"
-msgstr "Nombre del perfil 9"
+msgstr "Nombre de perfil 9"
 
 msgctxt "#32061"
 msgid "Profile 10"
@@ -261,7 +261,7 @@ msgstr "Perfil 10"
 
 msgctxt "#32062"
 msgid "Name of profile 10"
-msgstr "Nombre del perfil 10"
+msgstr "Nombre de perfil 10"
 
 msgctxt "#32063"
 msgid "Codec Detection"
@@ -273,7 +273,7 @@ msgstr "Perfil para AC3"
 
 msgctxt "#32065"
 msgid "Profile for E-AC3"
-msgstr "Perfil de E-AC3"
+msgstr "Perfil para E-AC3"
 
 msgctxt "#32066"
 msgid "Profile for DTS"
@@ -305,7 +305,7 @@ msgstr "Audio multicanal"
 
 msgctxt "#32073"
 msgid "delay before reading codec info"
-msgstr "demora antes de leer la información del códec"
+msgstr "retraso antes de leer la información del códec"
 
 msgctxt "#32074"
 msgid "match streams with no codec details as music"

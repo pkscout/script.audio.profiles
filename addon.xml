@@ -18,6 +18,7 @@ v.2.1.2
 		<forum>https://forum.kodi.tv/showthread.php?tid=353852</forum>
 		<website>https://kodi.wiki/view/Add-on:Audio_Profiles</website>
 		<source>https://github.com/pkscout/script.audio.profiles</source>
+		<summary lang="af_ZA">Stoor oudio profiel en skakel maklik tussen hulle.</summary>
 		<summary lang="da_DK">Gem lydprofiler og skift let mellem dem.</summary>
 		<summary lang="de_DE">Audioprofile speichern und einfach zwischen diesen wechseln.</summary>
 		<summary lang="en_GB">Save audio profile and easily switch between them.</summary>
@@ -35,6 +36,7 @@ v.2.1.2
 		<summary lang="pt_BR">Salve o perfil de áudio e alterne facilmente entre eles.</summary>
 		<summary lang="ru_RU">Сохраняйте аудиопрофили и легко переключайтесь между ними.</summary>
 		<summary lang="zh_CN">保存音频配置文件并在它们之间轻松切换。</summary>
+		<description lang="af_ZA">Stoor oudio profiel en skakel maklik tussen hulle.</description>
 		<description lang="da_DK">Gem lydprofiler og skift let mellem dem.</description>
 		<description lang="de_DE">Audioprofile speichern und einfach zwischen diesen wechseln.</description>
 		<description lang="en_GB">Save audio profile and easily switch between them.</description>

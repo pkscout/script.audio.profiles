@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2025-01-05 10:39+0000\n"
+"PO-Revision-Date: 2025-01-25 09:27+0000\n"
 "Last-Translator: Heiko Berner <berner.h@gmail.com>\n"
 "Language-Team: Afrikaans (South Africa) <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/af_za/>\n"
 "Language: af_za\n"
@@ -29,7 +29,7 @@ msgstr " Naam van profiel 1"
 
 msgctxt "#32002"
 msgid "Settings"
-msgstr "Verstellings"
+msgstr "Instellings"
 
 msgctxt "#32003"
 msgid " Name of profile 2"
@@ -65,15 +65,15 @@ msgstr "Profiel 4"
 
 msgctxt "#32011"
 msgid "Include video player settings"
-msgstr ""
+msgstr "Sluit video speler instellings in"
 
 msgctxt "#32012"
 msgid "Include display settings"
-msgstr ""
+msgstr "Sluit vertoon instellings in"
 
 msgctxt "#32013"
 msgid "Includes Settings"
-msgstr ""
+msgstr "Sluit Instellings in"
 
 msgctxt "#32014"
 msgid "Auto Switch"
@@ -313,7 +313,7 @@ msgstr ""
 
 msgctxt "#32100"
 msgid "Select profile to save settings"
-msgstr ""
+msgstr "Kies profiel om instellings te stoor"
 
 msgctxt "#32101"
 msgid "Configure profile"

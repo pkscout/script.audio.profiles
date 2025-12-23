@@ -15,7 +15,7 @@ msgstr ""
 
 #: Settings
 msgctxt "#32000"
-msgid "Profiles 1-5"
+msgid "Profiles"
 msgstr ""
 
 #: Settings
@@ -250,7 +250,7 @@ msgstr ""
 
 #: Settings
 msgctxt "#32049"
-msgid "By number of channels"
+msgid "Channel Detection"
 msgstr ""
 
 #: Settings
@@ -377,6 +377,116 @@ msgstr ""
 #: Settings
 msgctxt "#32074"
 msgid "match streams with no codec details as music"
+msgstr ""
+
+#: Settings
+msgctxt "#32075"
+msgid "Profile for Dolby TrueHD with Atmos"
+msgstr ""
+
+#: Settings
+msgctxt "#32076"
+msgid "The codec entry for this option is truehd_atmos"
+msgstr ""
+
+#: Settings
+msgctxt "#32077"
+msgid "Profile for DTS:X IMAX Enhanced"
+msgstr ""
+
+#: Settings
+msgctxt "#32078"
+msgid "The codec entry for this option is dtshd_ma_x_imax"
+msgstr ""
+
+#: Settings
+msgctxt "#32079"
+msgid "Profile for DTS:X"
+msgstr ""
+
+#: Settings
+msgctxt "#32080"
+msgid "The codec entry for this option is dtshd_ma_x"
+msgstr ""
+
+#: Settings
+msgctxt "#32081"
+msgid "Profile for Lossless FLAC"
+msgstr ""
+
+#: Settings
+msgctxt "#32082"
+msgid "The codec entry for this option is flac"
+msgstr ""
+
+#: Settings
+msgctxt "#32083"
+msgid "Profile for Dolby TrueHD"
+msgstr ""
+
+#: Settings
+msgctxt "#32084"
+msgid "The codec entry for this option is truehd"
+msgstr ""
+
+#: Settings
+msgctxt "#32085"
+msgid "Profile for DTS-HD Master Audio"
+msgstr ""
+
+#: Settings
+msgctxt "#32086"
+msgid "The codec entry for this option is dtshd_ma"
+msgstr ""
+
+#: Settings
+msgctxt "#32087"
+msgid "Profile for DTS-HD High Resolution Audio"
+msgstr ""
+
+#: Settings
+msgctxt "#32088"
+msgid "The codec entry for this option is dtshd_hra"
+msgstr ""
+
+#: Settings
+msgctxt "#32089"
+msgid "Profile for Dolby Digital Plus with Atmos"
+msgstr ""
+
+#: Settings
+msgctxt "#32090"
+msgid "The codec entry for this option is eac3_ddp_atmos"
+msgstr ""
+
+#: Settings
+msgctxt "#32091"
+msgid "Profile for Dolby Digital Plus"
+msgstr ""
+
+#: Settings
+msgctxt "#32092"
+msgid "The codec entry for this option is eac3"
+msgstr ""
+
+#: Settings
+msgctxt "#32093"
+msgid "Profile for DTS"
+msgstr ""
+
+#: Settings
+msgctxt "#32094"
+msgid "The codec entry for this option is dca"
+msgstr ""
+
+#: Settings
+msgctxt "#32095"
+msgid "Profile for Dolby Digital"
+msgstr ""
+
+#: Settings
+msgctxt "#32096"
+msgid "The codec entry for this option is ac3"
 msgstr ""
 
 #: Script

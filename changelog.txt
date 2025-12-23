@@ -1,3 +1,8 @@
+v.2.2.0
+- Piers and later update
+- added full list of audio codec support
+- rearranged settings
+
 v.2.1.2
 - fix for DTS and DTSHD not being properly detected
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.audio.profiles" name="Audio Profiles" version="2.1.2" provider-name="pkscout, notoco, Regss">
+<addon id="script.audio.profiles" name="Audio Profiles" version="2.2.0~beta1" provider-name="pkscout, notoco, Regss">
 	<requires>
         <import addon="xbmc.python" version="3.0.0" />
 	</requires>
@@ -7,8 +7,10 @@
 	<extension point="xbmc.service" library="service.py" />
 	<extension point="xbmc.addon.metadata">
 		<news>
-v.2.1.2
-- fix for DTS and DTSHD not being properly detected
+v.2.2.0
+- this update is for Kodi 22 Piers and later
+- added full list of audio codec support
+- rearranged settings
 		</news>
 		<assets>
 			<icon>icon.png</icon>

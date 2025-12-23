@@ -103,10 +103,6 @@
 						<heading>32052</heading>
 					</control>
 				</setting>
-			</group>
-		</category>
-		<category help="" id="profiles 6-10" label="32070">
-			<group id="1">
 				<setting help="" id="profile6" label="32053" type="boolean">
 					<level>0</level>
 					<default>false</default>
@@ -583,7 +579,7 @@
 						<popup>false</popup>
 					</control>
 				</setting>
-				<setting help="" id="auto_ac3" label="32064" type="integer">
+				<setting help="32096" id="auto_ac3" label="32095" type="integer">
 					<level>0</level>
 					<default>0</default>
 					<constraints>
@@ -603,10 +599,10 @@
 						</options>
 					</constraints>
 					<control format="string" type="list">
-						<heading>32064</heading>
+						<heading>32095</heading>
 					</control>
 				</setting>
-				<setting help="" id="auto_eac3" label="32065" type="integer">
+				<setting help="32092" id="auto_eac3" label="32091" type="integer">
 					<level>0</level>
 					<default>0</default>
 					<constraints>
@@ -626,10 +622,10 @@
 						</options>
 					</constraints>
 					<control format="string" type="list">
-						<heading>32065</heading>
+						<heading>32091</heading>
 					</control>
 				</setting>
-				<setting help="" id="auto_dts" label="32066" type="integer">
+				<setting help="32090" id="auto_eac3_ddp_atmos" label="32089" type="integer">
 					<level>0</level>
 					<default>0</default>
 					<constraints>
@@ -649,10 +645,10 @@
 						</options>
 					</constraints>
 					<control format="string" type="list">
-						<heading>32066</heading>
+						<heading>32089</heading>
 					</control>
 				</setting>
-				<setting help="" id="auto_dtshd" label="32067" type="integer">
+				<setting help="32094" id="auto_dca" label="32093" type="integer">
 					<level>0</level>
 					<default>0</default>
 					<constraints>
@@ -672,10 +668,10 @@
 						</options>
 					</constraints>
 					<control format="string" type="list">
-						<heading>32067</heading>
+						<heading>32093</heading>
 					</control>
 				</setting>
-				<setting help="" id="auto_truehd" label="32068" type="integer">
+				<setting help="32088" id="auto_dtshd_hra" label="32087" type="integer">
 					<level>0</level>
 					<default>0</default>
 					<constraints>
@@ -695,7 +691,145 @@
 						</options>
 					</constraints>
 					<control format="string" type="list">
-						<heading>32068</heading>
+						<heading>32087</heading>
+					</control>
+				</setting>
+				<setting help="32086" id="auto_dtshd_ma" label="32085" type="integer">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32026">0</option>
+							<option label="32007">1</option>
+							<option label="32008">2</option>
+							<option label="32009">3</option>
+							<option label="32010">4</option>
+							<option label="32051">5</option>
+							<option label="32053">6</option>
+							<option label="32055">7</option>
+							<option label="32057">8</option>
+							<option label="32059">9</option>
+							<option label="32061">10</option>
+							<option label="32045">11</option>
+						</options>
+					</constraints>
+					<control format="string" type="list">
+						<heading>32085</heading>
+					</control>
+				</setting>
+				<setting help="32084" id="auto_truehd" label="32083" type="integer">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32026">0</option>
+							<option label="32007">1</option>
+							<option label="32008">2</option>
+							<option label="32009">3</option>
+							<option label="32010">4</option>
+							<option label="32051">5</option>
+							<option label="32053">6</option>
+							<option label="32055">7</option>
+							<option label="32057">8</option>
+							<option label="32059">9</option>
+							<option label="32061">10</option>
+							<option label="32045">11</option>
+						</options>
+					</constraints>
+					<control format="string" type="list">
+						<heading>32083</heading>
+					</control>
+				</setting>
+				<setting help="32082" id="auto_flac" label="32081" type="integer">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32026">0</option>
+							<option label="32007">1</option>
+							<option label="32008">2</option>
+							<option label="32009">3</option>
+							<option label="32010">4</option>
+							<option label="32051">5</option>
+							<option label="32053">6</option>
+							<option label="32055">7</option>
+							<option label="32057">8</option>
+							<option label="32059">9</option>
+							<option label="32061">10</option>
+							<option label="32045">11</option>
+						</options>
+					</constraints>
+					<control format="string" type="list">
+						<heading>32081</heading>
+					</control>
+				</setting>
+				<setting help="32080" id="auto_dtshd_ma_mx" label="32079" type="integer">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32026">0</option>
+							<option label="32007">1</option>
+							<option label="32008">2</option>
+							<option label="32009">3</option>
+							<option label="32010">4</option>
+							<option label="32051">5</option>
+							<option label="32053">6</option>
+							<option label="32055">7</option>
+							<option label="32057">8</option>
+							<option label="32059">9</option>
+							<option label="32061">10</option>
+							<option label="32045">11</option>
+						</options>
+					</constraints>
+					<control format="string" type="list">
+						<heading>32079</heading>
+					</control>
+				</setting>
+				<setting help="32078" id="auto_dtshd_ma_x_imax" label="32077" type="integer">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32026">0</option>
+							<option label="32007">1</option>
+							<option label="32008">2</option>
+							<option label="32009">3</option>
+							<option label="32010">4</option>
+							<option label="32051">5</option>
+							<option label="32053">6</option>
+							<option label="32055">7</option>
+							<option label="32057">8</option>
+							<option label="32059">9</option>
+							<option label="32061">10</option>
+							<option label="32045">11</option>
+						</options>
+					</constraints>
+					<control format="string" type="list">
+						<heading>32077</heading>
+					</control>
+				</setting>
+				<setting help="32076" id="auto_truehd_atmos" label="32075" type="integer">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32026">0</option>
+							<option label="32007">1</option>
+							<option label="32008">2</option>
+							<option label="32009">3</option>
+							<option label="32010">4</option>
+							<option label="32051">5</option>
+							<option label="32053">6</option>
+							<option label="32055">7</option>
+							<option label="32057">8</option>
+							<option label="32059">9</option>
+							<option label="32061">10</option>
+							<option label="32045">11</option>
+						</options>
+					</constraints>
+					<control format="string" type="list">
+						<heading>32075</heading>
 					</control>
 				</setting>
 				<setting help="" id="auto_othercodec" label="32069" type="integer">
@@ -722,7 +856,9 @@
 					</control>
 				</setting>
 			</group>
-			<group id="2" label="32049">
+		</category>
+		<category help="" id="channels" label="32049">
+			<group id="1">
 				<setting help="" id="auto_stereo" label="32071" type="integer">
 					<level>0</level>
 					<default>0</default>

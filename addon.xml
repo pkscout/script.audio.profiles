@@ -20,6 +20,7 @@ v.2.1.2
 		<source>https://github.com/pkscout/script.audio.profiles</source>
 		<summary lang="af_ZA">Stoor oudio profiel en skakel maklik tussen hulle.</summary>
 		<summary lang="bs_BA">Sačuvajte audio profil i lako se prebacujte između njih.</summary>
+		<summary lang="cs_CZ">Umožňuje uložit zvukové profily a snadno mezi nimi přepínat.</summary>
 		<summary lang="da_DK">Gem lydprofiler og skift let mellem dem.</summary>
 		<summary lang="de_DE">Audioprofile speichern und einfach zwischen diesen wechseln.</summary>
 		<summary lang="en_GB">Save audio profile and easily switch between them.</summary>
@@ -41,6 +42,7 @@ v.2.1.2
 		<summary lang="zh_CN">保存音频配置文件并在它们之间轻松切换。</summary>
 		<description lang="af_ZA">Stoor oudio profiel en skakel maklik tussen hulle.</description>
 		<description lang="bs_BA">Sačuvajte audio profil i lako se prebacujte između njih.</description>
+		<description lang="cs_CZ">Umožňuje uložit zvukové profily a snadno mezi nimi přepínat.</description>
 		<description lang="da_DK">Gem lydprofiler og skift let mellem dem.</description>
 		<description lang="de_DE">Audioprofile speichern und einfach zwischen diesen wechseln.</description>
 		<description lang="en_GB">Save audio profile and easily switch between them.</description>

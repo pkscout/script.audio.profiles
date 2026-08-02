@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2022-12-12 07:48+0000\n"
+"PO-Revision-Date: 2026-02-08 12:13+0000\n"
 "Last-Translator: rimasx <riks_12@hot.ee>\n"
 "Language-Team: Estonian <https://kodi.weblate.cloud/projects/kodi-add-ons-scripts/script-audio-profiles/et_ee/>\n"
 "Language: et_ee\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 msgctxt "Addon Summary"
 msgid "Save audio profile and easily switch between them."
@@ -65,7 +65,7 @@ msgstr "Profiil 4"
 
 msgctxt "#32011"
 msgid "Include video player settings"
-msgstr "Kaasa taasesituse sätted"
+msgstr "Kaasa videopleieri sätted"
 
 msgctxt "#32012"
 msgid "Include display settings"
@@ -73,7 +73,7 @@ msgstr "Kaasa ekraani sätted"
 
 msgctxt "#32013"
 msgid "Includes Settings"
-msgstr "Kaasa sätted"
+msgstr "Sisaldab sätted"
 
 msgctxt "#32014"
 msgid "Auto Switch"
@@ -169,7 +169,7 @@ msgstr "Vaikeprofiil Kodi käivitamisel/ärkamisel"
 
 msgctxt "#32039"
 msgid " Delay before close"
-msgstr " Viiteaeg enne sulgemist"
+msgstr " Viiivitus enne sulgemist"
 
 msgctxt "#32040"
 msgid "Enable debug logging"
@@ -209,7 +209,7 @@ msgstr "Lisaseaded"
 
 msgctxt "#32049"
 msgid "By number of channels"
-msgstr "Kanalite arvu järgi"
+msgstr "Helikanalite arvu järgi"
 
 msgctxt "#32050"
 msgid "Menu Options"
@@ -305,11 +305,11 @@ msgstr "Mitmekanaline heli"
 
 msgctxt "#32073"
 msgid "delay before reading codec info"
-msgstr "viiteaeg enne koodekiinfo lugemist"
+msgstr "viivitus enne koodekiinfo lugemist"
 
 msgctxt "#32074"
 msgid "match streams with no codec details as music"
-msgstr "Käsitle koodekiinfota meediavooge muusikana"
+msgstr "Käsitle koodekiteabeta meediavooge muusikana"
 
 msgctxt "#32100"
 msgid "Select profile to save settings"
